@@ -318,3 +318,27 @@ assert.deepEqual(layoutWarnings(corrected),[]);
 console.log('Exactly 24 widths corrected; other data unchanged; no current review warnings.');
 JS
 ```
+
+## Rooftop and terrace rendering
+
+The renderer previously capped the entire rooftop and excluded landscaped
+terraces from the walkthrough menu. The roof now subtracts the union of
+landscape rectangles on the top storey; a higher full-footprint storey still
+covers lower terraces. The geometry tests verify expected roof area, no double
+coverage, complete outdoor subtraction, physical-unit parity and unchanged
+input data. Navigation includes rooms/landscapes and excludes water/parking.
+The location selector is controlled by the camera's actual space, including
+return-to-entry resets. All 49 studio tests passed. Browser and updated native
+package verification are pending for this iteration.
+
+Isolated browser verification navigated to the level-7 landscaped roof terrace,
+confirmed the open sky and distinct landscape surface, returned to the guest
+core lobby and observed the menu reset, then switched to level 2 and visited
+its covered club terrace. Both menu and location badge stayed consistent.
+[Open rooftop evidence](../../output/ui/arcloom-rooftop-walkthrough.png).
+The full web check passed (3,449 tests, four skipped). Tool-count, wiki, protocol
+and relative doc links passed. The new `release/arcloom-terraces/mac-arm64/Arcloom.app`
+passed packaged native runtime smoke checks with Codex 0.162.1, compiled assets,
+PDF worker delivery and all six attribution files. It remains unsigned and
+unnotarized. Both native Mac CI jobs passed for the previous review commit
+`8bffa431`; Windows remains deferred.

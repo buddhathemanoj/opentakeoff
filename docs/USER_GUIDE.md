@@ -1437,3 +1437,15 @@ plan footer shows the selected floor's elevation in metres.
 The design-report PDF includes a building's saved design notes under **Design
 assumptions and unresolved issues**, alongside quantity bases, exclusions and
 review warnings. These notes describe the concept and remain subject to review.
+
+## Rooftop and terrace walkthroughs
+
+The walkthrough **Go to** menu includes rooms and landscaped areas. Its selected
+location follows the camera, and **Return to entry** resets both the view and
+menu. Landscaped areas have a distinct ground surface. The top storey's roof
+excludes landscaped outdoor areas, so rooftop terraces remain open to the sky
+in both the assembled model and walkthrough. Lower terraces retain the slab
+of any higher storey: the current model uses a full footprint slab per floor.
+These concept views do not model structural roof openings, setback floorplates
+or construction-ready terrace details. Water and parking areas are not
+walkthrough destinations.

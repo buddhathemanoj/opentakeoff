@@ -19,3 +19,26 @@ test('3D world preserves drawing size and fixture orientation across metre/feet 
  for(let i=0;i<a.length;i++)for(const key of['x','z','width','depth','height','bottom'])assert.ok(Math.abs(a[i][key]-b[i][key])<1e-9);
  const fixture={x:2,y:4,width:3,height:1,rotation:90};assert.deepEqual(worldFixture(fixture,'m'),{x:3.5,z:4.5,width:1,depth:3,rotation:-Math.PI/2});
 });
+
+test('roof excludes overlapping outdoor areas without roof overlaps and preserves physical units',async()=>{
+ const {ceilingPanels}=await import('../../web/src/studio/threeGeometry.js');
+ const project={unit:'m',width:10,height:8},floor={elements:[{kind:'landscape',x:2,y:2,width:4,height:4},{kind:'landscape',x:4,y:2,width:4,height:4}]},before=JSON.stringify(floor),panels=ceilingPanels(project,floor);
+ assert.ok(Math.abs(panels.reduce((n,p)=>n+p.width*p.depth,0)-56)<1e-8);
+ for(let x=.5;x<10;x++)for(let z=.5;z<8;z++){
+  const covered=panels.filter(p=>x>p.x-p.width/2&&x<p.x+p.width/2&&z>p.z-p.depth/2&&z<p.z+p.depth/2).length;
+  assert.equal(covered,x>2&&x<8&&z>2&&z<6?0:1);
+ }
+ const feet={unit:'ft',width:10/.3048,height:8/.3048},converted={elements:floor.elements.map(e=>({...e,x:e.x/.3048,y:e.y/.3048,width:e.width/.3048,height:e.height/.3048}))};
+ const convertedPanels=ceilingPanels(feet,converted);assert.equal(convertedPanels.length,panels.length);for(let i=0;i<panels.length;i++)for(const key of ['x','z','width','depth'])assert.ok(Math.abs(panels[i][key]-convertedPanels[i][key])<1e-8);
+ assert.equal(JSON.stringify(floor),before);assert.deepEqual(ceilingPanels(project,{elements:[{kind:'landscape',x:0,y:0,width:10,height:8}]}),[]);assert.deepEqual(ceilingPanels(project,{elements:[]}),[{x:5,z:4,width:10,depth:8}]);
+});
+test('walkthrough locations include terraces and exclude water and parking',async()=>{
+ const {walkthroughLocations}=await import('../../web/src/studio/walkthrough.js');
+ const elements=[{id:'room',kind:'room'},{id:'terrace',kind:'landscape'},{id:'pool',kind:'water'},{id:'parking',kind:'parking'}];assert.deepEqual(walkthroughLocations({elements}).map(e=>e.id),['room','terrace']);
+});
+
+test('a higher full-footprint storey still covers a lower terrace',async()=>{
+ const {ceilingPanels}=await import('../../web/src/studio/threeGeometry.js');
+ const floor={id:'lower',elevation:4,elements:[{kind:'landscape',x:0,y:0,width:10,height:8}]},upper={id:'upper',elevation:8,elements:floor.elements},p={unit:'m',width:10,height:8,floors:[floor,upper]};
+ assert.deepEqual(ceilingPanels(p,floor),[{x:5,z:4,width:10,depth:8}]);assert.deepEqual(ceilingPanels(p,upper),[]);
+});

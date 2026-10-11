@@ -1,8 +1,8 @@
 import {useEffect,useRef,useState} from 'react';
-import {wallBoxes,worldFixture} from './threeGeometry.js';
-import {canWalkTo,entryRoom} from './walkthrough.js';
+import {wallBoxes,worldFixture,ceilingPanels} from './threeGeometry.js';
+import {canWalkTo,entryRoom,walkthroughLocations} from './walkthrough.js';
 export default function Building3D({project,floorId}){
- const mount=useRef(null),reset=useRef(null),enter=useRef(null),keys=useRef(new Set()),[walk,setWalk]=useState(false),[roomName,setRoomName]=useState(''),[exploded,setExploded]=useState(false),[cutaway,setCutaway]=useState(false),[scope,setScope]=useState('all'),[error,setError]=useState(''),[ready,setReady]=useState(false);
+ const mount=useRef(null),reset=useRef(null),enter=useRef(null),keys=useRef(new Set()),[walk,setWalk]=useState(false),[roomName,setRoomName]=useState(''),[locationId,setLocationId]=useState(''),[exploded,setExploded]=useState(false),[cutaway,setCutaway]=useState(false),[scope,setScope]=useState('all'),[error,setError]=useState(''),[ready,setReady]=useState(false);
  useEffect(()=>{
   const host=mount.current;let disposed=false,cleanup=()=>{};setReady(false);setError('');
   async function load(){
@@ -24,11 +24,12 @@ export default function Building3D({project,floorId}){
     const activeFloor=project.floors.find(f=>f.id===floorId)||project.floors[0];
     const floors=walk?[activeFloor]:scope==='selected'?[activeFloor]:project.floors;
     const showCutaway=!walk&&cutaway,showExploded=!walk&&exploded;
-    let top=0;
+    let top=0;const landscape=material('#b2c2a3');
     floors.forEach((floor,index)=>{
      const group=new THREE.Group(),base=walk||scope==='selected'?0:floor.elevation+(showExploded?index*5:0);group.position.y=base;scene.add(group);top=Math.max(top,base+floor.storeyHeight);
      const floorMat=material(floor.use==='cafe'?'#d6c4ac':floor.use==='bank'?'#d7dfe0':'#e4e5df');
      box(group,w,.2,d,w/2,-.1,d/2,floorMat);
+     for(const area of floor.elements.filter(e=>e.kind==='landscape'))box(group,area.width*m,.012,area.height*m,(area.x+area.width/2)*m,.006,(area.y+area.height/2)*m,landscape);
      for(const b of wallBoxes(project,floor)){
       if(showCutaway&&b.perimeter&&(b.x>w-.2||b.z>d-.2))continue;
       const height=showCutaway&&!b.perimeter?Math.min(b.height,1.1):b.height;
@@ -67,8 +68,8 @@ export default function Building3D({project,floorId}){
       else {box(g,a,.9,b,0,.45,0,wood);box(g,a+.04,.06,b+.04,0,.93,0,white);}
      }
     });
-    if(walk){box(scene,w,.16,d,w/2,activeFloor.storeyHeight-.08,d/2,white);}
-    else if(!showCutaway&&!showExploded&&scope==='all'){box(scene,w+.3,.18,d+.3,w/2,top+.09,d/2,white);}
+    if(walk){for(const p of ceilingPanels(project,activeFloor))box(scene,p.width,.16,p.depth,p.x,activeFloor.storeyHeight-.08,p.z,white);}
+    else if(!showCutaway&&!showExploded&&scope==='all'){const roofFloor=floors.reduce((a,b)=>a.elevation+a.storeyHeight>b.elevation+b.storeyHeight?a:b);for(const p of ceilingPanels(project,roofFloor))box(scene,p.width,.18,p.depth,p.x,top+.09,p.z,white);}
     box(scene,w+12,.12,d+12,w/2,-.3,d/2,ground);
     const grid=new THREE.GridHelper(Math.max(w,d)+12,Math.ceil(Math.max(w,d)+12),'#c7ccc6','#d7dbd4');grid.position.set(w/2,-.235,d/2);scene.add(grid);geometries.push(grid.geometry);materials.push(grid.material);
     scene.add(new THREE.HemisphereLight('#fff9ed','#8d9b98',2.6));
@@ -78,7 +79,7 @@ export default function Building3D({project,floorId}){
     const place=(id)=>{
      const room=activeFloor.elements.find(e=>e.id===id)||entryRoom(activeFloor);
      const px=room?(room.x+room.width/2)*m:w/2,pz=room?(room.y+room.height*.78)*m:d/2;
-     camera.position.set(px,1.65,pz);yaw=0;pitch=-.12;camera.rotation.set(pitch,yaw,0);setRoomName(room?.label||activeFloor.name);
+     camera.position.set(px,1.65,pz);yaw=0;pitch=-.12;camera.rotation.set(pitch,yaw,0);setRoomName(room?.label||activeFloor.name);setLocationId(room?.id||'');
     };
     enter.current=place;
     const home=()=>{
@@ -107,7 +108,7 @@ export default function Building3D({project,floorId}){
        const norm=Math.hypot(forward,side)||1,speed=2.4*dt/norm,dx=(-Math.sin(yaw)*forward+Math.cos(yaw)*side)*speed,dz=(-Math.cos(yaw)*forward-Math.sin(yaw)*side)*speed,bounds={width:w,depth:d};
        if(canWalkTo(camera.position.x+dx,camera.position.z,walkingWalls,bounds))camera.position.x+=dx;
        if(canWalkTo(camera.position.x,camera.position.z+dz,walkingWalls,bounds))camera.position.z+=dz;
-       if(clock.elapsedTime-lastRoomUpdate>.5){lastRoomUpdate=clock.elapsedTime;const room=activeFloor.elements.find(e=>camera.position.x>=e.x*m&&camera.position.x<=(e.x+e.width)*m&&camera.position.z>=e.y*m&&camera.position.z<=(e.y+e.height)*m);setRoomName(room?.label||activeFloor.name);}
+       if(clock.elapsedTime-lastRoomUpdate>.5){lastRoomUpdate=clock.elapsedTime;const room=walkthroughLocations(activeFloor).find(e=>camera.position.x>=e.x*m&&camera.position.x<=(e.x+e.width)*m&&camera.position.z>=e.y*m&&camera.position.z<=(e.y+e.height)*m);setRoomName(room?.label||activeFloor.name);setLocationId(room?.id||'');}
       }else controls.update();
       renderer.render(scene,camera);
      }
@@ -123,7 +124,7 @@ export default function Building3D({project,floorId}){
  return <section className={'ks-three-view '+(walk?'is-walking':'')} aria-label="Interactive 3D building viewer"><div className="ks-three-controls">
   <button aria-pressed={walk} className="ks-enter-building" onClick={()=>setWalk(!walk)}>{walk?'Exit walkthrough':'Enter building'}</button>
   {!walk&&<><label>Show <select aria-label="3D floor visibility" value={scope} onChange={e=>setScope(e.target.value)}><option value="all">All floors</option><option value="selected">Selected floor</option></select></label><button aria-pressed={exploded} onClick={()=>setExploded(!exploded)} disabled={scope==='selected'}>Exploded</button><button aria-pressed={cutaway} onClick={()=>setCutaway(!cutaway)}>Cutaway</button></>}
-  {walk&&<label>Go to <select aria-label="Walkthrough room" defaultValue="" onChange={e=>enter.current?.(e.target.value)}><option value="" disabled>Choose a room</option>{floor.elements.filter(e=>e.kind==='room').map(e=><option key={e.id} value={e.id}>{e.label}</option>)}</select></label>}
+  {walk&&<label>Go to <select aria-label="Walkthrough location" value={walkthroughLocations(floor).some(e=>e.id===locationId)?locationId:''} onChange={e=>enter.current?.(e.target.value)}><option value="" disabled>Choose a space</option>{walkthroughLocations(floor).map(e=><option key={e.id} value={e.id}>{e.label}</option>)}</select></label>}
   <button onClick={()=>reset.current?.()}>{walk?'Return to entry':'Reset view'}</button>
  </div><div className="ks-three-canvas" ref={mount}/>{error?<p className="ks-three-status" role="alert">{error}</p>:!ready&&<p className="ks-three-status" role="status">Loading 3D building…</p>}
  {walk&&<><div className="ks-walk-location">{floor.name}<strong>{roomName}</strong></div><div className="ks-walk-pad">{moveButton('arrowleft','Turn left','↶')}{moveButton('w','Move forward','↑')}{moveButton('arrowright','Turn right','↷')}{moveButton('a','Move left','←')}{moveButton('s','Move backward','↓')}{moveButton('d','Move right','→')}</div></>}

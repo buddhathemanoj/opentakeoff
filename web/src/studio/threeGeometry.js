@@ -1,4 +1,21 @@
 // World coordinates are metres. Elevation/storeyHeight remain metres in either drawing unit.
+export function ceilingPanels(project,floor){
+ const m=project.unit==='ft'?.3048:1;
+ let panels=[{x:0,z:0,width:project.width*m,depth:project.height*m}];
+ // Every storey currently has a full footprint slab: a higher storey still covers lower terraces.
+ const covered=project.floors?.some(f=>f.elevation>floor.elevation);
+ if(covered)return panels.map(p=>({...p,x:p.x+p.width/2,z:p.z+p.depth/2}));
+ // Subtract the union of landscaped outdoor areas, keeping the remaining roof continuous.
+ for(const area of floor.elements.filter(e=>e.kind==='landscape')){
+  const cut={x:area.x*m,z:area.y*m,width:area.width*m,depth:area.height*m};
+  panels=panels.flatMap(p=>{
+   const left=Math.max(p.x,cut.x),right=Math.min(p.x+p.width,cut.x+cut.width),near=Math.max(p.z,cut.z),far=Math.min(p.z+p.depth,cut.z+cut.depth);
+   if(right<=left||far<=near)return[p];
+   return[{x:p.x,z:p.z,width:left-p.x,depth:p.depth},{x:right,z:p.z,width:p.x+p.width-right,depth:p.depth},{x:left,z:p.z,width:right-left,depth:near-p.z},{x:left,z:far,width:right-left,depth:p.z+p.depth-far}].filter(r=>r.width>1e-8&&r.depth>1e-8);
+  });
+ }
+ return panels.map(p=>({...p,x:p.x+p.width/2,z:p.z+p.depth/2}));
+}
 export function wallBoxes(project,floor){
  const m=project.unit==='ft'?.3048:1,height=floor.storeyHeight-.22,raw=[];
  const edge=(axis,at,start,end,thickness)=>raw.push({axis,at:at*m,start:start*m,end:end*m,thickness:thickness*m});

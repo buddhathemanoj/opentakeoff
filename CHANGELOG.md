@@ -1,5 +1,7 @@
 # Changelog
 
+- Arcloom: rooftop landscape areas now cut the rendered roof and ceiling, while lower terraces retain overhead floor slabs. Walkthrough destinations include landscaped areas, show their surface and keep the location menu in sync with camera movement and entry resets.
+
 - Arcloom: a floor picker keeps buildings above four floors navigable in narrow previews; project changes reset empty chat scrolling and floor-plan footers show actual elevations. Design-report PDFs now include saved design assumptions and unresolved issues. Verified an eight-floor live AI hotel and a targeted 24-opening correction, preserving all other geometry.
 
 - Arcloom: building review now flags missing boundary access, detached openings and interior-window placement in proposal warnings and quantity reports, with metre/feet parity and no automatic geometry changes.
