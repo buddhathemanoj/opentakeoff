@@ -6,7 +6,7 @@ import {mixedUseBuilding} from '../../web/src/studio/mixedUse.js';
 import {exampleProject} from '../../web/src/studio/model.js';
 test('exports all three tenant plans as vector A3 sheets with a stable project title',async()=>{
  const project=mixedUseBuilding('pdf-building'),bytes=await createPlanPdf(project),pdf=await PDFDocument.load(bytes);
- assert.equal(pdf.getPageCount(),3);assert.equal(pdf.getTitle(),'Kosal Commons - Bank / Cafe / IT');
+ assert.equal(pdf.getPageCount(),3);assert.equal(pdf.getTitle(),'Arcloom Commons - Bank / Cafe / IT');
  for(const page of pdf.getPages()){
   assert.deepEqual(page.getSize(),{width:1190.55,height:841.89});
   assert.ok(page.node.Contents());

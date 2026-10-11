@@ -1,4 +1,4 @@
-name: Kosal desktop beta packages
+name: Arcloom desktop beta packages
 on:
   workflow_dispatch:
   push:
@@ -64,7 +64,7 @@ jobs:
         run: node desktop/scripts/check-package.mjs release/${{ matrix.folder }}
       - uses: actions/upload-artifact@v4
         with:
-          name: kosal-${{ matrix.platform }}-${{ matrix.arch }}-unsigned
+          name: arcloom-${{ matrix.platform }}-${{ matrix.arch }}-unsigned
           if-no-files-found: error
           path: |
             release/*.dmg

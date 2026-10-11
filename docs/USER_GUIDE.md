@@ -1,6 +1,6 @@
-# Kosal Studio local beta workspace
+# Arcloom local beta workspace
 
-## Kosal 3D and original takeoff tools
+## Arcloom 3D and original takeoff tools
 
 Building projects now include **3D model**: drag to orbit, scroll to zoom and
 right-drag to pan. Use All floors/Selected floor, Exploded and Cutaway to inspect
@@ -8,7 +8,7 @@ rooms and furnishings. This is an indicative model generated from editable plan
 geometry, not a structural or construction-approved BIM model. **3D study** remains
 the simpler vector axonometric view; **Elevation** is a façade concept.
 
-**Plan takeoff** opens the complete original canvas with Kosal typography and
+**PDF takeoff** opens the complete original canvas with Arcloom typography and
 neutral surfaces. File, Sheets, Quantities, Work, markups, stamps, RFIs, revisions,
 reports, search, layouts and the original tool rail remain available. The report
 bar wraps to fit the available width. Original experimental and configured-service
@@ -16,7 +16,7 @@ gates still apply; a new theme does not imply that premium features in developme
 have shipped. The detailed feature map is [FEATURES.md](../FEATURES.md).
 
 The local fork opens in **Design studio**. Your existing PDF tools are available
-through **Plan takeoff** in the sidebar, including all the original controls
+through **PDF takeoff** in the sidebar, including all the original controls
 described below. Design projects and takeoff data use separate local storage.
 
 Choose **New design → 3-floor bank / café / IT building** to explore the furnished
@@ -25,7 +25,7 @@ café or IT office; **3D study** shows the floor stack and **Elevation** shows a
 indicative south façade. Room labels and dimensions can be edited in the layer
 inspector. These are concept drawings, not approved construction documents.
 
-Describe changes in the bottom composer. Kosal invokes the local Codex login and
+Describe changes in the bottom composer. Arcloom invokes the local Codex login and
 sends the brief, recent conversation, project and selected item IDs. It does not
 expose credentials to the browser. Generated changes remain proposals until you
 choose **Apply to drawing**. **Discard** keeps the original; Undo restores a prior
@@ -1364,7 +1364,7 @@ explains the browser controls and the current MCP transport limit explicitly.
 
 Open the guide (`?`) for links to the [Privacy Policy](https://opentakeoff.kentucky-ai.com/privacy/) and [Terms of Service](https://opentakeoff.kentucky-ai.com/terms/). These explain local storage, optional cloud and AI connections, contributions, and responsibility for reviewed estimates.
 
-## Kosal design reports
+## Arcloom design reports
 
 In Design studio, open **Preview → Quantities & reports**, or **View quantities &
 reports** beneath the chat. Quantities update from the current editable geometry;

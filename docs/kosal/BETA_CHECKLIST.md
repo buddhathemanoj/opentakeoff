@@ -118,3 +118,16 @@ rendered in the production measurement workspace, and More tools expanded.
 Current checks: full web suite 3,449 passing / four skipped / zero failing;
 34 studio tests passing; build, lint, typecheck, benchmarks, OCR distribution and
 relative documentation links passing.
+
+## Arcloom Mac handoff
+
+The product is now named Arcloom. The built-in imagegen tool produced the folded
+architectural logo; the selected transparent PNG drives the sidebar and desktop
+icon formats. The Mac bundle uses `com.arcloom.studio` while explicitly retaining
+the existing `Kosal Studio` profile directory. Launching the renamed native app
+restored the saved 3-Acre Farm Concept and its conversation. The packaged local
+API confirmed authenticated ChatGPT access through bundled Codex. The extended
+package smoke check passed: native arm64 runtime, compiled assets, PDF module-worker
+MIME handling and all six attribution/license files. The refreshed web check and
+34 studio tests passed. This package is unsigned and not notarized; distribution
+signing remains a beta gate. Windows work is deferred at the user's request.

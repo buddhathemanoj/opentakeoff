@@ -1,8 +1,8 @@
 {
-  "name": "kosal-studio",
+  "name": "arcloom",
   "version": "0.1.0-beta.1",
   "private": true,
-  "description": "Kosal Studio — AI-assisted spatial design and takeoff",
+  "description": "Arcloom — AI-assisted spatial design and takeoff",
   "license": "AGPL-3.0-only",
   "type": "module",
   "main": "desktop/main.cjs",

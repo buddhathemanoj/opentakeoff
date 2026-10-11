@@ -16,7 +16,7 @@ export async function smoke(){
  const {server,url}=await startStudioServer({root:join(root,'web/dist'),port:0});
  try{
   const response=await fetch(url);assert.equal(response.status,200);
-  const html=await response.text();assert.ok(html.includes('Kosal Studio'));
+  const html=await response.text();assert.ok(html.includes('Arcloom'));
   const assets=[...html.matchAll(/(?:src|href)="(\/assets\/[^\"]+)"/g)].map(match=>match[1]);assert.ok(assets.length>=2);
   for(const asset of assets)assert.equal((await fetch(url+asset)).status,200);
   const worker=(await readdir(join(root,'web/dist/assets'))).find(name=>/^pdf\.worker.*\.mjs$/.test(name));assert.ok(worker,'Compiled PDF module worker is missing');

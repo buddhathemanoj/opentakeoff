@@ -71,7 +71,7 @@ export function mixedUseBuilding(id=crypto.randomUUID()){
     floors.push(floor);
   };
   make(0,'Ground floor · Bank','bank');make(1,'Level 1 · Café','cafe');make(2,'Level 2 · IT company','office');
-  return validateBuilding({schema:BUILDING_SCHEMA,id,name:'Kosal Commons · Bank / Café / IT',mode:'building',unit:'m',width:30,height:24,floors,notes:[
+  return validateBuilding({schema:BUILDING_SCHEMA,id,name:'Arcloom Commons · Bank / Café / IT',mode:'building',unit:'m',width:30,height:24,floors,notes:[
     'Concept design for a 30 × 24 m mixed-use building. North is at the top; principal bank entrance is south-facing.',
     'Three storeys at 4 m floor-to-floor height; gross area 720 m² per floor / 2,160 m² total.',
     'A shared west lift/stair core and a second east stair are aligned on every floor. Tenant access is independent of the bank secure area.',

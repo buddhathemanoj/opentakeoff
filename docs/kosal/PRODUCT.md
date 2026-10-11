@@ -1,6 +1,6 @@
-# Kosal Studio
+# Arcloom
 
-Kosal Studio is the Kosal-branded spatial design and takeoff workspace built on OpenTakeoff.
+Arcloom is the Arcloom-branded spatial design and takeoff workspace built on OpenTakeoff.
 The requested end state includes an improved editor inspired by Remocn Studio, integrated
 Codex chat, editable AI-generated building and land layouts, and macOS and Windows apps.
 Beta readiness must be demonstrated with working flows, not implied by this document.
@@ -97,3 +97,11 @@ benchmark and production build passed. Studio tests: 25 passed. The new Mac
 package smoke check launched bundled Codex 0.162.1 and served the UI assets.
 Native-platform package CI is prepared for Apple Silicon, Intel Mac and Windows
 x64; Windows execution is still unverified.
+
+
+### Product rename
+
+The current product name is Arcloom. Its generated logo, exact prompts, asset paths
+and storage continuity are recorded in [BRAND.md](BRAND.md). Kosal names in earlier
+verification records describe previous builds; original schema IDs and profile
+paths remain stable for compatibility. Current studio checks pass 34 tests.

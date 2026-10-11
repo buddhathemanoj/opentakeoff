@@ -15,7 +15,7 @@ export async function startStudioServer({root,port=51377}) {
       const bytes=await readFile(file);
       res.writeHead(200,{'Content-Type':types[extname(file)]||'application/octet-stream','X-Content-Type-Options':'nosniff','Cache-Control':'no-cache'});
       res.end(req.method==='HEAD'?undefined:bytes);
-    }catch{res.writeHead(500);res.end('Unable to load Kosal Studio.');}
+    }catch{res.writeHead(500);res.end('Unable to load Arcloom.');}
   }));
   await new Promise((ok,fail)=>{server.once('error',fail);server.listen(port,'127.0.0.1',ok);});
   return {server,url:`http://127.0.0.1:${server.address().port}`};

@@ -7,7 +7,7 @@ export function BuildingStack({project,selected,onSelect}){
     <g transform={`translate(0 ${70-offset}) matrix(2.1 1.15 -2.1 1.15 0 0)`} filter="url(#floor-shadow)"><rect width={project.width} height={project.height} fill={selected===f.id?'#edf1e8':'#fafaf7'} stroke="#9ca7a6" strokeWidth=".1"/>{f.elements.map(e=><rect key={e.id} x={e.x} y={e.y} width={e.width} height={e.height} fill={e.kind==='landscape'?'#d8e4ce':f.use==='bank'?'#e3e9ed':f.use==='cafe'?'#eee5d7':'#e8e9e7'} stroke="#8f9ca0" strokeWidth=".08"/>)}<FloorDetails floor={f} width={project.width} height={project.height} showLabels={false}/></g>
     <path d={`M70 ${89-offset}h30`} stroke="#a2aaa7" strokeWidth=".4"/><text x="102" y={87-offset} fontSize="3.2" fill="#67716d">{f.name}</text><text x="102" y={93-offset} fontSize="2.6" fill="#9ba29d">+{f.elevation.toFixed(2)} m · 720 m²</text>
   </g>;})}
-  <text x="-52" y="143" fontSize="3" fill="#67716d" letterSpacing=".4">KOSAL COMMONS / EXPLODED FLOOR STUDY</text>
+  <text x="-52" y="143" fontSize="3" fill="#67716d" letterSpacing=".4">ARCLOOM COMMONS / EXPLODED FLOOR STUDY</text>
  </svg></div>;
 }
 export function BuildingElevation({project}){
@@ -19,7 +19,7 @@ export function BuildingElevation({project}){
     <rect x=".4" y=".65" width={project.width-.8} height={f.storeyHeight-1} fill="url(#glass)"/>
     {Array.from({length:15},(_,i)=><path key={i} d={`M${i*2} .6v${f.storeyHeight-1}`} stroke="#7a898c" strokeWidth=".08"/>)}
     <path d={`M0 ${f.storeyHeight-.25}h${project.width}`} stroke="#a9a89d" strokeWidth=".25"/>
-    <rect x=".5" y={f.storeyHeight-1.1} width="8" height=".75" fill="#f5f4ef"/><text x=".85" y={f.storeyHeight-.58} fill="#546363" fontSize=".36" letterSpacing=".05">{f.use==='bank'?'KOSAL BANK':f.use==='cafe'?'COMMONS CAFÉ':'KOSAL TECHNOLOGIES'}</text>
+    <rect x=".5" y={f.storeyHeight-1.1} width="8" height=".75" fill="#f5f4ef"/><text x=".85" y={f.storeyHeight-.58} fill="#546363" fontSize=".36" letterSpacing=".05">{f.use==='bank'?'ARCLOOM BANK':f.use==='cafe'?'COMMONS CAFÉ':'ARCLOOM TECHNOLOGIES'}</text>
     {f.use==='cafe'&&Array.from({length:8},(_,i)=><g key={i}><rect x={10+i*2} y={f.storeyHeight-.7} width="1.3" height=".5" fill="#adbaa0"/><circle cx={10.6+i*2} cy={f.storeyHeight-.9} r=".45" fill="#a0b58e"/></g>)}
   </g>)}
   <rect x="16" y={h-2.8} width="4" height="2.8" fill="#aabcbf" stroke="#788b8f" strokeWidth=".1"/><path d={`M18 ${h-2.8}v2.8`} stroke="#6a7e82" strokeWidth=".06"/>

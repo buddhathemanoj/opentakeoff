@@ -3,7 +3,7 @@ export async function createQuantityReport(project,quantities,priced,currency){
  const pdf=await PDFDocument.create(),font=await pdf.embedFont(StandardFonts.Helvetica),bold=await pdf.embedFont(StandardFonts.HelveticaBold);
  let page,y;
  const clean=s=>String(s).normalize('NFKD').replace(/[^\x20-\x7E]/g,'');
- const next=()=>{page=pdf.addPage([595.28,841.89]);y=790;line('KOSAL STUDIO / DESIGN REPORT',12,true);line(project.name,16,true);line('Concept quantities | '+currency+' | '+quantities.floors+' floors',10);y-=14;};
+ const next=()=>{page=pdf.addPage([595.28,841.89]);y=790;line('ARCLOOM / DESIGN REPORT',12,true);line(project.name,16,true);line('Concept quantities | '+currency+' | '+quantities.floors+' floors',10);y-=14;};
  const line=(text,size=10,strong=false)=>{if(y<55)next();page.drawText(clean(text),{x:40,y,size,font:strong?bold:font,color:rgb(.15,.17,.18)});y-=size+9;};
  const wrap=(text,size=9)=>{let row='';for(const word of clean(text).split(/\s+/)){if(font.widthOfTextAtSize(row+' '+word,size)>505){line(row,size);row=word;}else row+=(row?' ':'')+word;}if(row)line(row,size);};
  const num=n=>Number(n).toLocaleString('en-US',{maximumFractionDigits:2});

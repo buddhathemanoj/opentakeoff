@@ -6,7 +6,7 @@ const color=hex=>rgb(parseInt(hex.slice(1,3),16)/255,parseInt(hex.slice(3,5),16)
 export async function createPlanPdf(input){
  const project=validateProject(input),pdf=await PDFDocument.create();
  const font=await pdf.embedFont(StandardFonts.Helvetica),bold=await pdf.embedFont(StandardFonts.HelveticaBold);
- pdf.setTitle(ascii(project.name));pdf.setAuthor('Kosal Studio');pdf.setSubject('Concept architectural plan set');
+ pdf.setTitle(ascii(project.name));pdf.setAuthor('Arcloom');pdf.setSubject('Concept architectural plan set');
  const floors=project.schema===BUILDING_SCHEMA?project.floors:[{name:project.mode==='site'?'Site layout':'Floor plan',elements:project.elements,openings:[],fixtures:[],elevation:0}];
  for(const [index,floor] of floors.entries()){
   const page=pdf.addPage([1190.55,841.89]),ink=color('#36464c'),soft=color('#839298');
@@ -56,7 +56,7 @@ export async function createPlanPdf(input){
   const north=xy(project.width+.8,1);page.drawLine({start:{x:north.x,y:north.y-20},end:{x:north.x,y:north.y},thickness:.8,color:soft});text('N',north.x-3,north.y+5,8,bold,soft);
   const dp=xy(project.width/2,-.5);center(`${project.width.toFixed(2)} ${project.unit}`,dp.x,dp.y,8,font,soft);
   const dh=xy(-.9,project.height/2);text(`${project.height.toFixed(2)} ${project.unit}`,dh.x-25,dh.y,8,font,soft);
-  text('KOSAL STUDIO',65,805,12,bold);text(ascii(project.name),65,783,15,bold);
+  text('ARCLOOM',65,805,12,bold);text(ascii(project.name),65,783,15,bold);
   text(floor.name,960,770,11,bold);text(`SHEET A-${String(index+1).padStart(2,'0')}`,960,752,8,font,soft);
   text(`Elevation +${floor.elevation.toFixed(2)} m`,960,730,8,font,soft);
   text(`Gross ${(project.width*project.height*metresPerUnit**2).toFixed(0)} m2`,960,715,8,font,soft);

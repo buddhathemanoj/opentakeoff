@@ -1,23 +1,25 @@
-# Kosal Studio (local beta)
+# Arcloom (local beta)
 
-This fork adds a Kosal-branded, conversation-first design workspace to OpenTakeoff.
+This fork adds a Arcloom-branded, conversation-first design workspace to OpenTakeoff.
 Run `npm ci` at the repository root and `npm ci --prefix web`, then `npm run dev`.
 The local app uses your existing Codex login (`codex login`) for design requests.
-Use **Plan takeoff** in the sidebar for the original PDF, measurement, annotation,
+Use **PDF takeoff** in the sidebar for the original PDF, measurement, annotation,
 reporting, revision and project tools.
 
 **New design → 3-floor bank / café / IT building** opens a furnished 30 × 24 m
 mixed-use concept. Preview includes floor tabs, walls, door swings, glazing,
 furniture, a floor stack and an elevation study. AI changes are separate proposals;
 review and apply them before changing the drawing. Drafts and proposals survive reloads.
-**Export → Architectural plan set** creates an A3 vector PDF, and **Open in Plan takeoff**
+**Export → Architectural plan set** creates an A3 vector PDF, and **Open in PDF takeoff**
 adds that plan set to the original measuring engine. Concepts require professional
 engineering and local approval before construction.
 
 Desktop: `npm run build && npm run desktop`. Packaging commands are
 `npm run desktop:mac` and `npm run desktop:windows`. Local Apple Silicon builds have
 been launched; Windows runtime validation and release signing remain pending.
-See [product and verification status](docs/kosal/PRODUCT.md).
+See [product and verification status](docs/kosal/PRODUCT.md) and [logo and brand assets](docs/kosal/BRAND.md).
+
+**Preview → Quantities & reports** shows geometry-derived quantities, room schedules, entered-rate costs and report PDF/CSV downloads beside agent chat. **3D model → Enter building** enables an interior walkthrough. Sidebar and chat/preview sizes are adjustable and saved.
 
 The interface adapts Remocn Studio's MIT-licensed shell geometry and NeuroNoise aura;
 its notice is preserved in [desktop/licenses/remocn-MIT.txt](desktop/licenses/remocn-MIT.txt).

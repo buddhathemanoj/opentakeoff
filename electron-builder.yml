@@ -1,6 +1,6 @@
-appId: com.kosal.studio
-productName: Kosal Studio
-copyright: Copyright © 2026 Kosal. Includes OpenTakeoff contributors.
+appId: com.arcloom.studio
+productName: Arcloom
+copyright: Copyright © 2026 Arcloom. Includes OpenTakeoff contributors.
 asar: true
 beforePack: desktop/scripts/before-pack.cjs
 extraResources:
