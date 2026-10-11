@@ -342,3 +342,50 @@ passed packaged native runtime smoke checks with Codex 0.162.1, compiled assets,
 PDF worker delivery and all six attribution files. It remains unsigned and
 unnotarized. Both native Mac CI jobs passed for the previous review commit
 `8bffa431`; Windows remains deferred.
+
+## Viewed-space agent context
+
+The walkthrough previously changed the camera without informing agent chat of
+the viewed space. The composer now shows a **Viewing ·** context chip and sends
+that room/landscape ID in the existing selected-ID request field. Manual
+selection takes priority. Project/floor identity and saved-preview visibility
+guards prevent stale or unapplied-proposal context from leaking into a saved
+drawing request. Viewing does not change editor selection or geometry. The
+callback is stable, and location reports occur on transitions rather than every
+frame. View context remains transient and must be chosen again after reload.
+
+All 52 studio tests passed, including priority, stale identity, preview exclusion
+and site-selection regressions. Live browser verification navigated to the
+rooftop terrace and sent “Rename this space to Roof garden” without naming the
+floor or terrace. The production API received selected ID `r15` on floor `f7`.
+Authenticated Codex returned a review proposal; exact object comparison verified
+only that label changed. Discard restored the original label; Clear removed the
+Viewing chip until deliberate navigation. Temporary request/result capture was
+removed after the test, and the normal isolated QA server was restored.
+
+| Boundary | Evidence |
+| --- | --- |
+| Viewed location → composer | [Viewing chip](../../output/ui/arcloom-viewed-context.png) |
+| Composer → local API | Captured request selected `r15`, matching the saved level-7 terrace |
+| API → Codex → validated proposal | [Normalized audit hashes and exact comparison](../../output/verification/viewed-context-proof.json) |
+| Proposal → review UI | [Review controls](../../output/ui/arcloom-context-proposal.png); proposal remained unapplied |
+| Discard / Clear | Original terrace label restored; Clear viewed space button count became zero |
+
+Console inspection also found deprecated Clock and removed PCFSoftShadowMap
+usage. The renderer now uses the installed Three.js Timer with Page Visibility
+handling and cleanup, plus PCFShadowMap. Final browser and native package checks
+are pending for these API updates.
+
+The final viewer was reloaded after the Timer/shadow changes, entered the
+rooftop terrace and displayed matching camera/menu/composer context. A held
+movement control moved the view without resetting it. No new browser warnings
+or errors were captured after this reload.
+[Final viewed-space UI](../../output/ui/arcloom-viewed-context-final.png).
+The final full web check passed (3,449 tests, four skipped); tool-count, wiki,
+protocol and relative doc links passed. Native package verification is pending.
+
+The refreshed `release/arcloom-context/mac-arm64/Arcloom.app` passed packaged
+runtime smoke checks: native arm64 metadata, bundled Codex 0.162.1, compiled
+assets, PDF worker delivery and all six attribution files. Both native Mac CI
+jobs passed for terrace commit `3c974d85`; the context change still needs its
+own CI run. Signing/notarization and public-beta manual QA remain open.

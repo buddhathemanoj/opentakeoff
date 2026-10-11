@@ -1,0 +1,16 @@
+{
+  "prompt": "Rename this space to Roof garden. Change only its label; preserve every other label, floor, opening, fixture and dimension. Return a proposal for review.",
+  "selected": [
+    "r15"
+  ],
+  "floorId": "f7",
+  "before": "Landscaped roof terrace",
+  "after": "Roof garden",
+  "message": "Proposed renaming the selected space to “Roof garden”; all other details are preserved for review.",
+  "normalization": "Only the imported project root ID is normalized to the committed baseline ID.",
+  "baselineSha256": "8449ec3acb6758739858e148f03fda02bdb8879ca47647bc8b7a12d3467661f2",
+  "returnedProposalSha256": "f724ca7aed781ec48fb35d03bc03e03d41b7fce4b8960d546ec9bc8e5c9b593c",
+  "expectedSingleLabelChangeSha256": "f724ca7aed781ec48fb35d03bc03e03d41b7fce4b8960d546ec9bc8e5c9b593c",
+  "otherValuesUnchanged": true,
+  "proposalDiscardedInQA": true
+}

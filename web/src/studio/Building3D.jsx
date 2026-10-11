@@ -1,14 +1,15 @@
 import {useEffect,useRef,useState} from 'react';
 import {wallBoxes,worldFixture,ceilingPanels} from './threeGeometry.js';
 import {canWalkTo,entryRoom,walkthroughLocations} from './walkthrough.js';
-export default function Building3D({project,floorId}){
+export default function Building3D({project,floorId,onLocationChange}){
  const mount=useRef(null),reset=useRef(null),enter=useRef(null),keys=useRef(new Set()),[walk,setWalk]=useState(false),[roomName,setRoomName]=useState(''),[locationId,setLocationId]=useState(''),[exploded,setExploded]=useState(false),[cutaway,setCutaway]=useState(false),[scope,setScope]=useState('all'),[error,setError]=useState(''),[ready,setReady]=useState(false);
  useEffect(()=>{
   const host=mount.current;let disposed=false,cleanup=()=>{};setReady(false);setError('');
+  if(!walk)onLocationChange?.(null);
   async function load(){
    try{
     const THREE=await import('three'),{OrbitControls}=await import('three/addons/controls/OrbitControls.js');if(disposed)return;
-    const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));renderer.setClearColor('#e6e4df');renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.9;
+    const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));renderer.setClearColor('#e6e4df');renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.9;
     renderer.domElement.setAttribute('aria-label','Interactive 3D building. Exterior orbit or interior walkthrough.');renderer.domElement.setAttribute('role','img');renderer.domElement.tabIndex=0;host.appendChild(renderer.domElement);
     const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(walk?72:38,1,.1,1200),controls=new OrbitControls(camera,renderer.domElement);
     controls.enableDamping=true;controls.minDistance=2;controls.maxDistance=400;controls.minPolarAngle=.12;controls.maxPolarAngle=Math.PI*.44;controls.enabled=!walk;camera.rotation.order='YXZ';
@@ -74,12 +75,13 @@ export default function Building3D({project,floorId}){
     const grid=new THREE.GridHelper(Math.max(w,d)+12,Math.ceil(Math.max(w,d)+12),'#c7ccc6','#d7dbd4');grid.position.set(w/2,-.235,d/2);scene.add(grid);geometries.push(grid.geometry);materials.push(grid.material);
     scene.add(new THREE.HemisphereLight('#fff9ed','#8d9b98',2.6));
     const sun=new THREE.DirectionalLight('#fff5df',3.2);sun.position.set(-15,45,20);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-60;sun.shadow.camera.right=60;sun.shadow.camera.top=60;sun.shadow.camera.bottom=-60;sun.shadow.bias=-.0005;scene.add(sun);
-    const walkingWalls=wallBoxes(project,activeFloor),clock=new THREE.Clock();
-    let yaw=0,pitch=0,drag=null,lastRoomUpdate=0;
+    const walkingWalls=wallBoxes(project,activeFloor),frameTimer=new THREE.Timer();frameTimer.connect(document);
+    let yaw=0,pitch=0,drag=null,lastRoomUpdate=0,lastReported;
+    const reportLocation=(room,force=false)=>{const id=room?.id||null;if(force||id!==lastReported){lastReported=id;onLocationChange?.(id?{projectId:project.id,floorId:activeFloor.id,elementId:id}:null);}};
     const place=(id)=>{
      const room=activeFloor.elements.find(e=>e.id===id)||entryRoom(activeFloor);
      const px=room?(room.x+room.width/2)*m:w/2,pz=room?(room.y+room.height*.78)*m:d/2;
-     camera.position.set(px,1.65,pz);yaw=0;pitch=-.12;camera.rotation.set(pitch,yaw,0);setRoomName(room?.label||activeFloor.name);setLocationId(room?.id||'');
+     camera.position.set(px,1.65,pz);yaw=0;pitch=-.12;camera.rotation.set(pitch,yaw,0);setRoomName(room?.label||activeFloor.name);setLocationId(room?.id||'');reportLocation(room,true);
     };
     enter.current=place;
     const home=()=>{
@@ -99,8 +101,8 @@ export default function Building3D({project,floorId}){
     const move=e=>{if(!walk||!drag)return;yaw-=(e.clientX-drag.x)*.004;pitch=Math.max(-1.1,Math.min(1.1,pitch-(e.clientY-drag.y)*.004));drag={x:e.clientX,y:e.clientY};camera.rotation.set(pitch,yaw,0);};
     const up=()=>{drag=null;};
     canvas.addEventListener('keydown',keydown);canvas.addEventListener('keyup',keyup);canvas.addEventListener('blur',clear);canvas.addEventListener('pointerdown',down);canvas.addEventListener('pointermove',move);canvas.addEventListener('pointerup',up);canvas.addEventListener('pointercancel',up);window.addEventListener('blur',clear);
-    let frame;const animate=()=>{
-     if(disposed)return;frame=requestAnimationFrame(animate);const dt=Math.min(clock.getDelta(),.05);
+    let frame;const animate=timestamp=>{
+     if(disposed)return;frame=requestAnimationFrame(animate);frameTimer.update(timestamp);const dt=Math.min(frameTimer.getDelta(),.05);
      if(document.visibilityState==='visible'){
       if(walk){
        const pressed=keys.current;let forward=(pressed.has('w')||pressed.has('arrowup')?1:0)-(pressed.has('s')||pressed.has('arrowdown')?1:0),side=(pressed.has('d')?1:0)-(pressed.has('a')?1:0);
@@ -108,17 +110,17 @@ export default function Building3D({project,floorId}){
        const norm=Math.hypot(forward,side)||1,speed=2.4*dt/norm,dx=(-Math.sin(yaw)*forward+Math.cos(yaw)*side)*speed,dz=(-Math.cos(yaw)*forward-Math.sin(yaw)*side)*speed,bounds={width:w,depth:d};
        if(canWalkTo(camera.position.x+dx,camera.position.z,walkingWalls,bounds))camera.position.x+=dx;
        if(canWalkTo(camera.position.x,camera.position.z+dz,walkingWalls,bounds))camera.position.z+=dz;
-       if(clock.elapsedTime-lastRoomUpdate>.5){lastRoomUpdate=clock.elapsedTime;const room=walkthroughLocations(activeFloor).find(e=>camera.position.x>=e.x*m&&camera.position.x<=(e.x+e.width)*m&&camera.position.z>=e.y*m&&camera.position.z<=(e.y+e.height)*m);setRoomName(room?.label||activeFloor.name);setLocationId(room?.id||'');}
+       if(frameTimer.getElapsed()-lastRoomUpdate>.5){lastRoomUpdate=frameTimer.getElapsed();const room=walkthroughLocations(activeFloor).find(e=>camera.position.x>=e.x*m&&camera.position.x<=(e.x+e.width)*m&&camera.position.z>=e.y*m&&camera.position.z<=(e.y+e.height)*m);setRoomName(room?.label||activeFloor.name);setLocationId(room?.id||'');reportLocation(room);}
       }else controls.update();
       renderer.render(scene,camera);
      }
     };animate();
-    cleanup=()=>{clear();canvas.removeEventListener('keydown',keydown);canvas.removeEventListener('keyup',keyup);canvas.removeEventListener('blur',clear);canvas.removeEventListener('pointerdown',down);canvas.removeEventListener('pointermove',move);canvas.removeEventListener('pointerup',up);canvas.removeEventListener('pointercancel',up);window.removeEventListener('blur',clear);enter.current=null;cancelAnimationFrame(frame);observer.disconnect();controls.dispose();for(const g of geometries)g.dispose();for(const v of materials){if(Array.isArray(v))v.forEach(m=>m.dispose());else v.dispose();}renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();reset.current=null;};
+    cleanup=()=>{clear();canvas.removeEventListener('keydown',keydown);canvas.removeEventListener('keyup',keyup);canvas.removeEventListener('blur',clear);canvas.removeEventListener('pointerdown',down);canvas.removeEventListener('pointermove',move);canvas.removeEventListener('pointerup',up);canvas.removeEventListener('pointercancel',up);window.removeEventListener('blur',clear);enter.current=null;cancelAnimationFrame(frame);observer.disconnect();frameTimer.dispose();controls.dispose();for(const g of geometries)g.dispose();for(const v of materials){if(Array.isArray(v))v.forEach(m=>m.dispose());else v.dispose();}renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();reset.current=null;};
     setReady(true);
    }catch(e){if(!disposed)setError(`3D rendering is unavailable on this device. ${e.message}`);}
   }
   load();return()=>{disposed=true;cleanup();};
- },[project,floorId,exploded,cutaway,scope,walk]);
+ },[project,floorId,exploded,cutaway,scope,walk,onLocationChange]);
  const floor=project.floors.find(f=>f.id===floorId)||project.floors[0];
  const moveButton=(key,label,glyph)=><button aria-label={label} onPointerDown={e=>{e.preventDefault();e.currentTarget.setPointerCapture(e.pointerId);keys.current.add(key);}} onPointerUp={()=>keys.current.delete(key)} onPointerCancel={()=>keys.current.delete(key)}>{glyph}</button>;
  return <section className={'ks-three-view '+(walk?'is-walking':'')} aria-label="Interactive 3D building viewer"><div className="ks-three-controls">

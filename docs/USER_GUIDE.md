@@ -1449,3 +1449,18 @@ of any higher storey: the current model uses a full footprint slab per floor.
 These concept views do not model structural roof openings, setback floorplates
 or construction-ready terrace details. Water and parking areas are not
 walkthrough destinations.
+
+## Edit the space you are viewing
+
+In an interior walkthrough, the composer shows **Viewing ·** followed by the
+current room or landscaped area's name. A brief such as “Rename this space to
+Roof garden” sends that space's ID with your saved drawing. An explicitly
+selected element takes priority. **Clear viewed space** clears this context
+until you navigate to another space or return to entry. Navigation does not
+select an editable element in the inspector or change the drawing.
+
+Context is excluded when the walkthrough is hidden, a different floor/project
+is active or an unapplied proposal is being previewed. Generated edits still
+require **Apply to drawing**; **Discard** keeps the saved design. View context
+is transient: after reloading, navigate to the intended space again before
+retrying a brief that refers to “this space.”
