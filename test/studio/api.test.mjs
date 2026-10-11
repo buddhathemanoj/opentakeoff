@@ -80,3 +80,22 @@ test('rejects invalid geometry and unknown selections before starting the runtim
  assert.equal((await fetch(url+'/api/studio/chat',{method:'POST',headers,body:JSON.stringify(input)})).status,400);
  assert.equal(calls,0);
 });
+
+test('sign-in uses the same local-origin guard and reuses an existing Codex session',async t=>{
+ let loginCalls=0;const api=createStudioApi({status:async()=>({available:true,connected:true,method:'ChatGPT'}),login:async()=>{loginCalls++;return{connected:true};}}),server=createServer((req,res)=>api(req,res,()=>res.end()));await new Promise(r=>server.listen(0,'127.0.0.1',r));t.after(()=>new Promise(r=>server.close(r)));const url=`http://127.0.0.1:${server.address().port}`;
+ assert.equal((await fetch(url+'/api/studio/login',{method:'POST',headers:{...headers,Origin:'https://other.example'},body:'{}'})).status,403);
+ assert.equal((await fetch(url+'/api/studio/login',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).status,403);
+ assert.equal((await fetch(url+'/api/studio/login',{method:'POST',headers,body:'{"command":"anything"}'})).status,400);
+ const events=(await(await fetch(url+'/api/studio/login',{method:'POST',headers,body:'{}'})).text()).trim().split('\n').map(JSON.parse);assert.equal(events.at(-1).type,'connected');assert.equal(events.at(-1).status.method,'ChatGPT');assert.equal(loginCalls,0);
+});
+test('sign-in streams its URL and cancellation releases the runtime without starting a design',async t=>{
+ let cancelled,designCalls=0;const aborted=new Promise(resolve=>{cancelled=resolve;});
+ const api=createStudioApi({status:async()=>({available:true,connected:false}),design:async()=>{designCalls++;return{message:'Ready',proposal:null};},login:({signal,onEvent})=>{onEvent({type:'auth',url:'https://auth.openai.com/oauth/authorize?state=fixture'});return new Promise((resolve,reject)=>signal.addEventListener('abort',()=>{cancelled();reject(new Error('Sign-in cancelled.'));},{once:true}));}}),server=createServer((req,res)=>api(req,res,()=>res.end()));await new Promise(r=>server.listen(0,'127.0.0.1',r));t.after(()=>new Promise(r=>server.close(r)));const url=`http://127.0.0.1:${server.address().port}`,controller=new AbortController();
+ const response=await fetch(url+'/api/studio/login',{method:'POST',headers,body:'{}',signal:controller.signal});await response.body.getReader().read();assert.equal((await fetch(url+'/api/studio/chat',{method:'POST',headers,body:body()})).status,409);controller.abort();await aborted;assert.equal((await fetch(url+'/api/studio/chat',{method:'POST',headers,body:body()})).status,200);assert.equal(designCalls,1);
+});
+test('an observed authentication failure can force a fresh sign-in despite cached login status',async t=>{
+ let calls=0;const api=createStudioApi({status:async()=>({available:true,connected:true,method:'ChatGPT'}),login:async()=>{calls++;return{available:true,connected:true,method:'ChatGPT'};},design:async()=>{const error=new Error('Sign in again');error.code='CODEX_AUTH_REQUIRED';throw error;}}),server=createServer((req,res)=>api(req,res,()=>res.end()));await new Promise(r=>server.listen(0,'127.0.0.1',r));t.after(()=>new Promise(r=>server.close(r)));const url=`http://127.0.0.1:${server.address().port}`;
+ const errorEvents=(await(await fetch(url+'/api/studio/chat',{method:'POST',headers,body:body()})).text()).trim().split('\n').map(JSON.parse);assert.equal(errorEvents.at(-1).code,'CODEX_AUTH_REQUIRED');
+ assert.equal((await fetch(url+'/api/studio/login',{method:'POST',headers,body:'{"force":"true"}'})).status,400);
+ const response=await fetch(url+'/api/studio/login',{method:'POST',headers,body:'{"force":true}'});assert.match(await response.text(),/"type":"connected"/);assert.equal(calls,1);
+});

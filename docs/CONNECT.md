@@ -38,6 +38,12 @@ opentakeoff: npx -y opentakeoff-mcp - ✔ Connected
 
 ## Codex CLI
 
+In the local Arcloom desktop fork, **Sign in to Codex** appears directly in the
+design chat when disconnected. It runs the bundled CLI's browser login and
+returns to the chat after completion. **Sign in again** handles an authentication
+failure; **Cancel sign-in** stops waiting without logging out. This design-chat
+connection is separate from registering the original measurement MCP tools below.
+
 ```bash
 codex mcp add opentakeoff -- npx -y opentakeoff-mcp
 codex mcp list
@@ -54,7 +60,7 @@ codex mcp add opentakeoff -- node /absolute/path/to/opentakeoff/mcp/dist/server.
 
 Restart your Codex session after adding it. Use `codex login status` to check
 your existing login. With a ChatGPT login, this integration uses Codex subscription
-access. The browser canvas has no embedded chat: ask Codex to perform the takeoff,
+access. The original browser canvas has no embedded chat: ask Codex to perform the takeoff,
 then import its exported takeoff into the canvas to review it.
 
 ## Cursor and other MCP clients

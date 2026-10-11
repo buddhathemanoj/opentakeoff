@@ -11,6 +11,7 @@ import Building3D from './Building3D.jsx';
 import ResizeHandle from './ResizeHandle.jsx';
 import NumberField from './NumberField.jsx';
 import EstimatePanel from './EstimatePanel.jsx';
+import CodexConnection from './CodexConnection.jsx';
 import {restoreLayout,LAYOUT_STORAGE} from './layoutPreferences.js';
 import { BuildingStack, BuildingElevation } from './BuildingViews.jsx';
 import TitlebarAura from './TitlebarAura.jsx';
@@ -131,14 +132,14 @@ export default function Studio({takeoffWorkspace}) {
   const messages=Array.isArray(chats[active])?chats[active]:EMPTY_MESSAGES;
   const setMessages=fn=>setChats(rows=>({...rows,[active]:fn(Array.isArray(rows[active])?rows[active]:[])}));
   useEffect(()=>{if(chatBoot.error)return;try{localStorage.setItem(CHAT_STORAGE,JSON.stringify(chats));}catch{setNotice('Conversation storage is full. Export your drawing to keep a backup.');}},[chats,chatBoot.error]);
-  const request=useRef(null),fileInput=useRef(null),chatBottom=useRef(null);
+  const request=useRef(null),fileInput=useRef(null),chatBottom=useRef(null),chatScroll=useRef(null);
   const selection=isBuilding?floorSelection(storedProject,activeFloor,selected):null;
   const element=selection?.item||project.elements.find(e=>e.id===selected), stats=metrics(project), warnings=layoutWarnings(proposal||project);
   const collection=selection?.collection||'elements';
   const stale=proposal&&proposalBase!==JSON.stringify(storedProject);
   useEffect(()=>{if(boot.error)return;try{localStorage.setItem(STORAGE,JSON.stringify(projects));setSaved(true);}catch{setSaved(false);setNotice('Browser storage is full. Export a project backup to keep your work.');}},[projects,boot.error]);
   useEffect(()=>{let live=true;fetch('/api/studio/status').then(r=>{if(!r.ok)throw new Error();return r.json();}).then(s=>{if(live)setStatus(s);}).catch(()=>{if(live)setStatus({available:false,connected:false});});return()=>{live=false;};},[]);
-  useEffect(()=>{chatBottom.current?.scrollIntoView({block:'nearest'});},[messages,running,activity]);
+  useEffect(()=>{if(messages.length||running||activity)chatBottom.current?.scrollIntoView({block:'nearest'});else chatScroll.current?.scrollTo({top:0});},[messages,running,activity,status?.connected]);
   useEffect(()=>()=>request.current?.abort(),[]);
   const update=next=>{try{const valid=validateProject(applyView(storedProject,next,activeFloor));setPast(p=>[...p.slice(-39),storedProject]);setFuture([]);setProjects(rows=>rows.map(p=>p.id===active?valid:p));setNotice('');}catch(e){setNotice(e.message);}};
   const undo=()=>{if(!past.length)return;setFuture(f=>[storedProject,...f]);setProjects(rows=>rows.map(p=>p.id===active?past[past.length-1]:p));setPast(p=>p.slice(0,-1));setSelected(null);};
@@ -168,7 +169,7 @@ export default function Studio({takeoffWorkspace}) {
       while(true){const {value,done}=await reader.read();if(done)break;buffer+=decoder.decode(value,{stream:true});let n;
         while((n=buffer.indexOf('\n'))>=0){const line=buffer.slice(0,n);buffer=buffer.slice(n+1);if(!line)continue;const event=JSON.parse(line);
           if(event.type==='status')setActivity(event.message);
-          if(event.type==='error')throw new Error(event.message);
+          if(event.type==='error'){if(event.code==='CODEX_AUTH_REQUIRED'){setStatus({available:true,connected:false,needsSignIn:true});setNotice('');}throw new Error(event.message);}
           if(event.type==='result'){if(event.proposal)validateProject(event.proposal);gotResult=true;setMessages(m=>[...m,{role:'assistant',content:event.message}]);if(event.proposal){updateRecovery({proposal:validateProject(event.proposal),base});setPreviewProposal(true);}}
         }
       }
@@ -178,6 +179,7 @@ export default function Studio({takeoffWorkspace}) {
   };
   const importProject=async file=>{if(!file||running)return;try{if(projects.length>=30)throw new Error('Export a backup before adding more than 30 local projects.');if(file.size>1000000)throw new Error('Choose a project smaller than 1 MB.');const imported=validateProject(JSON.parse(await file.text()));const copy={...imported,id:crypto.randomUUID()};setProjects(rows=>[copy,...rows]);selectProject(copy.id);}catch(e){setNotice(e.message);}if(fileInput.current)fileInput.current.value='';};
   const exportPdf=async (toTakeoff,target=storedProject)=>{if(exporting)return;setExporting(true);setExportOpen(false);try{const bytes=await createPlanPdf(target);const name=`${target.name.replace(/[\\/:*?"<>|]/g,'-')}-${target.id.slice(0,8)}.pdf`;if(toTakeoff){await localStore.addPdf(new File([bytes],name,{type:'application/pdf'}));setWorkspace('takeoff');}else download(name,bytes,'application/pdf');}catch(error){setNotice(error.message||'Could not export the drawing set.');}finally{setExporting(false);}};
+  const connectStatus=next=>{setStatus(next);if(next.connected)setNotice('Codex is ready. Describe your design to begin.');};
   const shownStored=proposal&&previewProposal?proposal:storedProject;
   const shown=projectView(shownStored,activeFloor);
   const shownBuilding=shownStored.schema===BUILDING_SCHEMA;
@@ -232,12 +234,12 @@ export default function Studio({takeoffWorkspace}) {
       </main>
       <aside className="ks-chat">
         <header className="ks-chat-header" hidden><span className="ks-ai-mark"><Glyph name="sparkle" size={20}/></span><div><strong>Arcloom assistant</strong><span>{status?.connected?`Connected with ${status.method}`:status===null?'Checking Codex…':'Connect your Codex'}</span></div><span className={`ks-dot ${status?.connected?'':'warning'}`}/></header>
-        {(chatBoot.error||recoveryBoot.error)&&<div className="ks-notice" role="alert">{chatBoot.error||recoveryBoot.error}</div>}{notice&&!previewOpen&&<div className="ks-notice" role="alert">{notice}<button aria-label="Dismiss message" onClick={()=>setNotice('')}><Glyph name="close" size={14}/></button></div>}<div className="ks-chat-scroll"><div className="ks-conversation">
+        {!status?.connected&&status!==null&&<CodexConnection status={status} onStatus={connectStatus}/>}
+        {(chatBoot.error||recoveryBoot.error)&&<div className="ks-notice" role="alert">{chatBoot.error||recoveryBoot.error}</div>}{notice&&!previewOpen&&<div className="ks-notice" role="alert">{notice}<button aria-label="Dismiss message" onClick={()=>setNotice('')}><Glyph name="close" size={14}/></button></div>}<div className="ks-chat-scroll" ref={chatScroll} style={{overflowAnchor:messages.length?'auto':'none'}}><div className="ks-conversation">
           {!messages.length&&<div className="ks-chat-intro"><span className="ks-welcome-mark"><Glyph name="sparkle" size={32}/></span><span className="ks-eyebrow">YOUR SPACE TO EXPLORE</span><h1>What will we create?</h1><p>From the first idea to a place you can see.<br/>Describe your vision. Let’s give it shape.</p><div className="ks-prompt-cards">{[{title:'Plan a neighbourhood',body:'Plots, access & shared green',prompt:'Design a residential site with 8 plots, a 6 m access road, a central green and visitor parking. Keep all elements inside the current boundary.'},{title:'Design a floor plan',body:'Rooms that work together',prompt:'Create a 20 by 15 metre floor plan with three bedrooms, two bathrooms, a living and dining area, kitchen, and circulation. Change the drawing mode to floor. Label all rooms and explain your assumptions.'},{title:'Review this layout',body:'Find room for improvement',prompt:'Review the current layout for circulation, overlapping elements and inefficient space. Give me specific improvements; do not change the drawing yet.'}].map(c=><button key={c.title} onClick={()=>setPrompt(c.prompt)}><span><strong>{c.title}</strong><small>{c.body}</small></span><Glyph name="chevron" size={14}/></button>)}</div></div>}
           {messages.map((m,i)=><div className={`ks-message ${m.role}`} key={i}><span className="ks-message-author">{m.role==='user'?'You':m.role==='error'?'Connection notice':'Arcloom'}</span><p>{m.content}</p></div>)}
           {session.pending&&!running&&<div className="ks-recovery-notice" role="status"><strong>Your last request was interrupted.</strong><p>Your brief is restored below. Send it again to continue; your drawing is unchanged.</p><button className="ks-text-button" onClick={()=>updateRecovery({pending:false})}>Dismiss</button></div>}{running&&<div className="ks-activity" role="status"><span className="ks-pulse"/>{activity}</div>}
           {proposal&&<div className="ks-review"><span className="ks-eyebrow">READY FOR YOUR REVIEW</span><strong>{proposal.name}</strong><p>{proposal.schema===BUILDING_SCHEMA?`${buildingStats(proposal).floors} floors · ${buildingStats(proposal).spaces} spaces`:proposal.elements.length+' editable elements'} · {format(proposal.width)} × {format(proposal.height)} {proposal.unit}</p>{warnings.map((w,i)=><p className="ks-warning" key={i}>{w}</p>)}{stale&&<p className="ks-warning">Your drawing changed after this request. Ask for an updated proposal before applying.</p>}<div><button className="ks-button" onClick={()=>{setPreviewOpen(true);setPreviewProposal(true);}}><Glyph name="grid" size={15}/>Preview drawing</button><button className="ks-button primary" disabled={!!stale} onClick={()=>{update(proposal);setProposal(null);setSelected(null);setMessages(m=>[...m,{role:'assistant',content:'Proposal applied. Every element is editable. You can undo this change.'}]);}}><Glyph name="check" size={15}/>Apply to drawing</button><button className="ks-text-button" onClick={()=>setProposal(null)}>Discard</button></div></div>}
-          {!status?.connected&&status!==null&&<div className="ks-connection"><strong>Your Codex. Your workspace.</strong><p>{status.available?'Sign in with your ChatGPT account using Codex on this computer.':'Run Arcloom locally to connect your Codex. The drawing tools work without AI.'}</p><code>codex login</code><button className="ks-text-button" onClick={()=>fetch('/api/studio/status').then(r=>r.json()).then(setStatus).catch(()=>setNotice('The local AI service is unavailable.'))}>Check connection</button></div>}
           {!!project.elements.length&&<div className="ks-chat-report"><Glyph name="file"/><div><strong>Your design report</strong><p>Areas, material quantities and costs update as you edit.</p><button className="ks-button" onClick={()=>{setPreviewOpen(true);setEstimateOpen(true);}}>View quantities & reports</button></div></div>}
           {isBuilding&&<details className="ks-building-brief"><summary>Building brief & assumptions</summary>{storedProject.notes.map((note,i)=><p key={i}>{note}</p>)}</details>}<div ref={chatBottom}/></div>
         </div>

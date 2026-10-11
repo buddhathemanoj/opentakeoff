@@ -25,6 +25,16 @@ café or IT office; **3D study** shows the floor stack and **Elevation** shows a
 indicative south façade. Room labels and dimensions can be edited in the layer
 inspector. These are concept drawings, not approved construction documents.
 
+If Codex is disconnected, choose **Sign in to Codex** in the chat workspace.
+The bundled official CLI opens browser authentication; **Open sign-in page** is
+the fallback link. Complete authentication in your browser and return to Arcloom.
+An existing login is reused. **Cancel sign-in** stops the waiting process without
+logging out. If a design request reports expired authentication, **Sign in again**
+refreshes the session even if the cached login status still appears connected.
+See [Codex authentication](https://learn.chatgpt.com/docs/auth) for the CLI's
+browser flow and credential storage. Arcloom does not collect passwords or copy
+the credential cache into its project data.
+
 Describe changes in the bottom composer. Arcloom invokes the local Codex login and
 sends the brief, recent conversation, project and selected item IDs. It does not
 expose credentials to the browser. Generated changes remain proposals until you

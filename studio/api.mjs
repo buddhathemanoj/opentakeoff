@@ -1,3 +1,4 @@
+import {runLogin} from './login.mjs';
 import { codexStatus, runDesign } from './codex.mjs';
 import { allElementIds } from '../web/src/studio/building.js';
 import { validateProject } from '../web/src/studio/model.js';
@@ -13,7 +14,7 @@ function validateInput(input) {
   return { prompt: input.prompt.trim(), project, history: input.history.map(({ role, content }) => ({ role, content })), selected: [...new Set(input.selected)] };
 }
 
-export function createStudioApi({ status = codexStatus, design = runDesign } = {}) {
+export function createStudioApi({ status = codexStatus, design = runDesign, login = runLogin } = {}) {
   let running = false;
   return async function studioApi(req, res, next) {
     if (!req.url?.startsWith('/api/studio/')) return next();
@@ -30,9 +31,10 @@ export function createStudioApi({ status = codexStatus, design = runDesign } = {
       try { return json(200, await status()); }
       catch { return json(503, { error: 'Could not check your Codex connection. Try again.' }); }
     }
-    if (req.url !== '/api/studio/chat' || req.method !== 'POST') return json(404, { error: 'Not found.' });
+    const signingIn=req.url==='/api/studio/login';
+    if ((!signingIn&&req.url !== '/api/studio/chat') || req.method !== 'POST') return json(404, { error: 'Not found.' });
     if (req.headers['x-kosal-client'] !== 'studio' || !req.headers['content-type']?.startsWith('application/json')) return json(403, { error: 'Invalid studio request.' });
-    if (running) return json(409, { error: 'Another design is running. Wait for it to finish.' });
+    if (running) return json(409, { error: 'Another Codex request is running. Wait for it to finish.' });
 
     // Reserve the runtime before reading the body. Slow uploads must not start two jobs.
     running = true;
@@ -51,19 +53,20 @@ export function createStudioApi({ status = codexStatus, design = runDesign } = {
       }
       if (req.socket) req.setTimeout(0);
       let input;
-      try { input = validateInput(JSON.parse(Buffer.concat(chunks).toString('utf8'))); }
+      try { const parsed=JSON.parse(Buffer.concat(chunks).toString('utf8'));if(signingIn){if(!parsed||typeof parsed!=='object'||Array.isArray(parsed)||Object.keys(parsed).some(key=>key!=='force')||(parsed.force!==undefined&&typeof parsed.force!=='boolean'))throw new Error('Invalid sign-in request.');input={force:parsed.force===true};}else input = validateInput(parsed); }
       catch (error) { return json(400, { error: error instanceof SyntaxError ? 'Invalid request.' : error.message }); }
       if (controller.signal.aborted || res.destroyed) return;
       res.writeHead(200, { 'Content-Type': 'application/x-ndjson', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' });
       const send = event => { if (!res.destroyed && !res.writableEnded) res.write(JSON.stringify(event) + '\n'); };
-      send({ type: 'status', message: 'Connecting to your Codex…' });
+      send({ type: 'status', message: signingIn?'Checking your Codex connection…':'Connecting to your Codex…' });
       try {
+        if(signingIn){const existing=await status(),connected=existing.connected&&!input.force?existing:await login({signal:controller.signal,onEvent:send});if(connected?.connected!==true)throw new Error('Sign-in did not complete. Try again.');send({type:'connected',status:connected});return;}
         const result = await design({ ...input, signal: controller.signal, onEvent: send });
         if (typeof result?.message !== 'string' || result.message.length > 30000) throw new Error('Codex returned an invalid response. Please retry.');
         const proposal = result.proposal ? validateProject(result.proposal) : null;
         if (proposal && proposal.id !== input.project.id) throw new Error('The proposal belongs to a different project. Please retry.');
         send({ type: 'result', message: result.message, proposal });
-      } catch (error) { send({ type: 'error', message: error.message || 'The request failed.' }); }
+      } catch (error) { send({ type: 'error', message: error.message || 'The request failed.', code:error.code }); }
     } catch {
       if (!res.headersSent) json(400, { error: 'Invalid request.' });
     } finally {

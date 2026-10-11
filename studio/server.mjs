@@ -3,8 +3,8 @@ import { readFile, stat } from 'node:fs/promises';
 import { resolve, extname, sep } from 'node:path';
 import { createStudioApi } from './api.mjs';
 const types={'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.pdf':'application/pdf','.wasm':'application/wasm','.woff2':'font/woff2','.ico':'image/x-icon'};
-export async function startStudioServer({root,port=51377}) {
-  const base=resolve(root),api=createStudioApi();
+export async function startStudioServer({root,port=51377,api=createStudioApi()}) {
+  const base=resolve(root);
   const server=createServer((req,res)=>api(req,res,async()=>{
     if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);return res.end();}
     try {

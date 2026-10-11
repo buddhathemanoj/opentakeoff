@@ -191,3 +191,29 @@ quantities were visible. This successful rerun did not need the repair path;
 repair behavior remains verified through the subprocess fault-injection tests.
 The initial failed run remains evidence that generation quality needs continued
 review. Current test-build folder is `release/arcloom-reports/mac-arm64/Arcloom.app`.
+
+## In-app Codex sign-in
+
+The design chat now launches the bundled official CLI's browser sign-in, provides
+an allowlisted fallback URL, supports cancellation and reconnects after an
+observed authentication failure even when cached login status appears connected.
+The connection card stays mounted across project changes. Empty conversations
+open at the welcome area rather than scrolling past it.
+
+Isolated browser verification used an injected authentication fixture: the URL
+and cancellation controls appeared, cancellation removed the link, successful
+completion enabled the composer, and an expired-session response exposed
+**Sign in again**. Reauthentication completed despite the fixture's cached
+connected status. The final UI clears a stale ready notice on auth failure.
+No actual credentials were changed or user projects modified. A fresh live
+browser authentication remains a manual beta gate; fixture success does not
+prove a real OAuth round trip. Studio tests pass 43 cases; full web checks pass
+3,449 tests with four skipped and zero failures. Protocol, tool-count, wiki and
+relative documentation-link checks passed.
+
+The refreshed Apple Silicon app in
+`release/arcloom-onboarding/mac-arm64/Arcloom.app` passed the packaged runtime
+smoke check: bundled Codex 0.162.1, native arm64 metadata, compiled assets,
+PDF module-worker MIME handling and six attribution/license files. It remains
+unsigned and unnotarized. The user's running app and saved project were preserved.
+UI evidence: [signed-out workspace](../../output/ui/arcloom-codex-signin.png).

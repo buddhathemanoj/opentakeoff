@@ -1,8 +1,9 @@
 # Arcloom (local beta)
 
-This fork adds a Arcloom-branded, conversation-first design workspace to OpenTakeoff.
+This fork adds an Arcloom-branded, conversation-first design workspace to OpenTakeoff.
 Run `npm ci` at the repository root and `npm ci --prefix web`, then `npm run dev`.
-The local app uses your existing Codex login (`codex login`) for design requests.
+The local app uses your existing Codex login for design requests. If disconnected,
+choose **Sign in to Codex** in the chat workspace and finish in your browser.
 Use **PDF takeoff** in the sidebar for the original PDF, measurement, annotation,
 reporting, revision and project tools.
 

@@ -73,7 +73,7 @@ export async function runDesign({ prompt, project, history = [], selected = [], 
     if (stopped) throw new Error(signal?.aborted ? 'Request cancelled.' : 'Codex took too long. Try a smaller brief.');
     if (code !== 0) {
       if (/rate.limit|usage.limit/i.test(stderr)) throw new Error('Your Codex usage limit was reached. Try again after it resets.');
-      if (/login|unauthorized|authentication|401/i.test(stderr)) throw new Error('Codex needs you to sign in again. Run codex login, then reconnect.');
+      if (/login|unauthorized|authentication|401/i.test(stderr)){const error=new Error('Your Codex session needs signing in again. Use Sign in to Codex in Arcloom.');error.code='CODEX_AUTH_REQUIRED';throw error;}
       throw new Error('Codex could not finish this request. Check your connection and retry.');
     }
     const result = JSON.parse(await readFile(output,'utf8'));

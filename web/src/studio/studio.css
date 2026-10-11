@@ -389,3 +389,5 @@
 .ks-takeoff-workspace>div{height:calc(100% - 72px)!important}
 .ks-brand img{width:32px;height:32px;object-fit:contain;flex-shrink:0}.ks-brand>span{font-size:19px;font-weight:550;letter-spacing:-.5px}.ks-sidebar-brand{gap:10px}
 .ks-room-move-options{font-size:11px;margin:12px 0;color:var(--ks-soft)}.ks-room-move-options label{display:flex;gap:8px;align-items:center;line-height:1.5}.ks-room-move-options input{width:14px;height:14px;flex-shrink:0}.ks-room-move-options p{font-size:10px;line-height:1.6;color:var(--ks-muted)}
+.ks-connect-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.ks-connect-actions a{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.ks-connection [role=alert]{color:#e7b5aa}
+.ks-chat>.ks-connection{flex-shrink:0;width:calc(100% - 40px);max-width:672px;align-self:center;margin:16px 20px 0;box-sizing:border-box}
