@@ -1,4 +1,5 @@
 import { validateBuilding, BUILDING_SCHEMA } from './building.js';
+import {floorAccessWarnings} from './designReview.js';
 export const SCHEMA = 'kosal.studio.project.v1';
 export const KINDS = ['plot', 'building', 'room', 'road', 'landscape', 'water', 'parking'];
 export const KIND_LABELS = { plot: 'Plot', building: 'Building', room: 'Room', road: 'Road', landscape: 'Landscape', water: 'Water', parking: 'Parking' };
@@ -51,7 +52,7 @@ export function metrics(project) {
   return { area: project.width * project.height, areas, plots: project.elements.filter(e => e.kind === 'plot').length };
 }
 export function layoutWarnings(project) {
-  if(project.schema===BUILDING_SCHEMA)return project.floors.flatMap(floor=>layoutWarnings({...project,schema:SCHEMA,elements:floor.elements}).map(w=>`${floor.name}: ${w}`)).slice(0,15);
+  if(project.schema===BUILDING_SCHEMA)return project.floors.flatMap(floor=>[...layoutWarnings({...project,schema:SCHEMA,elements:floor.elements}),...floorAccessWarnings(project,floor)].map(w=>`${floor.name}: ${w}`)).slice(0,15);
   const warnings = [];
   const solid = project.elements.filter(e => ['building', 'plot', 'room'].includes(e.kind));
   for (let i = 0; i < solid.length; i++) for (let j = i + 1; j < solid.length; j++) {

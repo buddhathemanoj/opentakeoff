@@ -241,3 +241,80 @@ packaged runtime smoke check with Codex 0.162.1, compiled assets, PDF worker
 delivery and all six attribution files. It remains unsigned and unnotarized.
 [Hospitality 3D evidence](../../output/ui/arcloom-hospitality-3d.png) uses synthetic
 fixture data. The user's running app and project were untouched.
+
+## Access diagnostics
+
+Building review now checks modelled boundary access, detached doors/passages and
+window placement. Existing bank/café/IT starters have no such warnings. A sealed
+vault and detached reverse-hinge opening regression verifies actionable messages,
+metre/feet parity and unchanged geometry. Intentional interior glazing remains a
+review warning, not a validation error. These diagnostics do not establish route
+connectivity or regulatory compliance. All 46 studio tests passed. The live
+eight-floor evaluation is still running and has no verified result yet.
+
+The synthetic missing-bathroom-door example displayed its warning beside chat
+and in the exported two-page quantity report. The report was rendered and
+inspected. Full web checks passed (3,449 passing, four skipped); tool-count, wiki,
+protocol and relative doc links passed. The review build at
+`release/arcloom-review/mac-arm64/Arcloom.app` passed packaged native runtime,
+compiled-asset, PDF worker and license smoke checks. Both native Mac CI jobs
+passed for hospitality commit `9032eb06`; Windows is still deferred.
+[Access warning UI](../../output/ui/arcloom-access-review.png).
+
+## Eight-floor live evaluation
+
+An authenticated Codex request generated THE ATRIUM in 585 seconds: eight
+distinct floors in a 48 × 36 m footprint, 211 spaces, 264 openings and 408
+fixtures. The proposal passed structural validation and had no room overlaps.
+The new access diagnostics found three partial-wall core openings on each floor
+(24 issues): one stair door and two passenger-lift passages extended beyond
+their served room edges. A separate targeted AI correction completed in about
+24 seconds. Exact object comparison proved only those 24 widths changed to
+0.9 m; all other values, furniture, spaces, labels and notes stayed identical.
+The corrected proposal has no warnings from current overlap/access diagnostics.
+This does not prove connected routes, architectural suitability or compliance.
+
+The model contains 31 beds, 22 showers and 13,824 m² gross floor area, with
+20 proposed hotel keys, convention, coworking, services and rooftop uses. It
+requires professional development: sparse guest capacity, oversized corridors,
+borrowed daylight for some bedrooms, stair/lift lobby arrangements, plant/MEP
+and envelope details remain unresolved. Generation latency was nearly the
+ten-minute limit, so responsiveness for complex briefs needs improvement.
+
+The full eight-page A3 plan set exported successfully; the level-3 plan was
+rendered and inspected. The corrected editable project imported into isolated
+browser storage and its report displayed matching totals and unpriced rates.
+Large buildings now use a **Building floor** picker above four floors; shorter
+buildings retain their tabs. Empty-chat scroll resets when changing projects,
+and the drawing footer shows the actual floor elevation instead of a fixed 01.
+
+Browser verification of the corrected model selected level 3 through the new
+floor picker, confirmed the `ELEV. +12.0 m` footer, entered the building and
+navigated to room 301 Deluxe king. The furnished interior rendered. The
+eleven-page quantity report now includes the model's design assumptions and
+unresolved issues; its notes page was rendered and inspected. All 46 studio
+tests and the final full web check passed. The refreshed review Mac bundle
+passed its native runtime smoke check.
+
+Evidence: [original AI proposal](../../output/verification/eight-floor-hotel.arcloom.json),
+[corrected editable proposal](../../output/verification/eight-floor-hotel-reviewed.arcloom.json),
+[eight-page drawing set](../../output/verification/eight-floor-hotel-reviewed.pdf),
+[quantity report](../../output/verification/eight-floor-hotel-reviewed-report.pdf),
+and [interior preview](../../output/ui/arcloom-eight-floor-interior.png).
+
+To audit the exact correction from the repository root:
+
+```sh
+node --input-type=module - <<'JS'
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {layoutWarnings} from './web/src/studio/model.js';
+const read=name=>JSON.parse(fs.readFileSync('output/verification/'+name));
+const original=read('eight-floor-hotel.arcloom.json');
+const corrected=read('eight-floor-hotel-reviewed.arcloom.json');
+for(const floor of original.floors)for(const opening of floor.openings.slice(0,3))opening.width=.9;
+assert.deepEqual(corrected,original);
+assert.deepEqual(layoutWarnings(corrected),[]);
+console.log('Exactly 24 widths corrected; other data unchanged; no current review warnings.');
+JS
+```

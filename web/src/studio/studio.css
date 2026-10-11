@@ -281,6 +281,9 @@
 .ks-floor-tabs {display:flex;gap:4px;overflow:auto;}
 .ks-floor-tabs button {flex:1;white-space:nowrap;background:transparent;border:1px solid transparent;border-radius:6px;color:#a9aeab;padding:7px;font-size:11px;}
 .ks-floor-tabs button[aria-selected=true] {background:#2c2c2c;color:#f3f3f3;border-color:var(--ks-line);}
+.ks-floor-picker {display:flex;align-items:center;gap:8px;color:var(--ks-soft);font-size:11px;}
+.ks-floor-picker select {flex:1;min-width:0;height:34px;padding:0 8px;border:1px solid var(--ks-line);border-radius:var(--ks-radius);background:var(--ks-field);color:var(--ks-ink);font-size:11px;}
+.ks-floor-picker small {flex-shrink:0;color:var(--ks-muted);font-variant-numeric:tabular-nums;}
 .ks-view-tabs {display:flex;justify-content:center;gap:14px;margin-top:10px;}
 .ks-view-tabs button {border:0;background:transparent;color:#919892;font-size:10px;padding:3px;}
 .ks-view-tabs button.active {color:#e4e9e4;}

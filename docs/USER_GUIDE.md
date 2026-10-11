@@ -1417,3 +1417,23 @@ distinct sleeping and shower details. Quantities count their objects as
 AI hospitality briefs request these types explicitly. They are concept objects,
 not manufacturer products or plumbing specifications. Existing projects and
 measurement formats are preserved; older app builds may reject these new types.
+
+## Building access review
+
+Proposal review and **Quantities & reports** now flag rooms with no modelled
+door or open passage on their boundary, openings away from room walls and the
+building perimeter, and windows away from the perimeter. Interior glazing may
+be intentional; the message asks you to check it. These checks use opening
+coordinates and their full length, including reverse hinges, with a physical
+4 cm tolerance in either metres or feet. They do not prove that rooms have a
+connected circulation route or that the building meets accessibility or fire
+requirements. The checks report issues without changing geometry or approval.
+
+Buildings with more than four floors use the **Building floor** picker so every
+level remains reachable in a narrow preview. Smaller buildings keep their floor
+tabs. Switching floors updates the drawing and interior walkthrough; the floor
+plan footer shows the selected floor's elevation in metres.
+
+The design-report PDF includes a building's saved design notes under **Design
+assumptions and unresolved issues**, alongside quantity bases, exclusions and
+review warnings. These notes describe the concept and remain subject to review.

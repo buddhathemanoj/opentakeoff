@@ -1,5 +1,9 @@
 # Changelog
 
+- Arcloom: a floor picker keeps buildings above four floors navigable in narrow previews; project changes reset empty chat scrolling and floor-plan footers show actual elevations. Design-report PDFs now include saved design assumptions and unresolved issues. Verified an eight-floor live AI hotel and a targeted 24-opening correction, preserving all other geometry.
+
+- Arcloom: building review now flags missing boundary access, detached openings and interior-window placement in proposal warnings and quantity reports, with metre/feet parity and no automatic geometry changes.
+
 - Arcloom: added bed and shower fixtures to the building model, floor-plan/SVG/PDF details, 3D furnishings and geometry-based fixture counts. Hospitality generation now requests actual bedroom and bathroom furnishings.
 
 - Arcloom: in-app Codex browser sign-in, cancellation, connection checks and expired-session recovery. The sign-in card stays mounted across project switches; empty conversations open at the welcome area.

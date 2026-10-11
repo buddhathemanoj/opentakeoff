@@ -1,0 +1,8696 @@
+{
+  "schema": "kosal.studio.building.v1",
+  "id": "arcloom-hotel-evaluation",
+  "name": "THE ATRIUM",
+  "mode": "building",
+  "unit": "m",
+  "width": 48,
+  "height": 36,
+  "floors": [
+    {
+      "id": "f0",
+      "name": "Ground · Arrival",
+      "use": "mixed",
+      "elevation": 0,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "g01",
+          "kind": "room",
+          "label": "Guest stair A",
+          "x": 0,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g02",
+          "kind": "room",
+          "label": "Passenger lift A",
+          "x": 3,
+          "y": 0,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g03",
+          "kind": "room",
+          "label": "Passenger lift B",
+          "x": 3,
+          "y": 3,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g04",
+          "kind": "room",
+          "label": "Guest core lobby",
+          "x": 3,
+          "y": 6,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g05",
+          "kind": "room",
+          "label": "Guest circulation",
+          "x": 0,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g06",
+          "kind": "room",
+          "label": "Service stair B",
+          "x": 45,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g07",
+          "kind": "room",
+          "label": "Service lift",
+          "x": 42,
+          "y": 0,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g08",
+          "kind": "room",
+          "label": "Service core lobby",
+          "x": 42,
+          "y": 4,
+          "width": 3,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g09",
+          "kind": "room",
+          "label": "Staff circulation",
+          "x": 42,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g10",
+          "kind": "room",
+          "label": "Arrival gallery",
+          "x": 6,
+          "y": 10,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g11",
+          "kind": "room",
+          "label": "Service corridor",
+          "x": 6,
+          "y": 30,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g12",
+          "kind": "room",
+          "label": "Reception and concierge",
+          "x": 6,
+          "y": 0,
+          "width": 15,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g13",
+          "kind": "room",
+          "label": "Lobby lounge",
+          "x": 21,
+          "y": 0,
+          "width": 13,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g14",
+          "kind": "room",
+          "label": "Retail boutique",
+          "x": 34,
+          "y": 0,
+          "width": 8,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g15",
+          "kind": "room",
+          "label": "Cafe dining",
+          "x": 6,
+          "y": 13,
+          "width": 16,
+          "height": 17,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g16",
+          "kind": "room",
+          "label": "Cafe kitchen",
+          "x": 22,
+          "y": 20,
+          "width": 8,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g17",
+          "kind": "room",
+          "label": "Guest toilets",
+          "x": 22,
+          "y": 13,
+          "width": 8,
+          "height": 7,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g18",
+          "kind": "room",
+          "label": "Loading and receiving",
+          "x": 30,
+          "y": 13,
+          "width": 12,
+          "height": 9,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g19",
+          "kind": "room",
+          "label": "Laundry and linen",
+          "x": 30,
+          "y": 22,
+          "width": 12,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g20",
+          "kind": "room",
+          "label": "Staff room and lockers",
+          "x": 6,
+          "y": 33,
+          "width": 12,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g21",
+          "kind": "room",
+          "label": "Security office",
+          "x": 18,
+          "y": 33,
+          "width": 8,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g22",
+          "kind": "room",
+          "label": "Waste holding",
+          "x": 26,
+          "y": 33,
+          "width": 8,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "g23",
+          "kind": "room",
+          "label": "Building services",
+          "x": 34,
+          "y": 33,
+          "width": 8,
+          "height": 3,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "gd01",
+          "kind": "door",
+          "x": 2,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gd02",
+          "kind": "opening",
+          "x": 3,
+          "y": 2,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "gd03",
+          "kind": "opening",
+          "x": 3,
+          "y": 5,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "gd04",
+          "kind": "opening",
+          "x": 4,
+          "y": 10,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gd05",
+          "kind": "door",
+          "x": 46,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gd06",
+          "kind": "opening",
+          "x": 43,
+          "y": 4,
+          "width": 1.4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gd07",
+          "kind": "opening",
+          "x": 43,
+          "y": 10,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gd08",
+          "kind": "opening",
+          "x": 6,
+          "y": 11,
+          "width": 1.8,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "gd09",
+          "kind": "door",
+          "x": 42,
+          "y": 11,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "gd10",
+          "kind": "door",
+          "x": 6,
+          "y": 31,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "gd11",
+          "kind": "opening",
+          "x": 42,
+          "y": 31,
+          "width": 1.5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "gd12",
+          "kind": "door",
+          "x": 0,
+          "y": 16,
+          "width": 2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "gd13",
+          "kind": "opening",
+          "x": 12,
+          "y": 10,
+          "width": 2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gd14",
+          "kind": "opening",
+          "x": 26,
+          "y": 10,
+          "width": 2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gd15",
+          "kind": "door",
+          "x": 37,
+          "y": 10,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gd16",
+          "kind": "door",
+          "x": 12,
+          "y": 13,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gd17",
+          "kind": "door",
+          "x": 25,
+          "y": 13,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gd18",
+          "kind": "door",
+          "x": 22,
+          "y": 25,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "gd19",
+          "kind": "door",
+          "x": 26,
+          "y": 30,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gd20",
+          "kind": "door",
+          "x": 42,
+          "y": 17,
+          "width": 2.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "gd21",
+          "kind": "door",
+          "x": 48,
+          "y": 17,
+          "width": 3,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "gd22",
+          "kind": "door",
+          "x": 42,
+          "y": 26,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "gd23",
+          "kind": "door",
+          "x": 11,
+          "y": 33,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gd24",
+          "kind": "door",
+          "x": 21,
+          "y": 33,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gd25",
+          "kind": "door",
+          "x": 29,
+          "y": 33,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gd26",
+          "kind": "door",
+          "x": 37,
+          "y": 33,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gw01",
+          "kind": "window",
+          "x": 9,
+          "y": 0,
+          "width": 8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gw02",
+          "kind": "window",
+          "x": 23,
+          "y": 0,
+          "width": 8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gw03",
+          "kind": "window",
+          "x": 35,
+          "y": 0,
+          "width": 5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "gw04",
+          "kind": "window",
+          "x": 0,
+          "y": 23,
+          "width": 7,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "gw05",
+          "kind": "window",
+          "x": 8,
+          "y": 36,
+          "width": 6,
+          "rotation": 0,
+          "swing": 1
+        }
+      ],
+      "fixtures": [
+        {
+          "id": "gf01",
+          "type": "stair",
+          "label": "Stair A",
+          "x": 0.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "gf02",
+          "type": "lift",
+          "label": "Lift A",
+          "x": 3.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "gf03",
+          "type": "lift",
+          "label": "Lift B",
+          "x": 3.3,
+          "y": 3.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "gf04",
+          "type": "stair",
+          "label": "Stair B",
+          "x": 45.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "gf05",
+          "type": "lift",
+          "label": "Service lift",
+          "x": 42.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 3.4,
+          "rotation": 0
+        },
+        {
+          "id": "gf06",
+          "type": "counter",
+          "label": "Reception",
+          "x": 9,
+          "y": 3,
+          "width": 7,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "gf07",
+          "type": "desk",
+          "label": "Concierge",
+          "x": 17,
+          "y": 6,
+          "width": 2,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "gf08",
+          "type": "chair",
+          "label": "Reception chair",
+          "x": 11,
+          "y": 1.8,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "gf09",
+          "type": "chair",
+          "label": "Concierge chair",
+          "x": 17.7,
+          "y": 5,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "gf10",
+          "type": "sofa",
+          "label": "Lounge sofa",
+          "x": 23,
+          "y": 2,
+          "width": 3,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "gf11",
+          "type": "sofa",
+          "label": "Lounge sofa",
+          "x": 28,
+          "y": 6,
+          "width": 3,
+          "height": 0.9,
+          "rotation": 180
+        },
+        {
+          "id": "gf12",
+          "type": "table",
+          "label": "Coffee table",
+          "x": 24,
+          "y": 4,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "gf13",
+          "type": "plant",
+          "label": "Lobby planting",
+          "x": 31.5,
+          "y": 1,
+          "width": 1,
+          "height": 1,
+          "rotation": 0
+        },
+        {
+          "id": "gf14",
+          "type": "rack",
+          "label": "Retail display",
+          "x": 35,
+          "y": 1,
+          "width": 5,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "gf15",
+          "type": "counter",
+          "label": "Retail checkout",
+          "x": 39,
+          "y": 6,
+          "width": 2,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "gf16",
+          "type": "counter",
+          "label": "Coffee counter",
+          "x": 18,
+          "y": 21,
+          "width": 3,
+          "height": 0.8,
+          "rotation": 90
+        },
+        {
+          "id": "gf17",
+          "type": "table",
+          "label": "Cafe table",
+          "x": 9,
+          "y": 17,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "gf18",
+          "type": "chair",
+          "label": "Cafe seat",
+          "x": 9.3,
+          "y": 16,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "gf19",
+          "type": "chair",
+          "label": "Cafe seat",
+          "x": 9.3,
+          "y": 18.7,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "gf20",
+          "type": "table",
+          "label": "Cafe table",
+          "x": 14,
+          "y": 17,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "gf21",
+          "type": "chair",
+          "label": "Cafe seat",
+          "x": 14.3,
+          "y": 16,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "gf22",
+          "type": "chair",
+          "label": "Cafe seat",
+          "x": 14.3,
+          "y": 18.7,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "gf23",
+          "type": "table",
+          "label": "Communal table",
+          "x": 9,
+          "y": 24,
+          "width": 4,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "gf24",
+          "type": "chair",
+          "label": "Cafe seat",
+          "x": 9.3,
+          "y": 23,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "gf25",
+          "type": "chair",
+          "label": "Cafe seat",
+          "x": 11.3,
+          "y": 23,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "gf26",
+          "type": "chair",
+          "label": "Cafe seat",
+          "x": 9.3,
+          "y": 25.7,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "gf27",
+          "type": "chair",
+          "label": "Cafe seat",
+          "x": 11.3,
+          "y": 25.7,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "gf28",
+          "type": "kitchen",
+          "label": "Cooking line",
+          "x": 23,
+          "y": 21,
+          "width": 5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "gf29",
+          "type": "sink",
+          "label": "Wash station",
+          "x": 28,
+          "y": 25,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 90
+        },
+        {
+          "id": "gf30",
+          "type": "table",
+          "label": "Prep bench",
+          "x": 24,
+          "y": 25,
+          "width": 2.4,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "gf31",
+          "type": "toilet",
+          "label": "Accessible WC",
+          "x": 23,
+          "y": 14,
+          "width": 0.8,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "gf32",
+          "type": "sink",
+          "label": "Guest basin",
+          "x": 27.5,
+          "y": 14,
+          "width": 0.7,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "gf33",
+          "type": "rack",
+          "label": "Receiving shelves",
+          "x": 31,
+          "y": 14,
+          "width": 7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "gf34",
+          "type": "table",
+          "label": "Inspection bench",
+          "x": 33,
+          "y": 18,
+          "width": 3,
+          "height": 1,
+          "rotation": 0
+        },
+        {
+          "id": "gf35",
+          "type": "cabinet",
+          "label": "Laundry equipment",
+          "x": 31,
+          "y": 23,
+          "width": 5,
+          "height": 1,
+          "rotation": 0
+        },
+        {
+          "id": "gf36",
+          "type": "rack",
+          "label": "Clean linen",
+          "x": 39,
+          "y": 23,
+          "width": 0.8,
+          "height": 5,
+          "rotation": 90
+        },
+        {
+          "id": "gf37",
+          "type": "table",
+          "label": "Staff table",
+          "x": 9,
+          "y": 34,
+          "width": 3,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "gf38",
+          "type": "cabinet",
+          "label": "Staff lockers",
+          "x": 15,
+          "y": 33.5,
+          "width": 2,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "gf39",
+          "type": "desk",
+          "label": "Security console",
+          "x": 23,
+          "y": 34,
+          "width": 2,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "gf40",
+          "type": "chair",
+          "label": "Security seat",
+          "x": 23.7,
+          "y": 35,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "gf41",
+          "type": "cabinet",
+          "label": "Waste segregation",
+          "x": 27,
+          "y": 34,
+          "width": 5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "gf42",
+          "type": "rack",
+          "label": "Services equipment",
+          "x": 35,
+          "y": 34,
+          "width": 5,
+          "height": 0.8,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "f1",
+      "name": "Level 1 · Convention",
+      "use": "mixed",
+      "elevation": 4,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "c01",
+          "kind": "room",
+          "label": "Guest stair A",
+          "x": 0,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c02",
+          "kind": "room",
+          "label": "Passenger lift A",
+          "x": 3,
+          "y": 0,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c03",
+          "kind": "room",
+          "label": "Passenger lift B",
+          "x": 3,
+          "y": 3,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c04",
+          "kind": "room",
+          "label": "Guest core lobby",
+          "x": 3,
+          "y": 6,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c05",
+          "kind": "room",
+          "label": "Guest circulation",
+          "x": 0,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c06",
+          "kind": "room",
+          "label": "Service stair B",
+          "x": 45,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c07",
+          "kind": "room",
+          "label": "Service lift",
+          "x": 42,
+          "y": 0,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c08",
+          "kind": "room",
+          "label": "Service core lobby",
+          "x": 42,
+          "y": 4,
+          "width": 3,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c09",
+          "kind": "room",
+          "label": "Staff circulation",
+          "x": 42,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c10",
+          "kind": "room",
+          "label": "Prefunction gallery",
+          "x": 6,
+          "y": 10,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c11",
+          "kind": "room",
+          "label": "Banquet service corridor",
+          "x": 6,
+          "y": 30,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c12",
+          "kind": "room",
+          "label": "Meeting room 1",
+          "x": 6,
+          "y": 0,
+          "width": 10,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c13",
+          "kind": "room",
+          "label": "Meeting room 2",
+          "x": 16,
+          "y": 0,
+          "width": 10,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c14",
+          "kind": "room",
+          "label": "Meeting room 3",
+          "x": 26,
+          "y": 0,
+          "width": 10,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c15",
+          "kind": "room",
+          "label": "Guest toilets",
+          "x": 36,
+          "y": 0,
+          "width": 6,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c16",
+          "kind": "room",
+          "label": "Ballroom A",
+          "x": 6,
+          "y": 13,
+          "width": 12,
+          "height": 17,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c17",
+          "kind": "room",
+          "label": "Ballroom B",
+          "x": 18,
+          "y": 13,
+          "width": 12,
+          "height": 17,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c18",
+          "kind": "room",
+          "label": "Banquet kitchen",
+          "x": 30,
+          "y": 13,
+          "width": 12,
+          "height": 11,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c19",
+          "kind": "room",
+          "label": "Dishwash and plating",
+          "x": 30,
+          "y": 24,
+          "width": 12,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c20",
+          "kind": "room",
+          "label": "Furniture store",
+          "x": 6,
+          "y": 33,
+          "width": 12,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c21",
+          "kind": "room",
+          "label": "Event office",
+          "x": 18,
+          "y": 33,
+          "width": 8,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c22",
+          "kind": "room",
+          "label": "Cold and dry stores",
+          "x": 26,
+          "y": 33,
+          "width": 10,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "c23",
+          "kind": "room",
+          "label": "AV equipment",
+          "x": 36,
+          "y": 33,
+          "width": 6,
+          "height": 3,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "cd01",
+          "kind": "door",
+          "x": 2,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd02",
+          "kind": "opening",
+          "x": 3,
+          "y": 2,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "cd03",
+          "kind": "opening",
+          "x": 3,
+          "y": 5,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "cd04",
+          "kind": "opening",
+          "x": 4,
+          "y": 10,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd05",
+          "kind": "door",
+          "x": 46,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd06",
+          "kind": "opening",
+          "x": 43,
+          "y": 4,
+          "width": 1.4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd07",
+          "kind": "opening",
+          "x": 43,
+          "y": 10,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd08",
+          "kind": "opening",
+          "x": 6,
+          "y": 11,
+          "width": 1.8,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "cd09",
+          "kind": "door",
+          "x": 42,
+          "y": 11,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "cd10",
+          "kind": "door",
+          "x": 6,
+          "y": 31,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "cd11",
+          "kind": "opening",
+          "x": 42,
+          "y": 31,
+          "width": 1.5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "cd12",
+          "kind": "door",
+          "x": 9,
+          "y": 10,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd13",
+          "kind": "door",
+          "x": 19,
+          "y": 10,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd14",
+          "kind": "door",
+          "x": 29,
+          "y": 10,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd15",
+          "kind": "door",
+          "x": 38,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd16",
+          "kind": "door",
+          "x": 10,
+          "y": 13,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd17",
+          "kind": "door",
+          "x": 22,
+          "y": 13,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd18",
+          "kind": "opening",
+          "x": 18,
+          "y": 17,
+          "width": 9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "cd19",
+          "kind": "door",
+          "x": 14,
+          "y": 30,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd20",
+          "kind": "door",
+          "x": 26,
+          "y": 30,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd21",
+          "kind": "door",
+          "x": 42,
+          "y": 18,
+          "width": 1.5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "cd22",
+          "kind": "door",
+          "x": 35,
+          "y": 24,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd23",
+          "kind": "door",
+          "x": 38,
+          "y": 30,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd24",
+          "kind": "door",
+          "x": 10,
+          "y": 33,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd25",
+          "kind": "door",
+          "x": 21,
+          "y": 33,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd26",
+          "kind": "door",
+          "x": 30,
+          "y": 33,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cd27",
+          "kind": "door",
+          "x": 38,
+          "y": 33,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cw01",
+          "kind": "window",
+          "x": 8,
+          "y": 0,
+          "width": 6,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cw02",
+          "kind": "window",
+          "x": 18,
+          "y": 0,
+          "width": 6,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cw03",
+          "kind": "window",
+          "x": 28,
+          "y": 0,
+          "width": 6,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "cw04",
+          "kind": "window",
+          "x": 0,
+          "y": 16,
+          "width": 9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "cw05",
+          "kind": "window",
+          "x": 48,
+          "y": 14,
+          "width": 7,
+          "rotation": 90,
+          "swing": 1
+        }
+      ],
+      "fixtures": [
+        {
+          "id": "cf01",
+          "type": "stair",
+          "label": "Stair A",
+          "x": 0.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "cf02",
+          "type": "lift",
+          "label": "Lift A",
+          "x": 3.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "cf03",
+          "type": "lift",
+          "label": "Lift B",
+          "x": 3.3,
+          "y": 3.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "cf04",
+          "type": "stair",
+          "label": "Stair B",
+          "x": 45.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "cf05",
+          "type": "lift",
+          "label": "Service lift",
+          "x": 42.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 3.4,
+          "rotation": 0
+        },
+        {
+          "id": "cf06",
+          "type": "table",
+          "label": "Meeting table 1",
+          "x": 9,
+          "y": 3,
+          "width": 4,
+          "height": 1.4,
+          "rotation": 0
+        },
+        {
+          "id": "cf07",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 9.5,
+          "y": 2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "cf08",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 11.5,
+          "y": 2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "cf09",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 9.5,
+          "y": 5,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "cf10",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 11.5,
+          "y": 5,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "cf11",
+          "type": "table",
+          "label": "Meeting table 2",
+          "x": 19,
+          "y": 3,
+          "width": 4,
+          "height": 1.4,
+          "rotation": 0
+        },
+        {
+          "id": "cf12",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 19.5,
+          "y": 2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "cf13",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 21.5,
+          "y": 2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "cf14",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 19.5,
+          "y": 5,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "cf15",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 21.5,
+          "y": 5,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "cf16",
+          "type": "table",
+          "label": "Meeting table 3",
+          "x": 29,
+          "y": 3,
+          "width": 4,
+          "height": 1.4,
+          "rotation": 0
+        },
+        {
+          "id": "cf17",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 29.5,
+          "y": 2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "cf18",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 31.5,
+          "y": 2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "cf19",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 29.5,
+          "y": 5,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "cf20",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 31.5,
+          "y": 5,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "cf21",
+          "type": "toilet",
+          "label": "Accessible WC",
+          "x": 37,
+          "y": 1,
+          "width": 0.8,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "cf22",
+          "type": "sink",
+          "label": "Guest basin",
+          "x": 40,
+          "y": 1,
+          "width": 0.7,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "cf23",
+          "type": "table",
+          "label": "Banquet table A1",
+          "x": 9,
+          "y": 17,
+          "width": 1.8,
+          "height": 1.8,
+          "rotation": 0
+        },
+        {
+          "id": "cf24",
+          "type": "chair",
+          "label": "Banquet seat",
+          "x": 9.6,
+          "y": 16,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "cf25",
+          "type": "chair",
+          "label": "Banquet seat",
+          "x": 9.6,
+          "y": 19.4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "cf26",
+          "type": "chair",
+          "label": "Banquet seat",
+          "x": 8,
+          "y": 17.6,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "cf27",
+          "type": "chair",
+          "label": "Banquet seat",
+          "x": 11.4,
+          "y": 17.6,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 270
+        },
+        {
+          "id": "cf28",
+          "type": "table",
+          "label": "Banquet table A2",
+          "x": 13,
+          "y": 23,
+          "width": 1.8,
+          "height": 1.8,
+          "rotation": 0
+        },
+        {
+          "id": "cf29",
+          "type": "chair",
+          "label": "Banquet seat",
+          "x": 13.6,
+          "y": 22,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "cf30",
+          "type": "chair",
+          "label": "Banquet seat",
+          "x": 13.6,
+          "y": 25.4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "cf31",
+          "type": "table",
+          "label": "Banquet table B1",
+          "x": 21,
+          "y": 17,
+          "width": 1.8,
+          "height": 1.8,
+          "rotation": 0
+        },
+        {
+          "id": "cf32",
+          "type": "chair",
+          "label": "Banquet seat",
+          "x": 21.6,
+          "y": 16,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "cf33",
+          "type": "chair",
+          "label": "Banquet seat",
+          "x": 21.6,
+          "y": 19.4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "cf34",
+          "type": "chair",
+          "label": "Banquet seat",
+          "x": 20,
+          "y": 17.6,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "cf35",
+          "type": "chair",
+          "label": "Banquet seat",
+          "x": 23.4,
+          "y": 17.6,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 270
+        },
+        {
+          "id": "cf36",
+          "type": "table",
+          "label": "Banquet table B2",
+          "x": 25,
+          "y": 23,
+          "width": 1.8,
+          "height": 1.8,
+          "rotation": 0
+        },
+        {
+          "id": "cf37",
+          "type": "chair",
+          "label": "Banquet seat",
+          "x": 25.6,
+          "y": 22,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "cf38",
+          "type": "chair",
+          "label": "Banquet seat",
+          "x": 25.6,
+          "y": 25.4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "cf39",
+          "type": "counter",
+          "label": "Registration",
+          "x": 33,
+          "y": 10.5,
+          "width": 3,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "cf40",
+          "type": "kitchen",
+          "label": "Banquet cooking line",
+          "x": 31,
+          "y": 14,
+          "width": 8,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "cf41",
+          "type": "table",
+          "label": "Prep island",
+          "x": 33,
+          "y": 18,
+          "width": 5,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "cf42",
+          "type": "sink",
+          "label": "Dishwash",
+          "x": 31,
+          "y": 25,
+          "width": 2,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "cf43",
+          "type": "counter",
+          "label": "Plating pass",
+          "x": 35,
+          "y": 25,
+          "width": 5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "cf44",
+          "type": "rack",
+          "label": "Chair storage",
+          "x": 7,
+          "y": 34,
+          "width": 8,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "cf45",
+          "type": "desk",
+          "label": "Event manager",
+          "x": 23,
+          "y": 34,
+          "width": 2,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "cf46",
+          "type": "chair",
+          "label": "Office seat",
+          "x": 23.5,
+          "y": 35,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "cf47",
+          "type": "cabinet",
+          "label": "Cold storage",
+          "x": 27,
+          "y": 34,
+          "width": 3,
+          "height": 1,
+          "rotation": 0
+        },
+        {
+          "id": "cf48",
+          "type": "rack",
+          "label": "Dry stores",
+          "x": 32,
+          "y": 34,
+          "width": 3,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "cf49",
+          "type": "rack",
+          "label": "AV racks",
+          "x": 39,
+          "y": 34,
+          "width": 2,
+          "height": 0.8,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "f2",
+      "name": "Level 2 · Coworking Club",
+      "use": "office",
+      "elevation": 8,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "w01",
+          "kind": "room",
+          "label": "Guest stair A",
+          "x": 0,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w02",
+          "kind": "room",
+          "label": "Passenger lift A",
+          "x": 3,
+          "y": 0,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w03",
+          "kind": "room",
+          "label": "Passenger lift B",
+          "x": 3,
+          "y": 3,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w04",
+          "kind": "room",
+          "label": "Guest core lobby",
+          "x": 3,
+          "y": 6,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w05",
+          "kind": "room",
+          "label": "Club circulation",
+          "x": 0,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w06",
+          "kind": "room",
+          "label": "Service stair B",
+          "x": 45,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w07",
+          "kind": "room",
+          "label": "Service lift",
+          "x": 42,
+          "y": 0,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w08",
+          "kind": "room",
+          "label": "Service core lobby",
+          "x": 42,
+          "y": 4,
+          "width": 3,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w09",
+          "kind": "room",
+          "label": "Staff circulation",
+          "x": 42,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w10",
+          "kind": "room",
+          "label": "Club gallery",
+          "x": 6,
+          "y": 10,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w11",
+          "kind": "room",
+          "label": "Service corridor",
+          "x": 6,
+          "y": 30,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w12",
+          "kind": "room",
+          "label": "Private office A",
+          "x": 6,
+          "y": 0,
+          "width": 7,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w13",
+          "kind": "room",
+          "label": "Private office B",
+          "x": 13,
+          "y": 0,
+          "width": 7,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w14",
+          "kind": "room",
+          "label": "Meeting room A",
+          "x": 20,
+          "y": 0,
+          "width": 8,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w15",
+          "kind": "room",
+          "label": "Meeting room B",
+          "x": 28,
+          "y": 0,
+          "width": 8,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w16",
+          "kind": "room",
+          "label": "Guest toilets",
+          "x": 36,
+          "y": 0,
+          "width": 6,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w17",
+          "kind": "room",
+          "label": "Coworking studio",
+          "x": 6,
+          "y": 13,
+          "width": 20,
+          "height": 17,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w18",
+          "kind": "room",
+          "label": "Club reception and lounge",
+          "x": 26,
+          "y": 13,
+          "width": 8,
+          "height": 17,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w19",
+          "kind": "landscape",
+          "label": "Open club terrace",
+          "x": 34,
+          "y": 13,
+          "width": 8,
+          "height": 17,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w20",
+          "kind": "room",
+          "label": "Pantry",
+          "x": 6,
+          "y": 33,
+          "width": 12,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w21",
+          "kind": "room",
+          "label": "Quiet room",
+          "x": 18,
+          "y": 33,
+          "width": 8,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w22",
+          "kind": "room",
+          "label": "IT and server room",
+          "x": 26,
+          "y": 33,
+          "width": 8,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "w23",
+          "kind": "room",
+          "label": "Club store",
+          "x": 34,
+          "y": 33,
+          "width": 8,
+          "height": 3,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "wd01",
+          "kind": "door",
+          "x": 2,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd02",
+          "kind": "opening",
+          "x": 3,
+          "y": 2,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "wd03",
+          "kind": "opening",
+          "x": 3,
+          "y": 5,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "wd04",
+          "kind": "opening",
+          "x": 4,
+          "y": 10,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd05",
+          "kind": "door",
+          "x": 46,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd06",
+          "kind": "opening",
+          "x": 43,
+          "y": 4,
+          "width": 1.4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd07",
+          "kind": "opening",
+          "x": 43,
+          "y": 10,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd08",
+          "kind": "opening",
+          "x": 6,
+          "y": 11,
+          "width": 1.8,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "wd09",
+          "kind": "door",
+          "x": 42,
+          "y": 11,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "wd10",
+          "kind": "door",
+          "x": 6,
+          "y": 31,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "wd11",
+          "kind": "opening",
+          "x": 42,
+          "y": 31,
+          "width": 1.5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "wd12",
+          "kind": "door",
+          "x": 9,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd13",
+          "kind": "door",
+          "x": 16,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd14",
+          "kind": "door",
+          "x": 23,
+          "y": 10,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd15",
+          "kind": "door",
+          "x": 31,
+          "y": 10,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd16",
+          "kind": "door",
+          "x": 38,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd17",
+          "kind": "door",
+          "x": 13,
+          "y": 13,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd18",
+          "kind": "opening",
+          "x": 29,
+          "y": 13,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd19",
+          "kind": "door",
+          "x": 34,
+          "y": 19,
+          "width": 1.5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "wd20",
+          "kind": "door",
+          "x": 29,
+          "y": 30,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd21",
+          "kind": "door",
+          "x": 11,
+          "y": 33,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd22",
+          "kind": "door",
+          "x": 21,
+          "y": 33,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd23",
+          "kind": "door",
+          "x": 29,
+          "y": 33,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "wd24",
+          "kind": "door",
+          "x": 37,
+          "y": 33,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ww01",
+          "kind": "window",
+          "x": 7,
+          "y": 0,
+          "width": 4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ww02",
+          "kind": "window",
+          "x": 14,
+          "y": 0,
+          "width": 4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ww03",
+          "kind": "window",
+          "x": 21,
+          "y": 0,
+          "width": 5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ww04",
+          "kind": "window",
+          "x": 29,
+          "y": 0,
+          "width": 5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ww05",
+          "kind": "window",
+          "x": 0,
+          "y": 17,
+          "width": 10,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ww06",
+          "kind": "window",
+          "x": 8,
+          "y": 36,
+          "width": 6,
+          "rotation": 0,
+          "swing": 1
+        }
+      ],
+      "fixtures": [
+        {
+          "id": "wf01",
+          "type": "stair",
+          "label": "Stair A",
+          "x": 0.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf02",
+          "type": "lift",
+          "label": "Lift A",
+          "x": 3.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "wf03",
+          "type": "lift",
+          "label": "Lift B",
+          "x": 3.3,
+          "y": 3.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "wf04",
+          "type": "stair",
+          "label": "Stair B",
+          "x": 45.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf05",
+          "type": "lift",
+          "label": "Service lift",
+          "x": 42.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 3.4,
+          "rotation": 0
+        },
+        {
+          "id": "wf06",
+          "type": "desk",
+          "label": "Private desk A",
+          "x": 8,
+          "y": 3,
+          "width": 1.8,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf07",
+          "type": "chair",
+          "label": "Office chair A",
+          "x": 8.5,
+          "y": 4.2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf08",
+          "type": "cabinet",
+          "label": "Office storage A",
+          "x": 11,
+          "y": 1,
+          "width": 1,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "wf09",
+          "type": "desk",
+          "label": "Private desk B",
+          "x": 15,
+          "y": 3,
+          "width": 1.8,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf10",
+          "type": "chair",
+          "label": "Office chair B",
+          "x": 15.5,
+          "y": 4.2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf11",
+          "type": "cabinet",
+          "label": "Office storage B",
+          "x": 18,
+          "y": 1,
+          "width": 1,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "wf12",
+          "type": "table",
+          "label": "Meeting table A",
+          "x": 22,
+          "y": 3,
+          "width": 4,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "wf13",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 22.5,
+          "y": 2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "wf14",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 24.5,
+          "y": 2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "wf15",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 22.5,
+          "y": 4.8,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf16",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 24.5,
+          "y": 4.8,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf17",
+          "type": "table",
+          "label": "Meeting table B",
+          "x": 30,
+          "y": 3,
+          "width": 4,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "wf18",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 30.5,
+          "y": 2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "wf19",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 32.5,
+          "y": 2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "wf20",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 30.5,
+          "y": 4.8,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf21",
+          "type": "chair",
+          "label": "Meeting seat",
+          "x": 32.5,
+          "y": 4.8,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf22",
+          "type": "toilet",
+          "label": "Accessible WC",
+          "x": 37,
+          "y": 1,
+          "width": 0.8,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf23",
+          "type": "sink",
+          "label": "Guest basin",
+          "x": 40,
+          "y": 1,
+          "width": 0.7,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "wf24",
+          "type": "desk",
+          "label": "Workstation 1",
+          "x": 8,
+          "y": 16,
+          "width": 1.6,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf25",
+          "type": "chair",
+          "label": "Work chair 1",
+          "x": 8.5,
+          "y": 17.2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf26",
+          "type": "desk",
+          "label": "Workstation 2",
+          "x": 12,
+          "y": 16,
+          "width": 1.6,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf27",
+          "type": "chair",
+          "label": "Work chair 2",
+          "x": 12.5,
+          "y": 17.2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf28",
+          "type": "desk",
+          "label": "Workstation 3",
+          "x": 16,
+          "y": 16,
+          "width": 1.6,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf29",
+          "type": "chair",
+          "label": "Work chair 3",
+          "x": 16.5,
+          "y": 17.2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf30",
+          "type": "desk",
+          "label": "Workstation 4",
+          "x": 20,
+          "y": 16,
+          "width": 1.6,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf31",
+          "type": "chair",
+          "label": "Work chair 4",
+          "x": 20.5,
+          "y": 17.2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf32",
+          "type": "desk",
+          "label": "Workstation 5",
+          "x": 8,
+          "y": 22,
+          "width": 1.6,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf33",
+          "type": "chair",
+          "label": "Work chair 5",
+          "x": 8.5,
+          "y": 23.2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf34",
+          "type": "desk",
+          "label": "Workstation 6",
+          "x": 12,
+          "y": 22,
+          "width": 1.6,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf35",
+          "type": "chair",
+          "label": "Work chair 6",
+          "x": 12.5,
+          "y": 23.2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf36",
+          "type": "desk",
+          "label": "Workstation 7",
+          "x": 16,
+          "y": 22,
+          "width": 1.6,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf37",
+          "type": "chair",
+          "label": "Work chair 7",
+          "x": 16.5,
+          "y": 23.2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf38",
+          "type": "desk",
+          "label": "Workstation 8",
+          "x": 20,
+          "y": 22,
+          "width": 1.6,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf39",
+          "type": "chair",
+          "label": "Work chair 8",
+          "x": 20.5,
+          "y": 23.2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf40",
+          "type": "table",
+          "label": "Collaboration table",
+          "x": 12,
+          "y": 27,
+          "width": 5,
+          "height": 1,
+          "rotation": 0
+        },
+        {
+          "id": "wf41",
+          "type": "counter",
+          "label": "Club reception",
+          "x": 28,
+          "y": 16,
+          "width": 3,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf42",
+          "type": "sofa",
+          "label": "Club sofa",
+          "x": 28,
+          "y": 23,
+          "width": 3,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "wf43",
+          "type": "table",
+          "label": "Lounge table",
+          "x": 29,
+          "y": 25,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "wf44",
+          "type": "table",
+          "label": "Terrace table",
+          "x": 36,
+          "y": 17,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "wf45",
+          "type": "chair",
+          "label": "Terrace seat",
+          "x": 36.3,
+          "y": 16,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "wf46",
+          "type": "chair",
+          "label": "Terrace seat",
+          "x": 36.3,
+          "y": 18.7,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "wf47",
+          "type": "plant",
+          "label": "Terrace planter",
+          "x": 39,
+          "y": 24,
+          "width": 2,
+          "height": 4,
+          "rotation": 0
+        },
+        {
+          "id": "wf48",
+          "type": "kitchen",
+          "label": "Club pantry",
+          "x": 7,
+          "y": 34,
+          "width": 5,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "wf49",
+          "type": "sink",
+          "label": "Pantry sink",
+          "x": 14,
+          "y": 34,
+          "width": 0.8,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "wf50",
+          "type": "desk",
+          "label": "Quiet desk",
+          "x": 23,
+          "y": 34,
+          "width": 1.6,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "wf51",
+          "type": "chair",
+          "label": "Quiet chair",
+          "x": 23.5,
+          "y": 35,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "wf52",
+          "type": "rack",
+          "label": "Server racks",
+          "x": 27,
+          "y": 34,
+          "width": 4,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "wf53",
+          "type": "cabinet",
+          "label": "Club supplies",
+          "x": 38,
+          "y": 34,
+          "width": 3,
+          "height": 0.6,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "f3",
+      "name": "Level 3 · Deluxe and Family Rooms",
+      "use": "mixed",
+      "elevation": 12,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "a01",
+          "kind": "room",
+          "label": "Guest stair A",
+          "x": 0,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a02",
+          "kind": "room",
+          "label": "Passenger lift A",
+          "x": 3,
+          "y": 0,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a03",
+          "kind": "room",
+          "label": "Passenger lift B",
+          "x": 3,
+          "y": 3,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a04",
+          "kind": "room",
+          "label": "Guest core lobby",
+          "x": 3,
+          "y": 6,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a05",
+          "kind": "room",
+          "label": "Guest circulation",
+          "x": 0,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a06",
+          "kind": "room",
+          "label": "Service stair B",
+          "x": 45,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a07",
+          "kind": "room",
+          "label": "Service lift",
+          "x": 42,
+          "y": 0,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a08",
+          "kind": "room",
+          "label": "Service core lobby",
+          "x": 42,
+          "y": 4,
+          "width": 3,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a09",
+          "kind": "room",
+          "label": "Staff circulation",
+          "x": 42,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a10",
+          "kind": "room",
+          "label": "Guest gallery",
+          "x": 6,
+          "y": 10,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a11",
+          "kind": "room",
+          "label": "Housekeeping corridor",
+          "x": 6,
+          "y": 30,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a12",
+          "kind": "room",
+          "label": "301 Deluxe king",
+          "x": 6,
+          "y": 0,
+          "width": 6,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a13",
+          "kind": "room",
+          "label": "301 Ensuite",
+          "x": 12,
+          "y": 0,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a14",
+          "kind": "room",
+          "label": "301 Dressing",
+          "x": 12,
+          "y": 5,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a15",
+          "kind": "room",
+          "label": "302 Deluxe king",
+          "x": 15,
+          "y": 0,
+          "width": 6,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a16",
+          "kind": "room",
+          "label": "302 Ensuite",
+          "x": 21,
+          "y": 0,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a17",
+          "kind": "room",
+          "label": "302 Dressing",
+          "x": 21,
+          "y": 5,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a18",
+          "kind": "room",
+          "label": "303 Deluxe twin",
+          "x": 24,
+          "y": 0,
+          "width": 6,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a19",
+          "kind": "room",
+          "label": "303 Ensuite",
+          "x": 30,
+          "y": 0,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a20",
+          "kind": "room",
+          "label": "303 Dressing",
+          "x": 30,
+          "y": 5,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a21",
+          "kind": "room",
+          "label": "304 Accessible king",
+          "x": 33,
+          "y": 0,
+          "width": 6,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a22",
+          "kind": "room",
+          "label": "304 Ensuite",
+          "x": 39,
+          "y": 0,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a23",
+          "kind": "room",
+          "label": "304 Dressing",
+          "x": 39,
+          "y": 5,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a24",
+          "kind": "room",
+          "label": "305 Family bedroom",
+          "x": 6,
+          "y": 13,
+          "width": 8,
+          "height": 17,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a25",
+          "kind": "room",
+          "label": "305 Dressing",
+          "x": 14,
+          "y": 13,
+          "width": 4,
+          "height": 9,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a26",
+          "kind": "room",
+          "label": "305 Ensuite",
+          "x": 14,
+          "y": 22,
+          "width": 4,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a27",
+          "kind": "room",
+          "label": "306 Family bedroom",
+          "x": 18,
+          "y": 13,
+          "width": 8,
+          "height": 17,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a28",
+          "kind": "room",
+          "label": "306 Dressing",
+          "x": 26,
+          "y": 13,
+          "width": 4,
+          "height": 9,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a29",
+          "kind": "room",
+          "label": "306 Ensuite",
+          "x": 26,
+          "y": 22,
+          "width": 4,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a30",
+          "kind": "room",
+          "label": "307 Junior suite",
+          "x": 30,
+          "y": 13,
+          "width": 8,
+          "height": 17,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a31",
+          "kind": "room",
+          "label": "307 Dressing",
+          "x": 38,
+          "y": 13,
+          "width": 4,
+          "height": 9,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a32",
+          "kind": "room",
+          "label": "307 Ensuite",
+          "x": 38,
+          "y": 22,
+          "width": 4,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a33",
+          "kind": "room",
+          "label": "Housekeeping and linen",
+          "x": 6,
+          "y": 33,
+          "width": 18,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "a34",
+          "kind": "room",
+          "label": "Staff WC and services",
+          "x": 24,
+          "y": 33,
+          "width": 18,
+          "height": 3,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "ad01",
+          "kind": "door",
+          "x": 2,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ad02",
+          "kind": "opening",
+          "x": 3,
+          "y": 2,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad03",
+          "kind": "opening",
+          "x": 3,
+          "y": 5,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad04",
+          "kind": "opening",
+          "x": 4,
+          "y": 10,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ad05",
+          "kind": "door",
+          "x": 46,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ad06",
+          "kind": "opening",
+          "x": 43,
+          "y": 4,
+          "width": 1.4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ad07",
+          "kind": "opening",
+          "x": 43,
+          "y": 10,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ad08",
+          "kind": "opening",
+          "x": 6,
+          "y": 11,
+          "width": 1.8,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad09",
+          "kind": "door",
+          "x": 42,
+          "y": 11,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad10",
+          "kind": "door",
+          "x": 6,
+          "y": 31,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad11",
+          "kind": "opening",
+          "x": 42,
+          "y": 31,
+          "width": 1.5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad12",
+          "kind": "door",
+          "x": 8,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ad13",
+          "kind": "door",
+          "x": 12,
+          "y": 3,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad14",
+          "kind": "opening",
+          "x": 12,
+          "y": 7,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad15",
+          "kind": "door",
+          "x": 17,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ad16",
+          "kind": "door",
+          "x": 21,
+          "y": 3,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad17",
+          "kind": "opening",
+          "x": 21,
+          "y": 7,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad18",
+          "kind": "door",
+          "x": 26,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ad19",
+          "kind": "door",
+          "x": 30,
+          "y": 3,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad20",
+          "kind": "opening",
+          "x": 30,
+          "y": 7,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad21",
+          "kind": "door",
+          "x": 35,
+          "y": 10,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ad22",
+          "kind": "door",
+          "x": 39,
+          "y": 3,
+          "width": 1.1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad23",
+          "kind": "opening",
+          "x": 39,
+          "y": 7,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad24",
+          "kind": "door",
+          "x": 8,
+          "y": 13,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ad25",
+          "kind": "opening",
+          "x": 14,
+          "y": 17,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad26",
+          "kind": "door",
+          "x": 14,
+          "y": 24,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad27",
+          "kind": "door",
+          "x": 20,
+          "y": 13,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ad28",
+          "kind": "opening",
+          "x": 26,
+          "y": 17,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad29",
+          "kind": "door",
+          "x": 26,
+          "y": 24,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad30",
+          "kind": "door",
+          "x": 32,
+          "y": 13,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ad31",
+          "kind": "opening",
+          "x": 38,
+          "y": 17,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad32",
+          "kind": "door",
+          "x": 38,
+          "y": 24,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "ad33",
+          "kind": "door",
+          "x": 11,
+          "y": 33,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "ad34",
+          "kind": "door",
+          "x": 29,
+          "y": 33,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "aw01",
+          "kind": "window",
+          "x": 7,
+          "y": 0,
+          "width": 4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "aw02",
+          "kind": "window",
+          "x": 16,
+          "y": 0,
+          "width": 4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "aw03",
+          "kind": "window",
+          "x": 25,
+          "y": 0,
+          "width": 4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "aw04",
+          "kind": "window",
+          "x": 34,
+          "y": 0,
+          "width": 4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "aw05",
+          "kind": "window",
+          "x": 0,
+          "y": 18,
+          "width": 8,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "aw06",
+          "kind": "window",
+          "x": 48,
+          "y": 18,
+          "width": 8,
+          "rotation": 90,
+          "swing": 1
+        }
+      ],
+      "fixtures": [
+        {
+          "id": "af01",
+          "type": "stair",
+          "label": "Stair A",
+          "x": 0.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "af02",
+          "type": "lift",
+          "label": "Lift A",
+          "x": 3.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "af03",
+          "type": "lift",
+          "label": "Lift B",
+          "x": 3.3,
+          "y": 3.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "af04",
+          "type": "stair",
+          "label": "Stair B",
+          "x": 45.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "af05",
+          "type": "lift",
+          "label": "Service lift",
+          "x": 42.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 3.4,
+          "rotation": 0
+        },
+        {
+          "id": "af06",
+          "type": "bed",
+          "label": "301 King bed",
+          "x": 8,
+          "y": 2,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "af07",
+          "type": "cabinet",
+          "label": "301 Wardrobe",
+          "x": 13,
+          "y": 6,
+          "width": 0.6,
+          "height": 2,
+          "rotation": 90
+        },
+        {
+          "id": "af08",
+          "type": "shower",
+          "label": "301 Shower",
+          "x": 13,
+          "y": 0.5,
+          "width": 1.1,
+          "height": 1.1,
+          "rotation": 0
+        },
+        {
+          "id": "af09",
+          "type": "toilet",
+          "label": "301 WC",
+          "x": 13,
+          "y": 2,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "af10",
+          "type": "sink",
+          "label": "301 Basin",
+          "x": 14,
+          "y": 3.7,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "af11",
+          "type": "desk",
+          "label": "301 Desk",
+          "x": 7,
+          "y": 6,
+          "width": 1.4,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "af12",
+          "type": "chair",
+          "label": "301 Chair",
+          "x": 7.4,
+          "y": 7,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "af13",
+          "type": "bed",
+          "label": "302 King bed",
+          "x": 17,
+          "y": 2,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "af14",
+          "type": "cabinet",
+          "label": "302 Wardrobe",
+          "x": 22,
+          "y": 6,
+          "width": 0.6,
+          "height": 2,
+          "rotation": 90
+        },
+        {
+          "id": "af15",
+          "type": "shower",
+          "label": "302 Shower",
+          "x": 22,
+          "y": 0.5,
+          "width": 1.1,
+          "height": 1.1,
+          "rotation": 0
+        },
+        {
+          "id": "af16",
+          "type": "toilet",
+          "label": "302 WC",
+          "x": 22,
+          "y": 2,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "af17",
+          "type": "sink",
+          "label": "302 Basin",
+          "x": 23,
+          "y": 3.7,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "af18",
+          "type": "desk",
+          "label": "302 Desk",
+          "x": 16,
+          "y": 6,
+          "width": 1.4,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "af19",
+          "type": "chair",
+          "label": "302 Chair",
+          "x": 16.4,
+          "y": 7,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "af20",
+          "type": "bed",
+          "label": "303 Twin bed A",
+          "x": 25,
+          "y": 2,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "af21",
+          "type": "bed",
+          "label": "303 Twin bed B",
+          "x": 27.5,
+          "y": 2,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "af22",
+          "type": "cabinet",
+          "label": "303 Wardrobe",
+          "x": 31,
+          "y": 6,
+          "width": 0.6,
+          "height": 2,
+          "rotation": 90
+        },
+        {
+          "id": "af23",
+          "type": "shower",
+          "label": "303 Shower",
+          "x": 31,
+          "y": 0.5,
+          "width": 1.1,
+          "height": 1.1,
+          "rotation": 0
+        },
+        {
+          "id": "af24",
+          "type": "toilet",
+          "label": "303 WC",
+          "x": 31,
+          "y": 2,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "af25",
+          "type": "sink",
+          "label": "303 Basin",
+          "x": 32,
+          "y": 3.7,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "af26",
+          "type": "bed",
+          "label": "304 King bed",
+          "x": 35,
+          "y": 2,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "af27",
+          "type": "cabinet",
+          "label": "304 Wardrobe",
+          "x": 40,
+          "y": 6,
+          "width": 0.6,
+          "height": 2,
+          "rotation": 90
+        },
+        {
+          "id": "af28",
+          "type": "shower",
+          "label": "304 Level shower",
+          "x": 40,
+          "y": 0.5,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "af29",
+          "type": "toilet",
+          "label": "304 WC",
+          "x": 40,
+          "y": 2,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "af30",
+          "type": "sink",
+          "label": "304 Basin",
+          "x": 41,
+          "y": 3.7,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "af31",
+          "type": "bed",
+          "label": "305 Double bed",
+          "x": 8,
+          "y": 19,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "af32",
+          "type": "bed",
+          "label": "305 Single bed",
+          "x": 11,
+          "y": 19,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "af33",
+          "type": "cabinet",
+          "label": "305 Wardrobe",
+          "x": 16,
+          "y": 14,
+          "width": 0.6,
+          "height": 3,
+          "rotation": 90
+        },
+        {
+          "id": "af34",
+          "type": "shower",
+          "label": "305 Shower",
+          "x": 16,
+          "y": 27,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "af35",
+          "type": "toilet",
+          "label": "305 WC",
+          "x": 15,
+          "y": 23,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "af36",
+          "type": "sink",
+          "label": "305 Basin",
+          "x": 16.5,
+          "y": 25,
+          "width": 0.7,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "af37",
+          "type": "sofa",
+          "label": "305 Sofa",
+          "x": 8,
+          "y": 25,
+          "width": 2.4,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "af38",
+          "type": "bed",
+          "label": "306 Double bed",
+          "x": 20,
+          "y": 19,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "af39",
+          "type": "bed",
+          "label": "306 Single bed",
+          "x": 23,
+          "y": 19,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "af40",
+          "type": "cabinet",
+          "label": "306 Wardrobe",
+          "x": 28,
+          "y": 14,
+          "width": 0.6,
+          "height": 3,
+          "rotation": 90
+        },
+        {
+          "id": "af41",
+          "type": "shower",
+          "label": "306 Shower",
+          "x": 28,
+          "y": 27,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "af42",
+          "type": "toilet",
+          "label": "306 WC",
+          "x": 27,
+          "y": 23,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "af43",
+          "type": "sink",
+          "label": "306 Basin",
+          "x": 28.5,
+          "y": 25,
+          "width": 0.7,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "af44",
+          "type": "sofa",
+          "label": "306 Sofa",
+          "x": 20,
+          "y": 25,
+          "width": 2.4,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "af45",
+          "type": "bed",
+          "label": "307 King bed",
+          "x": 33,
+          "y": 20,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "af46",
+          "type": "cabinet",
+          "label": "307 Wardrobe",
+          "x": 40,
+          "y": 14,
+          "width": 0.6,
+          "height": 3,
+          "rotation": 90
+        },
+        {
+          "id": "af47",
+          "type": "shower",
+          "label": "307 Shower",
+          "x": 40,
+          "y": 27,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "af48",
+          "type": "toilet",
+          "label": "307 WC",
+          "x": 39,
+          "y": 23,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "af49",
+          "type": "sink",
+          "label": "307 Basin",
+          "x": 40.5,
+          "y": 25,
+          "width": 0.7,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "af50",
+          "type": "sofa",
+          "label": "307 Lounge sofa",
+          "x": 32,
+          "y": 16,
+          "width": 3,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "af51",
+          "type": "table",
+          "label": "307 Coffee table",
+          "x": 33,
+          "y": 17.5,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "af52",
+          "type": "rack",
+          "label": "Clean linen",
+          "x": 7,
+          "y": 34,
+          "width": 6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "af53",
+          "type": "sink",
+          "label": "Housekeeping sink",
+          "x": 20,
+          "y": 34,
+          "width": 1,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "af54",
+          "type": "toilet",
+          "label": "Staff WC",
+          "x": 25,
+          "y": 34,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "af55",
+          "type": "sink",
+          "label": "Staff basin",
+          "x": 27,
+          "y": 34,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "af56",
+          "type": "rack",
+          "label": "Service equipment",
+          "x": 35,
+          "y": 34,
+          "width": 5,
+          "height": 0.8,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "f4",
+      "name": "Level 4 · Business Kings and Twins",
+      "use": "mixed",
+      "elevation": 16,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "b01",
+          "kind": "room",
+          "label": "Guest stair A",
+          "x": 0,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b02",
+          "kind": "room",
+          "label": "Passenger lift A",
+          "x": 3,
+          "y": 0,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b03",
+          "kind": "room",
+          "label": "Passenger lift B",
+          "x": 3,
+          "y": 3,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b04",
+          "kind": "room",
+          "label": "Guest core lobby",
+          "x": 3,
+          "y": 6,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b05",
+          "kind": "room",
+          "label": "Guest circulation",
+          "x": 0,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b06",
+          "kind": "room",
+          "label": "Service stair B",
+          "x": 45,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b07",
+          "kind": "room",
+          "label": "Service lift",
+          "x": 42,
+          "y": 0,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b08",
+          "kind": "room",
+          "label": "Service core lobby",
+          "x": 42,
+          "y": 4,
+          "width": 3,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b09",
+          "kind": "room",
+          "label": "Staff circulation",
+          "x": 42,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b10",
+          "kind": "room",
+          "label": "Guest gallery",
+          "x": 6,
+          "y": 10,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b11",
+          "kind": "room",
+          "label": "Housekeeping corridor",
+          "x": 6,
+          "y": 30,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b12",
+          "kind": "room",
+          "label": "401 Business king",
+          "x": 6,
+          "y": 0,
+          "width": 9,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b13",
+          "kind": "room",
+          "label": "401 Ensuite",
+          "x": 15,
+          "y": 0,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b14",
+          "kind": "room",
+          "label": "401 Dressing",
+          "x": 15,
+          "y": 5,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b15",
+          "kind": "room",
+          "label": "402 Business twin",
+          "x": 18,
+          "y": 0,
+          "width": 9,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b16",
+          "kind": "room",
+          "label": "402 Ensuite",
+          "x": 27,
+          "y": 0,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b17",
+          "kind": "room",
+          "label": "402 Dressing",
+          "x": 27,
+          "y": 5,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b18",
+          "kind": "room",
+          "label": "403 Business king",
+          "x": 30,
+          "y": 0,
+          "width": 9,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b19",
+          "kind": "room",
+          "label": "403 Ensuite",
+          "x": 39,
+          "y": 0,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b20",
+          "kind": "room",
+          "label": "403 Dressing",
+          "x": 39,
+          "y": 5,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b21",
+          "kind": "room",
+          "label": "404 Executive twin",
+          "x": 6,
+          "y": 13,
+          "width": 8,
+          "height": 17,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b22",
+          "kind": "room",
+          "label": "404 Dressing",
+          "x": 14,
+          "y": 13,
+          "width": 4,
+          "height": 9,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b23",
+          "kind": "room",
+          "label": "404 Ensuite",
+          "x": 14,
+          "y": 22,
+          "width": 4,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b24",
+          "kind": "room",
+          "label": "405 Executive king",
+          "x": 18,
+          "y": 13,
+          "width": 8,
+          "height": 17,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b25",
+          "kind": "room",
+          "label": "405 Dressing",
+          "x": 26,
+          "y": 13,
+          "width": 4,
+          "height": 9,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b26",
+          "kind": "room",
+          "label": "405 Ensuite",
+          "x": 26,
+          "y": 22,
+          "width": 4,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b27",
+          "kind": "room",
+          "label": "406 Executive twin",
+          "x": 30,
+          "y": 13,
+          "width": 8,
+          "height": 17,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b28",
+          "kind": "room",
+          "label": "406 Dressing",
+          "x": 38,
+          "y": 13,
+          "width": 4,
+          "height": 9,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b29",
+          "kind": "room",
+          "label": "406 Ensuite",
+          "x": 38,
+          "y": 22,
+          "width": 4,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b30",
+          "kind": "room",
+          "label": "Housekeeping and linen",
+          "x": 6,
+          "y": 33,
+          "width": 18,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "b31",
+          "kind": "room",
+          "label": "Staff WC and services",
+          "x": 24,
+          "y": 33,
+          "width": 18,
+          "height": 3,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "bd01",
+          "kind": "door",
+          "x": 2,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bd02",
+          "kind": "opening",
+          "x": 3,
+          "y": 2,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd03",
+          "kind": "opening",
+          "x": 3,
+          "y": 5,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd04",
+          "kind": "opening",
+          "x": 4,
+          "y": 10,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bd05",
+          "kind": "door",
+          "x": 46,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bd06",
+          "kind": "opening",
+          "x": 43,
+          "y": 4,
+          "width": 1.4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bd07",
+          "kind": "opening",
+          "x": 43,
+          "y": 10,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bd08",
+          "kind": "opening",
+          "x": 6,
+          "y": 11,
+          "width": 1.8,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd09",
+          "kind": "door",
+          "x": 42,
+          "y": 11,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd10",
+          "kind": "door",
+          "x": 6,
+          "y": 31,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd11",
+          "kind": "opening",
+          "x": 42,
+          "y": 31,
+          "width": 1.5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd12",
+          "kind": "door",
+          "x": 8,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bd13",
+          "kind": "door",
+          "x": 15,
+          "y": 3,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd14",
+          "kind": "opening",
+          "x": 15,
+          "y": 7,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd15",
+          "kind": "door",
+          "x": 20,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bd16",
+          "kind": "door",
+          "x": 27,
+          "y": 3,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd17",
+          "kind": "opening",
+          "x": 27,
+          "y": 7,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd18",
+          "kind": "door",
+          "x": 32,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bd19",
+          "kind": "door",
+          "x": 39,
+          "y": 3,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd20",
+          "kind": "opening",
+          "x": 39,
+          "y": 7,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd21",
+          "kind": "door",
+          "x": 8,
+          "y": 13,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bd22",
+          "kind": "opening",
+          "x": 14,
+          "y": 17,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd23",
+          "kind": "door",
+          "x": 14,
+          "y": 24,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd24",
+          "kind": "door",
+          "x": 20,
+          "y": 13,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bd25",
+          "kind": "opening",
+          "x": 26,
+          "y": 17,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd26",
+          "kind": "door",
+          "x": 26,
+          "y": 24,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd27",
+          "kind": "door",
+          "x": 32,
+          "y": 13,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bd28",
+          "kind": "opening",
+          "x": 38,
+          "y": 17,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd29",
+          "kind": "door",
+          "x": 38,
+          "y": 24,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bd30",
+          "kind": "door",
+          "x": 11,
+          "y": 33,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bd31",
+          "kind": "door",
+          "x": 29,
+          "y": 33,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bw01",
+          "kind": "window",
+          "x": 8,
+          "y": 0,
+          "width": 5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bw02",
+          "kind": "window",
+          "x": 20,
+          "y": 0,
+          "width": 5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bw03",
+          "kind": "window",
+          "x": 32,
+          "y": 0,
+          "width": 5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bw04",
+          "kind": "window",
+          "x": 0,
+          "y": 18,
+          "width": 8,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bw05",
+          "kind": "window",
+          "x": 48,
+          "y": 18,
+          "width": 8,
+          "rotation": 90,
+          "swing": 1
+        }
+      ],
+      "fixtures": [
+        {
+          "id": "bf01",
+          "type": "stair",
+          "label": "Stair A",
+          "x": 0.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "bf02",
+          "type": "lift",
+          "label": "Lift A",
+          "x": 3.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "bf03",
+          "type": "lift",
+          "label": "Lift B",
+          "x": 3.3,
+          "y": 3.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "bf04",
+          "type": "stair",
+          "label": "Stair B",
+          "x": 45.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "bf05",
+          "type": "lift",
+          "label": "Service lift",
+          "x": 42.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 3.4,
+          "rotation": 0
+        },
+        {
+          "id": "bf06",
+          "type": "bed",
+          "label": "401 King bed",
+          "x": 9,
+          "y": 2,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "bf07",
+          "type": "desk",
+          "label": "401 Work desk",
+          "x": 12,
+          "y": 6,
+          "width": 1.8,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "bf08",
+          "type": "chair",
+          "label": "401 Chair",
+          "x": 12.5,
+          "y": 7,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "bf09",
+          "type": "cabinet",
+          "label": "401 Wardrobe",
+          "x": 16,
+          "y": 6,
+          "width": 0.6,
+          "height": 2,
+          "rotation": 90
+        },
+        {
+          "id": "bf10",
+          "type": "shower",
+          "label": "401 Shower",
+          "x": 16,
+          "y": 0.5,
+          "width": 1.1,
+          "height": 1.1,
+          "rotation": 0
+        },
+        {
+          "id": "bf11",
+          "type": "toilet",
+          "label": "401 WC",
+          "x": 16,
+          "y": 2,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "bf12",
+          "type": "sink",
+          "label": "401 Basin",
+          "x": 17,
+          "y": 3.7,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "bf13",
+          "type": "bed",
+          "label": "402 Twin A",
+          "x": 20,
+          "y": 2,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "bf14",
+          "type": "bed",
+          "label": "402 Twin B",
+          "x": 23,
+          "y": 2,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "bf15",
+          "type": "desk",
+          "label": "402 Work desk",
+          "x": 24,
+          "y": 6,
+          "width": 1.8,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "bf16",
+          "type": "chair",
+          "label": "402 Chair",
+          "x": 24.5,
+          "y": 7,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "bf17",
+          "type": "cabinet",
+          "label": "402 Wardrobe",
+          "x": 28,
+          "y": 6,
+          "width": 0.6,
+          "height": 2,
+          "rotation": 90
+        },
+        {
+          "id": "bf18",
+          "type": "shower",
+          "label": "402 Shower",
+          "x": 28,
+          "y": 0.5,
+          "width": 1.1,
+          "height": 1.1,
+          "rotation": 0
+        },
+        {
+          "id": "bf19",
+          "type": "toilet",
+          "label": "402 WC",
+          "x": 28,
+          "y": 2,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "bf20",
+          "type": "sink",
+          "label": "402 Basin",
+          "x": 29,
+          "y": 3.7,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "bf21",
+          "type": "bed",
+          "label": "403 King bed",
+          "x": 33,
+          "y": 2,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "bf22",
+          "type": "desk",
+          "label": "403 Work desk",
+          "x": 36,
+          "y": 6,
+          "width": 1.8,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "bf23",
+          "type": "chair",
+          "label": "403 Chair",
+          "x": 36.5,
+          "y": 7,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "bf24",
+          "type": "cabinet",
+          "label": "403 Wardrobe",
+          "x": 40,
+          "y": 6,
+          "width": 0.6,
+          "height": 2,
+          "rotation": 90
+        },
+        {
+          "id": "bf25",
+          "type": "shower",
+          "label": "403 Shower",
+          "x": 40,
+          "y": 0.5,
+          "width": 1.1,
+          "height": 1.1,
+          "rotation": 0
+        },
+        {
+          "id": "bf26",
+          "type": "toilet",
+          "label": "403 WC",
+          "x": 40,
+          "y": 2,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "bf27",
+          "type": "sink",
+          "label": "403 Basin",
+          "x": 41,
+          "y": 3.7,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "bf28",
+          "type": "bed",
+          "label": "404 Twin A",
+          "x": 8,
+          "y": 20,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "bf29",
+          "type": "bed",
+          "label": "404 Twin B",
+          "x": 11,
+          "y": 20,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "bf30",
+          "type": "desk",
+          "label": "404 Desk",
+          "x": 9,
+          "y": 16,
+          "width": 1.8,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "bf31",
+          "type": "chair",
+          "label": "404 Chair",
+          "x": 9.5,
+          "y": 17,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "bf32",
+          "type": "cabinet",
+          "label": "404 Wardrobe",
+          "x": 16,
+          "y": 14,
+          "width": 0.6,
+          "height": 3,
+          "rotation": 90
+        },
+        {
+          "id": "bf33",
+          "type": "shower",
+          "label": "404 Shower",
+          "x": 16,
+          "y": 27,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "bf34",
+          "type": "toilet",
+          "label": "404 WC",
+          "x": 15,
+          "y": 23,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "bf35",
+          "type": "sink",
+          "label": "404 Basin",
+          "x": 16.5,
+          "y": 25,
+          "width": 0.7,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "bf36",
+          "type": "bed",
+          "label": "405 King bed",
+          "x": 21,
+          "y": 20,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "bf37",
+          "type": "desk",
+          "label": "405 Desk",
+          "x": 21,
+          "y": 16,
+          "width": 1.8,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "bf38",
+          "type": "chair",
+          "label": "405 Chair",
+          "x": 21.5,
+          "y": 17,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "bf39",
+          "type": "cabinet",
+          "label": "405 Wardrobe",
+          "x": 28,
+          "y": 14,
+          "width": 0.6,
+          "height": 3,
+          "rotation": 90
+        },
+        {
+          "id": "bf40",
+          "type": "shower",
+          "label": "405 Shower",
+          "x": 28,
+          "y": 27,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "bf41",
+          "type": "toilet",
+          "label": "405 WC",
+          "x": 27,
+          "y": 23,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "bf42",
+          "type": "sink",
+          "label": "405 Basin",
+          "x": 28.5,
+          "y": 25,
+          "width": 0.7,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "bf43",
+          "type": "bed",
+          "label": "406 Twin A",
+          "x": 32,
+          "y": 20,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "bf44",
+          "type": "bed",
+          "label": "406 Twin B",
+          "x": 35,
+          "y": 20,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "bf45",
+          "type": "desk",
+          "label": "406 Desk",
+          "x": 33,
+          "y": 16,
+          "width": 1.8,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "bf46",
+          "type": "chair",
+          "label": "406 Chair",
+          "x": 33.5,
+          "y": 17,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "bf47",
+          "type": "cabinet",
+          "label": "406 Wardrobe",
+          "x": 40,
+          "y": 14,
+          "width": 0.6,
+          "height": 3,
+          "rotation": 90
+        },
+        {
+          "id": "bf48",
+          "type": "shower",
+          "label": "406 Shower",
+          "x": 40,
+          "y": 27,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "bf49",
+          "type": "toilet",
+          "label": "406 WC",
+          "x": 39,
+          "y": 23,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "bf50",
+          "type": "sink",
+          "label": "406 Basin",
+          "x": 40.5,
+          "y": 25,
+          "width": 0.7,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "bf51",
+          "type": "rack",
+          "label": "Linen shelves",
+          "x": 7,
+          "y": 34,
+          "width": 6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "bf52",
+          "type": "sink",
+          "label": "Housekeeping sink",
+          "x": 20,
+          "y": 34,
+          "width": 1,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "bf53",
+          "type": "toilet",
+          "label": "Staff WC",
+          "x": 25,
+          "y": 34,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "bf54",
+          "type": "sink",
+          "label": "Staff basin",
+          "x": 27,
+          "y": 34,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "bf55",
+          "type": "rack",
+          "label": "Service equipment",
+          "x": 35,
+          "y": 34,
+          "width": 5,
+          "height": 0.8,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "f5",
+      "name": "Level 5 · Family and Residential Suites",
+      "use": "mixed",
+      "elevation": 20,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "h01",
+          "kind": "room",
+          "label": "Guest stair A",
+          "x": 0,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h02",
+          "kind": "room",
+          "label": "Passenger lift A",
+          "x": 3,
+          "y": 0,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h03",
+          "kind": "room",
+          "label": "Passenger lift B",
+          "x": 3,
+          "y": 3,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h04",
+          "kind": "room",
+          "label": "Guest core lobby",
+          "x": 3,
+          "y": 6,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h05",
+          "kind": "room",
+          "label": "Guest circulation",
+          "x": 0,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h06",
+          "kind": "room",
+          "label": "Service stair B",
+          "x": 45,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h07",
+          "kind": "room",
+          "label": "Service lift",
+          "x": 42,
+          "y": 0,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h08",
+          "kind": "room",
+          "label": "Service core lobby",
+          "x": 42,
+          "y": 4,
+          "width": 3,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h09",
+          "kind": "room",
+          "label": "Staff circulation",
+          "x": 42,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h10",
+          "kind": "room",
+          "label": "Guest gallery",
+          "x": 6,
+          "y": 10,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h11",
+          "kind": "room",
+          "label": "Housekeeping corridor",
+          "x": 6,
+          "y": 30,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h12",
+          "kind": "room",
+          "label": "501 Family king",
+          "x": 6,
+          "y": 0,
+          "width": 9,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h13",
+          "kind": "room",
+          "label": "501 Ensuite",
+          "x": 15,
+          "y": 0,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h14",
+          "kind": "room",
+          "label": "501 Dressing",
+          "x": 15,
+          "y": 5,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h15",
+          "kind": "room",
+          "label": "502 Family twin",
+          "x": 18,
+          "y": 0,
+          "width": 9,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h16",
+          "kind": "room",
+          "label": "502 Ensuite",
+          "x": 27,
+          "y": 0,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h17",
+          "kind": "room",
+          "label": "502 Dressing",
+          "x": 27,
+          "y": 5,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h18",
+          "kind": "room",
+          "label": "503 Family king",
+          "x": 30,
+          "y": 0,
+          "width": 9,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h19",
+          "kind": "room",
+          "label": "503 Ensuite",
+          "x": 39,
+          "y": 0,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h20",
+          "kind": "room",
+          "label": "503 Dressing",
+          "x": 39,
+          "y": 5,
+          "width": 3,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h21",
+          "kind": "room",
+          "label": "504 Suite living and dining",
+          "x": 6,
+          "y": 13,
+          "width": 18,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h22",
+          "kind": "room",
+          "label": "504 King bedroom",
+          "x": 6,
+          "y": 21,
+          "width": 10,
+          "height": 9,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h23",
+          "kind": "room",
+          "label": "504 Dressing",
+          "x": 16,
+          "y": 21,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h24",
+          "kind": "room",
+          "label": "504 Ensuite",
+          "x": 16,
+          "y": 25,
+          "width": 8,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h25",
+          "kind": "room",
+          "label": "505 Suite living and dining",
+          "x": 24,
+          "y": 13,
+          "width": 18,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h26",
+          "kind": "room",
+          "label": "505 Twin bedroom",
+          "x": 24,
+          "y": 21,
+          "width": 10,
+          "height": 9,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h27",
+          "kind": "room",
+          "label": "505 Dressing",
+          "x": 34,
+          "y": 21,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h28",
+          "kind": "room",
+          "label": "505 Ensuite",
+          "x": 34,
+          "y": 25,
+          "width": 8,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h29",
+          "kind": "room",
+          "label": "Housekeeping and linen",
+          "x": 6,
+          "y": 33,
+          "width": 18,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "h30",
+          "kind": "room",
+          "label": "Staff WC and services",
+          "x": 24,
+          "y": 33,
+          "width": 18,
+          "height": 3,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "hd01",
+          "kind": "door",
+          "x": 2,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd02",
+          "kind": "opening",
+          "x": 3,
+          "y": 2,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hd03",
+          "kind": "opening",
+          "x": 3,
+          "y": 5,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hd04",
+          "kind": "opening",
+          "x": 4,
+          "y": 10,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd05",
+          "kind": "door",
+          "x": 46,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd06",
+          "kind": "opening",
+          "x": 43,
+          "y": 4,
+          "width": 1.4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd07",
+          "kind": "opening",
+          "x": 43,
+          "y": 10,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd08",
+          "kind": "opening",
+          "x": 6,
+          "y": 11,
+          "width": 1.8,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hd09",
+          "kind": "door",
+          "x": 42,
+          "y": 11,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hd10",
+          "kind": "door",
+          "x": 6,
+          "y": 31,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hd11",
+          "kind": "opening",
+          "x": 42,
+          "y": 31,
+          "width": 1.5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hd12",
+          "kind": "door",
+          "x": 8,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd13",
+          "kind": "door",
+          "x": 15,
+          "y": 3,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hd14",
+          "kind": "opening",
+          "x": 15,
+          "y": 7,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hd15",
+          "kind": "door",
+          "x": 20,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd16",
+          "kind": "door",
+          "x": 27,
+          "y": 3,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hd17",
+          "kind": "opening",
+          "x": 27,
+          "y": 7,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hd18",
+          "kind": "door",
+          "x": 32,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd19",
+          "kind": "door",
+          "x": 39,
+          "y": 3,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hd20",
+          "kind": "opening",
+          "x": 39,
+          "y": 7,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hd21",
+          "kind": "door",
+          "x": 9,
+          "y": 13,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd22",
+          "kind": "door",
+          "x": 12,
+          "y": 21,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd23",
+          "kind": "opening",
+          "x": 16,
+          "y": 23,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hd24",
+          "kind": "door",
+          "x": 19,
+          "y": 25,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd25",
+          "kind": "door",
+          "x": 27,
+          "y": 13,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd26",
+          "kind": "door",
+          "x": 30,
+          "y": 21,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd27",
+          "kind": "opening",
+          "x": 34,
+          "y": 23,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hd28",
+          "kind": "door",
+          "x": 37,
+          "y": 25,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd29",
+          "kind": "door",
+          "x": 11,
+          "y": 33,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hd30",
+          "kind": "door",
+          "x": 29,
+          "y": 33,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hw01",
+          "kind": "window",
+          "x": 8,
+          "y": 0,
+          "width": 5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hw02",
+          "kind": "window",
+          "x": 20,
+          "y": 0,
+          "width": 5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hw03",
+          "kind": "window",
+          "x": 32,
+          "y": 0,
+          "width": 5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "hw04",
+          "kind": "window",
+          "x": 0,
+          "y": 15,
+          "width": 5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hw05",
+          "kind": "window",
+          "x": 0,
+          "y": 23,
+          "width": 5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "hw06",
+          "kind": "window",
+          "x": 48,
+          "y": 15,
+          "width": 5,
+          "rotation": 90,
+          "swing": 1
+        }
+      ],
+      "fixtures": [
+        {
+          "id": "hf01",
+          "type": "stair",
+          "label": "Stair A",
+          "x": 0.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "hf02",
+          "type": "lift",
+          "label": "Lift A",
+          "x": 3.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "hf03",
+          "type": "lift",
+          "label": "Lift B",
+          "x": 3.3,
+          "y": 3.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "hf04",
+          "type": "stair",
+          "label": "Stair B",
+          "x": 45.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "hf05",
+          "type": "lift",
+          "label": "Service lift",
+          "x": 42.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 3.4,
+          "rotation": 0
+        },
+        {
+          "id": "hf06",
+          "type": "bed",
+          "label": "501 King bed",
+          "x": 8,
+          "y": 2,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "hf07",
+          "type": "bed",
+          "label": "501 Single bed",
+          "x": 12,
+          "y": 2,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "hf08",
+          "type": "cabinet",
+          "label": "501 Wardrobe",
+          "x": 16,
+          "y": 6,
+          "width": 0.6,
+          "height": 2,
+          "rotation": 90
+        },
+        {
+          "id": "hf09",
+          "type": "shower",
+          "label": "501 Shower",
+          "x": 16,
+          "y": 0.5,
+          "width": 1.1,
+          "height": 1.1,
+          "rotation": 0
+        },
+        {
+          "id": "hf10",
+          "type": "toilet",
+          "label": "501 WC",
+          "x": 16,
+          "y": 2,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "hf11",
+          "type": "sink",
+          "label": "501 Basin",
+          "x": 17,
+          "y": 3.7,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "hf12",
+          "type": "bed",
+          "label": "502 Twin A",
+          "x": 20,
+          "y": 2,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "hf13",
+          "type": "bed",
+          "label": "502 Twin B",
+          "x": 23,
+          "y": 2,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "hf14",
+          "type": "bed",
+          "label": "502 Single bed",
+          "x": 20,
+          "y": 6,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "hf15",
+          "type": "cabinet",
+          "label": "502 Wardrobe",
+          "x": 28,
+          "y": 6,
+          "width": 0.6,
+          "height": 2,
+          "rotation": 90
+        },
+        {
+          "id": "hf16",
+          "type": "shower",
+          "label": "502 Shower",
+          "x": 28,
+          "y": 0.5,
+          "width": 1.1,
+          "height": 1.1,
+          "rotation": 0
+        },
+        {
+          "id": "hf17",
+          "type": "toilet",
+          "label": "502 WC",
+          "x": 28,
+          "y": 2,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "hf18",
+          "type": "sink",
+          "label": "502 Basin",
+          "x": 29,
+          "y": 3.7,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "hf19",
+          "type": "bed",
+          "label": "503 King bed",
+          "x": 32,
+          "y": 2,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "hf20",
+          "type": "bed",
+          "label": "503 Single bed",
+          "x": 36,
+          "y": 2,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "hf21",
+          "type": "cabinet",
+          "label": "503 Wardrobe",
+          "x": 40,
+          "y": 6,
+          "width": 0.6,
+          "height": 2,
+          "rotation": 90
+        },
+        {
+          "id": "hf22",
+          "type": "shower",
+          "label": "503 Shower",
+          "x": 40,
+          "y": 0.5,
+          "width": 1.1,
+          "height": 1.1,
+          "rotation": 0
+        },
+        {
+          "id": "hf23",
+          "type": "toilet",
+          "label": "503 WC",
+          "x": 40,
+          "y": 2,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "hf24",
+          "type": "sink",
+          "label": "503 Basin",
+          "x": 41,
+          "y": 3.7,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "hf25",
+          "type": "sofa",
+          "label": "504 Sofa",
+          "x": 8,
+          "y": 16,
+          "width": 3,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "hf26",
+          "type": "table",
+          "label": "504 Coffee table",
+          "x": 9,
+          "y": 18,
+          "width": 1.4,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "hf27",
+          "type": "table",
+          "label": "504 Dining table",
+          "x": 17,
+          "y": 16,
+          "width": 2.4,
+          "height": 1,
+          "rotation": 0
+        },
+        {
+          "id": "hf28",
+          "type": "chair",
+          "label": "504 Dining seat",
+          "x": 17.5,
+          "y": 15,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "hf29",
+          "type": "chair",
+          "label": "504 Dining seat",
+          "x": 17.5,
+          "y": 17.6,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "hf30",
+          "type": "kitchen",
+          "label": "504 Kitchenette",
+          "x": 21,
+          "y": 14,
+          "width": 2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "hf31",
+          "type": "bed",
+          "label": "504 King bed",
+          "x": 10,
+          "y": 24,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "hf32",
+          "type": "cabinet",
+          "label": "504 Wardrobe",
+          "x": 17,
+          "y": 21.5,
+          "width": 4,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "hf33",
+          "type": "shower",
+          "label": "504 Shower",
+          "x": 21,
+          "y": 27,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "hf34",
+          "type": "toilet",
+          "label": "504 WC",
+          "x": 17,
+          "y": 27,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "hf35",
+          "type": "sink",
+          "label": "504 Vanity",
+          "x": 19,
+          "y": 29,
+          "width": 1.4,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "hf36",
+          "type": "sofa",
+          "label": "505 Sofa",
+          "x": 26,
+          "y": 16,
+          "width": 3,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "hf37",
+          "type": "table",
+          "label": "505 Coffee table",
+          "x": 27,
+          "y": 18,
+          "width": 1.4,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "hf38",
+          "type": "table",
+          "label": "505 Dining table",
+          "x": 35,
+          "y": 16,
+          "width": 2.4,
+          "height": 1,
+          "rotation": 0
+        },
+        {
+          "id": "hf39",
+          "type": "chair",
+          "label": "505 Dining seat",
+          "x": 35.5,
+          "y": 15,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "hf40",
+          "type": "chair",
+          "label": "505 Dining seat",
+          "x": 35.5,
+          "y": 17.6,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "hf41",
+          "type": "kitchen",
+          "label": "505 Kitchenette",
+          "x": 39,
+          "y": 14,
+          "width": 2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "hf42",
+          "type": "bed",
+          "label": "505 Twin A",
+          "x": 26,
+          "y": 24,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "hf43",
+          "type": "bed",
+          "label": "505 Twin B",
+          "x": 30,
+          "y": 24,
+          "width": 1.1,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "hf44",
+          "type": "cabinet",
+          "label": "505 Wardrobe",
+          "x": 35,
+          "y": 21.5,
+          "width": 4,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "hf45",
+          "type": "shower",
+          "label": "505 Shower",
+          "x": 39,
+          "y": 27,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "hf46",
+          "type": "toilet",
+          "label": "505 WC",
+          "x": 35,
+          "y": 27,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "hf47",
+          "type": "sink",
+          "label": "505 Vanity",
+          "x": 37,
+          "y": 29,
+          "width": 1.4,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "hf48",
+          "type": "rack",
+          "label": "Linen shelves",
+          "x": 7,
+          "y": 34,
+          "width": 6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "hf49",
+          "type": "sink",
+          "label": "Housekeeping sink",
+          "x": 20,
+          "y": 34,
+          "width": 1,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "hf50",
+          "type": "toilet",
+          "label": "Staff WC",
+          "x": 25,
+          "y": 34,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "hf51",
+          "type": "sink",
+          "label": "Staff basin",
+          "x": 27,
+          "y": 34,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "hf52",
+          "type": "rack",
+          "label": "Service equipment",
+          "x": 35,
+          "y": 34,
+          "width": 5,
+          "height": 0.8,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "f6",
+      "name": "Level 6 · Premium Suites",
+      "use": "mixed",
+      "elevation": 24,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "p01",
+          "kind": "room",
+          "label": "Guest stair A",
+          "x": 0,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p02",
+          "kind": "room",
+          "label": "Passenger lift A",
+          "x": 3,
+          "y": 0,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p03",
+          "kind": "room",
+          "label": "Passenger lift B",
+          "x": 3,
+          "y": 3,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p04",
+          "kind": "room",
+          "label": "Guest core lobby",
+          "x": 3,
+          "y": 6,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p05",
+          "kind": "room",
+          "label": "Guest circulation",
+          "x": 0,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p06",
+          "kind": "room",
+          "label": "Service stair B",
+          "x": 45,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p07",
+          "kind": "room",
+          "label": "Service lift",
+          "x": 42,
+          "y": 0,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p08",
+          "kind": "room",
+          "label": "Service core lobby",
+          "x": 42,
+          "y": 4,
+          "width": 3,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p09",
+          "kind": "room",
+          "label": "Staff circulation",
+          "x": 42,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p10",
+          "kind": "room",
+          "label": "Executive gallery",
+          "x": 6,
+          "y": 10,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p11",
+          "kind": "room",
+          "label": "Housekeeping corridor",
+          "x": 6,
+          "y": 30,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p12",
+          "kind": "room",
+          "label": "Executive lounge",
+          "x": 6,
+          "y": 0,
+          "width": 24,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p13",
+          "kind": "room",
+          "label": "Lounge pantry",
+          "x": 30,
+          "y": 0,
+          "width": 6,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p14",
+          "kind": "room",
+          "label": "Guest toilets",
+          "x": 36,
+          "y": 0,
+          "width": 6,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p15",
+          "kind": "room",
+          "label": "601 Premium living room",
+          "x": 6,
+          "y": 13,
+          "width": 18,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p16",
+          "kind": "room",
+          "label": "601 King bedroom",
+          "x": 6,
+          "y": 21,
+          "width": 10,
+          "height": 9,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p17",
+          "kind": "room",
+          "label": "601 Dressing room",
+          "x": 16,
+          "y": 21,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p18",
+          "kind": "room",
+          "label": "601 Ensuite",
+          "x": 16,
+          "y": 25,
+          "width": 8,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p19",
+          "kind": "room",
+          "label": "602 Premium living room",
+          "x": 24,
+          "y": 13,
+          "width": 18,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p20",
+          "kind": "room",
+          "label": "602 King bedroom",
+          "x": 24,
+          "y": 21,
+          "width": 10,
+          "height": 9,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p21",
+          "kind": "room",
+          "label": "602 Dressing room",
+          "x": 34,
+          "y": 21,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p22",
+          "kind": "room",
+          "label": "602 Ensuite",
+          "x": 34,
+          "y": 25,
+          "width": 8,
+          "height": 5,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p23",
+          "kind": "room",
+          "label": "Housekeeping and linen",
+          "x": 6,
+          "y": 33,
+          "width": 18,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "p24",
+          "kind": "room",
+          "label": "Staff WC and services",
+          "x": 24,
+          "y": 33,
+          "width": 18,
+          "height": 3,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "pd01",
+          "kind": "door",
+          "x": 2,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pd02",
+          "kind": "opening",
+          "x": 3,
+          "y": 2,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "pd03",
+          "kind": "opening",
+          "x": 3,
+          "y": 5,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "pd04",
+          "kind": "opening",
+          "x": 4,
+          "y": 10,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pd05",
+          "kind": "door",
+          "x": 46,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pd06",
+          "kind": "opening",
+          "x": 43,
+          "y": 4,
+          "width": 1.4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pd07",
+          "kind": "opening",
+          "x": 43,
+          "y": 10,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pd08",
+          "kind": "opening",
+          "x": 6,
+          "y": 11,
+          "width": 1.8,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "pd09",
+          "kind": "door",
+          "x": 42,
+          "y": 11,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "pd10",
+          "kind": "door",
+          "x": 6,
+          "y": 31,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "pd11",
+          "kind": "opening",
+          "x": 42,
+          "y": 31,
+          "width": 1.5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "pd12",
+          "kind": "door",
+          "x": 12,
+          "y": 10,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pd13",
+          "kind": "door",
+          "x": 30,
+          "y": 6,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "pd14",
+          "kind": "door",
+          "x": 42,
+          "y": 7,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "pd15",
+          "kind": "door",
+          "x": 38,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pd16",
+          "kind": "door",
+          "x": 9,
+          "y": 13,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pd17",
+          "kind": "door",
+          "x": 12,
+          "y": 21,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pd18",
+          "kind": "opening",
+          "x": 16,
+          "y": 23,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "pd19",
+          "kind": "door",
+          "x": 19,
+          "y": 25,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pd20",
+          "kind": "door",
+          "x": 27,
+          "y": 13,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pd21",
+          "kind": "door",
+          "x": 30,
+          "y": 21,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pd22",
+          "kind": "opening",
+          "x": 34,
+          "y": 23,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "pd23",
+          "kind": "door",
+          "x": 37,
+          "y": 25,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pd24",
+          "kind": "door",
+          "x": 11,
+          "y": 33,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pd25",
+          "kind": "door",
+          "x": 29,
+          "y": 33,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pw01",
+          "kind": "window",
+          "x": 8,
+          "y": 0,
+          "width": 8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pw02",
+          "kind": "window",
+          "x": 19,
+          "y": 0,
+          "width": 8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "pw03",
+          "kind": "window",
+          "x": 0,
+          "y": 15,
+          "width": 5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "pw04",
+          "kind": "window",
+          "x": 0,
+          "y": 23,
+          "width": 5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "pw05",
+          "kind": "window",
+          "x": 48,
+          "y": 15,
+          "width": 5,
+          "rotation": 90,
+          "swing": 1
+        }
+      ],
+      "fixtures": [
+        {
+          "id": "pf01",
+          "type": "stair",
+          "label": "Stair A",
+          "x": 0.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "pf02",
+          "type": "lift",
+          "label": "Lift A",
+          "x": 3.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "pf03",
+          "type": "lift",
+          "label": "Lift B",
+          "x": 3.3,
+          "y": 3.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "pf04",
+          "type": "stair",
+          "label": "Stair B",
+          "x": 45.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "pf05",
+          "type": "lift",
+          "label": "Service lift",
+          "x": 42.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 3.4,
+          "rotation": 0
+        },
+        {
+          "id": "pf06",
+          "type": "sofa",
+          "label": "Executive sofa A",
+          "x": 9,
+          "y": 2,
+          "width": 3,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "pf07",
+          "type": "sofa",
+          "label": "Executive sofa B",
+          "x": 9,
+          "y": 6,
+          "width": 3,
+          "height": 0.9,
+          "rotation": 180
+        },
+        {
+          "id": "pf08",
+          "type": "table",
+          "label": "Lounge table",
+          "x": 10,
+          "y": 4,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "pf09",
+          "type": "table",
+          "label": "Executive dining",
+          "x": 20,
+          "y": 3,
+          "width": 4,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "pf10",
+          "type": "chair",
+          "label": "Dining seat",
+          "x": 20.5,
+          "y": 2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "pf11",
+          "type": "chair",
+          "label": "Dining seat",
+          "x": 22.5,
+          "y": 2,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "pf12",
+          "type": "chair",
+          "label": "Dining seat",
+          "x": 20.5,
+          "y": 4.8,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "pf13",
+          "type": "chair",
+          "label": "Dining seat",
+          "x": 22.5,
+          "y": 4.8,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 180
+        },
+        {
+          "id": "pf14",
+          "type": "counter",
+          "label": "Executive buffet",
+          "x": 26,
+          "y": 6,
+          "width": 3,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "pf15",
+          "type": "kitchen",
+          "label": "Lounge pantry",
+          "x": 31,
+          "y": 1,
+          "width": 4,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "pf16",
+          "type": "sink",
+          "label": "Pantry sink",
+          "x": 34,
+          "y": 4,
+          "width": 0.8,
+          "height": 0.6,
+          "rotation": 90
+        },
+        {
+          "id": "pf17",
+          "type": "toilet",
+          "label": "Accessible WC",
+          "x": 37,
+          "y": 1,
+          "width": 0.8,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "pf18",
+          "type": "sink",
+          "label": "Guest basin",
+          "x": 40,
+          "y": 1,
+          "width": 0.7,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "pf19",
+          "type": "sofa",
+          "label": "601 Sofa",
+          "x": 8,
+          "y": 16,
+          "width": 3,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "pf20",
+          "type": "table",
+          "label": "601 Coffee table",
+          "x": 9,
+          "y": 18,
+          "width": 1.4,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "pf21",
+          "type": "table",
+          "label": "601 Dining table",
+          "x": 17,
+          "y": 16,
+          "width": 2.4,
+          "height": 1,
+          "rotation": 0
+        },
+        {
+          "id": "pf22",
+          "type": "chair",
+          "label": "601 Dining seat",
+          "x": 17.5,
+          "y": 15,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "pf23",
+          "type": "chair",
+          "label": "601 Dining seat",
+          "x": 17.5,
+          "y": 17.6,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "pf24",
+          "type": "desk",
+          "label": "601 Writing desk",
+          "x": 21,
+          "y": 19,
+          "width": 1.8,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "pf25",
+          "type": "chair",
+          "label": "601 Desk chair",
+          "x": 21.5,
+          "y": 18,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "pf26",
+          "type": "bed",
+          "label": "601 King bed",
+          "x": 10,
+          "y": 24,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "pf27",
+          "type": "cabinet",
+          "label": "601 Bedside A",
+          "x": 9,
+          "y": 24,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "pf28",
+          "type": "cabinet",
+          "label": "601 Bedside B",
+          "x": 12.3,
+          "y": 24,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "pf29",
+          "type": "cabinet",
+          "label": "601 Wardrobe",
+          "x": 17,
+          "y": 21.5,
+          "width": 4,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "pf30",
+          "type": "shower",
+          "label": "601 Shower",
+          "x": 21,
+          "y": 27,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "pf31",
+          "type": "toilet",
+          "label": "601 WC",
+          "x": 17,
+          "y": 27,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "pf32",
+          "type": "sink",
+          "label": "601 Double vanity",
+          "x": 19,
+          "y": 29,
+          "width": 1.8,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "pf33",
+          "type": "sofa",
+          "label": "602 Sofa",
+          "x": 26,
+          "y": 16,
+          "width": 3,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "pf34",
+          "type": "table",
+          "label": "602 Coffee table",
+          "x": 27,
+          "y": 18,
+          "width": 1.4,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "pf35",
+          "type": "table",
+          "label": "602 Dining table",
+          "x": 35,
+          "y": 16,
+          "width": 2.4,
+          "height": 1,
+          "rotation": 0
+        },
+        {
+          "id": "pf36",
+          "type": "chair",
+          "label": "602 Dining seat",
+          "x": 35.5,
+          "y": 15,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "pf37",
+          "type": "chair",
+          "label": "602 Dining seat",
+          "x": 35.5,
+          "y": 17.6,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "pf38",
+          "type": "desk",
+          "label": "602 Writing desk",
+          "x": 39,
+          "y": 19,
+          "width": 1.8,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "pf39",
+          "type": "chair",
+          "label": "602 Desk chair",
+          "x": 39.5,
+          "y": 18,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "pf40",
+          "type": "bed",
+          "label": "602 King bed",
+          "x": 28,
+          "y": 24,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "pf41",
+          "type": "cabinet",
+          "label": "602 Bedside A",
+          "x": 27,
+          "y": 24,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "pf42",
+          "type": "cabinet",
+          "label": "602 Bedside B",
+          "x": 30.3,
+          "y": 24,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "pf43",
+          "type": "cabinet",
+          "label": "602 Wardrobe",
+          "x": 35,
+          "y": 21.5,
+          "width": 4,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "pf44",
+          "type": "shower",
+          "label": "602 Shower",
+          "x": 39,
+          "y": 27,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "pf45",
+          "type": "toilet",
+          "label": "602 WC",
+          "x": 35,
+          "y": 27,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "pf46",
+          "type": "sink",
+          "label": "602 Double vanity",
+          "x": 37,
+          "y": 29,
+          "width": 1.8,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "pf47",
+          "type": "rack",
+          "label": "Linen shelves",
+          "x": 7,
+          "y": 34,
+          "width": 6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "pf48",
+          "type": "sink",
+          "label": "Housekeeping sink",
+          "x": 20,
+          "y": 34,
+          "width": 1,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "pf49",
+          "type": "toilet",
+          "label": "Staff WC",
+          "x": 25,
+          "y": 34,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "pf50",
+          "type": "sink",
+          "label": "Staff basin",
+          "x": 27,
+          "y": 34,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "pf51",
+          "type": "rack",
+          "label": "Service equipment",
+          "x": 35,
+          "y": 34,
+          "width": 5,
+          "height": 0.8,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "f7",
+      "name": "Level 7 · Rooftop Dining and Wellness",
+      "use": "mixed",
+      "elevation": 28,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "r01",
+          "kind": "room",
+          "label": "Guest stair A",
+          "x": 0,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r02",
+          "kind": "room",
+          "label": "Passenger lift A",
+          "x": 3,
+          "y": 0,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r03",
+          "kind": "room",
+          "label": "Passenger lift B",
+          "x": 3,
+          "y": 3,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r04",
+          "kind": "room",
+          "label": "Guest core lobby",
+          "x": 3,
+          "y": 6,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r05",
+          "kind": "room",
+          "label": "Guest circulation",
+          "x": 0,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r06",
+          "kind": "room",
+          "label": "Service stair B",
+          "x": 45,
+          "y": 0,
+          "width": 3,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r07",
+          "kind": "room",
+          "label": "Service lift",
+          "x": 42,
+          "y": 0,
+          "width": 3,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r08",
+          "kind": "room",
+          "label": "Service core lobby",
+          "x": 42,
+          "y": 4,
+          "width": 3,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r09",
+          "kind": "room",
+          "label": "Staff circulation",
+          "x": 42,
+          "y": 10,
+          "width": 6,
+          "height": 26,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r10",
+          "kind": "room",
+          "label": "Rooftop arrival gallery",
+          "x": 6,
+          "y": 10,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r11",
+          "kind": "room",
+          "label": "Service corridor",
+          "x": 6,
+          "y": 30,
+          "width": 36,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r12",
+          "kind": "room",
+          "label": "Rooftop restaurant",
+          "x": 6,
+          "y": 0,
+          "width": 20,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r13",
+          "kind": "room",
+          "label": "Sky bar",
+          "x": 26,
+          "y": 0,
+          "width": 10,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r14",
+          "kind": "room",
+          "label": "Guest toilets",
+          "x": 36,
+          "y": 0,
+          "width": 6,
+          "height": 10,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r15",
+          "kind": "landscape",
+          "label": "Landscaped roof terrace",
+          "x": 6,
+          "y": 13,
+          "width": 18,
+          "height": 17,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r16",
+          "kind": "room",
+          "label": "Gym",
+          "x": 24,
+          "y": 13,
+          "width": 10,
+          "height": 11,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r17",
+          "kind": "room",
+          "label": "Changing room A",
+          "x": 24,
+          "y": 24,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r18",
+          "kind": "room",
+          "label": "Changing room B",
+          "x": 29,
+          "y": 24,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r19",
+          "kind": "room",
+          "label": "Restaurant kitchen",
+          "x": 34,
+          "y": 13,
+          "width": 8,
+          "height": 11,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r20",
+          "kind": "room",
+          "label": "Wash and cold store",
+          "x": 34,
+          "y": 24,
+          "width": 8,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r21",
+          "kind": "room",
+          "label": "Screened plant room",
+          "x": 6,
+          "y": 33,
+          "width": 18,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r22",
+          "kind": "room",
+          "label": "Roof maintenance store",
+          "x": 24,
+          "y": 33,
+          "width": 8,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r23",
+          "kind": "room",
+          "label": "Staff facilities",
+          "x": 32,
+          "y": 33,
+          "width": 10,
+          "height": 3,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "rd01",
+          "kind": "door",
+          "x": 2,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd02",
+          "kind": "opening",
+          "x": 3,
+          "y": 2,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "rd03",
+          "kind": "opening",
+          "x": 3,
+          "y": 5,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "rd04",
+          "kind": "opening",
+          "x": 4,
+          "y": 10,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd05",
+          "kind": "door",
+          "x": 46,
+          "y": 8,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd06",
+          "kind": "opening",
+          "x": 43,
+          "y": 4,
+          "width": 1.4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd07",
+          "kind": "opening",
+          "x": 43,
+          "y": 10,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd08",
+          "kind": "opening",
+          "x": 6,
+          "y": 11,
+          "width": 1.8,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "rd09",
+          "kind": "door",
+          "x": 42,
+          "y": 11,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "rd10",
+          "kind": "door",
+          "x": 6,
+          "y": 31,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "rd11",
+          "kind": "opening",
+          "x": 42,
+          "y": 31,
+          "width": 1.5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "rd12",
+          "kind": "door",
+          "x": 12,
+          "y": 10,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd13",
+          "kind": "opening",
+          "x": 26,
+          "y": 7,
+          "width": 1.8,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "rd14",
+          "kind": "door",
+          "x": 30,
+          "y": 10,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd15",
+          "kind": "door",
+          "x": 38,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd16",
+          "kind": "door",
+          "x": 12,
+          "y": 13,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd17",
+          "kind": "door",
+          "x": 27,
+          "y": 13,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd18",
+          "kind": "door",
+          "x": 26,
+          "y": 24,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd19",
+          "kind": "door",
+          "x": 31,
+          "y": 24,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd20",
+          "kind": "door",
+          "x": 42,
+          "y": 18,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "rd21",
+          "kind": "door",
+          "x": 37,
+          "y": 24,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd22",
+          "kind": "door",
+          "x": 38,
+          "y": 30,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd23",
+          "kind": "door",
+          "x": 11,
+          "y": 33,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd24",
+          "kind": "door",
+          "x": 27,
+          "y": 33,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rd25",
+          "kind": "door",
+          "x": 35,
+          "y": 33,
+          "width": 1,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rw01",
+          "kind": "window",
+          "x": 8,
+          "y": 0,
+          "width": 7,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rw02",
+          "kind": "window",
+          "x": 17,
+          "y": 0,
+          "width": 7,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rw03",
+          "kind": "window",
+          "x": 28,
+          "y": 0,
+          "width": 6,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "rw04",
+          "kind": "window",
+          "x": 48,
+          "y": 15,
+          "width": 6,
+          "rotation": 90,
+          "swing": 1
+        }
+      ],
+      "fixtures": [
+        {
+          "id": "rf01",
+          "type": "stair",
+          "label": "Stair A",
+          "x": 0.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "rf02",
+          "type": "lift",
+          "label": "Lift A",
+          "x": 3.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "rf03",
+          "type": "lift",
+          "label": "Lift B",
+          "x": 3.3,
+          "y": 3.3,
+          "width": 2.4,
+          "height": 2.4,
+          "rotation": 0
+        },
+        {
+          "id": "rf04",
+          "type": "stair",
+          "label": "Stair B",
+          "x": 45.4,
+          "y": 0.5,
+          "width": 2.2,
+          "height": 6.8,
+          "rotation": 0
+        },
+        {
+          "id": "rf05",
+          "type": "lift",
+          "label": "Service lift",
+          "x": 42.3,
+          "y": 0.3,
+          "width": 2.4,
+          "height": 3.4,
+          "rotation": 0
+        },
+        {
+          "id": "rf06",
+          "type": "table",
+          "label": "Restaurant table 1",
+          "x": 9,
+          "y": 3,
+          "width": 1.4,
+          "height": 1.4,
+          "rotation": 0
+        },
+        {
+          "id": "rf07",
+          "type": "chair",
+          "label": "Dining seat",
+          "x": 9.4,
+          "y": 2,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "rf08",
+          "type": "chair",
+          "label": "Dining seat",
+          "x": 9.4,
+          "y": 5,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "rf09",
+          "type": "table",
+          "label": "Restaurant table 2",
+          "x": 15,
+          "y": 3,
+          "width": 1.4,
+          "height": 1.4,
+          "rotation": 0
+        },
+        {
+          "id": "rf10",
+          "type": "chair",
+          "label": "Dining seat",
+          "x": 15.4,
+          "y": 2,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "rf11",
+          "type": "chair",
+          "label": "Dining seat",
+          "x": 15.4,
+          "y": 5,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "rf12",
+          "type": "table",
+          "label": "Restaurant table 3",
+          "x": 21,
+          "y": 3,
+          "width": 1.4,
+          "height": 1.4,
+          "rotation": 0
+        },
+        {
+          "id": "rf13",
+          "type": "chair",
+          "label": "Dining seat",
+          "x": 21.4,
+          "y": 2,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "rf14",
+          "type": "chair",
+          "label": "Dining seat",
+          "x": 21.4,
+          "y": 5,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "rf15",
+          "type": "counter",
+          "label": "Host stand",
+          "x": 19,
+          "y": 8,
+          "width": 1.8,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "rf16",
+          "type": "counter",
+          "label": "Sky bar counter",
+          "x": 28,
+          "y": 3,
+          "width": 6,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "rf17",
+          "type": "chair",
+          "label": "Bar stool",
+          "x": 29,
+          "y": 4.5,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "rf18",
+          "type": "chair",
+          "label": "Bar stool",
+          "x": 31,
+          "y": 4.5,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "rf19",
+          "type": "chair",
+          "label": "Bar stool",
+          "x": 33,
+          "y": 4.5,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "rf20",
+          "type": "sink",
+          "label": "Bar sink",
+          "x": 33,
+          "y": 1,
+          "width": 0.8,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "rf21",
+          "type": "toilet",
+          "label": "Accessible WC",
+          "x": 37,
+          "y": 1,
+          "width": 0.8,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "rf22",
+          "type": "sink",
+          "label": "Guest basin",
+          "x": 40,
+          "y": 1,
+          "width": 0.7,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "rf23",
+          "type": "plant",
+          "label": "Terrace planting",
+          "x": 7,
+          "y": 15,
+          "width": 2,
+          "height": 5,
+          "rotation": 0
+        },
+        {
+          "id": "rf24",
+          "type": "plant",
+          "label": "Terrace planting",
+          "x": 20,
+          "y": 22,
+          "width": 2,
+          "height": 6,
+          "rotation": 0
+        },
+        {
+          "id": "rf25",
+          "type": "sofa",
+          "label": "Outdoor sofa",
+          "x": 10,
+          "y": 24,
+          "width": 3,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "rf26",
+          "type": "table",
+          "label": "Outdoor coffee table",
+          "x": 11,
+          "y": 26,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "rf27",
+          "type": "table",
+          "label": "Terrace dining table",
+          "x": 14,
+          "y": 17,
+          "width": 2.4,
+          "height": 1,
+          "rotation": 0
+        },
+        {
+          "id": "rf28",
+          "type": "chair",
+          "label": "Terrace seat",
+          "x": 14.5,
+          "y": 16,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "rf29",
+          "type": "chair",
+          "label": "Terrace seat",
+          "x": 14.5,
+          "y": 18.6,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "rf30",
+          "type": "rack",
+          "label": "Gym equipment storage",
+          "x": 25,
+          "y": 14,
+          "width": 3,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "rf31",
+          "type": "table",
+          "label": "Exercise bench A",
+          "x": 26,
+          "y": 17,
+          "width": 0.7,
+          "height": 1.8,
+          "rotation": 90
+        },
+        {
+          "id": "rf32",
+          "type": "table",
+          "label": "Exercise bench B",
+          "x": 30,
+          "y": 17,
+          "width": 0.7,
+          "height": 1.8,
+          "rotation": 90
+        },
+        {
+          "id": "rf33",
+          "type": "cabinet",
+          "label": "Fitness equipment",
+          "x": 31,
+          "y": 21,
+          "width": 2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "rf34",
+          "type": "cabinet",
+          "label": "Changing lockers A",
+          "x": 24.5,
+          "y": 25,
+          "width": 0.6,
+          "height": 2,
+          "rotation": 90
+        },
+        {
+          "id": "rf35",
+          "type": "shower",
+          "label": "Changing shower A",
+          "x": 27,
+          "y": 28,
+          "width": 1.1,
+          "height": 1.1,
+          "rotation": 0
+        },
+        {
+          "id": "rf36",
+          "type": "sink",
+          "label": "Changing basin A",
+          "x": 26,
+          "y": 25,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "rf37",
+          "type": "cabinet",
+          "label": "Changing lockers B",
+          "x": 29.5,
+          "y": 25,
+          "width": 0.6,
+          "height": 2,
+          "rotation": 90
+        },
+        {
+          "id": "rf38",
+          "type": "shower",
+          "label": "Changing shower B",
+          "x": 32,
+          "y": 28,
+          "width": 1.1,
+          "height": 1.1,
+          "rotation": 0
+        },
+        {
+          "id": "rf39",
+          "type": "sink",
+          "label": "Changing basin B",
+          "x": 31,
+          "y": 25,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "rf40",
+          "type": "kitchen",
+          "label": "Restaurant cooking line",
+          "x": 35,
+          "y": 14,
+          "width": 6,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "rf41",
+          "type": "table",
+          "label": "Kitchen prep island",
+          "x": 36,
+          "y": 18,
+          "width": 3,
+          "height": 1.1,
+          "rotation": 0
+        },
+        {
+          "id": "rf42",
+          "type": "counter",
+          "label": "Kitchen pass",
+          "x": 35,
+          "y": 22,
+          "width": 5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "rf43",
+          "type": "sink",
+          "label": "Dishwash",
+          "x": 35,
+          "y": 25,
+          "width": 2,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "rf44",
+          "type": "cabinet",
+          "label": "Cold storage",
+          "x": 39,
+          "y": 25,
+          "width": 2,
+          "height": 1,
+          "rotation": 0
+        },
+        {
+          "id": "rf45",
+          "type": "rack",
+          "label": "Mechanical plant",
+          "x": 7,
+          "y": 34,
+          "width": 7,
+          "height": 1,
+          "rotation": 0
+        },
+        {
+          "id": "rf46",
+          "type": "rack",
+          "label": "Ventilation equipment",
+          "x": 17,
+          "y": 34,
+          "width": 5,
+          "height": 1,
+          "rotation": 0
+        },
+        {
+          "id": "rf47",
+          "type": "cabinet",
+          "label": "Maintenance supplies",
+          "x": 28,
+          "y": 34,
+          "width": 3,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "rf48",
+          "type": "cabinet",
+          "label": "Staff lockers",
+          "x": 33,
+          "y": 34,
+          "width": 3,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "rf49",
+          "type": "table",
+          "label": "Staff break table",
+          "x": 38,
+          "y": 34,
+          "width": 2,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "rf50",
+          "type": "chair",
+          "label": "Staff seat",
+          "x": 38.5,
+          "y": 35,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Full replacement review proposal preserving project ID; building schema enables eight separately editable floors, doors, glazing and fixtures.",
+    "The concept contains 211 non-overlapping space rectangles across eight floors. Furnishings and openings are separate editable collections.",
+    "North is assumed at the top. Public arrival is from the west; ground-level loading enters from the east. Site roads, setbacks and external vehicle manoeuvring are outside this footprint.",
+    "Two stairs, two passenger lifts and one service lift align on all eight floors. West circulation serves guests; east circulation and the southern service corridor serve staff. Controlled crossover doors connect the routes.",
+    "Passenger lift doorways open west into the guest stair/core zone, which connects through the lobby and west circulation. Detailed lift lobbies and stair enclosures require professional development.",
+    "South-facing hotel accommodation is buffered by the service band; its daylight concept relies on borrowed light from glazed side circulation. Direct exterior glazing to every bedroom would require revising the perimeter circulation strategy.",
+    "Proposed hotel mix: seven keys on level 3, six on level 4, five on level 5 and two premium suites on level 6. A higher room count has not been assumed.",
+    "Ballroom A and B have an editable large connecting opening representing a retractable acoustic divider; partition storage, event capacity and AV layouts remain conceptual.",
+    "Level 2 has a genuine open terrace; level 7 has a separately reserved landscaped terrace. Waterproofing, drainage, guards and wind protection remain unresolved.",
+    "THE ATRIUM is treated as the hotel name; no multi-floor void is assumed because no atrium size or location was provided.",
+    "Room rectangles describe planning extents with 0.18 m internal walls. The intended 0.28 m external envelope requires a separate detailed envelope model.",
+    "All floor heights are assumed at 4 m. Convention clear heights, rooftop plant loads, structural transfers, wet-service risers, acoustic separation and kitchen exhaust routes require coordination.",
+    "Fixtures illustrate a low-density furnished concept, not a final seating, occupancy or equipment schedule. Toilet suites and staff WC/service rooms require further stall and privacy subdivision."
+  ]
+}
