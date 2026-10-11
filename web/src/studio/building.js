@@ -55,14 +55,22 @@ export function floorSelection(project,floorId,id){
   }
   return null;
 }
-export function editFloorItem(project,floorId,id,patch){
+export function editFloorItem(project,floorId,id,patch,{moveDetails=false}={}){
   const selected=floorSelection(project,floorId,id);
   if(!selected)throw new Error('The selected item is no longer on this floor.');
-  return validateBuilding({...project,floors:project.floors.map(f=>f.id!==selected.floorId?f:{...f,[selected.collection]:patch===null?f[selected.collection].filter(i=>i.id!==id):f[selected.collection].map(i=>i.id===id?{...i,...patch}:i)})});
+  return validateBuilding({...project,floors:project.floors.map(f=>{if(f.id!==selected.floorId)return f;const next={...f,[selected.collection]:patch===null?f[selected.collection].filter(i=>i.id!==id):f[selected.collection].map(i=>i.id===id?{...i,...patch}:i)};return moveDetails&&patch&&selected.collection==='elements'&&selected.item.kind==='room'?translateRoomDetails(f,selected.item,{...selected.item,...patch},next):next;})});
 }
 export function fixtureFrame(item){
   const turned=item.rotation===90||item.rotation===270;
   const width=turned?item.height:item.width,height=turned?item.width:item.height;
   const cx=item.x+item.width/2,cy=item.y+item.height/2,angle=item.rotation*Math.PI/180;
   return{width,height,transform:'translate('+cx+' '+cy+') rotate('+item.rotation+') translate('+(-width/2)+' '+(-height/2)+')',point:(x,y)=>({x:cx+(x-width/2)*Math.cos(angle)-(y-height/2)*Math.sin(angle),y:cy+(x-width/2)*Math.sin(angle)+(y-height/2)*Math.cos(angle)})};
+}
+
+export function translateRoomDetails(floor,room,moved,next={...floor,elements:floor.elements.map(e=>e.id===room.id?moved:e)}){
+ const dx=moved.x-room.x,dy=moved.y-room.y,eps=1e-6;
+ if(!dx&&!dy)return next;
+ const inside=(x,y)=>x>=room.x-eps&&x<=room.x+room.width+eps&&y>=room.y-eps&&y<=room.y+room.height+eps;
+ const boundary=o=>{const rad=o.rotation*Math.PI/180,ex=o.x+o.width*Math.cos(rad),ey=o.y+o.width*Math.sin(rad);if(!inside(o.x,o.y)||!inside(ex,ey))return false;return Math.abs(o.y-ey)<eps?(Math.abs(o.y-room.y)<eps||Math.abs(o.y-room.y-room.height)<eps):(Math.abs(o.x-room.x)<eps||Math.abs(o.x-room.x-room.width)<eps);};
+ return{...next,fixtures:floor.fixtures.map(i=>inside(i.x,i.y)&&inside(i.x+i.width,i.y+i.height)?{...i,x:i.x+dx,y:i.y+dy}:i),openings:floor.openings.map(o=>boundary(o)?{...o,x:o.x+dx,y:o.y+dy}:o)};
 }

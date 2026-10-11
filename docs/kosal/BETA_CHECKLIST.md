@@ -131,3 +131,26 @@ package smoke check passed: native arm64 runtime, compiled assets, PDF module-wo
 MIME handling and all six attribution/license files. The refreshed web check and
 34 studio tests passed. This package is unsigned and not notarized; distribution
 signing remains a beta gate. Windows work is deferred at the user's request.
+
+## Parametric views and room translation
+
+The elevation and exploded study now derive their bounds, floor areas and height
+from the actual project. South elevation draws only modelled south-edge openings,
+including reverse-hinge coordinates; metre/feet conversions preserve physical
+geometry. A 42 × 30 m browser test displayed 1,260 m² per floor.
+
+Room translation has an explicit enabled-by-default scope control: furniture
+fully contained by the room and openings on its boundary translate with it.
+Shared boundary openings follow the selected room; neighbouring connections must
+be checked afterward. Furniture dimensions stay unchanged. Browser verification
+moved the manager's room by 12 m, confirmed its desk moved by the same distance,
+and undid the change. Persistent ownership relationships and automatic adjacency
+repair are still not implemented. New test-build bundle:
+`release/arcloom-editor/mac-arm64/Arcloom.app`; its extended smoke check passed.
+Full web checks and 36 studio tests passed.
+
+Native Apple Silicon CI passed for the branded build at commit `41a41df4`.
+Intel CI failed while detaching a busy DMG volume before its runtime smoke step.
+The workflow now verifies the native app directory before creating installers,
+and architecture is selected by the command rather than duplicated target lists.
+The next native CI run must prove this change; Intel readiness is not yet claimed.

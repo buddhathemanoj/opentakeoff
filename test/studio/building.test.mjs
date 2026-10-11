@@ -86,3 +86,14 @@ test('rotated fixture details stay inside the unchanged footprint at all quarter
   assert.ok(Math.abs(Math.max(...corners.map(p=>p.y))-4.8)<1e-9);
  }
 });
+
+test('room translation carries contained furniture and boundary openings without changing their sizes or unrelated floors',()=>{
+ const p=mixedUseBuilding('room-move'),f=p.floors[0],room=f.elements.find(e=>e.label==='Branch manager'),inside=f.fixtures.filter(i=>i.x>=room.x&&i.y>=room.y&&i.x+i.width<=room.x+room.width&&i.y+i.height<=room.y+room.height);
+ assert.ok(inside.length);const door=f.openings.find(o=>o.kind==='door'&&o.y===room.y+room.height&&o.x>=room.x&&o.x+o.width<=room.x+room.width);assert.ok(door);
+ const next=editFloorItem(p,'f0',room.id,{x:room.x-1,y:room.y+1},{moveDetails:true});
+ for(const item of inside){const moved=next.floors[0].fixtures.find(i=>i.id===item.id);assert.equal(moved.x,item.x-1);assert.equal(moved.y,item.y+1);assert.equal(moved.width,item.width);assert.equal(moved.height,item.height);}
+ const movedDoor=next.floors[0].openings.find(o=>o.id===door.id);assert.equal(movedDoor.x,door.x-1);assert.equal(movedDoor.y,door.y+1);assert.equal(movedDoor.width,door.width);
+ assert.deepEqual(next.floors[1],p.floors[1]);assert.deepEqual(next.floors[2],p.floors[2]);
+ const alone=editFloorItem(p,'f0',room.id,{x:room.x-1,y:room.y+1},{moveDetails:false});assert.deepEqual(alone.floors[0].fixtures,f.fixtures);assert.deepEqual(alone.floors[0].openings,f.openings);
+ const renamed=editFloorItem(p,'f0',room.id,{label:'Manager suite'},{moveDetails:true});assert.deepEqual(renamed.floors[0].fixtures,f.fixtures);assert.deepEqual(renamed.floors[0].openings,f.openings);
+});

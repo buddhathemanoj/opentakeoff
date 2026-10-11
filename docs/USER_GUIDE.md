@@ -1383,3 +1383,8 @@ their sizes are saved on this device.
 For a building interior, select **3D model → Enter building**. Choose a floor and
 room, click the scene, use WASD to move and drag to look; Esc exits. These are concept
 models, not surveyed or construction-approved building models.
+
+When moving a building room, **Move furniture and openings with room** carries
+fully contained furniture and boundary openings by the same distance. Clear the
+checkbox to move only the room outline. Shared doors follow the room, so inspect
+neighbouring connections afterward. Furniture sizes remain unchanged on resize.

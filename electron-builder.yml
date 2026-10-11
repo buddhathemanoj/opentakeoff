@@ -25,10 +25,8 @@ mac:
   icon: desktop/assets/icon.icns
   category: public.app-category.graphics-design
   target:
-    - target: dmg
-      arch: [arm64, x64]
-    - target: zip
-      arch: [arm64, x64]
+    - dmg
+    - zip
 win:
   icon: desktop/assets/icon.ico
   target:

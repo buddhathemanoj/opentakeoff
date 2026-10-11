@@ -59,9 +59,12 @@ jobs:
       - run: npm run typecheck --prefix web
       - run: npm run lint --prefix web
       - run: npm run build
-      - run: npx electron-builder --${{ matrix.platform }} --${{ matrix.arch }} --publish never
+      - name: Build native app directory
+        run: npx electron-builder --${{ matrix.platform }} dir --${{ matrix.arch }} --publish never
       - name: Exercise packaged server and bundled native Codex
         run: node desktop/scripts/check-package.mjs release/${{ matrix.folder }}
+      - name: Build installers from the verified native app
+        run: npx electron-builder --${{ matrix.platform }} --${{ matrix.arch }} --prepackaged release/${{ matrix.folder }} --publish never
       - uses: actions/upload-artifact@v4
         with:
           name: arcloom-${{ matrix.platform }}-${{ matrix.arch }}-unsigned
