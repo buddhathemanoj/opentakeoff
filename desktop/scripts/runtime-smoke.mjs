@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
-import {readFile} from 'node:fs/promises';
+import {readFile,readdir} from 'node:fs/promises';
 import {join} from 'node:path';
 import {startStudioServer} from '../../studio/server.mjs';
 import {codexCommand} from '../../studio/codex.mjs';
@@ -19,8 +19,11 @@ export async function smoke(){
   const html=await response.text();assert.ok(html.includes('Kosal Studio'));
   const assets=[...html.matchAll(/(?:src|href)="(\/assets\/[^\"]+)"/g)].map(match=>match[1]);assert.ok(assets.length>=2);
   for(const asset of assets)assert.equal((await fetch(url+asset)).status,200);
+  const worker=(await readdir(join(root,'web/dist/assets'))).find(name=>/^pdf\.worker.*\.mjs$/.test(name));assert.ok(worker,'Compiled PDF module worker is missing');
+  const workerResponse=await fetch(url+'/assets/'+worker);assert.equal(workerResponse.status,200);assert.equal(workerResponse.headers.get('content-type'),'text/javascript');assert.equal(workerResponse.headers.get('x-content-type-options'),'nosniff');
+  for(const license of ['remocn-MIT.txt','codex-Apache-2.0.txt','three-MIT.txt','dm-sans-OFL.txt','paper-shaders-Apache-2.0.txt','lucide-ISC.txt'])assert.ok((await readFile(join(resources,'licenses',license),'utf8')).length>100);
   const status=await fetch(url+'/api/studio/status');assert.equal(status.status,200);
   assert.equal((await status.json()).available,true);
-  console.log(JSON.stringify({ok:true,platform:process.platform,arch:process.arch,codex:version.stdout.trim(),assets:assets.length}));
+  console.log(JSON.stringify({ok:true,platform:process.platform,arch:process.arch,codex:version.stdout.trim(),assets:assets.length,pdfWorker:true,licenses:6}));
  }finally{await new Promise(resolve=>server.close(resolve));}
 }

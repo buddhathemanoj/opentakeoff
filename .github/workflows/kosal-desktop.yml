@@ -1,6 +1,16 @@
 name: Kosal desktop beta packages
 on:
   workflow_dispatch:
+  push:
+    branches: [codex/kosal-studio]
+    paths:
+      - 'desktop/**'
+      - 'studio/**'
+      - 'web/**'
+      - 'test/studio/**'
+      - 'electron-builder.yml'
+      - 'package*.json'
+      - '.github/workflows/kosal-desktop.yml'
   pull_request:
     paths:
       - 'desktop/**'
