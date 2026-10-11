@@ -32,6 +32,8 @@ export async function createPlanPdf(input){
    box(0,0,w,h,color(type==='table'||type==='counter'?'#eee6d7':type==='desk'?'#e4e9eb':'#f8f8f5'));
    if(type==='stair'){for(let i=1;i<13;i++)edge(0,h*i/13,w,h*i/13,.035);edge(w/2,h*.9,w/2,h*.12,.05);edge(w/2,h*.12,w*.3,h*.24,.05);edge(w/2,h*.12,w*.7,h*.24,.05);}
    if(type==='lift'){edge(0,0,w,h);edge(w,0,0,h);}
+   if(type==='bed'){box(w*.05,h*.02,w*.9,h*.08,color('#e6e0d6'));box(w*.08,h*.12,w*.36,h*.18);box(w*.56,h*.12,w*.36,h*.18);edge(0,h*.36,w,h*.36);edge(0,h*.8,w,h*.8);}
+   if(type==='shower'){edge(0,0,w,h);edge(w,0,0,h);ellipse(w/2,h/2,Math.min(w,h)*.06,Math.min(w,h)*.06,color('#eaf0f1'));}
    if(type==='desk')box(w*.32,h*.1,w*.36,h*.28,color('#fafaf7'),.025);
    if(type==='chair')edge(0,h*.2,w,h*.2);
    if(type==='rack'||type==='cabinet')for(let i=1;i<5;i++)edge(0,h*i/5,w,h*i/5,.035);

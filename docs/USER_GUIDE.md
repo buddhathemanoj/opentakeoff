@@ -1406,3 +1406,14 @@ site schedule. Slab assumptions appear only for building models with slab quanti
 If an AI draft fails structural geometry validation, Arcloom makes one repair
 attempt before reporting a repeated failure. Repaired designs still require review
 and application; your saved drawing stays unchanged throughout generation.
+
+## Hotel and residential furnishings
+
+**Add furniture or opening** now includes **Bed** and **Shower** fixture types.
+They remain editable in the layer inspector and drawing, including position,
+footprint and rotation. The floor plan, SVG, vector PDF and 3D model render
+distinct sleeping and shower details. Quantities count their objects as
+**Bed fixtures** and **Shower fixtures**; enter rates to price them.
+AI hospitality briefs request these types explicitly. They are concept objects,
+not manufacturer products or plumbing specifications. Existing projects and
+measurement formats are preserved; older app builds may reject these new types.

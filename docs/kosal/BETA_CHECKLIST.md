@@ -217,3 +217,27 @@ smoke check: bundled Codex 0.162.1, native arm64 metadata, compiled assets,
 PDF module-worker MIME handling and six attribution/license files. It remains
 unsigned and unnotarized. The user's running app and saved project were preserved.
 UI evidence: [signed-out workspace](../../output/ui/arcloom-codex-signin.png).
+
+## Hospitality fixture support
+
+Bed and shower fixture types extend the design building vocabulary without
+changing existing records or measurement formats. The AI schema inherits these
+types from the model. A rotated fixture regression covers JSON round trips,
+metre/feet conversions, targeted edits preserving other fixtures and report
+counts. All 44 studio tests and full web checks passed. A synthetic two-bedroom
+fixture project was imported into isolated browser storage. Its floor plan
+exposed selectable beds/showers, 3D cutaway showed both orientations, and the
+inline report displayed two beds and two showers. The vector plan PDF was
+rendered and inspected. This fixture study is not evidence of AI quality.
+An authenticated eight-floor hotel generation is running separately; its outcome
+is pending review. Native CI at `85cca9c3` passed on both Apple Silicon and Intel, including
+packaged runtime smoke checks and installer creation. Windows CI failed and
+remains deferred under the current Mac focus. Signing, notarization and fresh live OAuth remain gates.
+
+Manual browser placement also verified a new 1.8 × 2 m bed centred in the selected
+bedroom; undo restored the original two-bed study. Showers start at 1.2 × 1.2 m.
+The refreshed `release/arcloom-hospitality/mac-arm64/Arcloom.app` passed the native
+packaged runtime smoke check with Codex 0.162.1, compiled assets, PDF worker
+delivery and all six attribution files. It remains unsigned and unnotarized.
+[Hospitality 3D evidence](../../output/ui/arcloom-hospitality-3d.png) uses synthetic
+fixture data. The user's running app and project were untouched.

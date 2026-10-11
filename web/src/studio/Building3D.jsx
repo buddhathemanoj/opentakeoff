@@ -59,6 +59,8 @@ export default function Building3D({project,floorId}){
        box(g,a,.09,b,0,.75,0,wood);for(const x of[-a*.38,a*.38])for(const z of[-b*.35,b*.35])box(g,.045,.72,.045,x,.36,z,metal);
        if(item.type==='desk'){box(g,a*.36,.35,.045,0,1,-b*.23,metal);box(g,a*.15,.08,b*.2,0,.81,-b*.23,metal);}
       }else if(item.type==='sofa'){box(g,a,.42,b,0,.3,0,fabric);box(g,a,.48,b*.22,0,.62,-b*.39,fabric);}
+      else if(item.type==='bed'){box(g,a,.28,b,0,.2,0,wood);box(g,a*.96,.22,b*.94,0,.45,0,white);box(g,a,.95,.08,0,.475,-b*.46,wood);for(const x of[-a*.23,a*.23])box(g,a*.36,.12,b*.18,x,.61,-b*.29,white);box(g,a*.97,.035,b*.28,0,.575,b*.27,fabric);}
+      else if(item.type==='shower'){box(g,a,.08,b,0,.04,0,white);box(g,.035,2,b,-a*.48,1,0,glass);box(g,a,2,.035,0,1,-b*.48,glass);box(g,.035,1.6,.035,a*.25,.95,-b*.43,metal);box(g,a*.22,.04,b*.18,a*.25,1.8,-b*.32,metal);box(g,a*.08,.01,b*.08,0,.085,0,metal);}
       else if(item.type==='toilet'){box(g,a*.55,.7,b*.23,0,.35,-b*.36,white);sphere(g,Math.min(a,b)*.28,0,.38,b*.1,white);}
       else if(item.type==='sink'){box(g,a,.78,b,0,.39,0,white);box(g,a*.7,.025,b*.65,0,.79,0,metal);}
       else if(item.type==='rack'||item.type==='safe'||item.type==='cabinet'||item.type==='atm'){box(g,a,item.type==='rack'?1.8:1.2,b,0,item.type==='rack'?.9:.6,0,metal);}

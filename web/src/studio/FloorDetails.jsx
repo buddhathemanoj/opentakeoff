@@ -9,6 +9,8 @@ function Fixture({item,selected,onSelect}){
   else if(type==='toilet')detail=<><rect x={w*.2} y={0} width={w*.6} height={h*.25} rx={.06}/><ellipse cx={w/2} cy={h*.57} rx={w*.34} ry={h*.37}/><ellipse cx={w/2} cy={h*.57} rx={w*.2} ry={h*.24}/></>;
   else if(type==='sink')detail=<><rect width={w} height={h} rx={.06}/><ellipse cx={w/2} cy={h/2} rx={w*.35} ry={h*.3}/><circle cx={w/2} cy={h*.18} r={.025}/></>;
   else if(type==='sofa')detail=<><rect width={w} height={h} rx={.08}/><rect x={.1} y={h*.28} width={w-.2} height={h*.6} rx={.06}/><path d={`M${w/3} ${h*.28}v${h*.6}M${w*2/3} ${h*.28}v${h*.6}`}/></>;
+  else if(type==='bed')detail=<><rect width={w} height={h} rx={.05}/><rect x={w*.05} y={h*.02} width={w*.9} height={h*.08} fill="#e6e0d6"/><rect x={w*.08} y={h*.12} width={w*.36} height={h*.18} rx={.04}/><rect x={w*.56} y={h*.12} width={w*.36} height={h*.18} rx={.04}/><path d={`M0 ${h*.36}h${w}M0 ${h*.8}h${w}`}/></>;
+  else if(type==='shower')detail=<><rect width={w} height={h} fill="#eaf0f1"/><path d={`M0 0 ${w} ${h}M${w} 0 0 ${h}`}/><circle cx={w/2} cy={h/2} r={Math.min(w,h)*.06}/></>;
   else if(type==='table')detail=<rect width={w} height={h} rx={.12} fill="#eee6d7"/>;
   else if(type==='desk')detail=<><rect width={w} height={h} fill="#e4e9eb"/><rect x={w*.32} y={h*.1} width={w*.36} height={h*.28}/><path d={`M${w*.36} ${h*.58}h${w*.28}`}/></>;
   else if(type==='rack'||type==='cabinet')detail=<><rect width={w} height={h}/>{Array.from({length:4},(_,i)=><path key={i} d={`M0 ${h*(i+1)/5}h${w}`}/>)}<path d={`M${w*.85} ${h*.35}v${h*.3}`}/></>;

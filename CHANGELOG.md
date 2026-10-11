@@ -1,5 +1,7 @@
 # Changelog
 
+- Arcloom: added bed and shower fixtures to the building model, floor-plan/SVG/PDF details, 3D furnishings and geometry-based fixture counts. Hospitality generation now requests actual bedroom and bathroom furnishings.
+
 - Arcloom: in-app Codex browser sign-in, cancellation, connection checks and expired-session recovery. The sign-in card stays mounted across project switches; empty conversations open at the welcome area.
 
 - Kosal: resizable sidebar sections and chat/preview split, corrected prompt bar, interior walkthrough, short-brief design defaults, and geometry-based quantities with room schedules and PDF/CSV reports beside agent chat. PDF measurement chrome groups advanced controls and explains measured versus design quantities.

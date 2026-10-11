@@ -20,6 +20,8 @@ Desktop: `npm run build && npm run desktop`. Packaging commands are
 been launched; Windows runtime validation and release signing remain pending.
 See [product and verification status](docs/kosal/PRODUCT.md) and [logo and brand assets](docs/kosal/BRAND.md).
 
+Hotel and residential concepts support editable bed and shower fixtures across plans, 3D and quantity reports.
+
 **Preview → Quantities & reports** shows geometry-derived quantities, room schedules, entered-rate costs and report PDF/CSV downloads beside agent chat. **3D model → Enter building** enables an interior walkthrough. Sidebar and chat/preview sizes are adjustable and saved.
 
 The interface adapts Remocn Studio's MIT-licensed shell geometry and NeuroNoise aura;

@@ -151,7 +151,8 @@ export default function Studio({takeoffWorkspace}) {
   const addDetail=(type,collection)=>{
     if(!type||!isBuilding)return;
     const m=metresPerUnit(project.unit),room=collection==='fixtures'&&element?.kind==='room'?element:null;
-    const item=collection==='fixtures'?{id:crypto.randomUUID(),type,label:type[0].toUpperCase()+type.slice(1),x:room?room.x+room.width/2-.4/m:project.width/2-.4/m,y:room?room.y+room.height/2-.3/m:project.height/2-.3/m,width:.8/m,height:.6/m,rotation:0}:{id:crypto.randomUUID(),kind:type,x:element?.kind==='room'?element.x+Math.max(0,(element.width-1/m)/2):Math.max(0,(project.width-1/m)/2),y:element?.kind==='room'?element.y:project.height,width:1/m,rotation:0,swing:1};
+    const [fixtureWidth,fixtureHeight]=type==='bed'?[1.8,2]:type==='shower'?[1.2,1.2]:[.8,.6];
+    const item=collection==='fixtures'?{id:crypto.randomUUID(),type,label:type[0].toUpperCase()+type.slice(1),x:(room?room.x+room.width/2:project.width/2)-fixtureWidth/2/m,y:(room?room.y+room.height/2:project.height/2)-fixtureHeight/2/m,width:fixtureWidth/m,height:fixtureHeight/m,rotation:0}:{id:crypto.randomUUID(),kind:type,x:element?.kind==='room'?element.x+Math.max(0,(element.width-1/m)/2):Math.max(0,(project.width-1/m)/2),y:element?.kind==='room'?element.y:project.height,width:1/m,rotation:0,swing:1};
     const floor=project.floor;
     update({...storedProject,floors:storedProject.floors.map(f=>f.id===floor.id?{...f,[collection]:[...f[collection],item]}:f)});
     setSelected(item.id);setPanel('layers');setBuildingView('plan');setPreviewProposal(false);setTool('select');

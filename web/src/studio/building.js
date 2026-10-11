@@ -1,5 +1,5 @@
 export const BUILDING_SCHEMA='kosal.studio.building.v1';
-export const FIXTURE_TYPES=['desk','chair','table','sofa','counter','teller','atm','safe','kitchen','sink','toilet','stair','lift','plant','rack','cabinet'];
+export const FIXTURE_TYPES=['desk','chair','table','sofa','bed','shower','counter','teller','atm','safe','kitchen','sink','toilet','stair','lift','plant','rack','cabinet'];
 export const USES=['bank','cafe','office','mixed'];
 export const BUILDING_KINDS=['room','building','landscape','water','parking'];
 export const metresPerUnit=unit=>unit==='ft'?.3048:1;

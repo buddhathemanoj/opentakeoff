@@ -1,0 +1,162 @@
+{
+  "schema": "kosal.studio.building.v1",
+  "id": "fixture-visual-qa",
+  "name": "Hospitality fixture study",
+  "mode": "building",
+  "unit": "m",
+  "width": 12,
+  "height": 9,
+  "floors": [
+    {
+      "id": "guest",
+      "name": "Guest accommodation",
+      "use": "mixed",
+      "elevation": 0,
+      "storeyHeight": 3.5,
+      "elements": [
+        {
+          "id": "room-a",
+          "kind": "room",
+          "label": "Double bedroom",
+          "x": 0,
+          "y": 0,
+          "width": 6,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "room-b",
+          "kind": "room",
+          "label": "Rotated bedroom",
+          "x": 6,
+          "y": 0,
+          "width": 6,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "bath-a",
+          "kind": "room",
+          "label": "Bathroom A",
+          "x": 0,
+          "y": 6,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "hall",
+          "kind": "room",
+          "label": "Entrance hallway",
+          "x": 3,
+          "y": 6,
+          "width": 6,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "bath-b",
+          "kind": "room",
+          "label": "Bathroom B",
+          "x": 9,
+          "y": 6,
+          "width": 3,
+          "height": 3,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "entry",
+          "kind": "door",
+          "x": 5,
+          "y": 9,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "door-a",
+          "kind": "door",
+          "x": 4,
+          "y": 6,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "door-b",
+          "kind": "door",
+          "x": 7,
+          "y": 6,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "bath-door-a",
+          "kind": "door",
+          "x": 3,
+          "y": 7,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "bath-door-b",
+          "kind": "door",
+          "x": 9,
+          "y": 7,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": -1
+        }
+      ],
+      "fixtures": [
+        {
+          "id": "bed-a",
+          "type": "bed",
+          "label": "Double bed",
+          "x": 2,
+          "y": 0.3,
+          "width": 1.8,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "bed-b",
+          "type": "bed",
+          "label": "Rotated double bed",
+          "x": 9.6,
+          "y": 1,
+          "width": 2,
+          "height": 1.8,
+          "rotation": 90
+        },
+        {
+          "id": "shower-a",
+          "type": "shower",
+          "label": "Shower A",
+          "x": 0.2,
+          "y": 6.2,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "shower-b",
+          "type": "shower",
+          "label": "Shower B",
+          "x": 10.6,
+          "y": 6.2,
+          "width": 1.2,
+          "height": 1.2,
+          "rotation": 90
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Synthetic visual QA fixture, not an AI generation."
+  ]
+}
