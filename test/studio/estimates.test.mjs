@@ -35,3 +35,10 @@ test('layout preferences recover from corrupted storage and clamp saved panel si
  const value=restoreLayout({getItem:()=>JSON.stringify({sidebar:900,projects:10,layers:330,chat:90})});
  assert.deepEqual(value,{sidebar:440,projects:80,layers:330,chat:76});
 });
+test('site reports include building and water areas and distinguish boundary area from floor area',async()=>{
+ const {newProject}=await import('../../web/src/studio/model.js');const p=newProject('site');
+ p.elements=[{id:'a',kind:'building',label:'Farmhouse',x:0,y:0,width:20,height:10},{id:'b',kind:'building',label:'Shed',x:30,y:0,width:10,height:10},{id:'c',kind:'water',label:'Pond',x:0,y:20,width:15,height:12}];
+ const quantities=estimateQuantities(p);assert.equal(quantities.areaLabel,'Site boundary area');assert.equal(quantities.summary,'Site layout');assert.equal(quantities.hasSlabs,false);assert.equal(quantities.rows.find(r=>r.id==='area-building').quantity,300);assert.equal(quantities.rows.find(r=>r.id==='area-water').quantity,180);assert.ok(!quantities.rows.some(r=>r.id==='slabs'));
+ const ft={...p,unit:'ft',width:p.width/.3048,height:p.height/.3048,elements:p.elements.map(e=>({...e,x:e.x/.3048,y:e.y/.3048,width:e.width/.3048,height:e.height/.3048}))};
+ for(const row of quantities.rows)assert.ok(Math.abs(estimateQuantities(ft).rows.find(r=>r.id===row.id).quantity-row.quantity)<1e-8);
+});

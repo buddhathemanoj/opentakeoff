@@ -20,14 +20,14 @@ export function estimateQuantities(input,{slabThickness=.2}={}){
     add('doors','Door sets','each',doors,'Door objects in all floors; no doors inferred from room labels.');
     add('windows','Window glazing','m²',glazing,'Opening width × modelled glazing height; frame allowances excluded.');
   }
-  for(const [kind,label] of [['room','Room floor finishes (gross)'],['landscape','Landscape area'],['parking','Parking area'],['road','Road surface'],['plot','Plot area']]){
+  for(const [kind,label] of [['room','Room floor finishes (gross)'],['building','Building footprints'],['water','Water area'],['landscape','Landscape area'],['parking','Parking area'],['road','Road surface'],['plot','Plot area']]){
     const quantity=floors.flatMap(f=>f.elements).filter(e=>e.kind===kind).reduce((n,e)=>n+e.width*e.height*m*m,0);
     if(quantity)add('area-'+kind,label,'m²',quantity,'Sum of labelled rectangle areas; overlapping areas are not deducted.');
   }
   const fixtures=new Map();
   for(const item of floors.flatMap(f=>f.fixtures))fixtures.set(item.type,(fixtures.get(item.type)||0)+1);
   for(const [type,count] of fixtures)add('fixture-'+type,type[0].toUpperCase()+type.slice(1)+' fixtures','each',count,'Count of editable fixture objects across all floors.');
-  return{grossArea:gross,floors:floors.length,rows,warnings:layoutWarnings(p),assumptions:['Concept quantities, not a priced construction tender.','No foundations, reinforcement, structural sizing, MEP, earthworks, taxes or contractor allowances are inferred.','Enter local supplier or estimator rates. Blank rates remain unpriced.']};
+  return{grossArea:gross,floors:floors.length,areaLabel:p.mode==='site'?'Site boundary area':'Gross floor area',summary:p.mode==='site'?'Site layout':floors.length+' '+(floors.length===1?'floor':'floors'),scheduleLabel:p.mode==='site'?'Plots & areas':'Rooms & areas',hasSlabs:p.schema===BUILDING_SCHEMA,rows,warnings:layoutWarnings(p),assumptions:['Concept quantities, not a priced construction tender.','No foundations, reinforcement, structural sizing, MEP, earthworks, taxes or contractor allowances are inferred.','Enter local supplier or estimator rates. Blank rates remain unpriced.']};
 }
 export function priceEstimate(rows,rates){
   const priced=rows.map(row=>{const rate=rates[row.id];return{...row,rate:typeof rate==='number'&&Number.isFinite(rate)&&rate>=0?rate:null,amount:typeof rate==='number'&&Number.isFinite(rate)&&rate>=0?row.quantity*rate:null};});

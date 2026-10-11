@@ -1198,3 +1198,8 @@ The engine work RFC #60 asked for, built and staged for upstream by **Kevin Murp
 
 ## 2026-06-15
 - **Initial release** — open-source PDF takeoff canvas for flooring: One-Click Area, manual measure kit, per-sheet scale (auto-detect + calibrate), conditions with CAD hatches, waste %, reports with SF/SY/LF/EA and CSV/JSON export, client-only storage.
+
+- Arcloom site reports include building footprints and water areas, distinguish
+  site boundary from floor area, and wrap long PDF titles. Detailed one-floor
+  briefs retain architectural openings and fixtures. Invalid structured AI drafts
+  receive one bounded repair attempt before a repeated failure is shown.

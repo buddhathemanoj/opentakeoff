@@ -154,3 +154,40 @@ Intel CI failed while detaching a busy DMG volume before its runtime smoke step.
 The workflow now verifies the native app directory before creating installers,
 and architecture is selected by the command rather than duplicated target lists.
 The next native CI run must prove this change; Intel readiness is not yet claimed.
+
+## Site report completeness
+
+Site reports now include building footprints and water areas alongside plots,
+roads, parking and landscaping. The boundary area is labelled as site area,
+not gross floor area, and slab assumptions are displayed only when slabs are
+actually estimated. Site schedules use Plots & areas. Metre/feet regression tests
+cover building and water quantities. The browser showed the courtyard's 80 m²
+water area, and site report PDFs with ordinary and 120-character unbroken titles
+were rendered and inspected. Long report titles wrap within the page width.
+
+Detailed single-floor briefs now request the existing building format with one
+floor so openings and fixtures remain editable, without inventing extra storeys.
+A live single-floor library generation has been started; its result still needs
+verification before claiming that flow passed.
+
+The first live library run failed validation because an opening ended outside the
+footprint. This is a confirmed generation failure, not a successful test. The
+runtime now allows one minimal geometry repair attempt, keeping the original
+brief and unchanged saved drawing. A subprocess regression fixture verifies one
+invalid draft is repaired, repeated invalid drafts stop after two attempts, and
+input geometry remains unchanged. Studio checks now pass 38 tests. The live
+library rerun is still pending and must be inspected before this flow is claimed
+as verified.
+
+Native Mac CI at `2b1df949` passed on both Apple Silicon and Intel, including the
+native app smoke check and installer creation. Windows execution remains outside
+the current Mac-focused work. Signing and notarization remain release gates.
+
+The library rerun completed successfully: one floor, 300 m² footprint, eight spaces,
+20 openings and 53 fixtures, with no rectangle overlap warnings. Its vector A3
+plan was rendered and inspected. The exported project was imported into isolated
+browser storage; its detailed floor plan, 3D interior room navigation and report
+quantities were visible. This successful rerun did not need the repair path;
+repair behavior remains verified through the subprocess fault-injection tests.
+The initial failed run remains evidence that generation quality needs continued
+review. Current test-build folder is `release/arcloom-reports/mac-arm64/Arcloom.app`.

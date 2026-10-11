@@ -1388,3 +1388,11 @@ When moving a building room, **Move furniture and openings with room** carries
 fully contained furniture and boundary openings by the same distance. Clear the
 checkbox to move only the room outline. Shared doors follow the room, so inspect
 neighbouring connections afterward. Furniture sizes remain unchanged on resize.
+
+Site quantities include building footprints and water areas, alongside plots,
+roads, parking and landscaping. The report distinguishes site boundary area from
+gross floor area; overlapping areas are not deducted. Use **Plots & areas** for a
+site schedule. Slab assumptions appear only for building models with slab quantities.
+If an AI draft fails structural geometry validation, Arcloom makes one repair
+attempt before reporting a repeated failure. Repaired designs still require review
+and application; your saved drawing stays unchanged throughout generation.

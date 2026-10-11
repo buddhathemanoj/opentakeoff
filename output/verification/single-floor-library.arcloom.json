@@ -1,0 +1,824 @@
+{
+  "schema": "kosal.studio.building.v1",
+  "id": "single-floor-library-check",
+  "name": "Community Library",
+  "mode": "building",
+  "unit": "m",
+  "width": 20,
+  "height": 15,
+  "floors": [
+    {
+      "id": "f0",
+      "name": "Ground Floor",
+      "use": "mixed",
+      "elevation": 0,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "r1",
+          "kind": "room",
+          "label": "Reception & returns",
+          "x": 0,
+          "y": 0,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r2",
+          "kind": "room",
+          "label": "Entrance & circulation",
+          "x": 8,
+          "y": 0,
+          "width": 2,
+          "height": 15,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r3",
+          "kind": "room",
+          "label": "Reading lounge",
+          "x": 10,
+          "y": 0,
+          "width": 10,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r4",
+          "kind": "room",
+          "label": "Book stacks",
+          "x": 0,
+          "y": 4,
+          "width": 8,
+          "height": 7,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r5",
+          "kind": "room",
+          "label": "Quiet study",
+          "x": 10,
+          "y": 8,
+          "width": 10,
+          "height": 7,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r6",
+          "kind": "room",
+          "label": "Staff & processing",
+          "x": 0,
+          "y": 11,
+          "width": 5,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r7",
+          "kind": "room",
+          "label": "Accessible WC",
+          "x": 5,
+          "y": 11,
+          "width": 3,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "r8",
+          "kind": "room",
+          "label": "Guest WC",
+          "x": 5,
+          "y": 13,
+          "width": 3,
+          "height": 2,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "o1",
+          "kind": "door",
+          "x": 8.3,
+          "y": 0,
+          "width": 1.4,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "o2",
+          "kind": "door",
+          "x": 8.3,
+          "y": 15,
+          "width": 1.4,
+          "rotation": 0,
+          "swing": -1
+        },
+        {
+          "id": "o3",
+          "kind": "opening",
+          "x": 8,
+          "y": 1.2,
+          "width": 1.8,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "o4",
+          "kind": "opening",
+          "x": 8,
+          "y": 8.5,
+          "width": 1.8,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "o5",
+          "kind": "opening",
+          "x": 10,
+          "y": 3,
+          "width": 1.8,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "o6",
+          "kind": "door",
+          "x": 10,
+          "y": 9,
+          "width": 1,
+          "rotation": 90,
+          "swing": -1
+        },
+        {
+          "id": "o7",
+          "kind": "door",
+          "x": 5,
+          "y": 11.4,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "o8",
+          "kind": "door",
+          "x": 8,
+          "y": 11.3,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "o9",
+          "kind": "door",
+          "x": 8,
+          "y": 13.3,
+          "width": 0.9,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "w1",
+          "kind": "window",
+          "x": 1,
+          "y": 0,
+          "width": 3,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "w2",
+          "kind": "window",
+          "x": 11,
+          "y": 0,
+          "width": 3,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "w3",
+          "kind": "window",
+          "x": 16,
+          "y": 0,
+          "width": 3,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "w4",
+          "kind": "window",
+          "x": 20,
+          "y": 1.5,
+          "width": 2.5,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "w5",
+          "kind": "window",
+          "x": 20,
+          "y": 5,
+          "width": 2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "w6",
+          "kind": "window",
+          "x": 20,
+          "y": 9,
+          "width": 2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "w7",
+          "kind": "window",
+          "x": 20,
+          "y": 12,
+          "width": 2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "w8",
+          "kind": "window",
+          "x": 11,
+          "y": 15,
+          "width": 3,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "w9",
+          "kind": "window",
+          "x": 16,
+          "y": 15,
+          "width": 3,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "w10",
+          "kind": "window",
+          "x": 0,
+          "y": 5,
+          "width": 2,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "w11",
+          "kind": "window",
+          "x": 1,
+          "y": 15,
+          "width": 2.5,
+          "rotation": 0,
+          "swing": 1
+        }
+      ],
+      "fixtures": [
+        {
+          "id": "a1",
+          "type": "counter",
+          "label": "Reception / loans",
+          "x": 3.8,
+          "y": 2.1,
+          "width": 2.8,
+          "height": 0.75,
+          "rotation": 0
+        },
+        {
+          "id": "a2",
+          "type": "chair",
+          "label": "Librarian",
+          "x": 4.9,
+          "y": 3,
+          "width": 0.55,
+          "height": 0.55,
+          "rotation": 0
+        },
+        {
+          "id": "a3",
+          "type": "cabinet",
+          "label": "Book returns",
+          "x": 6.8,
+          "y": 2.1,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "a4",
+          "type": "sofa",
+          "label": "Waiting bench",
+          "x": 0.7,
+          "y": 1.2,
+          "width": 2,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "a5",
+          "type": "rack",
+          "label": "Community notices",
+          "x": 0.4,
+          "y": 3.3,
+          "width": 2,
+          "height": 0.35,
+          "rotation": 0
+        },
+        {
+          "id": "a6",
+          "type": "plant",
+          "label": "Entrance plant",
+          "x": 7,
+          "y": 0.5,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "b1",
+          "type": "rack",
+          "label": "Fiction",
+          "x": 1,
+          "y": 5,
+          "width": 0.65,
+          "height": 4,
+          "rotation": 90
+        },
+        {
+          "id": "b2",
+          "type": "rack",
+          "label": "Nonfiction",
+          "x": 3,
+          "y": 5,
+          "width": 0.65,
+          "height": 4,
+          "rotation": 90
+        },
+        {
+          "id": "b3",
+          "type": "rack",
+          "label": "Community collection",
+          "x": 5,
+          "y": 5,
+          "width": 0.65,
+          "height": 4,
+          "rotation": 90
+        },
+        {
+          "id": "b4",
+          "type": "rack",
+          "label": "New books",
+          "x": 1,
+          "y": 10.1,
+          "width": 3,
+          "height": 0.45,
+          "rotation": 0
+        },
+        {
+          "id": "b5",
+          "type": "desk",
+          "label": "Catalogue terminal",
+          "x": 6.3,
+          "y": 5,
+          "width": 1.1,
+          "height": 0.65,
+          "rotation": 0
+        },
+        {
+          "id": "b6",
+          "type": "chair",
+          "label": "Catalogue seat",
+          "x": 6.6,
+          "y": 5.9,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "c1",
+          "type": "table",
+          "label": "Reading table",
+          "x": 11.4,
+          "y": 2.1,
+          "width": 1.8,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "c2",
+          "type": "chair",
+          "label": "Reader",
+          "x": 11.6,
+          "y": 1.35,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "c3",
+          "type": "chair",
+          "label": "Reader",
+          "x": 12.45,
+          "y": 1.35,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "c4",
+          "type": "chair",
+          "label": "Reader",
+          "x": 11.6,
+          "y": 3.25,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "c5",
+          "type": "chair",
+          "label": "Reader",
+          "x": 12.45,
+          "y": 3.25,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "c6",
+          "type": "table",
+          "label": "Reading table",
+          "x": 15,
+          "y": 2.1,
+          "width": 1.8,
+          "height": 0.9,
+          "rotation": 0
+        },
+        {
+          "id": "c7",
+          "type": "chair",
+          "label": "Reader",
+          "x": 15.2,
+          "y": 1.35,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "c8",
+          "type": "chair",
+          "label": "Reader",
+          "x": 16.05,
+          "y": 1.35,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "c9",
+          "type": "chair",
+          "label": "Reader",
+          "x": 15.2,
+          "y": 3.25,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "c10",
+          "type": "chair",
+          "label": "Reader",
+          "x": 16.05,
+          "y": 3.25,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "c11",
+          "type": "sofa",
+          "label": "Lounge seating",
+          "x": 11.4,
+          "y": 6.5,
+          "width": 2.2,
+          "height": 0.85,
+          "rotation": 0
+        },
+        {
+          "id": "c12",
+          "type": "table",
+          "label": "Low table",
+          "x": 11.9,
+          "y": 5.3,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "c13",
+          "type": "sofa",
+          "label": "Window seating",
+          "x": 18.6,
+          "y": 4.8,
+          "width": 0.85,
+          "height": 2.2,
+          "rotation": 90
+        },
+        {
+          "id": "c14",
+          "type": "table",
+          "label": "Low table",
+          "x": 17.2,
+          "y": 5.3,
+          "width": 0.6,
+          "height": 1.2,
+          "rotation": 90
+        },
+        {
+          "id": "c15",
+          "type": "rack",
+          "label": "Periodicals",
+          "x": 14.5,
+          "y": 7.2,
+          "width": 2.4,
+          "height": 0.4,
+          "rotation": 0
+        },
+        {
+          "id": "c16",
+          "type": "plant",
+          "label": "Reading plant",
+          "x": 18.7,
+          "y": 0.6,
+          "width": 0.6,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "d1",
+          "type": "table",
+          "label": "Shared study",
+          "x": 12,
+          "y": 10.7,
+          "width": 2.4,
+          "height": 1.1,
+          "rotation": 0
+        },
+        {
+          "id": "d2",
+          "type": "chair",
+          "label": "Study seat",
+          "x": 12.2,
+          "y": 9.95,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "d3",
+          "type": "chair",
+          "label": "Study seat",
+          "x": 13.6,
+          "y": 9.95,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "d4",
+          "type": "chair",
+          "label": "Study seat",
+          "x": 12.2,
+          "y": 12.05,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "d5",
+          "type": "chair",
+          "label": "Study seat",
+          "x": 13.6,
+          "y": 12.05,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "d6",
+          "type": "desk",
+          "label": "Individual study",
+          "x": 18.6,
+          "y": 9,
+          "width": 0.75,
+          "height": 1.2,
+          "rotation": 90
+        },
+        {
+          "id": "d7",
+          "type": "chair",
+          "label": "Study seat",
+          "x": 17.8,
+          "y": 9.35,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "d8",
+          "type": "desk",
+          "label": "Individual study",
+          "x": 18.6,
+          "y": 11,
+          "width": 0.75,
+          "height": 1.2,
+          "rotation": 90
+        },
+        {
+          "id": "d9",
+          "type": "chair",
+          "label": "Study seat",
+          "x": 17.8,
+          "y": 11.35,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "d10",
+          "type": "desk",
+          "label": "Individual study",
+          "x": 18.6,
+          "y": 13,
+          "width": 0.75,
+          "height": 1.2,
+          "rotation": 90
+        },
+        {
+          "id": "d11",
+          "type": "chair",
+          "label": "Study seat",
+          "x": 17.8,
+          "y": 13.35,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "d12",
+          "type": "rack",
+          "label": "Reference books",
+          "x": 11,
+          "y": 14.2,
+          "width": 3.5,
+          "height": 0.4,
+          "rotation": 0
+        },
+        {
+          "id": "e1",
+          "type": "desk",
+          "label": "Book processing",
+          "x": 0.5,
+          "y": 11.5,
+          "width": 1.8,
+          "height": 0.75,
+          "rotation": 0
+        },
+        {
+          "id": "e2",
+          "type": "chair",
+          "label": "Staff seat",
+          "x": 1.1,
+          "y": 12.5,
+          "width": 0.55,
+          "height": 0.55,
+          "rotation": 180
+        },
+        {
+          "id": "e3",
+          "type": "table",
+          "label": "Staff break table",
+          "x": 2.8,
+          "y": 13.3,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "e4",
+          "type": "chair",
+          "label": "Staff seat",
+          "x": 3.1,
+          "y": 12.55,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "e5",
+          "type": "chair",
+          "label": "Staff seat",
+          "x": 3.1,
+          "y": 14.2,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "e6",
+          "type": "kitchen",
+          "label": "Staff kitchenette",
+          "x": 0.4,
+          "y": 13.9,
+          "width": 1.8,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "e7",
+          "type": "sink",
+          "label": "Kitchenette sink",
+          "x": 0.55,
+          "y": 14,
+          "width": 0.45,
+          "height": 0.4,
+          "rotation": 0
+        },
+        {
+          "id": "e8",
+          "type": "cabinet",
+          "label": "Staff lockers",
+          "x": 3,
+          "y": 11.3,
+          "width": 1.2,
+          "height": 0.45,
+          "rotation": 0
+        },
+        {
+          "id": "e9",
+          "type": "cabinet",
+          "label": "IT / cleaning supplies",
+          "x": 0.3,
+          "y": 12.6,
+          "width": 0.6,
+          "height": 0.7,
+          "rotation": 90
+        },
+        {
+          "id": "t1",
+          "type": "toilet",
+          "label": "Accessible WC",
+          "x": 5.3,
+          "y": 11.3,
+          "width": 0.75,
+          "height": 0.7,
+          "rotation": 90
+        },
+        {
+          "id": "t2",
+          "type": "sink",
+          "label": "Washbasin",
+          "x": 6.7,
+          "y": 12.35,
+          "width": 0.55,
+          "height": 0.4,
+          "rotation": 0
+        },
+        {
+          "id": "t3",
+          "type": "toilet",
+          "label": "WC",
+          "x": 5.3,
+          "y": 13.4,
+          "width": 0.75,
+          "height": 0.7,
+          "rotation": 90
+        },
+        {
+          "id": "t4",
+          "type": "sink",
+          "label": "Washbasin",
+          "x": 6.7,
+          "y": 14.35,
+          "width": 0.55,
+          "height": 0.4,
+          "rotation": 0
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Single floor only; no stairs or lift assumed necessary.",
+    "Central 2 m circulation spine connects every public zone and both exterior entries. Staff access is through the toilet lobby.",
+    "Eight table-reading seats, two lounge sofas and seven quiet-study seats; catalogue terminal provided beside the stacks.",
+    "Stacks have approximately 1.35 m between shelving footprints; final clear widths depend on wall and shelving details.",
+    "Internal walls shown at 0.18 m; perimeter walls assumed 0.28 m, to be resolved within the stated footprint.",
+    "Accessible WC is conceptual; door operation, transfer space and fittings require detailed review.",
+    "Kitchenette sink intentionally sits within its kitchen fixture.",
+    "Concept for review; structure, acoustics, ventilation and construction details are unresolved."
+  ]
+}
