@@ -1464,3 +1464,19 @@ is active or an unapplied proposal is being previewed. Generated edits still
 require **Apply to drawing**; **Discard** keeps the saved design. View context
 is transient: after reloading, navigate to the intended space again before
 retrying a brief that refers to “this space.”
+
+## Add and remove items with short briefs
+
+From a walkthrough, “Add two small planters inside this terrace” can propose
+new fixtures without replacing existing items. Requests to remove named items
+use the same review flow. **Apply to drawing** updates the model and its
+quantities; **Discard** retains the saved drawing. Small refinements can combine
+item edits, additions and removals, with up to 100 operations in one proposal.
+Invalid geometry or unknown targets reject the whole proposal without partially
+changing your drawing. Larger designs and changes to floor structure or project
+dimensions still use full proposals. These operations do not grant review or
+construction approval.
+
+Editable design exports now use `.arcloom.json`; existing `.kosal.json` and
+other valid JSON project files remain importable. The document schema and
+original takeoff formats are unchanged.

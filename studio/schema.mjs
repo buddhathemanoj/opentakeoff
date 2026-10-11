@@ -14,4 +14,6 @@ export const buildingSchema=object({
 });
 const nullable=schema=>({anyOf:[schema,{type:'null'}]});
 const editSchema=object({floorId:string,collection:{type:'string',enum:['spaces','fixtures','openings']},targetId:string,label:nullable(string),x:nullable(number),y:nullable(number),width:nullable(number),height:nullable(number),rotation:nullable(rotation)});
-export const responseSchema=object({message:string,proposal:{anyOf:[projectSchema,buildingSchema,{type:'null'}]},edits:nullable({type:'array',items:editSchema})});
+const floorProperties=buildingSchema.properties.floors.items.properties;
+const changeSchema=object({operation:{type:'string',enum:['add','remove']},floorId:string,collection:{type:'string',enum:['spaces','fixtures','openings']},targetId:string,item:nullable({anyOf:[projectSchema.properties.elements.items,floorProperties.elements.items,floorProperties.fixtures.items,floorProperties.openings.items]})});
+export const responseSchema=object({message:string,proposal:{anyOf:[projectSchema,buildingSchema,{type:'null'}]},edits:nullable({type:'array',items:editSchema}),changes:nullable({type:'array',items:changeSchema})});

@@ -389,3 +389,43 @@ runtime smoke checks: native arm64 metadata, bundled Codex 0.162.1, compiled
 assets, PDF worker delivery and all six attribution files. Both native Mac CI
 jobs passed for terrace commit `3c974d85`; the context change still needs its
 own CI run. Signing/notarization and public-beta manual QA remain open.
+
+## Compact additions and removals
+
+The model previously had to resend a complete building when adding or removing
+items. The transient AI response now supports `changes` with add/remove
+operations, alongside field edits. The server expands them locally into the
+existing project format. A full proposal cannot be mixed with compact operations;
+up to 100 combined operations run on a clone and pass final project validation.
+Unknown targets, bad collections, out-of-bounds items, duplicate IDs and
+conflicting full replacements reject the proposal without mutating input.
+Exported project and takeoff schemas remain unchanged.
+
+All 56 studio tests passed, including compound changes, atomic rejection,
+site-format preservation and subprocess expansion/conflict handling. Live
+authenticated browser/API verification used the eight-floor hotel and viewed
+terrace `r15`: two 1 × 1 m planters were proposed via the compact path in
+15.33 seconds. They fit within the terrace and did not overlap any existing
+fixture footprint. Exact comparison verified every existing value was unchanged.
+After applying in isolated QA, the inline report counted six plants instead of
+four. The compact removal request completed in 9.868 seconds and returned
+exactly the pre-addition project. Applying it restored four plants; the browser's
+editable JSON export exactly matched the original request project. These are
+measured cases, not a latency guarantee or an architectural certification.
+
+The export test also found the old branded suffix. New design exports now use
+`.arcloom.json`; the import validator continues accepting valid older JSON.
+Final branded-export and native-package verification are pending.
+
+The rebranded export downloaded as `THE ATRIUM.arcloom.json`; exact comparison
+confirmed the data still matched the pre-addition project. The temporary API
+recorder was removed and the normal isolated server restored.
+[Compact mutation audit](../../output/verification/compact-mutations-proof.json),
+[six-plant saved report](../../output/ui/arcloom-compact-addition-report.png),
+[four-plant restored report](../../output/ui/arcloom-compact-removal-report.png).
+The final full web check passed (3,449 passing, four skipped), and tool-count,
+wiki, protocol and relative doc links passed. The new
+`release/arcloom-compact/mac-arm64/Arcloom.app` passed native packaged runtime,
+compiled-asset, PDF worker and attribution smoke checks. Both native Mac CI
+jobs passed for prior context commit `75521709`; compact changes need their
+own CI run. Packages remain unsigned/unnotarized, and Windows remains deferred.

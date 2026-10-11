@@ -1,0 +1,67 @@
+{
+  "baseline": "eight-floor-hotel-reviewed.arcloom.json",
+  "normalization": "Imported project root ID only",
+  "selected": [
+    "r15"
+  ],
+  "addition": {
+    "prompt": "Add two small planters inside this terrace. Keep each new planter entirely within the terrace and clear of its furniture. Preserve every existing item, label, floor and dimension. Return a proposal for review.",
+    "elapsedMs": 15330,
+    "events": [
+      {
+        "type": "status",
+        "message": "Codex is planning your drawing…"
+      },
+      {
+        "type": "status",
+        "message": "Checking 2 item changes…"
+      }
+    ],
+    "added": [
+      {
+        "id": "rf51",
+        "type": "plant",
+        "label": "Small planter",
+        "x": 18,
+        "y": 15,
+        "width": 1,
+        "height": 1,
+        "rotation": 0
+      },
+      {
+        "id": "rf52",
+        "type": "plant",
+        "label": "Small planter",
+        "x": 18,
+        "y": 18,
+        "width": 1,
+        "height": 1,
+        "rotation": 0
+      }
+    ],
+    "baselineSha256": "8449ec3acb6758739858e148f03fda02bdb8879ca47647bc8b7a12d3467661f2",
+    "proposalSha256": "b2d3235ca9cae273863605b2b79d621893c8a6e54af97011dc71cb0aba8400fa",
+    "existingValuesUnchanged": true,
+    "insideTerrace": true,
+    "noFixtureOverlap": true,
+    "savedPlantCount": 6
+  },
+  "removal": {
+    "prompt": "Remove the two Small planter fixtures from this terrace. Preserve every other item, label, floor and dimension. Return a proposal for review.",
+    "elapsedMs": 9868,
+    "events": [
+      {
+        "type": "status",
+        "message": "Codex is planning your drawing…"
+      },
+      {
+        "type": "status",
+        "message": "Checking 2 item changes…"
+      }
+    ],
+    "restoredSha256": "8449ec3acb6758739858e148f03fda02bdb8879ca47647bc8b7a12d3467661f2",
+    "exactBaselineRestored": true,
+    "savedPlantCount": 4,
+    "exportExactlyMatched": true
+  }
+}

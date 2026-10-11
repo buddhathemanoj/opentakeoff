@@ -1,5 +1,7 @@
 # Changelog
 
+- Arcloom: compact AI additions/removals can combine with existing field edits into one atomic, validated review proposal, preserving unaffected items and floors. Live two-planter addition/removal tests updated quantities and restored an exact exported project. New editable exports use `.arcloom.json`.
+
 - Arcloom: walkthrough location now supplies visible, transient chat context for short briefs such as “rename this space.” Manual selections take priority; stale and proposal-preview locations are excluded. Updated the 3D timer and shadow mode to supported Three.js APIs.
 
 - Arcloom: rooftop landscape areas now cut the rendered roof and ceiling, while lower terraces retain overhead floor slabs. Walkthrough destinations include landscaped areas, show their surface and keep the location menu in sync with camera movement and entry resets.
