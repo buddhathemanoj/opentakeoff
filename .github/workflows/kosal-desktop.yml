@@ -1,0 +1,63 @@
+name: Kosal desktop beta packages
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'desktop/**'
+      - 'studio/**'
+      - 'web/**'
+      - 'test/studio/**'
+      - 'electron-builder.yml'
+      - 'package*.json'
+      - '.github/workflows/kosal-desktop.yml'
+permissions:
+  contents: read
+jobs:
+  package:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            platform: mac
+            arch: arm64
+            folder: mac-arm64
+          - runner: macos-15-intel
+            platform: mac
+            arch: x64
+            folder: mac
+          - runner: windows-latest
+            platform: win
+            arch: x64
+            folder: win-unpacked
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 25
+    env:
+      CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            web/package-lock.json
+      - run: npm ci
+      - run: npm ci --prefix web
+      - run: npm run test:studio
+      - run: npm run typecheck --prefix web
+      - run: npm run lint --prefix web
+      - run: npm run build
+      - run: npx electron-builder --${{ matrix.platform }} --${{ matrix.arch }} --publish never
+      - name: Exercise packaged server and bundled native Codex
+        run: node desktop/scripts/check-package.mjs release/${{ matrix.folder }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kosal-${{ matrix.platform }}-${{ matrix.arch }}-unsigned
+          if-no-files-found: error
+          path: |
+            release/*.dmg
+            release/*.zip
+            release/*.exe
+            release/*.blockmap

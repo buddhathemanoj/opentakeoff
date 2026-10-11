@@ -45,6 +45,18 @@ codex mcp list
 
 Codex asks before running OpenTakeoff's tools; approve them as they come up.
 
+To use a local checkout, run `npm ci --prefix web`, `npm ci --prefix mcp`, and
+`npm run build --prefix mcp` from its root, then register the built server:
+
+```bash
+codex mcp add opentakeoff -- node /absolute/path/to/opentakeoff/mcp/dist/server.js
+```
+
+Restart your Codex session after adding it. Use `codex login status` to check
+your existing login. With a ChatGPT login, this integration uses Codex subscription
+access. The browser canvas has no embedded chat: ask Codex to perform the takeoff,
+then import its exported takeoff into the canvas to review it.
+
 ## Cursor and other MCP clients
 
 Any client that runs local ("stdio") MCP servers takes the same entry. In Cursor it goes in

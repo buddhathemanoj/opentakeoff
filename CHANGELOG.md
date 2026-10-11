@@ -1,5 +1,22 @@
 # Changelog
 
+- Kosal: resizable sidebar sections and chat/preview split, corrected prompt bar, interior walkthrough, short-brief design defaults, and geometry-based quantities with room schedules and PDF/CSV reports beside agent chat. PDF measurement chrome groups advanced controls and explains measured versus design quantities.
+
+## Kosal Studio local beta — 2026-10-12
+
+- Added a conversation-first Kosal workspace with Remocn code-derived sidebar geometry,
+  component sizes and NeuroNoise titlebar aura (MIT notice retained).
+- Added editable multi-storey building projects with distinct tenant plans, furnished
+  rooms, wall thicknesses, door/window openings, floor tabs, exploded floor study and
+  conceptual elevation. The bank/café/IT starter has three 720 m² floors.
+- Added validated Codex proposals and targeted edits across floors, retained drafts
+  and proposals after reload, and explicit recovery for interrupted requests.
+- Added A3 vector plan-set PDF export and a direct handoff to the original takeoff
+  engine, now accessible within the Kosal sidebar.
+- Added local Electron desktop packaging. Mac launch verified; Windows release QA,
+  signed installers and construction-grade engineering are still pending.
+
+
 ## 2026-10-10 — relicensed to AGPL-3.0
 
 OpenTakeoff is now licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only). Commit `84c7f48e` and everything before it stay under Apache-2.0, so existing forks and copies keep their rights. Outside contributions made before this change stay Apache-2.0 and keep their notices (`LICENSES/Apache-2.0.txt`). New contributions are accepted under `CLA.md`. If you run a modified copy for other people, including as a hosted service, you must publish your changes under the same license.
@@ -14,6 +31,8 @@ Click **Pin** beside **Sheets** in the top toolbar, then click two corners aroun
 
 
 ## Unreleased
+
+- Fixed Codex skipping coordinate tools: point and rectangle input schemas now use homogeneous arrays with exact lengths instead of tuple-form JSON Schema items. Coordinate validation and stored geometry are unchanged.
 
 - **Import from schedule reads a glued MATERIAL CODE header, word-after codes as OCR returns them, and keeps each one its own item (#483 rows 2 and 5).** A header box an on-device read returns over two columns (`MATERIAL CODE`) is split in two when the cells under it sit inside it in two groups and the code's group holds codes; when more than a fifth of the cells under it run past its edges (`CODE MFG` over vendors running into the next column) the second look stands down as before. A code with words after it now also reads when its suffix is glued to the word or spaced inside its parentheses (`CUT(C)`, `COVE (W )`, `CUT( W)`), when it has two words and a closing suffix (`ALT CUT (C)`), and when a word of three or more letters is glued to the code (`FTB-03ALTCUT (C)`). Code lines the reader used to skip or fold into the row above now follow the collision rule today's rows do: when two of them share a code, or one shares a plain row's code, each keeps its words glued (`FTB-01CUT(C)`, `FTB-01CUT(W)`, `FTB-01COVE(C)`, `CT-1COVE` beside `CT-1`), so the dialog no longer marks all but one **duplicate** (they used to import as one code). A key column centred under its header in a table too sparse to map its columns is read by centre as well as left edge, so a longer key line under centred codes is found. On an on-device read, a word-after code line printed as a whole row, with its own cells in two or more other columns on its line, is read as a row (the vector read already did); a key-column wrap with no cells beside it stays merged. A headerless legend led by a four- or five-letter code (`CONC`) names it in the text-layer notice instead of dropping it; on-device reads still take no letters codes. On recorded on-device words of the five private regions behind #483 (sets B–E, 73 live rows), Import from schedule reads 65 live rows instead of 46: set D 0 → 14 of 14, set C left 13 → 18 of 18 (its tile-base rows), with B, C right and E unchanged.
 - **Second-read measurement for flagged scan codes (#519, measure first; no app change).** `web/bench/ocr-codes` now scores a blind second read of the codes the disagreement check flags, before any provider read is built. It follows @drb995's three points on #519. Only flagged rows are scored against truth. The flag clears only when the blind reply equals the primary read, through `comparable()` from `codeCheck.ts`: a reply equal to the alternate is still shown, and the naive "take the reply" rule is printed beside it. An empty second view (`codeAlternate: ""`) is counted apart from a real alternate. A tight crop and the whole schedule row are two columns. With the free on-device stand-in reader (no provider), the blind rule cleared a flag wrongly 0 or 1 times per column on the public set, against up to 3 rows the naive rule settled wrongly. Provider numbers are not in this change; `scripts/measure-ocr-second-read.mjs --reader=provider --allow-network` runs them against an endpoint you name. [Evidence](web/bench/ocr-codes/README.md#second-read-of-flagged-codes-519-measure-first).

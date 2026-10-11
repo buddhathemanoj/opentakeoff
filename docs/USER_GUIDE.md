@@ -1,3 +1,45 @@
+# Kosal Studio local beta workspace
+
+## Kosal 3D and original takeoff tools
+
+Building projects now include **3D model**: drag to orbit, scroll to zoom and
+right-drag to pan. Use All floors/Selected floor, Exploded and Cutaway to inspect
+rooms and furnishings. This is an indicative model generated from editable plan
+geometry, not a structural or construction-approved BIM model. **3D study** remains
+the simpler vector axonometric view; **Elevation** is a façade concept.
+
+**Plan takeoff** opens the complete original canvas with Kosal typography and
+neutral surfaces. File, Sheets, Quantities, Work, markups, stamps, RFIs, revisions,
+reports, search, layouts and the original tool rail remain available. The report
+bar wraps to fit the available width. Original experimental and configured-service
+gates still apply; a new theme does not imply that premium features in development
+have shipped. The detailed feature map is [FEATURES.md](../FEATURES.md).
+
+The local fork opens in **Design studio**. Your existing PDF tools are available
+through **Plan takeoff** in the sidebar, including all the original controls
+described below. Design projects and takeoff data use separate local storage.
+
+Choose **New design → 3-floor bank / café / IT building** to explore the furnished
+30 × 24 m starter. **Preview** opens the drawing. Choose a floor tab for the bank,
+café or IT office; **3D study** shows the floor stack and **Elevation** shows an
+indicative south façade. Room labels and dimensions can be edited in the layer
+inspector. These are concept drawings, not approved construction documents.
+
+Describe changes in the bottom composer. Kosal invokes the local Codex login and
+sends the brief, recent conversation, project and selected item IDs. It does not
+expose credentials to the browser. Generated changes remain proposals until you
+choose **Apply to drawing**. **Discard** keeps the original; Undo restores a prior
+current-session edit. Stop cancels the request without applying geometry.
+
+Drafts and unapplied proposals are saved on this device. After a reload interrupts
+an in-flight request, its brief is restored for an explicit retry. Export backups
+before clearing browser data. **Export → Editable project** retains all floors,
+openings and furniture. **Architectural plan set** exports one A3 vector PDF sheet
+per floor. **Open in Plan takeoff** adds the set as a new source PDF; repeated exports
+of the same project use the original revision archive behavior.
+
+---
+
 # OpenTakeoff — The User Manual
 
 ### Annotation toolbar and reviewed Sweep
@@ -1028,6 +1070,11 @@ What's sent, and only while an agent run you started is going: your goal, the pr
 
 ### MCP — for agent users
 
+For Codex, connect the MCP server using [CONNECT.md](CONNECT.md). Give the AI
+your instructions in Codex, then import its takeoff export into the canvas for
+review. Coordinate tools support Codex while still requiring exactly two numeric
+coordinates per point.
+
 The same engine speaks [MCP](https://modelcontextprotocol.io), one command away:
 `npx -y opentakeoff-mcp` (or the one-click `opentakeoff-mcp.mcpb` bundle for Claude Desktop). **Help → Connect your AI** in the app (also on the opening screen and in the **⋯** menu) has the setup for Claude Desktop, Claude Code, Codex and Cursor with copy buttons, and a first question to ask about the sample plan; [CONNECT.md](CONNECT.md) is the same walk-through. An
 MCP client gets **<!--tool-count-->53<!--/tool-count--> tools** plus browsable sheet resources, over the very same measuring engine,
@@ -1316,3 +1363,23 @@ explains the browser controls and the current MCP transport limit explicitly.
 ## Privacy and terms
 
 Open the guide (`?`) for links to the [Privacy Policy](https://opentakeoff.kentucky-ai.com/privacy/) and [Terms of Service](https://opentakeoff.kentucky-ai.com/terms/). These explain local storage, optional cloud and AI connections, contributions, and responsibility for reviewed estimates.
+
+## Kosal design reports
+
+In Design studio, open **Preview → Quantities & reports**, or **View quantities &
+reports** beneath the chat. Quantities update from the current editable geometry;
+proposals are explicitly labelled as previews. Use **Rooms & areas** for the floor
+schedule. Download the report PDF, quantities CSV or drawing PDF from this panel.
+Enter local unit rates to calculate costs; blank rates stay unpriced. The displayed
+cost is only the subtotal of entered rates, not a complete construction budget.
+
+**PDF takeoff** measures uploaded drawings independently. Draw areas, lengths or
+counts on the PDF, then use its **Quantities** and **Report** actions. **More tools**
+contains the original advanced actions. **Design quantities & reports** returns
+to the geometry-based report beside the agent chat. The sidebar edge, Projects and
+Layers dividers, and chat/preview divider can be dragged or resized with arrow keys;
+their sizes are saved on this device.
+
+For a building interior, select **3D model → Enter building**. Choose a floor and
+room, click the scene, use WASD to move and drag to look; Esc exits. These are concept
+models, not surveyed or construction-approved building models.

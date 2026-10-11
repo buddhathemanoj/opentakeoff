@@ -87,6 +87,30 @@ test("tools/list: exactly TOOL_NAMES, each described with the coordinate contrac
   }
 });
 
+test("coordinate tools advertise Codex-compatible arrays and reject malformed points", async () => {
+  const client = await pair();
+  try {
+    const { tools } = await client.listTools();
+    function inspect(value: unknown, location: string) {
+      if (!value || typeof value !== "object") return;
+      for (const [key, child] of Object.entries(value)) {
+        if (key === "items") assert.equal(Array.isArray(child), false, `${location}: tuple items hide tools in Codex`);
+        inspect(child, `${location}.${key}`);
+      }
+    }
+    for (const tool of tools) inspect(tool.inputSchema, tool.name);
+    await call(client, "load_plan", { path: PLAN });
+    for (const point of [[1], [1, 2, 3], ["x", 2]]) {
+      const bad = await client.callTool({ name: "place_count", arguments: { sheet: KEY, points: [point], condition: "TEST" } });
+      assert.equal(bad.isError, true, `reject malformed point ${JSON.stringify(point)}`);
+    }
+    const good = await call(client, "place_count", { sheet: KEY, points: [[1, 2]], condition: "TEST" });
+    assert.equal(good.isError, false);
+  } finally {
+    await client.close();
+  }
+});
+
 test("load_plan: happy path returns sheets; a missing file is isError, not a crash", async () => {
   const client = await pair();
   const good = await call(client, "load_plan", { path: PLAN });

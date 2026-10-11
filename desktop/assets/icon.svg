@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+ <defs><linearGradient id="surface" x2="0" y2="1"><stop stop-color="#27232e"/><stop offset="1" stop-color="#181818"/></linearGradient><radialGradient id="aura"><stop stop-color="#8d63b8" stop-opacity=".65"/><stop offset="1" stop-color="#8d63b8" stop-opacity="0"/></radialGradient><clipPath id="shape"><rect x="42" y="42" width="940" height="940" rx="210"/></clipPath></defs>
+ <rect x="42" y="42" width="940" height="940" rx="210" fill="url(#surface)"/>
+ <g clip-path="url(#shape)"><ellipse cx="345" cy="84" rx="520" ry="360" fill="url(#aura)"/></g>
+ <rect x="43" y="43" width="938" height="938" rx="209" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="2"/>
+ <path d="M5 4h5v8L20 4h6L14 14l12 10h-7l-9-8v8H5Z" transform="translate(151 190) scale(24)" fill="#f3f3f3"/>
+</svg>

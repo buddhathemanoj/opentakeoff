@@ -1,3 +1,30 @@
+# Kosal Studio (local beta)
+
+This fork adds a Kosal-branded, conversation-first design workspace to OpenTakeoff.
+Run `npm ci` at the repository root and `npm ci --prefix web`, then `npm run dev`.
+The local app uses your existing Codex login (`codex login`) for design requests.
+Use **Plan takeoff** in the sidebar for the original PDF, measurement, annotation,
+reporting, revision and project tools.
+
+**New design → 3-floor bank / café / IT building** opens a furnished 30 × 24 m
+mixed-use concept. Preview includes floor tabs, walls, door swings, glazing,
+furniture, a floor stack and an elevation study. AI changes are separate proposals;
+review and apply them before changing the drawing. Drafts and proposals survive reloads.
+**Export → Architectural plan set** creates an A3 vector PDF, and **Open in Plan takeoff**
+adds that plan set to the original measuring engine. Concepts require professional
+engineering and local approval before construction.
+
+Desktop: `npm run build && npm run desktop`. Packaging commands are
+`npm run desktop:mac` and `npm run desktop:windows`. Local Apple Silicon builds have
+been launched; Windows runtime validation and release signing remain pending.
+See [product and verification status](docs/kosal/PRODUCT.md).
+
+The interface adapts Remocn Studio's MIT-licensed shell geometry and NeuroNoise aura;
+its notice is preserved in [desktop/licenses/remocn-MIT.txt](desktop/licenses/remocn-MIT.txt).
+OpenTakeoff's original source, licenses and machine-original geometry remain intact.
+
+---
+
 <div align="center">
 
 # OpenTakeoff
@@ -194,6 +221,8 @@ If you carry a GitHub identity, [fork the repository](https://github.com/Kentuck
 as well: that's where an engine change you make gets tested—every pull request from a fork runs the
 full CI with a read-only token—and tested pull requests from agents merge under the same bar as
 anyone else's. The [contributor path](#fork-it) is the same one.
+
+Codex-compatible coordinate inputs use fixed-length numeric arrays, so calibration and measurement tools remain available in Codex.
 
 **New here? [Connect OpenTakeoff to your AI](docs/CONNECT.md)** walks Claude Code, Codex, Cursor and
 Claude Desktop step by step and runs a first command on the demo plan.

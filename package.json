@@ -1,0 +1,25 @@
+{
+  "name": "kosal-studio",
+  "version": "0.1.0-beta.1",
+  "private": true,
+  "description": "Kosal Studio — AI-assisted spatial design and takeoff",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "dev": "npm run dev --prefix web -- --host 127.0.0.1 --port 5188 --strictPort",
+    "build": "npm run build --prefix web",
+    "test:studio": "node --test test/studio/*.test.mjs",
+    "desktop": "electron .",
+    "desktop:pack": "npm run build && electron-builder --dir",
+    "desktop:mac": "npm run build && electron-builder --mac",
+    "desktop:windows": "npm run build && electron-builder --win"
+  },
+  "dependencies": {
+    "@openai/codex": "0.162.1"
+  },
+  "devDependencies": {
+    "electron": "44.7.0",
+    "electron-builder": "26.15.3"
+  }
+}

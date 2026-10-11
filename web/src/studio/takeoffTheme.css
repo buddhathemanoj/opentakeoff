@@ -1,0 +1,53 @@
+/* Kosal chrome only. Measurement palettes, SVG marks, provenance and storage remain engine data. */
+:root:has(.ks-app),.ks-takeoff-workspace .app-shell {
+ --f-body:'DM Sans Variable',sans-serif;--f-display:var(--f-body);
+ --paper-bright:#181818;--paper-cream:#222;--paper-shadow:#2c2c2c;
+ --ink:#f3f3f3;--ink-soft:#d4d4d4;--ink-muted:#afafaf;--ink-secondary:#bdbdbd;--ink-faint:#ffffff14;--text-faint:#999;
+ --cobalt:#e4dcf3;--cobalt-deep:#cec1e9;--accent-contrast:#181818;
+ --tint-select:#302b38;--tint-active:#2c3730;--surface-pop:#333;--divider-soft:#ffffff14;
+ --stage:#242424;--status-bg:#181818;--status-fg:#afafaf;--status-acc:#e4dcf3;
+ --shadow-1:0 1px 3px #0002;--shadow-2:0 12px 36px #0005;--shadow-pop:var(--shadow-2);
+ --ring:0 0 0 3px #c4b5fd26;--glow:none;--r-1:8px;
+ --workspace-face:#222;--workspace-active-face:#333;--workspace-glow:none;--workspace-lit:#f3f3f3;
+}
+:root:has(.ks-takeoff-workspace [data-workspace-look=light]),.ks-takeoff-workspace .app-shell[data-workspace-look=light] {
+ --paper-bright:#fafaf8;--paper-cream:#fff;--paper-shadow:#eee;
+ --ink:#262626;--ink-soft:#444;--ink-muted:#737373;--ink-secondary:#666;--ink-faint:#00000014;--text-faint:#777;
+ --cobalt:#69558c;--cobalt-deep:#574377;--accent-contrast:#fff;--tint-select:#f0ebf6;--tint-active:#edf4ee;--surface-pop:#fff;
+ --stage:#eaeae6;--status-bg:#fafaf8;--status-fg:#666;--status-acc:#69558c;--workspace-face:#fff;--workspace-active-face:#eee8f5;
+}
+.ks-takeoff-workspace .app-shell[data-workspace-look=hud] {--paper-bright:#111;--paper-cream:#191919;--paper-shadow:#282828;--stage:#080808;}
+.ks-takeoff-workspace .calm-header {min-height:48px;padding:8px 12px;gap:12px;}
+.ks-takeoff-workspace .calm-brand {font-size:16px;flex-shrink:0;letter-spacing:-.3px;}
+.ks-takeoff-workspace .calm-header-actions {overflow-x:auto;overflow-y:hidden;flex:1;justify-content:flex-start;scrollbar-width:thin;overscroll-behavior-x:contain;}
+.ks-takeoff-workspace .calm-header-actions>* {flex-shrink:0;}
+.ks-takeoff-workspace .calm-header button,.ks-takeoff-workspace .calm-context button {min-height:32px;font-size:13px;padding:4px 9px;border-radius:8px;}
+.ks-takeoff-workspace .calm-report {background:var(--ink)!important;color:var(--paper-bright)!important;border:1px solid transparent!important;box-shadow:none!important;}
+.ks-takeoff-workspace [data-tool-rail] button[aria-pressed] {box-shadow:none!important;}
+.ks-takeoff-workspace [data-tool-rail] button[aria-pressed=true] svg {filter:none!important;}
+.ks-takeoff-workspace .calm-context {padding:6px 12px;gap:8px;}
+.ks-takeoff-workspace .calm-project {display:none;}
+.ks-takeoff-workspace .calm-navigator header {padding:12px 8px;}
+.ks-takeoff-workspace .calm-sheet-list>button {border-radius:8px;}
+.ks-takeoff-workspace .calm-context select {border-radius:6px;}
+.ks-takeoff-workspace .report-toolbar {flex-wrap:wrap;gap:8px!important;padding:12px!important;}
+.ks-takeoff-workspace .report-toolbar>strong {white-space:nowrap;}
+.ks-takeoff-workspace .report-toolbar input[name=project-name] {width:200px!important;max-width:100%;}
+.ks-takeoff-workspace .report-toolbar button {min-height:32px;height:32px;border-radius:8px!important;padding:4px 10px!important;font-size:13px;letter-spacing:0;text-transform:none;white-space:nowrap;}
+@media print {
+ body.report-open .ks-app,body.report-open .ks-takeoff-workspace,body.report-open .ks-takeoff-workspace>div {height:auto!important;overflow:visible!important;display:block!important;}
+ body.report-open .ks-app>:not(.ks-body),body.report-open .ks-body>:not(.ks-takeoff-workspace) {display:none!important;}
+}
+.ks-takeoff-workspace .calm-header{background:#181818;min-height:48px}
+.ks-takeoff-workspace .calm-header-actions{overflow:visible;gap:6px}
+.ks-takeoff-workspace .calm-brand{display:none}
+.ks-takeoff-workspace .calm-header button{font-weight:400;background:transparent;border-color:#ffffff14;box-shadow:none;color:var(--ink-soft)}
+.ks-takeoff-workspace .calm-header button[aria-pressed=true]{background:#2c2c2c;border-color:#ffffff14;color:var(--ink)}
+.ks-takeoff-workspace .calm-more{position:relative;margin-left:auto;flex-shrink:0}
+.ks-takeoff-workspace .calm-more summary{list-style:none;cursor:pointer;padding:6px 10px;border:1px solid #ffffff14;border-radius:8px;white-space:nowrap}
+.ks-takeoff-workspace .calm-more>div{position:absolute;right:0;top:40px;z-index:100;background:var(--paper-cream);border:1px solid var(--divider-soft);box-shadow:var(--shadow-pop);border-radius:10px;padding:10px;display:flex;flex-wrap:wrap;gap:8px;width:300px}
+.ks-takeoff-workspace .calm-context{background:#181818;min-height:40px;border-color:#ffffff14}
+.ks-takeoff-workspace .calm-navigator{background:#181818;width:240px!important;min-width:180px}
+.ks-takeoff-workspace .calm-sheet-list>button{padding:10px 12px;margin:4px 8px;border-radius:8px;background:transparent;font-size:13px}
+.ks-takeoff-workspace .calm-sheet-list>button[aria-current=page]{background:#2c2c2c;box-shadow:none}
+.ks-takeoff-workspace [data-tool-rail] button{border-radius:8px;box-shadow:none}

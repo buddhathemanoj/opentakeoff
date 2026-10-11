@@ -32,3 +32,22 @@ is the character list extracted from that file's `character_dict`.
 
 `pdf.js` is distributed under the Apache License 2.0; a copy of that license is
 available at <https://github.com/mozilla/pdf.js/blob/master/LICENSE>.
+
+## Remocn Studio interface adaptations
+
+Kosal Studio adapts shell dimensions, dark tokens, button/navigation sizing and
+the NeuroNoise titlebar field from Remocn Studio. Copyright (c) 2026 Remocn, MIT.
+The complete notice is retained at `desktop/licenses/remocn-MIT.txt`.
+Source: https://github.com/Remocn/remocn-studio
+
+## Kosal desktop and design additions
+
+| Project | License | Use |
+| --- | --- | --- |
+| [Codex CLI](https://github.com/openai/codex) 0.162.1 | Apache-2.0 | Bundled target-platform AI runtime; authenticated by the user |
+| [Three.js](https://github.com/mrdoob/three.js) 0.186.1 | MIT | Interactive architectural model and OrbitControls |
+| [Lucide](https://github.com/lucide-icons/lucide) 1.7.0 | ISC | Studio interface icons |
+| [Paper Design shaders](https://github.com/paper-design/shaders) 0.0.78 | Apache-2.0 | Remocn-adapted NeuroNoise aura |
+| [DM Sans](https://github.com/googlefonts/dm-fonts) | SIL Open Font License 1.1 | Locally bundled Studio typography |
+
+Complete notices for these additions are included in `desktop/licenses/`.

@@ -1,0 +1,40 @@
+appId: com.kosal.studio
+productName: Kosal Studio
+copyright: Copyright © 2026 Kosal. Includes OpenTakeoff contributors.
+asar: true
+beforePack: desktop/scripts/before-pack.cjs
+extraResources:
+  - from: .desktop-build/${os}-${arch}/codex
+    to: codex
+  - from: desktop/licenses
+    to: licenses
+directories:
+  output: release
+  buildResources: desktop/assets
+files:
+  - desktop/**/*
+  - studio/**/*
+  - web/dist/**/*
+  - web/src/studio/*.js
+  - package.json
+  - "!node_modules/@openai/**/*"
+  - LICENSE
+  - NOTICE
+  - THIRD-PARTY-NOTICES.md
+mac:
+  icon: desktop/assets/icon.icns
+  category: public.app-category.graphics-design
+  target:
+    - target: dmg
+      arch: [arm64, x64]
+    - target: zip
+      arch: [arm64, x64]
+win:
+  icon: desktop/assets/icon.ico
+  target:
+    - target: nsis
+      arch: [x64]
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true

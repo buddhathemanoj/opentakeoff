@@ -1,0 +1,11 @@
+import {execFile} from 'node:child_process';
+import {promisify} from 'node:util';
+import {resolve,join} from 'node:path';
+import {pathToFileURL} from 'node:url';
+const directory=resolve(process.argv[2]||'release');
+const app=process.platform==='darwin'?join(directory,'Kosal Studio.app/Contents'):directory;
+const resources=join(app,process.platform==='darwin'?'Resources':'resources');
+const executable=join(app,process.platform==='darwin'?'MacOS/Kosal Studio':'Kosal Studio.exe');
+const smoke=pathToFileURL(join(resources,'app.asar/desktop/scripts/runtime-smoke.mjs')).href;
+const {stdout}=await promisify(execFile)(executable,['--input-type=module','-e',`const {smoke}=await import(${JSON.stringify(smoke)});await smoke();`],{env:{...process.env,ELECTRON_RUN_AS_NODE:'1'},timeout:45000,windowsHide:true});
+console.log(stdout.trim());
