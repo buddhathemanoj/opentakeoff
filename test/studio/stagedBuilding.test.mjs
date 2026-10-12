@@ -65,3 +65,25 @@ test('new conversation instructions invalidate a retained floor checkpoint',asyn
  calls=[];await runStagedBuilding({...options,history:[...options.history,{role:'user',content:'Use a side atrium instead'}],generateFloor:async o=>{calls.push(o.project.floors[0].id);return{proposal:completed(o.project)};}});
  assert.equal(plans,2);assert.deepEqual(calls,['f0','f1','f2','f3']);
 });
+
+test('all floor assumptions remain in the exported project when stages provide more than 30 notes',async()=>{
+ const original=mixedUseBuilding('staged-test'),sourceNotes=[];
+ const result=await runStagedBuilding({checkpoints:new Map(),prompt:'Create four floors',project:original,request:async()=>blueprint(),generateFloor:async options=>{
+  const proposal=completed(options.project),id=proposal.floors[0].id;
+  proposal.notes=Array.from({length:10},(_,i)=>`${id}: Assumption ${i+1} requires review by the building designer.`);
+  sourceNotes.push(...proposal.notes);return{proposal};
+ }});
+ const exported=JSON.parse(JSON.stringify(result.proposal)),notes=exported.notes.join('\n');
+ assert.equal(sourceNotes.length,40);assert.ok(sourceNotes.every(note=>notes.includes(note)));assert.ok(exported.notes.length<=30);assert.ok(exported.notes.every(note=>note.length<=1000));
+});
+
+test('planner zero thickness on non-wall surfaces becomes nominal metadata without altering real walls',async()=>{
+ for(const unit of ['m','ft']){
+  const raw=blueprint();raw.unit=unit;raw.floors[0].elements.push({id:'f0-garden',kind:'landscape',label:'Garden',x:26,y:20,width:2,height:2,wallThickness:0});
+  const result=await runStagedBuilding({checkpoints:new Map(),prompt:'Create four floors',project:mixedUseBuilding('staged-test'),request:async()=>raw,generateFloor:async options=>({proposal:completed(options.project)})});
+  const garden=result.proposal.floors[0].elements.find(e=>e.id==='f0-garden');
+  assert.equal(garden.wallThickness,unit==='m'?.15:.15/.3048);assert.deepEqual([garden.x,garden.y,garden.width,garden.height],[26,20,2,2]);assert.equal(raw.floors[0].elements.at(-1).wallThickness,0);
+ }
+ const raw=blueprint();raw.floors[0].elements[0].wallThickness=0;let requests=0;
+ await assert.rejects(runStagedBuilding({checkpoints:new Map(),prompt:'Create four floors',project:mixedUseBuilding('staged-test'),request:async()=>{requests++;return raw;},generateFloor:async()=>{throw Error('Must not run');}}),/wall thickness/);assert.equal(requests,2);
+});

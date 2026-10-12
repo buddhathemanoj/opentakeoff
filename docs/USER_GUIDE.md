@@ -1609,3 +1609,8 @@ No partial floor is applied to your drawing.
 **Fit drawing** fits the whole sheet to both the preview width and height. It
 adapts when you resize the chat/preview split. Zoom in to inspect details and
 scroll to reach enlarged sheet edges.
+
+Design assumptions and open questions appear in **Quantities & reports**, in
+**Building brief & assumptions** for the drawing being previewed, and in the
+report PDF. Staged buildings keep all floor notes in the editable project rather
+than moving later notes into chat only.

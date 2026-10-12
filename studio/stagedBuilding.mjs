@@ -1,5 +1,6 @@
 import {buildingSchema} from './schema.mjs';
 import {validateProject} from '../web/src/studio/model.js';
+import {metresPerUnit} from '../web/src/studio/building.js';
 import {DESIGN_POLICY} from './designPolicy.mjs';
 import {createHash} from 'node:crypto';
 
@@ -23,6 +24,17 @@ function keepCheckpoint(store,key,state){
   if(Buffer.byteLength(JSON.stringify(state),'utf8')>2000000){store.delete(key);return;}
   state.updated=Date.now();store.delete(key);store.set(key,state);
   while(store.size>2)store.delete(store.keys().next().value);
+}
+
+export function packBuildingNotes(notes){
+  const packed=[];let paragraph='';
+  for(const note of new Set(notes)){
+    if(paragraph&&paragraph.length+note.length+2>1000){packed.push(paragraph);paragraph='';}
+    paragraph+=paragraph?'\n\n'+note:note;
+  }
+  if(paragraph)packed.push(paragraph);
+  if(packed.length>30)throw new Error('The building assumptions are too long for one report. Request more concise assumptions; your drawing is unchanged.');
+  return packed;
 }
 
 const object=properties=>({type:'object',properties,required:Object.keys(properties),additionalProperties:false});
@@ -51,7 +63,12 @@ function validateBlueprint(raw,id,expectedCount){
   if(!raw||raw.id!==id)throw new Error('The building plan belongs to a different project.');
   if(!Array.isArray(raw.floors)||raw.floors.length!==expectedCount)throw new Error(`The building plan must include all ${expectedCount} requested floors.`);
   const programmes=raw.floors.map(f=>{if(typeof f.programme!=='string'||!f.programme.trim()||f.programme.length>4000)throw new Error('Each floor needs its complete programme.');return f.programme;});
-  const project=validateProject({...raw,floors:raw.floors.map(({programme,...f})=>({...f,openings:[],fixtures:[]}))});
+  // Non-wall surfaces still require nominal thickness in the stored schema.
+  // Accept the planner's natural zero representation without changing any
+  // footprint or actual room wall. Canonical output remains reader-compatible.
+  const project=validateProject({...raw,floors:raw.floors.map(({programme,...f})=>({...f,
+    elements:Array.isArray(f.elements)?f.elements.map(e=>e?.wallThickness===0&&['landscape','void','water','parking'].includes(e.kind)?{...e,wallThickness:.15/metresPerUnit(raw.unit)}:e):f.elements,
+    openings:[],fixtures:[]}))});
   const cores=new Map();let coreKeys;
   for(const floor of project.floors){const keys=[];for(const element of floor.elements){
     if(!element.id.startsWith(floor.id+'-'))throw new Error('Reserved space IDs must use their floor prefix.');
@@ -98,7 +115,7 @@ export async function runStagedBuilding({prompt,project,history=[],signal,onEven
   for(let attempt=0;!blueprint?.project&&attempt<2;attempt++){
     raw=await request({instructions:instructions+(attempt?`\nThe previous blueprint was invalid. Correct this error: ${blueprint.message}. FAILED BLUEPRINT DATA: ${JSON.stringify(raw)}`:''),schema:blueprintSchema,signal,runtime,onEvent:()=>{}});
     await onDraft?.({result:structuredClone(raw),stage:'blueprint',repair:!!attempt});
-    try{blueprint=validateBlueprint(raw,project.id,requestedFloorCount(prompt));break;}catch(error){if(attempt)throw error;blueprint=error;}
+    try{blueprint=validateBlueprint(raw,project.id,requestedFloorCount(prompt));break;}catch(error){if(attempt)throw error;blueprint=error;onEvent({type:'status',message:'Correcting the shared floor organization…'});}
   }
   const state=checkpoint||{blueprint,completed:[],messages:[],extraNotes:[],history:contextHistory};
   const {completed,messages,extraNotes}=state;
@@ -121,8 +138,8 @@ export async function runStagedBuilding({prompt,project,history=[],signal,onEven
   }
   checkCancelled();
   onEvent({type:'status',message:'Checking the complete building for review…'});
-  const combinedNotes=[...new Set([...blueprint.project.notes,...extraNotes])];
-  const proposal=validateProject({...blueprint.project,floors:completed,notes:combinedNotes.slice(0,30)});
+  const combinedNotes=packBuildingNotes([...blueprint.project.notes,...extraNotes]);
+  const proposal=validateProject({...blueprint.project,floors:completed,notes:combinedNotes});
   checkpoints.delete(key);
-  return {message:`Complete ${completed.length}-floor proposal ready for review. ${messages.join(' ')}${combinedNotes.length>30?' Additional assumptions: '+combinedNotes.slice(30).join(' '):''}`,proposal};
+  return {message:`Complete ${completed.length}-floor proposal ready for review. ${messages.join(' ')}`,proposal};
 }

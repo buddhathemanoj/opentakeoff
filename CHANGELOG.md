@@ -1,5 +1,7 @@
 # Changelog
 
+- Arcloom: preserves staged floor assumptions in editable projects and PDF reports, displays them in Quantities & reports and proposal review, and keeps paragraph separators readable in PDF text. Planner zero wall thickness on landscape/void/water/parking is converted to nominal schema metadata without altering any footprint or room wall.
+
 - Arcloom: staged retries reuse validated floors for an unchanged drawing and brief, with bounded transient checkpoints and explicit resumption status. Fit drawing now accounts for preview height as well as width and keeps enlarged sheet edges reachable.
 
 - Arcloom: increased the bounded building fixture capacity to 1,000 per floor so classroom/laboratory programmes retain individual furnishings instead of failing at 400. Files over the old limit require the updated Arcloom reader; original PDF takeoff formats are unchanged.

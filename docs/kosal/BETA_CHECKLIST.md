@@ -829,3 +829,44 @@ QA directory; ordinary app requests do not enable this recorder. The new run
 was still planning at this checkpoint. Its server process retains retry
 checkpoints, and completed diagnostic stages are captured separately for
 inspection if a later floor fails. No complete university is claimed yet.
+
+## Assumption preservation and blueprint surface metadata
+
+Staged assembly previously kept only the first 30 note strings in the project,
+moving later notes to chat. Those later assumptions were absent from exported
+reports. It now groups complete notes within the existing 30 × 1,000-character
+schema bounds without discarding text. If the complete note set cannot fit, it
+returns an explicit error rather than publishing an incomplete report. PDF
+whitespace cleaning preserves separators between grouped notes.
+
+A four-floor controlled regression provides 40 distinct stage notes and checks
+every one in the exported project. A separate PDF stress artifact uses the
+retained real teaching geometry with 40 explicitly synthetic QA notes. All 40
+were verified with pdftotext, and the last PDF page was visually inspected with
+no clipping: [PDF](../../output/verification/forty-assumption-report.pdf),
+[rendered page](../../output/verification/forty-assumption-report-last.png).
+Quantities & reports now shows design assumptions separately from calculation
+basis, and chat's assumption section follows the previewed proposal.
+[UI evidence](../../output/ui/arcloom-visible-design-assumptions.png).
+
+The live run's initial blueprint used zero wall thickness only for the ground
+garden, making otherwise valid geometry fail structural validation. Future
+blueprints accept zero for landscape/void/water/parking transport and write
+0.15 m nominal metadata in the canonical unit. Their footprints remain exact;
+room wall thickness still rejects zero. Meter/foot regressions verify conversion
+and input preservation. No stored format or original Takeoff field changed.
+The live run was already executing older code and therefore used its bounded
+model repair; it was not interrupted or restarted for this patch.
+
+That run completed the [ground stage](../../output/verification/staged-nexus-ground.json):
+36 spaces, 64 openings, 331 fixtures, and exactly 150 chairs contained within
+the auditorium. Review found one internal-window warning (the AV viewing
+window), with no room overlaps or other current geometry findings. Library
+generation was live at this checkpoint. This is one completed floor, not a
+complete university or compliance assessment.
+
+Desktop CI run 38196305702 passed both Mac architectures at 979f7738. At the
+next observation, run 38201693107 at e96cafc0 had passed arm64 while Intel was
+still running. Windows remained failed on its previously known path issue.
+All 84 local studio tests, full web check, MCP tool-count/wiki, protocol and
+doc-link checks pass after the report/blueprint changes.
