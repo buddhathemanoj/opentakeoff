@@ -682,3 +682,39 @@ as beta 2 build `55c2cf04e595`. Its DMG and ZIP passed installer verification.
 The compact-grid retry is still active; no claim of improved end-to-end
 university generation quality is made yet. Packages remain unsigned and
 unnotarized.
+
+
+### Repairs of unreleased full proposals
+
+The compact-grid NEXUS retry returned a six-floor draft with 125 space entries,
+80 grids and 104 individually listed fixtures. It failed opening validation.
+The one bounded repair returned edits referencing floors in that new draft;
+the runtime incorrectly tried to apply them to the saved fixture and rejected
+the missing floor. No proposal was applied. The initial draft was temporary
+and was cleaned up, so the invalid opening's exact values were not retained.
+These counts were observed during validation, not a completed design result.
+
+Targeted repairs of failed full replacements now use the failed draft's
+existing fields and IDs, validate the corrected proposal completely and retain
+its original grids unless a replacement grid array is supplied. The saved
+source remains untouched. Unknown targets, fields and collections refuse.
+Normal compact refinements still use the saved drawing. The overall repair
+budget remains one attempt. Opening validation messages now identify the item,
+floor and permitted width range. Optional internal draft capture is used only
+by the owned synthetic QA recorder; the application does not log drafts by
+default or add telemetry.
+
+The regression test reproduces new draft floor IDs absent from the saved
+project, fixes its invalid opening, retains 150 grid-generated seats and
+verifies the saved drawing is unchanged. All 73 studio tests passed. The full
+university brief is being run again with this fix; the programme, rendering and
+counts remain pending verification.
+
+
+The full web check, tool-count/wiki checks, all 61 protocol tests and relative
+doc links passed. The refreshed beta 2 ARM64 runtime in
+`release/arcloom-draftrepair` passed native runtime identity, Codex, compiled
+assets, PDF worker and license checks as build `9612fddb7412`. Both installer
+formats passed verification. The live university run with corrected repair
+handling remains active; signing/notarization and the wider quality checklist
+remain open.
