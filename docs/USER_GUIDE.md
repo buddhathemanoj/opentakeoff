@@ -1498,3 +1498,22 @@ viewer returns to entry instead. **Return to entry** and **Reset view** remain
 explicit controls. Changing projects, floors, view modes or scene bounds resets
 the view. Camera memory is transient within the mounted 3D viewer; it is not
 stored in your exported project or restored after a page reload.
+
+## Inspect design issues beside the agent
+
+**Design checks** sits below the report link in the design conversation. It
+counts overlapping rooms, plots or building footprints. For multi-floor
+buildings it also flags rooms without a modelled door/passage, detached
+openings and windows away from the building perimeter. Expand the section,
+filter by floor and use **Next issues** to inspect pages of 25 findings.
+Click a finding to open the saved floor plan and select its first affected item.
+For an overlap, the message names both items. This navigation does not apply a
+proposal or change geometry; a pending proposal remains available for review.
+
+The displayed count includes all findings from these checks. Proposal and
+quantity-report warning summaries remain bounded, and explicitly disclose how
+many additional findings are omitted. **Design checks** inspects the saved
+drawing; apply a reviewed proposal to check it there. A clear result means these
+checks found no issues, not that a design meets accessibility, fire, structural
+or other regulations. An opening on a room boundary does not establish a
+connected route to an exit.

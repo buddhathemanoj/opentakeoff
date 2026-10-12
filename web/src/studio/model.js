@@ -1,5 +1,5 @@
 import { validateBuilding, BUILDING_SCHEMA } from './building.js';
-import {floorAccessWarnings} from './designReview.js';
+import {reviewLayout} from './designReview.js';
 export const SCHEMA = 'kosal.studio.project.v1';
 export const KINDS = ['plot', 'building', 'room', 'road', 'landscape', 'water', 'parking'];
 export const KIND_LABELS = { plot: 'Plot', building: 'Building', room: 'Room', road: 'Road', landscape: 'Landscape', water: 'Water', parking: 'Parking' };
@@ -52,15 +52,9 @@ export function metrics(project) {
   return { area: project.width * project.height, areas, plots: project.elements.filter(e => e.kind === 'plot').length };
 }
 export function layoutWarnings(project) {
-  if(project.schema===BUILDING_SCHEMA)return project.floors.flatMap(floor=>[...layoutWarnings({...project,schema:SCHEMA,elements:floor.elements}),...floorAccessWarnings(project,floor)].map(w=>`${floor.name}: ${w}`)).slice(0,15);
-  const warnings = [];
-  const solid = project.elements.filter(e => ['building', 'plot', 'room'].includes(e.kind));
-  for (let i = 0; i < solid.length; i++) for (let j = i + 1; j < solid.length; j++) {
-    const a = solid[i], b = solid[j];
-    if (a.kind !== b.kind) continue;
-    if (Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x) > .01 && Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y) > .01) warnings.push(`${a.label} overlaps ${b.label}.`);
-    if (warnings.length === 10) return warnings;
-  }
+  const building=project.schema===BUILDING_SCHEMA,review=reviewLayout(project,{limit:building?15:10});
+  const warnings=review.issues.map(issue=>(building?issue.floorName+': ':'')+issue.message);
+  if(review.total>review.issues.length)warnings.push(`${review.total-review.issues.length} additional geometry issues are not listed here. Inspect Design checks in the app.`);
   return warnings;
 }
 export const escapeXml = text => String(text).replace(/[<>&"']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[c]));

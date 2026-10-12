@@ -1,4 +1,4 @@
-import {metresPerUnit} from './building.js';
+import {BUILDING_SCHEMA,metresPerUnit} from './building.js';
 
 // Geometry diagnostics only: a boundary opening does not prove a connected route.
 export function openingOnBoundary(room,opening,unit='m'){
@@ -9,17 +9,37 @@ export function openingOnBoundary(room,opening,unit='m'){
  const minimum=horizontal?room.x:room.y,maximum=minimum+(horizontal?room.width:room.height);
  return edges.some(edge=>Math.abs(side-edge)<=tolerance)&&low>=minimum-tolerance&&high<=maximum+tolerance;
 }
-export function floorAccessWarnings(project,floor){
- const rooms=floor.elements.filter(item=>item.kind==='room'),footprint={x:0,y:0,width:project.width,height:project.height},warnings=[];
+export function floorAccessIssues(project,floor){
+ const rooms=floor.elements.filter(item=>item.kind==='room'),footprint={x:0,y:0,width:project.width,height:project.height},issues=[];
  for(const room of rooms){
-  if(!floor.openings.some(opening=>opening.kind!=='window'&&openingOnBoundary(room,opening,project.unit)))warnings.push(`${room.label} has no modelled door or open passage on its boundary.`);
+  if(!floor.openings.some(opening=>opening.kind!=='window'&&openingOnBoundary(room,opening,project.unit)))issues.push({kind:'access',itemIds:[room.id],message:`${room.label} has no modelled door or open passage on its boundary.`});
  }
  for(const opening of floor.openings){
   if(opening.kind==='window'){
-   if(!openingOnBoundary(footprint,opening,project.unit))warnings.push(`Window ${opening.id} is away from the building perimeter; check whether interior glazing is intended.`);
+   if(!openingOnBoundary(footprint,opening,project.unit))issues.push({kind:'window',itemIds:[opening.id],message:`Window ${opening.id} is away from the building perimeter; check whether interior glazing is intended.`});
   }else if(!openingOnBoundary(footprint,opening,project.unit)&&!rooms.some(room=>openingOnBoundary(room,opening,project.unit))){
-   warnings.push(`Opening ${opening.id} is not on a modelled room wall or the building perimeter.`);
+   issues.push({kind:'opening',itemIds:[opening.id],message:`Opening ${opening.id} is not on a modelled room wall or the building perimeter.`});
   }
  }
- return warnings;
+ return issues;
+}
+
+export function floorAccessWarnings(project,floor){return floorAccessIssues(project,floor).map(issue=>issue.message);}
+
+// Count every finding, but retain only the requested page for bounded UI/report output.
+export function reviewLayout(project,{floorId=null,offset=0,limit=25}={}){
+ if(!Number.isInteger(offset)||offset<0||!Number.isInteger(limit)||limit<1||limit>1000)throw new Error('Invalid design check page.');
+ const building=project.schema===BUILDING_SCHEMA,issues=[];
+ const floors=building?project.floors.filter(f=>!floorId||f.id===floorId):[{id:null,name:project.name,elements:project.elements}];
+ let total=0;
+ for(const floor of floors){
+  const add=issue=>{if(total>=offset&&issues.length<limit)issues.push({...issue,floorId:floor.id,floorName:floor.name});total++;};
+  const solid=floor.elements.filter(e=>['building','plot','room'].includes(e.kind));
+  for(let i=0;i<solid.length;i++)for(let j=i+1;j<solid.length;j++){
+   const a=solid[i],b=solid[j];if(a.kind!==b.kind)continue;
+   if(Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x)>.01&&Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y)>.01)add({kind:'overlap',itemIds:[a.id,b.id],message:`${a.label} overlaps ${b.label}.`});
+  }
+  if(building)for(const issue of floorAccessIssues(project,floor))add(issue);
+ }
+ return{issues,total,offset,limit};
 }

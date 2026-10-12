@@ -394,3 +394,20 @@
 .ks-room-move-options{font-size:11px;margin:12px 0;color:var(--ks-soft)}.ks-room-move-options label{display:flex;gap:8px;align-items:center;line-height:1.5}.ks-room-move-options input{width:14px;height:14px;flex-shrink:0}.ks-room-move-options p{font-size:10px;line-height:1.6;color:var(--ks-muted)}
 .ks-connect-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.ks-connect-actions a{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.ks-connection [role=alert]{color:#e7b5aa}
 .ks-chat>.ks-connection{flex-shrink:0;width:calc(100% - 40px);max-width:672px;align-self:center;margin:16px 20px 0;box-sizing:border-box}
+
+/* Geometry review belongs beside the brief, with direct links into the drawing. */
+.ks-design-checks{border-top:1px solid var(--ks-line);margin-top:20px;padding:16px 0;font-size:12px}
+.ks-design-checks summary{cursor:pointer;color:var(--ks-soft)}
+.ks-design-checks summary span{margin-left:10px;color:var(--ks-muted);font-variant-numeric:tabular-nums}
+.ks-design-checks .ks-muted{font-size:11px;line-height:1.7}
+.ks-check-filter{display:flex;gap:12px;align-items:center;color:var(--ks-muted);margin:16px 0}
+.ks-check-filter select{min-width:0;max-width:100%;border:1px solid var(--ks-line);border-radius:var(--ks-radius);background:var(--ks-panel);color:var(--ks-ink);padding:7px 10px;font:inherit}
+.ks-check-list{list-style:none;margin:0;padding:0}
+.ks-check-list li{border-bottom:1px solid var(--ks-line)}
+.ks-check-list button{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;width:100%;padding:12px 8px;border:0;background:transparent;color:var(--ks-soft);font:inherit;line-height:1.6;cursor:pointer;border-radius:var(--ks-radius)}
+.ks-check-list button:hover{background:#ffffff07}
+.ks-check-list button:focus-visible{outline:2px solid var(--ks-ink);outline-offset:-2px}
+.ks-check-list small{color:var(--ks-muted);font-size:10px}
+.ks-check-list em{font-style:normal;font-size:10px;color:var(--ks-muted)}
+.ks-check-pages{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px}
+.ks-check-pages>span{margin-right:auto;color:var(--ks-muted);font-size:11px;font-variant-numeric:tabular-nums}

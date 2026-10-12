@@ -12,6 +12,7 @@ import {chatContext} from './chatContext.js';
 import ResizeHandle from './ResizeHandle.jsx';
 import NumberField from './NumberField.jsx';
 import EstimatePanel from './EstimatePanel.jsx';
+import DesignChecks from './DesignChecks.jsx';
 import CodexConnection from './CodexConnection.jsx';
 import {restoreLayout,LAYOUT_STORAGE} from './layoutPreferences.js';
 import { BuildingStack, BuildingElevation } from './BuildingViews.jsx';
@@ -136,7 +137,8 @@ export default function Studio({takeoffWorkspace}) {
   useEffect(()=>{if(chatBoot.error)return;try{localStorage.setItem(CHAT_STORAGE,JSON.stringify(chats));}catch{setNotice('Conversation storage is full. Export your drawing to keep a backup.');}},[chats,chatBoot.error]);
   const request=useRef(null),fileInput=useRef(null),chatBottom=useRef(null),chatScroll=useRef(null);
   const selection=isBuilding?floorSelection(storedProject,activeFloor,selected):null;
-  const element=selection?.item||project.elements.find(e=>e.id===selected), stats=metrics(project), warnings=layoutWarnings(proposal||project);
+  const element=selection?.item||project.elements.find(e=>e.id===selected), stats=metrics(project);
+  const warnings=useMemo(()=>proposal?layoutWarnings(proposal):[],[proposal]);
   const collection=selection?.collection||'elements';
   const liveContext=chatContext(storedProject,selected,viewedLocation,{floorId:project.floor?.id,walkthroughVisible:previewOpen&&!estimateOpen&&buildingView==='three'&&(!proposal||!previewProposal)});
   const requestBase=session.base,requestSelection=session.selection,hasRetryDraft=!!session.draft.trim();
@@ -250,6 +252,7 @@ export default function Studio({takeoffWorkspace}) {
           {session.pending&&!running&&<div className="ks-recovery-notice" role="status"><strong>Your last request was interrupted.</strong><p>Your brief is restored below. Send it again to continue; your drawing is unchanged.</p><button className="ks-text-button" onClick={()=>updateRecovery({pending:false})}>Dismiss</button></div>}{running&&<div className="ks-activity" role="status"><span className="ks-pulse"/>{activity}</div>}
           {proposal&&<div className="ks-review"><span className="ks-eyebrow">READY FOR YOUR REVIEW</span><strong>{proposal.name}</strong><p>{proposal.schema===BUILDING_SCHEMA?`${buildingStats(proposal).floors} floors · ${buildingStats(proposal).spaces} spaces`:proposal.elements.length+' editable elements'} · {format(proposal.width)} × {format(proposal.height)} {proposal.unit}</p>{warnings.map((w,i)=><p className="ks-warning" key={i}>{w}</p>)}{stale&&<p className="ks-warning">Your drawing changed after this request. Ask for an updated proposal before applying.</p>}<div><button className="ks-button" onClick={()=>{setPreviewOpen(true);setPreviewProposal(true);}}><Glyph name="grid" size={15}/>Preview drawing</button><button className="ks-button primary" disabled={!!stale} onClick={()=>{update(proposal);setProposal(null);setSelected(null);setMessages(m=>[...m,{role:'assistant',content:'Proposal applied. Every element is editable. You can undo this change.'}]);}}><Glyph name="check" size={15}/>Apply to drawing</button><button className="ks-text-button" onClick={()=>setProposal(null)}>Discard</button></div></div>}
           {!!project.elements.length&&<div className="ks-chat-report"><Glyph name="file"/><div><strong>Your design report</strong><p>Areas, material quantities and costs update as you edit.</p><button className="ks-button" onClick={()=>{setPreviewOpen(true);setEstimateOpen(true);}}>View quantities & reports</button></div></div>}
+          <DesignChecks key={storedProject.id} project={storedProject} onLocate={issue=>{if(issue.floorId)setActiveFloor(issue.floorId);setPreviewOpen(true);setEstimateOpen(false);setBuildingView('plan');setPreviewProposal(false);setTool('select');setZoom(1);setSelected(issue.itemIds[0]);setPanel('layers');}}/>
           {isBuilding&&<details className="ks-building-brief"><summary>Building brief & assumptions</summary>{storedProject.notes.map((note,i)=><p key={i}>{note}</p>)}</details>}<div ref={chatBottom}/></div>
         </div>
         <form className="ks-composer" onSubmit={e=>{e.preventDefault();send();}}>

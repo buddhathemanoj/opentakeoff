@@ -1,0 +1,15 @@
+{
+  "fixture": "Intentional missing-opening test, not an AI-generated architectural design",
+  "allFloorIssues": 65,
+  "firstPage": "1\u201325",
+  "secondPage": "26\u201350",
+  "lastPage": "51\u201365",
+  "lastPageNextDisabled": true,
+  "filteredFloor": "Level 2 \u00b7 IT company",
+  "filteredIssues": 22,
+  "clickedIssue": "Meeting room A has no modelled door or open passage on its boundary.",
+  "observedFloor": "Level 2 \u00b7 IT company",
+  "observedInspectorLabel": "Meeting room A",
+  "exportPreservesEveryValueExceptImportAssignedProjectId": true,
+  "reportWarningSummaryDisclosesOmittedCount": 50
+}

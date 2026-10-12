@@ -496,3 +496,36 @@ checks and relative doc links passed. The isolated
 with bundled Codex 0.162.1, compiled assets, PDF worker delivery and six license
 files. Its ARM64 DMG passed `hdiutil verify`. Public-beta signing and
 notarization remain open.
+
+### Inspectable design checks — 2026-10-12
+
+Structured geometry findings now identify floor and affected item IDs. The
+review counts every detected issue while retaining only one bounded page.
+The chat's **Design checks** section offers a floor filter, pagination and
+navigation to the saved plan. Clicking a finding selects the first affected
+item without applying proposals or altering geometry. Existing warning
+summaries preserve their limits (15 building findings, 10 site/floor findings)
+but now disclose the exact omitted count rather than hiding it. These checks
+remain geometry diagnostics, not connected-route or compliance validation.
+
+Tests cover counts beyond the warning limit, stable pagination, floor filtering,
+exact targets despite duplicate labels, input preservation and physical-unit
+parity. The owned localhost UI test imported an intentionally flawed three-floor
+fixture with all openings removed. The section counted 65 issues, displayed
+pages 1–25, 26–50 and 51–65, and disabled Next on the last page. Filtering to
+the IT floor showed 22 issues. Clicking the Meeting room A finding opened that
+floor and selected the matching room in the inspector. Export comparison
+preserved every drawing value except the new project ID assigned at import.
+This is a navigation test, not evidence of architectural generation quality.
+
+Evidence: [floor filter](../../output/ui/arcloom-design-check-filter.png),
+[second issue page](../../output/ui/arcloom-design-check-page.png),
+[selected room](../../output/ui/arcloom-design-check-locate.png),
+[exact export comparison](../../output/verification/design-check-navigation-proof.json).
+The report UI also disclosed 50 additional findings beyond its first 15.
+All 62 studio tests, the full web check (3,449 passing, four skipped), MCP
+tool-count/wiki checks, all 61 protocol tests and relative doc links passed.
+`release/arcloom-checks/mac-arm64/Arcloom.app` passed native runtime checks for
+bundled Codex 0.162.1, compiled assets, the PDF worker and six license files.
+Its ARM64 DMG passed `hdiutil verify`. Signing/notarization and the wider
+public-beta manual checklist remain open.
