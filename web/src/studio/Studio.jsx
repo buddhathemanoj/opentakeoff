@@ -54,9 +54,20 @@ const format=n=>new Intl.NumberFormat(undefined,{maximumFractionDigits:1}).forma
 
 function Drawing({project,selected,onSelect,onMove,tool,onDraw,zoom,setZoom,showGrid,showLabels,readOnly=false}) {
   const svg=useRef(null),gesture=useRef(null);
+  const viewportRef=useRef(null),[viewport,setViewport]=useState({width:0,height:0});
+  useEffect(()=>{
+    const observer=new ResizeObserver(([entry])=>{
+      const {width,height}=entry.contentRect;
+      setViewport(previous=>previous.width===width&&previous.height===height?previous:{width,height});
+    });
+    observer.observe(viewportRef.current);
+    return()=>observer.disconnect();
+  },[]);
   const [preview,setPreview]=useState(null);
   const pad=Math.max(project.width*.08,project.height*.08,2);
   const font=Math.max(project.width/65,.18);
+  const aspect=(project.width+pad*2)/(project.height+pad*2);
+  const fitWidth=viewport.width&&viewport.height?Math.min(viewport.width,viewport.height*aspect):null;
   const point=e=>{const p=svg.current.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(svg.current.getScreenCTM().inverse());};
   const start=(e,element)=>{
     if(readOnly||e.button!==0)return;
@@ -77,8 +88,8 @@ function Drawing({project,selected,onSelect,onMove,tool,onDraw,zoom,setZoom,show
   const finish=()=>{if(preview&&gesture.current){if(gesture.current.kind==='move')onMove(preview);else if(preview.width>=.1&&preview.height>=.1)onDraw(preview);}gesture.current=null;setPreview(null);};
   const shapes=project.elements.map(e=>preview?.id===e.id?preview:e);
   if(preview?.id==='new')shapes.push(preview);
-  return <div className={`ks-drawing ${tool!=='select'?'is-drawing':''}`} onWheel={e=>{if(e.ctrlKey||e.metaKey)setZoom(z=>Math.max(.5,Math.min(3,z-e.deltaY*.002)));}}>
-    <div className="ks-sheet-surround" style={{width:`${zoom*100}%`,minWidth:`${zoom*100}%`}}>
+  return <div ref={viewportRef} className={`ks-drawing ${tool!=='select'?'is-drawing':''}`} onWheel={e=>{if(e.ctrlKey||e.metaKey)setZoom(z=>Math.max(.5,Math.min(3,z-e.deltaY*.002)));}}>
+    <div className="ks-sheet-surround" style={{width:fitWidth?fitWidth*zoom:`${zoom*100}%`,minWidth:fitWidth?fitWidth*zoom:`${zoom*100}%`,height:fitWidth?fitWidth*zoom/aspect:undefined}}>
       <svg ref={svg} className="ks-sheet" viewBox={`${-pad} ${-pad} ${project.width+pad*2} ${project.height+pad*2}`} onPointerDown={e=>start(e,null)} onPointerMove={move} onPointerUp={finish} onPointerCancel={()=>{gesture.current=null;setPreview(null);}} aria-label={`${project.name}, ${project.width} by ${project.height} ${project.unit}`}>
         <defs><pattern id="ks-grid" width={project.mode==='floor'?1:5} height={project.mode==='floor'?1:5} patternUnits="userSpaceOnUse"><path d={`M ${project.mode==='floor'?1:5} 0 L 0 0 0 ${project.mode==='floor'?1:5}`} fill="none" stroke="#e4e6df" strokeWidth=".07"/></pattern></defs>
         <rect x={-pad} y={-pad} width={project.width+2*pad} height={project.height+2*pad} fill="#fafaf7"/>

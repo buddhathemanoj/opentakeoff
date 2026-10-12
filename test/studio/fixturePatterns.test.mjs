@@ -25,3 +25,10 @@ test('Codex expands generated grids before returning a normal review proposal an
   await write({...result,proposal:null});await assert.rejects(runDesign({project:p,prompt:'150 seats',runtime:{command:process.execPath,args:[script]}}),/full building proposal/);
  }finally{await rm(dir,{recursive:true,force:true});}
 });
+
+test('dense teaching floors preserve 600 individual seats while enforcing the total floor bound',()=>{
+ const p=mixedUseBuilding('dense-teaching');p.floors[0].fixtures=[];p.floors[0].elements=[{id:'hall',kind:'room',label:'Hall',x:0,y:0,width:30,height:24,wallThickness:.18}];
+ const grid={floorId:p.floors[0].id,spaceId:'hall',idPrefix:'seat',x:1,y:1,rows:20,columns:30,rowSpacing:.7,columnSpacing:.7,fixture:{type:'chair',label:'Seat',width:.5,height:.5,rotation:0}};
+ const result=expandFixturePatterns(p,[grid]);assert.equal(result.floors[0].fixtures.length,600);assert.equal(result.floors[0].fixtures[599].id,'seat-20-30');assert.equal(p.floors[0].fixtures.length,0);
+ const extra={...grid,idPrefix:'extra',rows:1,columns:401};assert.throws(()=>expandFixturePatterns(result,[extra]),/1000-fixture floor limit/);
+});

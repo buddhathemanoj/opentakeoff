@@ -786,3 +786,46 @@ and a controlled four-floor generation inside its actual Electron executable.
 Its DMG and ZIP passed integrity checks. The preview fixes require the refreshed
 package at release/arcloom-staged-preview; do not confuse it with that initial
 build. Local packages remain unsigned and unnotarized.
+
+## Dense floor validation and retry checkpoints
+
+The first staged university run terminated during the third-floor repair. Its
+retained draft had valid base geometry but 473 furnishings (17 individual plus
+456 from grids), exceeding the old 400-fixture floor limit. The subsequent
+model repair timed out, so no full proposal was returned and the original
+request's drawing stayed unchanged.
+
+Arcloom beta.3 raises the bounded fixture capacity to 1,000 per floor. The
+[retained real teaching floor](../../output/verification/staged-nexus-teaching.json)
+now expands all 473 fixtures and has zero current geometry diagnostics. This
+is still a single-floor stage, not a completed university. Older beta readers
+reject files exceeding 400 fixtures; original Takeoff formats are unchanged.
+A regression preserves 600 individual seats and rejects an over-limit addition
+without changing the input.
+
+A staged request now retains validated floors in bounded process memory for an
+explicit retry of the same brief/drawing. Checkpoints expire after an hour, keep
+at most two requests of 2 MB each, and are invalidated by changed conversation
+instructions or drawing data. They are not persisted or applied. Controlled
+UI QA failed on floor 2, then resumed after floor 1 on Send and returned the
+complete four-floor proposal while the saved site name stayed unchanged.
+Evidence: [resumed proposal](../../output/ui/arcloom-staged-resumed-proposal.png).
+This is a transport regression, not a real AI quality claim.
+
+Dense-floor inspection also exposed clipping after widening the preview. Fit
+now uses both viewport dimensions, and enlarged content starts at reachable
+scroll edges. The [teaching floor fit](../../output/ui/arcloom-staged-teaching-fit.png)
+was checked against DOM bounds: the entire sheet lies inside its preview
+viewport. No geometry was edited by this display fix.
+
+After the dense-floor and fit fixes, all 82 studio tests and the full web check
+passed, along with MCP tool-count/wiki, protocol and doc-link checks. Native
+arm64 beta.3 build ada41617838e passed packaged content-digest validation,
+bundled Codex execution, PDF-worker serving and license checks. A fresh full
+NEXUS run was then started through chat in an isolated real API profile on port
+5192, using the same complete brief and an authored six-floor QA baseline. Only
+the expected synthetic brief captures diagnostic stage files in a temporary
+QA directory; ordinary app requests do not enable this recorder. The new run
+was still planning at this checkpoint. Its server process retains retry
+checkpoints, and completed diagnostic stages are captured separately for
+inspection if a later floor fails. No complete university is claimed yet.

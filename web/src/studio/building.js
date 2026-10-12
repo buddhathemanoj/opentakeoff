@@ -1,4 +1,5 @@
 export const BUILDING_SCHEMA='kosal.studio.building.v1';
+export const MAX_FLOOR_FIXTURES=1000;
 export const FIXTURE_TYPES=['desk','chair','table','sofa','bed','shower','counter','teller','atm','safe','kitchen','sink','toilet','stair','lift','plant','rack','cabinet'];
 export const USES=['bank','cafe','office','mixed'];
 export const BUILDING_KINDS=['room','building','landscape','water','parking','void'];
@@ -14,7 +15,7 @@ export function validateBuilding(value){
   const bounds=item=>{if(!finite(item.x,0,value.width)||!finite(item.y,0,value.height)||!finite(item.width,.1,value.width)||!finite(item.height,.1,value.height)||item.x+item.width>value.width+.001||item.y+item.height>value.height+.001)throw new Error(`“${item.label||item.id}” extends outside the building.`);};
   const floors=value.floors.map(f=>{
     unique(f.id);if(!text(f.name)||!USES.includes(f.use)||!finite(f.elevation,0,200)||!finite(f.storeyHeight,2,10))throw new Error('Invalid floor details.');
-    if(!Array.isArray(f.elements)||f.elements.length>150||!Array.isArray(f.openings)||f.openings.length>250||!Array.isArray(f.fixtures)||f.fixtures.length>400)throw new Error('Invalid floor geometry.');
+    if(!Array.isArray(f.elements)||f.elements.length>150||!Array.isArray(f.openings)||f.openings.length>250||!Array.isArray(f.fixtures)||f.fixtures.length>MAX_FLOOR_FIXTURES)throw new Error('Invalid floor geometry.');
     const elements=f.elements.map(e=>{unique(e.id);if(!BUILDING_KINDS.includes(e.kind)||!text(e.label)||!physical(e.wallThickness,.05,.8))throw new Error('Invalid space or wall thickness.');bounds(e);return{id:e.id,kind:e.kind,label:e.label,x:e.x,y:e.y,width:e.width,height:e.height,wallThickness:e.wallThickness};});
     const openings=f.openings.map(o=>{unique(o.id);if(!['door','window','opening'].includes(o.kind)||!finite(o.x,0,value.width)||!finite(o.y,0,value.height)||!physical(o.width,.3,12)||![0,90,180,270].includes(o.rotation)||![-1,1].includes(o.swing))throw new Error(`Opening “${o?.id||'unknown'}” on ${f.name} has invalid coordinates, width (0.3–12 m), rotation or swing.`);const angle=o.rotation*Math.PI/180,endX=o.x+o.width*Math.cos(angle),endY=o.y+o.width*Math.sin(angle);if(endX<-.001||endX>value.width+.001||endY<-.001||endY>value.height+.001)throw new Error(`Opening “${o.id}” ends outside the building (${endX.toFixed(3)}, ${endY.toFixed(3)} ${value.unit}); boundary is ${value.width} × ${value.height} ${value.unit}.`);return{id:o.id,kind:o.kind,x:o.x,y:o.y,width:o.width,rotation:o.rotation,swing:o.swing};});
     const fixtures=f.fixtures.map(item=>{unique(item.id);if(!FIXTURE_TYPES.includes(item.type)||!text(item.label)||![0,90,180,270].includes(item.rotation))throw new Error('Invalid furniture or fixture.');bounds(item);return{id:item.id,type:item.type,label:item.label,x:item.x,y:item.y,width:item.width,height:item.height,rotation:item.rotation};});

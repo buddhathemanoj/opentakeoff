@@ -18,20 +18,20 @@ test('staging selects new large buildings, counts basement, and leaves refinemen
 });
 test('shared blueprint becomes one complete atomic proposal, with bounded one-floor contexts',async()=>{
  const original=mixedUseBuilding('staged-test'),snapshot=structuredClone(original),calls=[],events=[];
- const result=await runStagedBuilding({prompt:'Create a four-floor centre',project:original,onEvent:e=>events.push(e),request:async()=>blueprint(),generateFloor:async options=>{calls.push(options);return{message:'Review',proposal:completed(options.project)};}});
+ const result=await runStagedBuilding({checkpoints:new Map(),prompt:'Create a four-floor centre',project:original,onEvent:e=>events.push(e),request:async()=>blueprint(),generateFloor:async options=>{calls.push(options);return{message:'Review',proposal:completed(options.project)};}});
  assert.equal(result.proposal.floors.length,4);assert.equal(calls.length,4);assert.ok(calls.every(c=>c.project.floors.length===1));assert.equal(result.proposal.floors.reduce((n,f)=>n+f.fixtures.length,0),4);
  assert.deepEqual(original,snapshot);assert.equal(events.filter(e=>e.message.startsWith('Designing floor')).length,4);
 });
 test('cancellation between floors never returns or changes a partial building',async()=>{
  const original=mixedUseBuilding('staged-test'),snapshot=structuredClone(original),controller=new AbortController();let calls=0;
- await assert.rejects(runStagedBuilding({prompt:'Create four floors',project:original,signal:controller.signal,request:async()=>blueprint(),generateFloor:async options=>{calls++;controller.abort();return{proposal:completed(options.project)};}}),/cancelled/);
+ await assert.rejects(runStagedBuilding({checkpoints:new Map(),prompt:'Create four floors',project:original,signal:controller.signal,request:async()=>blueprint(),generateFloor:async options=>{calls++;controller.abort();return{proposal:completed(options.project)};}}),/cancelled/);
  assert.equal(calls,1);assert.deepEqual(original,snapshot);
 });
 test('missing floors and moved reserved cores are rejected after one correction attempt',async()=>{
  const original=mixedUseBuilding('staged-test');let calls=0;
- await assert.rejects(runStagedBuilding({prompt:'Create six floors',project:original,request:async()=>{calls++;return blueprint();},generateFloor:async()=>{throw Error('Must not run');}}),/all 6/);assert.equal(calls,2);
+ await assert.rejects(runStagedBuilding({checkpoints:new Map(),prompt:'Create six floors',project:original,request:async()=>{calls++;return blueprint();},generateFloor:async()=>{throw Error('Must not run');}}),/all 6/);assert.equal(calls,2);
  calls=0;
- await assert.rejects(runStagedBuilding({prompt:'Create four floors',project:original,request:async()=>blueprint(),generateFloor:async options=>{calls++;const proposal=completed(options.project);proposal.floors[0].elements[0].x=1;return{proposal};}}),/reserved core/);assert.equal(calls,2);
+ await assert.rejects(runStagedBuilding({checkpoints:new Map(),prompt:'Create four floors',project:original,request:async()=>blueprint(),generateFloor:async options=>{calls++;const proposal=completed(options.project);proposal.floors[0].elements[0].x=1;return{proposal};}}),/reserved core/);assert.equal(calls,2);
 });
 test('actual subprocess pipeline expands 150 seats and assembles all four floors',async()=>{
  const dir=await mkdtemp(join(tmpdir(),'arcloom-staged-test-')),script=join(dir,'fake.mjs'),plan=blueprint();
@@ -40,4 +40,28 @@ test('actual subprocess pipeline expands 150 seats and assembles all four floors
   const original=mixedUseBuilding('staged-test'),result=await runDesign({prompt:'Create a four-floor centre with a 150-seat auditorium',project:original,runtime:{command:process.execPath,args:[script]}});
   assert.equal(result.proposal.floors.length,4);assert.equal(result.proposal.floors[0].fixtures.filter(f=>f.id.startsWith('f0-seat')).length,150);assert.deepEqual(original,mixedUseBuilding('staged-test'));
  }finally{await rm(dir,{recursive:true,force:true});}
+});
+
+test('retry resumes validated floors only for the unchanged drawing and conversation',async()=>{
+ const checkpoints=new Map(),project=mixedUseBuilding('staged-test');let plans=0,calls=[];
+ const options={checkpoints,project,prompt:'Create four floors',history:[{role:'user',content:'Use an atrium'}],request:async()=>{plans++;return blueprint();}};
+ await assert.rejects(runStagedBuilding({...options,generateFloor:async o=>{calls.push(o.project.floors[0].id);if(calls.length===2)throw Error('Temporary failure');return{proposal:completed(o.project)};}}),/Temporary failure/);
+ assert.deepEqual(calls,['f0','f1']);calls=[];const events=[];
+ const result=await runStagedBuilding({...options,history:[...options.history,{role:'user',content:options.prompt}],onEvent:e=>events.push(e),generateFloor:async o=>{calls.push(o.project.floors[0].id);return{proposal:completed(o.project)};}});
+ assert.deepEqual(calls,['f1','f2','f3']);assert.equal(plans,1);assert.equal(result.proposal.floors.length,4);assert.equal(checkpoints.size,0);assert.match(events[0].message,/Resuming/);
+});
+test('a changed saved drawing invalidates staged retry and restarts planning',async()=>{
+ const checkpoints=new Map(),project=mixedUseBuilding('staged-test');let plans=0,calls=[];
+ const options={checkpoints,project,prompt:'Create four floors',request:async()=>{plans++;return blueprint();}};
+ await assert.rejects(runStagedBuilding({...options,generateFloor:async o=>{calls.push(o.project.floors[0].id);if(calls.length===2)throw Error('Temporary failure');return{proposal:completed(o.project)};}}));
+ calls=[];await runStagedBuilding({...options,project:{...project,name:'Changed drawing'},generateFloor:async o=>{calls.push(o.project.floors[0].id);return{proposal:completed(o.project)};}});
+ assert.equal(plans,2);assert.deepEqual(calls,['f0','f1','f2','f3']);
+});
+
+test('new conversation instructions invalidate a retained floor checkpoint',async()=>{
+ const checkpoints=new Map(),project=mixedUseBuilding('staged-test');let plans=0,calls=[];
+ const options={checkpoints,project,prompt:'Create four floors',history:[{role:'user',content:'Use a central atrium'}],request:async()=>{plans++;return blueprint();}};
+ await assert.rejects(runStagedBuilding({...options,generateFloor:async o=>{calls.push(o.project.floors[0].id);if(calls.length===2)throw Error('Temporary failure');return{proposal:completed(o.project)};}}));
+ calls=[];await runStagedBuilding({...options,history:[...options.history,{role:'user',content:'Use a side atrium instead'}],generateFloor:async o=>{calls.push(o.project.floors[0].id);return{proposal:completed(o.project)};}});
+ assert.equal(plans,2);assert.deepEqual(calls,['f0','f1','f2','f3']);
 });

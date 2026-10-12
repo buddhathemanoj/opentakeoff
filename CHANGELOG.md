@@ -1,5 +1,9 @@
 # Changelog
 
+- Arcloom: staged retries reuse validated floors for an unchanged drawing and brief, with bounded transient checkpoints and explicit resumption status. Fit drawing now accounts for preview height as well as width and keeps enlarged sheet edges reachable.
+
+- Arcloom: increased the bounded building fixture capacity to 1,000 per floor so classroom/laboratory programmes retain individual furnishings instead of failing at 400. Files over the old limit require the updated Arcloom reader; original PDF takeoff formats are unchanged.
+
 - Arcloom: proposal preview titles, drawing tools and Measure drawing now follow the displayed proposal when it changes a site into a building. Drawing tools are disabled during read-only proposal preview; the original remains editable after Show original.
 
 - Arcloom: new briefs with four to twelve explicitly requested floors generate a shared building blueprint followed by detailed floor stages. The app returns one complete review proposal, preserves reserved geometry, reports floor progress, and cancels without applying partial designs.

@@ -1593,3 +1593,19 @@ connection is correct; inspect the design checks, plans and walkthrough.
 During proposal preview, the drawing title and **Measure drawing** use the
 proposal currently shown. Drawing tools are disabled until you apply it or
 choose **Show original**. Reviewing a proposal does not replace your saved design.
+
+Dense building floors support up to 1,000 individual fixtures starting with
+Arcloom 0.1.0-beta.3. Older Arcloom versions reject floor files containing more
+than 400 fixtures; use the updated app to open them. The original PDF takeoff
+format is unchanged.
+
+If a large-building request fails or you stop it, validated floors can be reused
+when you send the same brief for the unchanged drawing. Chat says **Resuming your
+building**. Checkpoints stay in the local app process, expire after one hour of
+inactivity, and are bounded to two requests of at most 2 MB each. Quitting the
+app loses them. Changed drawings or conversation instructions start a new plan.
+No partial floor is applied to your drawing.
+
+**Fit drawing** fits the whole sheet to both the preview width and height. It
+adapts when you resize the chat/preview split. Zoom in to inspect details and
+scroll to reach enlarged sheet edges.

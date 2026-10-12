@@ -1,0 +1,5684 @@
+{
+  "schema": "kosal.studio.building.v1",
+  "id": "ba905d2f-58a0-45e3-b3ee-e288930105ea",
+  "name": "NEXUS — University Innovation Centre",
+  "mode": "building",
+  "unit": "m",
+  "width": 54,
+  "height": 36,
+  "floors": [
+    {
+      "id": "level-2",
+      "name": "Level 2 — Teaching and Making",
+      "use": "mixed",
+      "elevation": 8,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "level-2-stair-west",
+          "kind": "room",
+          "label": "West stair reservation",
+          "x": 0,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-lifts",
+          "kind": "room",
+          "label": "Two-lift bank reservation",
+          "x": 5,
+          "y": 4,
+          "width": 4,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-accessible-toilets",
+          "kind": "room",
+          "label": "Accessible toilets reservation",
+          "x": 9,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-services",
+          "kind": "room",
+          "label": "Services and risers reservation",
+          "x": 14,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-stair-east",
+          "kind": "room",
+          "label": "East stair reservation",
+          "x": 49,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-west-connector",
+          "kind": "room",
+          "label": "West core circulation",
+          "x": 0,
+          "y": 10,
+          "width": 19,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-east-connector",
+          "kind": "room",
+          "label": "East core circulation",
+          "x": 35,
+          "y": 10,
+          "width": 19,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-courtyard-north",
+          "kind": "room",
+          "label": "Courtyard north circulation",
+          "x": 19,
+          "y": 10,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-courtyard-west",
+          "kind": "room",
+          "label": "Courtyard west circulation",
+          "x": 19,
+          "y": 12,
+          "width": 2,
+          "height": 12,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-courtyard-east",
+          "kind": "room",
+          "label": "Courtyard east circulation",
+          "x": 33,
+          "y": 12,
+          "width": 2,
+          "height": 12,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-courtyard-south",
+          "kind": "room",
+          "label": "Courtyard south circulation",
+          "x": 19,
+          "y": 24,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-courtyard",
+          "kind": "void",
+          "label": "Open-air courtyard slab opening",
+          "x": 21,
+          "y": 12,
+          "width": 12,
+          "height": 12,
+          "wallThickness": 0.15
+        },
+        {
+          "id": "level-2-c1",
+          "kind": "room",
+          "label": "Classroom 1 · 30",
+          "x": 0,
+          "y": 12,
+          "width": 9,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-c2",
+          "kind": "room",
+          "label": "Classroom 2 · 30",
+          "x": 11,
+          "y": 12,
+          "width": 8,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-c3",
+          "kind": "room",
+          "label": "Classroom 3 · 30",
+          "x": 0,
+          "y": 20,
+          "width": 9,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-c4",
+          "kind": "room",
+          "label": "Classroom 4 · 30",
+          "x": 11,
+          "y": 20,
+          "width": 8,
+          "height": 8,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-c5",
+          "kind": "room",
+          "label": "Classroom 5 · 30",
+          "x": 0,
+          "y": 28,
+          "width": 9,
+          "height": 8,
+          "wallThickness": 0.28
+        },
+        {
+          "id": "level-2-c6",
+          "kind": "room",
+          "label": "Classroom 6 · 30",
+          "x": 11,
+          "y": 28,
+          "width": 8,
+          "height": 8,
+          "wallThickness": 0.28
+        },
+        {
+          "id": "level-2-teach-route",
+          "kind": "room",
+          "label": "Teaching corridor",
+          "x": 9,
+          "y": 12,
+          "width": 2,
+          "height": 24,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-electronics",
+          "kind": "room",
+          "label": "Electronics lab · 24",
+          "x": 19,
+          "y": 0,
+          "width": 16,
+          "height": 10,
+          "wallThickness": 0.28
+        },
+        {
+          "id": "level-2-robotics",
+          "kind": "room",
+          "label": "Robotics lab · 24",
+          "x": 35,
+          "y": 0,
+          "width": 14,
+          "height": 10,
+          "wallThickness": 0.28
+        },
+        {
+          "id": "level-2-north-support",
+          "kind": "room",
+          "label": "Staff resource room",
+          "x": 0,
+          "y": 0,
+          "width": 19,
+          "height": 4,
+          "wallThickness": 0.28
+        },
+        {
+          "id": "level-2-east-support",
+          "kind": "room",
+          "label": "Safety equipment",
+          "x": 49,
+          "y": 0,
+          "width": 5,
+          "height": 4,
+          "wallThickness": 0.28
+        },
+        {
+          "id": "level-2-maker-route",
+          "kind": "room",
+          "label": "Controlled maker corridor",
+          "x": 35,
+          "y": 12,
+          "width": 2,
+          "height": 24,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-store-e",
+          "kind": "room",
+          "label": "Electronics store",
+          "x": 37,
+          "y": 12,
+          "width": 5,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-store-r",
+          "kind": "room",
+          "label": "Robotics store",
+          "x": 42,
+          "y": 12,
+          "width": 6,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-store-f",
+          "kind": "room",
+          "label": "Workshop store",
+          "x": 48,
+          "y": 12,
+          "width": 6,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-fab",
+          "kind": "room",
+          "label": "Fabrication workshop · 20",
+          "x": 37,
+          "y": 14,
+          "width": 17,
+          "height": 14,
+          "wallThickness": 0.28
+        },
+        {
+          "id": "level-2-prep",
+          "kind": "room",
+          "label": "Workshop prep / extraction",
+          "x": 37,
+          "y": 28,
+          "width": 17,
+          "height": 8,
+          "wallThickness": 0.28
+        },
+        {
+          "id": "level-2-faculty-front",
+          "kind": "room",
+          "label": "Faculty approach",
+          "x": 19,
+          "y": 26,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-faculty-route",
+          "kind": "room",
+          "label": "Faculty corridor",
+          "x": 19,
+          "y": 31,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-o1",
+          "kind": "room",
+          "label": "Faculty 1 · 2 desks",
+          "x": 19,
+          "y": 28,
+          "width": 4,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-o2",
+          "kind": "room",
+          "label": "Faculty 2 · 2 desks",
+          "x": 23,
+          "y": 28,
+          "width": 4,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-o3",
+          "kind": "room",
+          "label": "Faculty 3 · 2 desks",
+          "x": 27,
+          "y": 28,
+          "width": 4,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-o4",
+          "kind": "room",
+          "label": "Faculty 4 · 2 desks",
+          "x": 31,
+          "y": 28,
+          "width": 4,
+          "height": 3,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-o5",
+          "kind": "room",
+          "label": "Faculty 5 · 2 desks",
+          "x": 19,
+          "y": 33,
+          "width": 4,
+          "height": 3,
+          "wallThickness": 0.28
+        },
+        {
+          "id": "level-2-o6",
+          "kind": "room",
+          "label": "Faculty 6 · 2 desks",
+          "x": 23,
+          "y": 33,
+          "width": 4,
+          "height": 3,
+          "wallThickness": 0.28
+        },
+        {
+          "id": "level-2-o7",
+          "kind": "room",
+          "label": "Faculty 7 · 2 desks",
+          "x": 27,
+          "y": 33,
+          "width": 4,
+          "height": 3,
+          "wallThickness": 0.28
+        },
+        {
+          "id": "level-2-o8",
+          "kind": "room",
+          "label": "Faculty 8 · 2 desks",
+          "x": 31,
+          "y": 33,
+          "width": 4,
+          "height": 3,
+          "wallThickness": 0.28
+        }
+      ],
+      "openings": [
+        {
+          "id": "level-2-dsw",
+          "kind": "door",
+          "x": 2,
+          "y": 10,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": -1
+        },
+        {
+          "id": "level-2-dse",
+          "kind": "door",
+          "x": 51,
+          "y": 10,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": -1
+        },
+        {
+          "id": "level-2-dl1",
+          "kind": "opening",
+          "x": 5.5,
+          "y": 10,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-dl2",
+          "kind": "opening",
+          "x": 7.2,
+          "y": 10,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-dwc",
+          "kind": "door",
+          "x": 10,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": -1
+        },
+        {
+          "id": "level-2-dsrv",
+          "kind": "door",
+          "x": 16,
+          "y": 10,
+          "width": 1,
+          "rotation": 0,
+          "swing": -1
+        },
+        {
+          "id": "level-2-dstaff",
+          "kind": "door",
+          "x": 1,
+          "y": 4,
+          "width": 1,
+          "rotation": 0,
+          "swing": -1
+        },
+        {
+          "id": "level-2-dsafe",
+          "kind": "door",
+          "x": 50,
+          "y": 4,
+          "width": 1,
+          "rotation": 0,
+          "swing": -1
+        },
+        {
+          "id": "level-2-de",
+          "kind": "door",
+          "x": 20,
+          "y": 10,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": -1
+        },
+        {
+          "id": "level-2-dr",
+          "kind": "door",
+          "x": 36,
+          "y": 10,
+          "width": 1.2,
+          "rotation": 0,
+          "swing": -1
+        },
+        {
+          "id": "level-2-dc1",
+          "kind": "door",
+          "x": 9,
+          "y": 12.6,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "level-2-dc2",
+          "kind": "door",
+          "x": 11,
+          "y": 12.6,
+          "width": 1,
+          "rotation": 90,
+          "swing": -1
+        },
+        {
+          "id": "level-2-dc3",
+          "kind": "door",
+          "x": 9,
+          "y": 20.6,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "level-2-dc4",
+          "kind": "door",
+          "x": 11,
+          "y": 20.6,
+          "width": 1,
+          "rotation": 90,
+          "swing": -1
+        },
+        {
+          "id": "level-2-dc5",
+          "kind": "door",
+          "x": 9,
+          "y": 28.6,
+          "width": 1,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "level-2-dc6",
+          "kind": "door",
+          "x": 11,
+          "y": 28.6,
+          "width": 1,
+          "rotation": 90,
+          "swing": -1
+        },
+        {
+          "id": "level-2-dstore-e",
+          "kind": "door",
+          "x": 38,
+          "y": 12,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-dstore-r",
+          "kind": "door",
+          "x": 43,
+          "y": 12,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-dstore-f",
+          "kind": "door",
+          "x": 49,
+          "y": 12,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-dfab",
+          "kind": "door",
+          "x": 37,
+          "y": 15,
+          "width": 1.5,
+          "rotation": 90,
+          "swing": -1
+        },
+        {
+          "id": "level-2-dprep",
+          "kind": "door",
+          "x": 37,
+          "y": 29,
+          "width": 1.2,
+          "rotation": 90,
+          "swing": -1
+        },
+        {
+          "id": "level-2-dfab-prep",
+          "kind": "door",
+          "x": 50,
+          "y": 28,
+          "width": 1.5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-do1",
+          "kind": "door",
+          "x": 19.4,
+          "y": 28,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-do2",
+          "kind": "door",
+          "x": 23.4,
+          "y": 28,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-do3",
+          "kind": "door",
+          "x": 27.4,
+          "y": 28,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-do4",
+          "kind": "door",
+          "x": 31.4,
+          "y": 28,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-do5",
+          "kind": "door",
+          "x": 19.4,
+          "y": 33,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-do6",
+          "kind": "door",
+          "x": 23.4,
+          "y": 33,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-do7",
+          "kind": "door",
+          "x": 27.4,
+          "y": 33,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-do8",
+          "kind": "door",
+          "x": 31.4,
+          "y": 33,
+          "width": 0.9,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-p1",
+          "kind": "opening",
+          "x": 19,
+          "y": 10.2,
+          "width": 1.6,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "level-2-p2",
+          "kind": "opening",
+          "x": 35,
+          "y": 10.2,
+          "width": 1.6,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "level-2-p3",
+          "kind": "opening",
+          "x": 9.1,
+          "y": 12,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-p4",
+          "kind": "opening",
+          "x": 19.1,
+          "y": 12,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-p5",
+          "kind": "opening",
+          "x": 33.1,
+          "y": 12,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-p6",
+          "kind": "opening",
+          "x": 19.1,
+          "y": 24,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-p7",
+          "kind": "opening",
+          "x": 33.1,
+          "y": 24,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-p8",
+          "kind": "opening",
+          "x": 24,
+          "y": 26,
+          "width": 2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-p9",
+          "kind": "opening",
+          "x": 35,
+          "y": 24.2,
+          "width": 1.6,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "level-2-p10",
+          "kind": "door",
+          "x": 35.1,
+          "y": 12,
+          "width": 1.8,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-p11",
+          "kind": "opening",
+          "x": 35,
+          "y": 26.2,
+          "width": 1.6,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "level-2-p12",
+          "kind": "opening",
+          "x": 35,
+          "y": 31.2,
+          "width": 1.6,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w1",
+          "kind": "window",
+          "x": 0,
+          "y": 15,
+          "width": 3,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w2",
+          "kind": "window",
+          "x": 0,
+          "y": 23,
+          "width": 3,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w3",
+          "kind": "window",
+          "x": 0,
+          "y": 31,
+          "width": 3,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w4",
+          "kind": "window",
+          "x": 12,
+          "y": 36,
+          "width": 5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w5",
+          "kind": "window",
+          "x": 21,
+          "y": 0,
+          "width": 5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w6",
+          "kind": "window",
+          "x": 28,
+          "y": 0,
+          "width": 5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w7",
+          "kind": "window",
+          "x": 37,
+          "y": 0,
+          "width": 5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w8",
+          "kind": "window",
+          "x": 44,
+          "y": 0,
+          "width": 3,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w9",
+          "kind": "window",
+          "x": 3,
+          "y": 0,
+          "width": 6,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w10",
+          "kind": "window",
+          "x": 12,
+          "y": 0,
+          "width": 5,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w11",
+          "kind": "window",
+          "x": 54,
+          "y": 17,
+          "width": 4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w12",
+          "kind": "window",
+          "x": 54,
+          "y": 23,
+          "width": 3,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w13",
+          "kind": "window",
+          "x": 54,
+          "y": 31,
+          "width": 3,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w14",
+          "kind": "window",
+          "x": 20.5,
+          "y": 36,
+          "width": 2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w15",
+          "kind": "window",
+          "x": 24.5,
+          "y": 36,
+          "width": 2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w16",
+          "kind": "window",
+          "x": 28.5,
+          "y": 36,
+          "width": 2,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "level-2-w17",
+          "kind": "window",
+          "x": 32.5,
+          "y": 36,
+          "width": 2,
+          "rotation": 0,
+          "swing": 1
+        }
+      ],
+      "fixtures": [
+        {
+          "id": "level-2-stw",
+          "type": "stair",
+          "label": "West stair",
+          "x": 0.6,
+          "y": 4.5,
+          "width": 3.8,
+          "height": 4.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-ste",
+          "type": "stair",
+          "label": "East stair",
+          "x": 49.6,
+          "y": 4.5,
+          "width": 3.8,
+          "height": 4.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-lift1",
+          "type": "lift",
+          "label": "Lift 1",
+          "x": 5.3,
+          "y": 7.3,
+          "width": 1.5,
+          "height": 2.3,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-lift2",
+          "type": "lift",
+          "label": "Lift 2",
+          "x": 7.1,
+          "y": 7.3,
+          "width": 1.5,
+          "height": 2.3,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-wct",
+          "type": "toilet",
+          "label": "Accessible WC",
+          "x": 12.6,
+          "y": 4.6,
+          "width": 0.7,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-wcs",
+          "type": "sink",
+          "label": "Accessible basin",
+          "x": 9.6,
+          "y": 5,
+          "width": 0.6,
+          "height": 0.5,
+          "rotation": 90
+        },
+        {
+          "id": "level-2-riser",
+          "type": "rack",
+          "label": "Services / risers",
+          "x": 17.5,
+          "y": 4.5,
+          "width": 1,
+          "height": 3,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-extract",
+          "type": "rack",
+          "label": "Extraction reservation",
+          "x": 51,
+          "y": 30,
+          "width": 2,
+          "height": 3,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-prepbench",
+          "type": "counter",
+          "label": "Prep bench",
+          "x": 40,
+          "y": 34.5,
+          "width": 8,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-prepsink",
+          "type": "sink",
+          "label": "Workshop wash",
+          "x": 49,
+          "y": 34.4,
+          "width": 1,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-esink",
+          "type": "sink",
+          "label": "Lab wash",
+          "x": 33.6,
+          "y": 1,
+          "width": 0.7,
+          "height": 0.6,
+          "rotation": 90
+        },
+        {
+          "id": "level-2-rbench",
+          "type": "counter",
+          "label": "Robot test bench",
+          "x": 47.5,
+          "y": 2,
+          "width": 0.8,
+          "height": 5,
+          "rotation": 90
+        },
+        {
+          "id": "level-2-ebench",
+          "type": "counter",
+          "label": "Electronics test bench",
+          "x": 33.4,
+          "y": 2.5,
+          "width": 0.8,
+          "height": 4,
+          "rotation": 90
+        },
+        {
+          "id": "level-2-mach1",
+          "type": "rack",
+          "label": "Enclosed CNC reservation",
+          "x": 49,
+          "y": 18,
+          "width": 3,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-mach2",
+          "type": "rack",
+          "label": "Laser enclosure reservation",
+          "x": 49,
+          "y": 22,
+          "width": 3,
+          "height": 2,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-safe",
+          "type": "cabinet",
+          "label": "PPE / safety cabinet",
+          "x": 52.5,
+          "y": 0.5,
+          "width": 0.8,
+          "height": 2,
+          "rotation": 90
+        },
+        {
+          "id": "level-2-stafftable",
+          "type": "table",
+          "label": "Staff resources",
+          "x": 7,
+          "y": 1,
+          "width": 4,
+          "height": 1.2,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-1-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 14,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-1-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 14,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-1-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 14,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-2-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 15.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-2-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 15.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-2-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 15.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-3-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 16.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-3-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 16.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-3-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 16.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-4-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 17.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-4-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 17.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-4-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 17.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-5-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 18.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-5-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 18.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-desk-5-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 18.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-seat-1-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 14.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-1-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 14.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-1-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 14.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-1-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 14.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-1-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 14.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-1-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 14.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-2-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 15.65,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-2-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 15.65,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-2-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 15.65,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-2-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 15.65,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-2-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 15.65,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-2-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 15.65,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-3-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 16.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-3-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 16.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-3-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 16.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-3-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 16.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-3-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 16.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-3-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 16.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-4-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 17.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-4-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 17.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-4-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 17.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-4-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 17.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-4-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 17.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-4-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 17.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-5-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 18.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-5-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 18.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-5-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 18.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-5-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 18.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-5-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 18.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-seat-5-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 18.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-desk-1-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 14,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-desk-1-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 14,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-desk-1-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 14,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-desk-2-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 15.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-desk-2-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 15.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-desk-2-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 15.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-desk-3-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 16.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-desk-3-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 16.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-desk-3-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 16.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-desk-4-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 17.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-desk-4-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 17.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-desk-4-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 17.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-desk-5-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 18.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-desk-5-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 18.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-desk-5-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 18.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-seat-1-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 14.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-1-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 14.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-1-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 14.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-1-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 14.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-1-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 14.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-1-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 14.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-2-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 15.65,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-2-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 15.65,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-2-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 15.65,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-2-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 15.65,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-2-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 15.65,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-2-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 15.65,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-3-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 16.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-3-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 16.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-3-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 16.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-3-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 16.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-3-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 16.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-3-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 16.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-4-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 17.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-4-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 17.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-4-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 17.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-4-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 17.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-4-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 17.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-4-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 17.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-5-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 18.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-5-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 18.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-5-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 18.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-5-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 18.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-5-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 18.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c2-seat-5-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 18.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-desk-1-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 22,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-desk-1-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 22,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-desk-1-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 22,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-desk-2-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 23.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-desk-2-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 23.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-desk-2-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 23.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-desk-3-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 24.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-desk-3-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 24.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-desk-3-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 24.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-desk-4-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 25.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-desk-4-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 25.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-desk-4-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 25.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-desk-5-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 26.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-desk-5-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 26.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-desk-5-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 26.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-seat-1-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 22.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-1-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 22.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-1-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 22.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-1-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 22.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-1-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 22.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-1-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 22.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-2-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 23.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-2-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 23.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-2-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 23.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-2-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 23.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-2-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 23.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-2-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 23.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-3-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 24.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-3-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 24.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-3-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 24.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-3-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 24.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-3-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 24.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-3-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 24.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-4-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 25.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-4-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 25.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-4-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 25.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-4-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 25.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-4-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 25.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-4-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 25.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-5-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 26.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-5-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 26.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-5-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 26.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-5-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 26.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-5-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 26.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c3-seat-5-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 26.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-desk-1-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 22,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-desk-1-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 22,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-desk-1-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 22,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-desk-2-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 23.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-desk-2-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 23.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-desk-2-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 23.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-desk-3-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 24.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-desk-3-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 24.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-desk-3-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 24.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-desk-4-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 25.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-desk-4-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 25.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-desk-4-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 25.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-desk-5-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 26.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-desk-5-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 26.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-desk-5-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 26.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-seat-1-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 22.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-1-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 22.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-1-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 22.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-1-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 22.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-1-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 22.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-1-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 22.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-2-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 23.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-2-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 23.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-2-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 23.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-2-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 23.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-2-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 23.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-2-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 23.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-3-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 24.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-3-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 24.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-3-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 24.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-3-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 24.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-3-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 24.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-3-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 24.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-4-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 25.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-4-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 25.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-4-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 25.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-4-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 25.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-4-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 25.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-4-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 25.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-5-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 26.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-5-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 26.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-5-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 26.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-5-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 26.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-5-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 26.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c4-seat-5-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 26.950000000000003,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-desk-1-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 30,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-desk-1-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 30,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-desk-1-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 30,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-desk-2-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 31.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-desk-2-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 31.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-desk-2-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 31.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-desk-3-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 32.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-desk-3-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 32.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-desk-3-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 32.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-desk-4-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 33.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-desk-4-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 33.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-desk-4-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 33.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-desk-5-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 0.6,
+          "y": 34.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-desk-5-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 2.9,
+          "y": 34.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-desk-5-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 5.199999999999999,
+          "y": 34.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-seat-1-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 30.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-1-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 30.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-1-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 30.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-1-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 30.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-1-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 30.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-1-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 30.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-2-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 31.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-2-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 31.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-2-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 31.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-2-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 31.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-2-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 31.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-2-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 31.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-3-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 32.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-3-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 32.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-3-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 32.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-3-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 32.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-3-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 32.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-3-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 32.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-4-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 33.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-4-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 33.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-4-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 33.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-4-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 33.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-4-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 33.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-4-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 33.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-5-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 0.75,
+          "y": 34.95,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-5-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 1.9,
+          "y": 34.95,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-5-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 3.05,
+          "y": 34.95,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-5-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 4.199999999999999,
+          "y": 34.95,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-5-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 5.35,
+          "y": 34.95,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c5-seat-5-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 6.5,
+          "y": 34.95,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-desk-1-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 30,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-desk-1-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 30,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-desk-1-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 30,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-desk-2-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 31.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-desk-2-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 31.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-desk-2-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 31.1,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-desk-3-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 32.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-desk-3-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 32.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-desk-3-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 32.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-desk-4-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 33.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-desk-4-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 33.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-desk-4-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 33.3,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-desk-5-1",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 11.5,
+          "y": 34.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-desk-5-2",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 13.7,
+          "y": 34.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-desk-5-3",
+          "type": "desk",
+          "label": "Two-student desk",
+          "x": 15.9,
+          "y": 34.4,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-seat-1-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 30.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-1-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 30.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-1-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 30.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-1-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 30.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-1-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 30.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-1-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 30.55,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-2-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 31.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-2-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 31.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-2-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 31.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-2-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 31.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-2-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 31.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-2-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 31.650000000000002,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-3-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 32.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-3-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 32.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-3-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 32.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-3-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 32.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-3-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 32.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-3-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 32.75,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-4-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 33.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-4-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 33.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-4-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 33.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-4-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 33.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-4-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 33.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-4-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 33.85,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-5-1",
+          "type": "chair",
+          "label": "Student",
+          "x": 11.65,
+          "y": 34.95,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-5-2",
+          "type": "chair",
+          "label": "Student",
+          "x": 12.75,
+          "y": 34.95,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-5-3",
+          "type": "chair",
+          "label": "Student",
+          "x": 13.850000000000001,
+          "y": 34.95,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-5-4",
+          "type": "chair",
+          "label": "Student",
+          "x": 14.950000000000001,
+          "y": 34.95,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-5-5",
+          "type": "chair",
+          "label": "Student",
+          "x": 16.05,
+          "y": 34.95,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c6-seat-5-6",
+          "type": "chair",
+          "label": "Student",
+          "x": 17.15,
+          "y": 34.95,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-c1-teacherdesk-1-1",
+          "type": "desk",
+          "label": "Teacher",
+          "x": 3,
+          "y": 12.7,
+          "width": 1.4,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c1-teacherseat-1-1",
+          "type": "chair",
+          "label": "Teacher",
+          "x": 3.4,
+          "y": 12.2,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-teacherdesk-1-1",
+          "type": "desk",
+          "label": "Teacher",
+          "x": 14,
+          "y": 12.7,
+          "width": 1.4,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c2-teacherseat-1-1",
+          "type": "chair",
+          "label": "Teacher",
+          "x": 14.4,
+          "y": 12.2,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-teacherdesk-1-1",
+          "type": "desk",
+          "label": "Teacher",
+          "x": 3,
+          "y": 20.7,
+          "width": 1.4,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c3-teacherseat-1-1",
+          "type": "chair",
+          "label": "Teacher",
+          "x": 3.4,
+          "y": 20.2,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-teacherdesk-1-1",
+          "type": "desk",
+          "label": "Teacher",
+          "x": 14,
+          "y": 20.7,
+          "width": 1.4,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c4-teacherseat-1-1",
+          "type": "chair",
+          "label": "Teacher",
+          "x": 14.4,
+          "y": 20.2,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-teacherdesk-1-1",
+          "type": "desk",
+          "label": "Teacher",
+          "x": 3,
+          "y": 28.7,
+          "width": 1.4,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c5-teacherseat-1-1",
+          "type": "chair",
+          "label": "Teacher",
+          "x": 3.4,
+          "y": 28.2,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-teacherdesk-1-1",
+          "type": "desk",
+          "label": "Teacher",
+          "x": 14,
+          "y": 28.7,
+          "width": 1.4,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-c6-teacherseat-1-1",
+          "type": "chair",
+          "label": "Teacher",
+          "x": 14.4,
+          "y": 28.2,
+          "width": 0.45,
+          "height": 0.45,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-1-1",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 20.5,
+          "y": 1.3,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-1-2",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 22.5,
+          "y": 1.3,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-1-3",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 24.5,
+          "y": 1.3,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-1-4",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 26.5,
+          "y": 1.3,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-1-5",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 28.5,
+          "y": 1.3,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-1-6",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 30.5,
+          "y": 1.3,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-2-1",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 20.5,
+          "y": 3.2,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-2-2",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 22.5,
+          "y": 3.2,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-2-3",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 24.5,
+          "y": 3.2,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-2-4",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 26.5,
+          "y": 3.2,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-2-5",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 28.5,
+          "y": 3.2,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-2-6",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 30.5,
+          "y": 3.2,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-3-1",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 20.5,
+          "y": 5.1,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-3-2",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 22.5,
+          "y": 5.1,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-3-3",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 24.5,
+          "y": 5.1,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-3-4",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 26.5,
+          "y": 5.1,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-3-5",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 28.5,
+          "y": 5.1,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-3-6",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 30.5,
+          "y": 5.1,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-4-1",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 20.5,
+          "y": 6.999999999999999,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-4-2",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 22.5,
+          "y": 6.999999999999999,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-4-3",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 24.5,
+          "y": 6.999999999999999,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-4-4",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 26.5,
+          "y": 6.999999999999999,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-4-5",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 28.5,
+          "y": 6.999999999999999,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-eldesk-4-6",
+          "type": "desk",
+          "label": "Electronics bench",
+          "x": 30.5,
+          "y": 6.999999999999999,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-elseat-1-1",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 20.85,
+          "y": 2.1,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-1-2",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 22.85,
+          "y": 2.1,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-1-3",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 24.85,
+          "y": 2.1,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-1-4",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 26.85,
+          "y": 2.1,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-1-5",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 28.85,
+          "y": 2.1,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-1-6",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 30.85,
+          "y": 2.1,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-2-1",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 20.85,
+          "y": 4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-2-2",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 22.85,
+          "y": 4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-2-3",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 24.85,
+          "y": 4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-2-4",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 26.85,
+          "y": 4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-2-5",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 28.85,
+          "y": 4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-2-6",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 30.85,
+          "y": 4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-3-1",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 20.85,
+          "y": 5.9,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-3-2",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 22.85,
+          "y": 5.9,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-3-3",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 24.85,
+          "y": 5.9,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-3-4",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 26.85,
+          "y": 5.9,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-3-5",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 28.85,
+          "y": 5.9,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-3-6",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 30.85,
+          "y": 5.9,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-4-1",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 20.85,
+          "y": 7.799999999999999,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-4-2",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 22.85,
+          "y": 7.799999999999999,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-4-3",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 24.85,
+          "y": 7.799999999999999,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-4-4",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 26.85,
+          "y": 7.799999999999999,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-4-5",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 28.85,
+          "y": 7.799999999999999,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-elseat-4-6",
+          "type": "chair",
+          "label": "Electronics student",
+          "x": 30.85,
+          "y": 7.799999999999999,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-rodesk-1-1",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 36,
+          "y": 1.3,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-1-2",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 37.8,
+          "y": 1.3,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-1-3",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 39.6,
+          "y": 1.3,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-1-4",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 41.4,
+          "y": 1.3,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-1-5",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 43.2,
+          "y": 1.3,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-1-6",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 45,
+          "y": 1.3,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-2-1",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 36,
+          "y": 3.2,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-2-2",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 37.8,
+          "y": 3.2,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-2-3",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 39.6,
+          "y": 3.2,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-2-4",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 41.4,
+          "y": 3.2,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-2-5",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 43.2,
+          "y": 3.2,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-2-6",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 45,
+          "y": 3.2,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-3-1",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 36,
+          "y": 5.1,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-3-2",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 37.8,
+          "y": 5.1,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-3-3",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 39.6,
+          "y": 5.1,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-3-4",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 41.4,
+          "y": 5.1,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-3-5",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 43.2,
+          "y": 5.1,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-3-6",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 45,
+          "y": 5.1,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-4-1",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 36,
+          "y": 6.999999999999999,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-4-2",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 37.8,
+          "y": 6.999999999999999,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-4-3",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 39.6,
+          "y": 6.999999999999999,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-4-4",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 41.4,
+          "y": 6.999999999999999,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-4-5",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 43.2,
+          "y": 6.999999999999999,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-rodesk-4-6",
+          "type": "desk",
+          "label": "Robotics bench",
+          "x": 45,
+          "y": 6.999999999999999,
+          "width": 1.2,
+          "height": 0.7,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-roseat-1-1",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 36.35,
+          "y": 2.1,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-1-2",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 38.15,
+          "y": 2.1,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-1-3",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 39.95,
+          "y": 2.1,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-1-4",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 41.75,
+          "y": 2.1,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-1-5",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 43.550000000000004,
+          "y": 2.1,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-1-6",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 45.35,
+          "y": 2.1,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-2-1",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 36.35,
+          "y": 4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-2-2",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 38.15,
+          "y": 4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-2-3",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 39.95,
+          "y": 4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-2-4",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 41.75,
+          "y": 4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-2-5",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 43.550000000000004,
+          "y": 4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-2-6",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 45.35,
+          "y": 4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-3-1",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 36.35,
+          "y": 5.9,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-3-2",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 38.15,
+          "y": 5.9,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-3-3",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 39.95,
+          "y": 5.9,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-3-4",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 41.75,
+          "y": 5.9,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-3-5",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 43.550000000000004,
+          "y": 5.9,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-3-6",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 45.35,
+          "y": 5.9,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-4-1",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 36.35,
+          "y": 7.799999999999999,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-4-2",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 38.15,
+          "y": 7.799999999999999,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-4-3",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 39.95,
+          "y": 7.799999999999999,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-4-4",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 41.75,
+          "y": 7.799999999999999,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-4-5",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 43.550000000000004,
+          "y": 7.799999999999999,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-roseat-4-6",
+          "type": "chair",
+          "label": "Robotics student",
+          "x": 45.35,
+          "y": 7.799999999999999,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabbench-1-1",
+          "type": "table",
+          "label": "Making station",
+          "x": 38.5,
+          "y": 17.5,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-1-2",
+          "type": "table",
+          "label": "Making station",
+          "x": 40.8,
+          "y": 17.5,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-1-3",
+          "type": "table",
+          "label": "Making station",
+          "x": 43.1,
+          "y": 17.5,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-1-4",
+          "type": "table",
+          "label": "Making station",
+          "x": 45.4,
+          "y": 17.5,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-2-1",
+          "type": "table",
+          "label": "Making station",
+          "x": 38.5,
+          "y": 19.4,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-2-2",
+          "type": "table",
+          "label": "Making station",
+          "x": 40.8,
+          "y": 19.4,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-2-3",
+          "type": "table",
+          "label": "Making station",
+          "x": 43.1,
+          "y": 19.4,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-2-4",
+          "type": "table",
+          "label": "Making station",
+          "x": 45.4,
+          "y": 19.4,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-3-1",
+          "type": "table",
+          "label": "Making station",
+          "x": 38.5,
+          "y": 21.3,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-3-2",
+          "type": "table",
+          "label": "Making station",
+          "x": 40.8,
+          "y": 21.3,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-3-3",
+          "type": "table",
+          "label": "Making station",
+          "x": 43.1,
+          "y": 21.3,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-3-4",
+          "type": "table",
+          "label": "Making station",
+          "x": 45.4,
+          "y": 21.3,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-4-1",
+          "type": "table",
+          "label": "Making station",
+          "x": 38.5,
+          "y": 23.2,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-4-2",
+          "type": "table",
+          "label": "Making station",
+          "x": 40.8,
+          "y": 23.2,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-4-3",
+          "type": "table",
+          "label": "Making station",
+          "x": 43.1,
+          "y": 23.2,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-4-4",
+          "type": "table",
+          "label": "Making station",
+          "x": 45.4,
+          "y": 23.2,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-5-1",
+          "type": "table",
+          "label": "Making station",
+          "x": 38.5,
+          "y": 25.1,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-5-2",
+          "type": "table",
+          "label": "Making station",
+          "x": 40.8,
+          "y": 25.1,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-5-3",
+          "type": "table",
+          "label": "Making station",
+          "x": 43.1,
+          "y": 25.1,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabbench-5-4",
+          "type": "table",
+          "label": "Making station",
+          "x": 45.4,
+          "y": 25.1,
+          "width": 1.5,
+          "height": 0.8,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-fabseat-1-1",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 39,
+          "y": 18.4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-1-2",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 41.3,
+          "y": 18.4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-1-3",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 43.6,
+          "y": 18.4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-1-4",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 45.9,
+          "y": 18.4,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-2-1",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 39,
+          "y": 20.299999999999997,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-2-2",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 41.3,
+          "y": 20.299999999999997,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-2-3",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 43.6,
+          "y": 20.299999999999997,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-2-4",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 45.9,
+          "y": 20.299999999999997,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-3-1",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 39,
+          "y": 22.2,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-3-2",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 41.3,
+          "y": 22.2,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-3-3",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 43.6,
+          "y": 22.2,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-3-4",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 45.9,
+          "y": 22.2,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-4-1",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 39,
+          "y": 24.099999999999998,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-4-2",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 41.3,
+          "y": 24.099999999999998,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-4-3",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 43.6,
+          "y": 24.099999999999998,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-4-4",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 45.9,
+          "y": 24.099999999999998,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-5-1",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 39,
+          "y": 26,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-5-2",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 41.3,
+          "y": 26,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-5-3",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 43.6,
+          "y": 26,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-fabseat-5-4",
+          "type": "chair",
+          "label": "Workshop user",
+          "x": 45.9,
+          "y": 26,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 180
+        },
+        {
+          "id": "level-2-serack-1-1",
+          "type": "rack",
+          "label": "Electronics equipment",
+          "x": 37.5,
+          "y": 13.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-serack-1-2",
+          "type": "rack",
+          "label": "Electronics equipment",
+          "x": 39.6,
+          "y": 13.2,
+          "width": 1.8,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-srrack-1-1",
+          "type": "rack",
+          "label": "Robotics equipment",
+          "x": 42.5,
+          "y": 13.2,
+          "width": 2,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-srrack-1-2",
+          "type": "rack",
+          "label": "Robotics equipment",
+          "x": 45,
+          "y": 13.2,
+          "width": 2,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-sfrack-1-1",
+          "type": "rack",
+          "label": "Workshop equipment",
+          "x": 48.5,
+          "y": 13.2,
+          "width": 2,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-sfrack-1-2",
+          "type": "rack",
+          "label": "Workshop equipment",
+          "x": 51,
+          "y": 13.2,
+          "width": 2,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o1desk-1-1",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 19.6,
+          "y": 30,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o1desk-1-2",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 21.3,
+          "y": 30,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o1seat-1-1",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 19.95,
+          "y": 29.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o1seat-1-2",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 21.65,
+          "y": 29.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o2desk-1-1",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 23.6,
+          "y": 30,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o2desk-1-2",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 25.3,
+          "y": 30,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o2seat-1-1",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 23.95,
+          "y": 29.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o2seat-1-2",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 25.65,
+          "y": 29.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o3desk-1-1",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 27.6,
+          "y": 30,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o3desk-1-2",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 29.3,
+          "y": 30,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o3seat-1-1",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 27.95,
+          "y": 29.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o3seat-1-2",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 29.65,
+          "y": 29.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o4desk-1-1",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 31.6,
+          "y": 30,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o4desk-1-2",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 33.300000000000004,
+          "y": 30,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o4seat-1-1",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 31.95,
+          "y": 29.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o4seat-1-2",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 33.65,
+          "y": 29.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o5desk-1-1",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 19.6,
+          "y": 35,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o5desk-1-2",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 21.3,
+          "y": 35,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o5seat-1-1",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 19.95,
+          "y": 34.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o5seat-1-2",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 21.65,
+          "y": 34.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o6desk-1-1",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 23.6,
+          "y": 35,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o6desk-1-2",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 25.3,
+          "y": 35,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o6seat-1-1",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 23.95,
+          "y": 34.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o6seat-1-2",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 25.65,
+          "y": 34.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o7desk-1-1",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 27.6,
+          "y": 35,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o7desk-1-2",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 29.3,
+          "y": 35,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o7seat-1-1",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 27.95,
+          "y": 34.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o7seat-1-2",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 29.65,
+          "y": 34.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o8desk-1-1",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 31.6,
+          "y": 35,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o8desk-1-2",
+          "type": "desk",
+          "label": "Faculty workstation",
+          "x": 33.300000000000004,
+          "y": 35,
+          "width": 1.2,
+          "height": 0.6,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o8seat-1-1",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 31.95,
+          "y": 34.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        },
+        {
+          "id": "level-2-o8seat-1-2",
+          "type": "chair",
+          "label": "Faculty",
+          "x": 33.65,
+          "y": 34.3,
+          "width": 0.5,
+          "height": 0.5,
+          "rotation": 0
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Only assigned Level 2 is included; all twelve shared reservation rectangles and floor metadata are unchanged.",
+    "Furniture grids expand to 180 student chairs, six teacher desks and chairs, 24 electronics positions, 24 robotics positions, 20 workshop positions and 16 faculty workstations.",
+    "Classrooms occupy the west/south teaching wing. Robotics and fabrication occupy the east; three equipment stores buffer the workshop from north circulation. Maker access has a controlled doorway.",
+    "Rectangles fit the 54 × 36 m footprint without positive-area room overlaps. Furniture grids remain within their assigned spaces; the courtyard void remains empty.",
+    "Assume 4 m storey height and stated wall thicknesses. Core fixtures are indicative within preserved reservations; stair flights, lift shafts and accessible toilet partitioning require specialist detailing.",
+    "Classrooms 2 and 4 rely on a future borrowed-light strategy; no windows have been invented on internal room boundaries.",
+    "Workshop equipment footprints are allowances. Extraction, power, dust/noise isolation, controlled access hardware, structure, courtyard guarding and fire strategy remain unresolved. This is a conceptual proposal for review, with no construction approval or pricing claimed."
+  ]
+}

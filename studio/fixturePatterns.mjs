@@ -1,5 +1,5 @@
 import {validateProject} from '../web/src/studio/model.js';
-import {BUILDING_SCHEMA} from '../web/src/studio/building.js';
+import {BUILDING_SCHEMA,MAX_FLOOR_FIXTURES} from '../web/src/studio/building.js';
 
 // Compact generation transport; saved drawings still contain ordinary editable fixtures.
 export function expandFixturePatterns(project,patterns){
@@ -11,7 +11,7 @@ export function expandFixturePatterns(project,patterns){
   const {rows,columns,x,y,rowSpacing,columnSpacing}=pattern;
   const space=floor.elements.find(e=>e.id===pattern.spaceId&&(e.kind==='room'||e.kind==='landscape'));
   if(!space)throw new Error('Fixture grids need an existing room or landscape area.');
-  if(!Number.isInteger(rows)||!Number.isInteger(columns)||rows<1||columns<1||rows*columns>400||floor.fixtures.length+rows*columns>400)throw new Error('Fixture grids must fit the 400-fixture floor limit.');
+  if(!Number.isInteger(rows)||!Number.isInteger(columns)||rows<1||columns<1||rows*columns>MAX_FLOOR_FIXTURES||floor.fixtures.length+rows*columns>MAX_FLOOR_FIXTURES)throw new Error(`Fixture grids must fit the ${MAX_FLOOR_FIXTURES}-fixture floor limit.`);
   if([x,y,rowSpacing,columnSpacing,item.width,item.height].some(n=>typeof n!=='number'||!Number.isFinite(n))||x<0||y<0||rowSpacing<0||columnSpacing<0||(rows>1&&rowSpacing<item.height)||(columns>1&&columnSpacing<item.width))throw new Error('Fixture grid dimensions or spacing are invalid.');
   const margin=space.kind==='room'?space.wallThickness/2:0;
   if(x<space.x+margin||y<space.y+margin||x+(columns-1)*columnSpacing+item.width>space.x+space.width-margin||y+(rows-1)*rowSpacing+item.height>space.y+space.height-margin)throw new Error('The fixture grid extends outside its space or into its walls.');
