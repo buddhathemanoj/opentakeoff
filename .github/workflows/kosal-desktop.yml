@@ -62,15 +62,21 @@ jobs:
       - name: Build native app directory
         run: npx electron-builder --${{ matrix.platform }} dir --${{ matrix.arch }} --publish never
       - name: Exercise packaged server and bundled native Codex
+        id: native_smoke
         run: node desktop/scripts/check-package.mjs release/${{ matrix.folder }}
       - name: Build installers from the verified native app
-        run: npx electron-builder --${{ matrix.platform }} --${{ matrix.arch }} --prepackaged release/${{ matrix.folder }} --publish never
+        id: installers
+        run: node desktop/scripts/build-installers.mjs ${{ matrix.platform }} ${{ matrix.arch }} release/${{ matrix.folder }}
+      - name: Verify and preserve Mac installer files
+        if: ${{ always() && matrix.platform == 'mac' && steps.native_smoke.outcome == 'success' }}
+        run: node desktop/scripts/verify-mac-installers.mjs release
       - uses: actions/upload-artifact@v4
+        if: ${{ always() && steps.native_smoke.outcome == 'success' && (matrix.platform == 'mac' || steps.installers.outcome == 'success') }}
         with:
           name: arcloom-${{ matrix.platform }}-${{ matrix.arch }}-unsigned
           if-no-files-found: error
           path: |
-            release/*.dmg
-            release/*.zip
+            release/verified/*.dmg
+            release/verified/*.zip
             release/*.exe
-            release/*.blockmap
+            release/verified/*.blockmap

@@ -1517,3 +1517,14 @@ drawing; apply a reviewed proposal to check it there. A clear result means these
 checks found no issues, not that a design meets accessibility, fire, structural
 or other regulations. An opening on a room boundary does not establish a
 connected route to an exit.
+
+## Identify your Mac beta build
+
+Open **Guide** to see Arcloom's product version and build ID. The native Mac
+**About Arcloom** panel also includes that ID. Include both when reporting a
+bug, because different beta builds may share a version number. The ID is a
+fingerprint of the packaged interface, local service, model code, desktop entry
+point and bundled Codex, together with the target and Electron version. It
+identifies runtime content; it is not a signature or release approval.
+Development views without packaged metadata say that build information is
+unavailable. No drawing or conversation data is included in this fingerprint.

@@ -5,10 +5,16 @@ import {readFile,readdir} from 'node:fs/promises';
 import {join} from 'node:path';
 import {startStudioServer} from '../../studio/server.mjs';
 import {codexCommand} from '../../studio/codex.mjs';
+import {runtimeDigest} from './build-info.mjs';
+import {validateBuildInfo} from '../../web/src/studio/buildInfo.js';
 const exec=promisify(execFile);
 export async function smoke(){
  const resources=process.resourcesPath,root=join(resources,'app.asar');
  const runtime=JSON.parse(await readFile(join(resources,'codex/runtime.json'),'utf8'));
+ const identity=validateBuildInfo(JSON.parse(await readFile(join(root,'web/dist/build-info.json'),'utf8')));
+ const packaged=JSON.parse(await readFile(join(root,'package.json'),'utf8'));
+ assert.equal(identity.version,packaged.version);assert.equal(identity.platform,process.platform);assert.equal(identity.arch,process.arch);assert.equal(identity.electronVersion,process.versions.electron);
+ assert.equal(identity.contentDigest,await runtimeDigest({root,codexDirectory:join(resources,'codex'),...identity}));
  assert.equal(runtime.platform,process.platform);assert.equal(runtime.arch,process.arch);
  const binary=codexCommand();assert.equal(binary.args[0],join(resources,'codex/bin/codex.js'));
  const version=await exec(binary.command,[...binary.args,'--version'],{env:{...process.env,...binary.env},timeout:15000,windowsHide:true});
@@ -17,6 +23,7 @@ export async function smoke(){
  try{
   const response=await fetch(url);assert.equal(response.status,200);
   const html=await response.text();assert.ok(html.includes('Arcloom'));
+  const buildResponse=await fetch(url+'/build-info.json');assert.equal(buildResponse.status,200);assert.equal(buildResponse.headers.get('content-type'),'application/json');assert.deepEqual(await buildResponse.json(),identity);
   const assets=[...html.matchAll(/(?:src|href)="(\/assets\/[^\"]+)"/g)].map(match=>match[1]);assert.ok(assets.length>=2);
   for(const asset of assets)assert.equal((await fetch(url+asset)).status,200);
   const worker=(await readdir(join(root,'web/dist/assets'))).find(name=>/^pdf\.worker.*\.mjs$/.test(name));assert.ok(worker,'Compiled PDF module worker is missing');
@@ -24,6 +31,6 @@ export async function smoke(){
   for(const license of ['remocn-MIT.txt','codex-Apache-2.0.txt','three-MIT.txt','dm-sans-OFL.txt','paper-shaders-Apache-2.0.txt','lucide-ISC.txt'])assert.ok((await readFile(join(resources,'licenses',license),'utf8')).length>100);
   const status=await fetch(url+'/api/studio/status');assert.equal(status.status,200);
   assert.equal((await status.json()).available,true);
-  console.log(JSON.stringify({ok:true,platform:process.platform,arch:process.arch,codex:version.stdout.trim(),assets:assets.length,pdfWorker:true,licenses:6}));
+  console.log(JSON.stringify({ok:true,platform:process.platform,arch:process.arch,version:identity.version,buildId:identity.buildId,identityVerified:true,codex:version.stdout.trim(),assets:assets.length,pdfWorker:true,licenses:6}));
  }finally{await new Promise(resolve=>server.close(resolve));}
 }

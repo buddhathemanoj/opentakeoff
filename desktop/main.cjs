@@ -11,6 +11,9 @@ else {
   app.whenReady().then(async()=>{
     try {
       const {startStudioServer}=await import(pathToFileURL(path.join(app.getAppPath(),'studio/server.mjs')).href);
+      const {validateBuildInfo}=await import(pathToFileURL(path.join(app.getAppPath(),'web/src/studio/buildInfo.js')).href);
+      const {readFile}=require('node:fs/promises');
+      if(app.isPackaged){const info=validateBuildInfo(JSON.parse(await readFile(path.join(app.getAppPath(),'web/dist/build-info.json'),'utf8')));app.setAboutPanelOptions({applicationName:'Arcloom',applicationVersion:info.version,version:`Build ${info.buildId}`,copyright:'Copyright © 2026 Arcloom. Includes OpenTakeoff contributors.'});}
       const running=await startStudioServer({root:path.join(app.getAppPath(),'web/dist')});localServer=running.server;
       Menu.setApplicationMenu(Menu.buildFromTemplate([{role:'appMenu'},{role:'editMenu'},{role:'viewMenu'},{role:'windowMenu'}]));
       session.defaultSession.setPermissionRequestHandler((_webContents,_permission,callback)=>callback(false));

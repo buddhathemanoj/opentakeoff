@@ -411,3 +411,6 @@
 .ks-check-list em{font-style:normal;font-size:10px;color:var(--ks-muted)}
 .ks-check-pages{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px}
 .ks-check-pages>span{margin-right:auto;color:var(--ks-muted);font-size:11px;font-variant-numeric:tabular-nums}
+
+.ks-build-info{padding:10px 0 14px;margin:0;border-bottom:1px solid var(--ks-line);color:var(--ks-soft);font-size:12px}
+.ks-build-info span{display:block;margin-top:4px;color:var(--ks-muted);font-size:11px;font-variant-numeric:tabular-nums}

@@ -529,3 +529,53 @@ tool-count/wiki checks, all 61 protocol tests and relative doc links passed.
 bundled Codex 0.162.1, compiled assets, the PDF worker and six license files.
 Its ARM64 DMG passed `hdiutil verify`. Signing/notarization and the wider
 public-beta manual checklist remain open.
+
+### Identifiable Mac beta builds — 2026-10-12
+
+Before packaging, a build metadata file records the product version, target,
+Electron version, build time and a content-derived build ID. The native About
+panel and Guide display the ID. Original takeoff generator versions, schemas,
+storage profiles and drawing exports are unchanged. No project, conversation or
+credential data enters the fingerprint.
+
+The runtime digest covers compiled web files, studio modules, shipped model
+JavaScript, the desktop entry point and the staged Codex runtime. It excludes
+its own metadata file to avoid self-reference. Native package smoke verification
+recomputes that digest from the packaged files, validates target/Electron/product
+versions and checks that the same metadata is served as JSON. This identifies
+runtime content, not publisher authenticity or notarization.
+
+Tests prove stable identity across metadata rewrites and changed identity for
+UI, server, model, desktop and Codex changes, architecture/version changes and
+invalid metadata. All 64 studio tests, the full web check, MCP tool-count/wiki
+checks, all 61 protocol tests and relative doc links passed.
+The packaged ARM64 runtime's recomputed digest matched metadata, and Guide
+showed the same build ID `3a23dfe6046b` with version `0.1.0-beta.1`. A development
+view without metadata handled the missing file without breaking Guide. Native
+About panel rendering is still a manual verification item.
+
+Evidence: [Guide build identity](../../output/ui/arcloom-build-identity.png),
+[verification record](../../output/verification/build-identity-proof.json).
+The refreshed ARM64 DMG and ZIP both passed installer verification and were
+copied into the isolated release directory’s `verified` folder. No Developer ID
+Application certificate is
+available in the current signing identities. Packages remain unsigned and
+unnotarized; the wider public-beta checklist remains open.
+
+
+The [prior design-check CI run](https://github.com/buddhathemanoj/opentakeoff/actions/runs/38188245404)
+passed Apple silicon packaging. Its Intel native checks passed, but installer
+creation failed with `Unable to detach device cleanly` / `Resource busy`.
+The packaging wrapper now retries that specific Mac failure once. Other errors
+and repeated failures still fail the job. A post-build verification step checks
+DMGs with `hdiutil verify` and ZIPs with `unzip -t`, copies only valid files into
+a fresh `verified` directory and lets CI retain those verified Mac artifacts
+even if another installer failed. Windows upload still requires successful
+installer creation. No disks are force-detached by this wrapper.
+
+The wrapper built both local ARM64 installer formats successfully. Both passed
+the new verification step. A deliberately corrupt ZIP failed verification and
+left its upload directory empty. Tests replay the observed failure, bounded
+retries and non-Mac/unrelated-error refusal. Workflow YAML parsed successfully.
+The updated workflow still needs its own CI run; Windows test-path failures
+remain outside the current Mac focus.

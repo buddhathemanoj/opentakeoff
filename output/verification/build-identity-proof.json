@@ -1,0 +1,16 @@
+{
+  "version": "0.1.0-beta.1",
+  "buildId": "3a23dfe6046b",
+  "platform": "darwin",
+  "arch": "arm64",
+  "packagedRuntimeDigestVerified": true,
+  "guideObservedSameBuildId": true,
+  "developmentViewHandledMissingMetadata": true,
+  "nativeAboutPanelManualVerification": "pending",
+  "publisherSignature": "unsigned; not notarized",
+  "dmgVerified": true,
+  "zipVerified": true,
+  "corruptInstallerExcluded": true,
+  "installerRetryScope": "one retry only for the observed macOS temporary-disk detach busy error",
+  "updatedCI": "pending"
+}
