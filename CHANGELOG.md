@@ -1,5 +1,7 @@
 # Changelog
 
+- Arcloom: proposal preview titles, drawing tools and Measure drawing now follow the displayed proposal when it changes a site into a building. Drawing tools are disabled during read-only proposal preview; the original remains editable after Show original.
+
 - Arcloom: new briefs with four to twelve explicitly requested floors generate a shared building blueprint followed by detailed floor stages. The app returns one complete review proposal, preserves reserved geometry, reports floor progress, and cancels without applying partial designs.
 
 - Arcloom: same-scene AI preview, Apply and Discard preserve the 3D camera position and direction. Restoration checks project/floor identity, view settings and physical bounds; newly blocked walkthrough positions fall back to entry.

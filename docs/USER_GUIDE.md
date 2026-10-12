@@ -1589,3 +1589,7 @@ furniture expands into individual editable fixtures before review. Refinements
 continue to use the existing edit flow instead of regenerating every floor. This
 does not establish architectural compliance or guarantee that every circulation
 connection is correct; inspect the design checks, plans and walkthrough.
+
+During proposal preview, the drawing title and **Measure drawing** use the
+proposal currently shown. Drawing tools are disabled until you apply it or
+choose **Show original**. Reviewing a proposal does not replace your saved design.

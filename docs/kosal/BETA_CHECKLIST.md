@@ -752,3 +752,37 @@ floor was still running at this checkpoint. Complete AI programme quality,
 assembled geometry, UI review and refreshed Mac packaging remain unverified.
 The authenticated run remains live; do not restart it because an observation
 wait expires.
+
+## Staged proposal UI and real library checkpoint
+
+An isolated controlled-response server at port 5191 exercised chat → staged CLI
+transport → proposal review → apply. Four floors appeared in one review card;
+the saved site name remained unchanged before application. Manual QA of this
+path exposed a preview-mode mismatch: the header still said Site layout and
+Measure drawing exported the saved site. These now follow the displayed
+proposal. Drawing tools are disabled during proposal preview and enabled again
+for Show original. The fixed measurement action imported the proposal's four
+floor sheets into the original PDF workspace.
+
+Evidence: [proposal preview](../../output/ui/arcloom-staged-preview.png) and
+[proposal floor sheets](../../output/ui/arcloom-staged-measure-proposal.png).
+These are explicitly controlled regression fixtures, not generated university
+quality evidence. The full web check and 78 studio tests pass after the fix.
+
+The real university run completed the ground floor with one structural repair
+and the library floor without a repair, then moved on to teaching/making. The
+library stage has 33 spaces (including its slab opening), 49 openings and 318
+fixtures. Review found two missing modelled boundary passages on courtyard
+circulation spaces, with no detected room overlaps or floor-opening overlaps.
+The original run remains live and no complete six-floor proposal exists yet.
+A copy of the library stage was imported only into the isolated QA profile for
+[plan inspection](../../output/ui/arcloom-staged-library-plan.png) and
+[reading-room walkthrough](../../output/ui/arcloom-staged-library-walkthrough.png).
+This verifies one real generated floor, not the assembled building or every
+programme requirement.
+
+The initial staged native arm64 build 6385efa85659 passed packaged runtime checks
+and a controlled four-floor generation inside its actual Electron executable.
+Its DMG and ZIP passed integrity checks. The preview fixes require the refreshed
+package at release/arcloom-staged-preview; do not confuse it with that initial
+build. Local packages remain unsigned and unnotarized.

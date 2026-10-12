@@ -87,7 +87,7 @@ export async function runStagedBuilding({prompt,project,history=[],signal,onEven
       try{response=validateCompletedFloor(blueprint.project,index,response);break;}catch(error){if(attempt)throw error;response=error;}
     }
     completed.push(response.floors[0]);extraNotes.push(...response.notes);
-    messages.push(`${floor.name}: ${response.floors[0].elements.length} spaces, ${response.floors[0].fixtures.length} fixtures.`);
+    messages.push(`${floor.name}: ${response.floors[0].elements.length} spaces, ${response.floors[0].fixtures.length} fixture${response.floors[0].fixtures.length===1?'':'s'}.`);
   }
   checkCancelled();
   onEvent({type:'status',message:'Checking the complete building for review…'});
