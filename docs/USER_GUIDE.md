@@ -1462,8 +1462,15 @@ select an editable element in the inspector or change the drawing.
 Context is excluded when the walkthrough is hidden, a different floor/project
 is active or an unapplied proposal is being previewed. Generated edits still
 require **Apply to drawing**; **Discard** keeps the saved design. View context
-is transient: after reloading, navigate to the intended space again before
-retrying a brief that refers to “this space.”
+is transient until a request is sent. A sent request saves its selected or
+viewed target with a drawing snapshot. After an interruption or reload, a
+**Retry ·** chip identifies that target alongside the recovered brief; sending
+again is always explicit. A new selection or walkthrough location takes
+priority. If the drawing changed, Send is disabled until you select a current
+space or use **Clear saved context**. Clearing context retains the brief.
+Older saved requests without target information still require reselecting the
+intended space. This recovery data does not restore the camera or change your
+exported drawing format.
 
 ## Add and remove items with short briefs
 

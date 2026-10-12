@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { KINDS, KIND_LABELS, PAINT, exampleProject, newProject, validateProject, metrics, layoutWarnings } from './model.js';
 import {drawingSvg} from './drawingSvg.jsx';
-import { RECOVERY_STORAGE, EMPTY_RECOVERY, restoreRecovery, validateChats } from './recovery.js';
+import { RECOVERY_STORAGE, EMPTY_RECOVERY, restoreRecovery, validateChats, retryContext } from './recovery.js';
 import { BUILDING_SCHEMA, BUILDING_KINDS, FIXTURE_TYPES, projectView, applyView, buildingStats, floorSelection, editFloorItem, convertBuildingUnit, metresPerUnit } from './building.js';
 import { createPlanPdf } from './planPdf.js';
 import { localStore } from '../lib/store.js';
@@ -138,7 +138,11 @@ export default function Studio({takeoffWorkspace}) {
   const selection=isBuilding?floorSelection(storedProject,activeFloor,selected):null;
   const element=selection?.item||project.elements.find(e=>e.id===selected), stats=metrics(project), warnings=layoutWarnings(proposal||project);
   const collection=selection?.collection||'elements';
-  const context=chatContext(storedProject,selected,viewedLocation,{floorId:project.floor?.id,walkthroughVisible:previewOpen&&!estimateOpen&&buildingView==='three'&&(!proposal||!previewProposal)});
+  const liveContext=chatContext(storedProject,selected,viewedLocation,{floorId:project.floor?.id,walkthroughVisible:previewOpen&&!estimateOpen&&buildingView==='three'&&(!proposal||!previewProposal)});
+  const requestBase=session.base,requestSelection=session.selection,hasRetryDraft=!!session.draft.trim();
+  const savedContext=useMemo(()=>retryContext({base:requestBase,selection:requestSelection,draft:hasRetryDraft?'retry':''},storedProject),[requestBase,requestSelection,hasRetryDraft,storedProject]);
+  const context=liveContext.ids.length?liveContext:savedContext.status==='ready'?savedContext:liveContext,contextBlocked=!liveContext.ids.length&&savedContext.status==='stale';
+  const clearContext=()=>{setSelected(null);setViewedLocation(null);updateRecovery({selection:[],base:proposal?proposalBase:''});};
   const stale=proposal&&proposalBase!==JSON.stringify(storedProject);
   useEffect(()=>{if(boot.error)return;try{localStorage.setItem(STORAGE,JSON.stringify(projects));setSaved(true);}catch{setSaved(false);setNotice('Browser storage is full. Export a project backup to keep your work.');}},[projects,boot.error]);
   useEffect(()=>{let live=true;fetch('/api/studio/status').then(r=>{if(!r.ok)throw new Error();return r.json();}).then(s=>{if(live)setStatus(s);}).catch(()=>{if(live)setStatus({available:false,connected:false});});return()=>{live=false;};},[]);
@@ -161,9 +165,9 @@ export default function Studio({takeoffWorkspace}) {
     setSelected(item.id);setPanel('layers');setBuildingView('plan');setPreviewProposal(false);setTool('select');
   };
   const send=async()=>{
-    if(!prompt.trim()||running)return;
+    if(!prompt.trim()||running||contextBlocked)return;
     const text=prompt.trim(),base=JSON.stringify(storedProject),history=messages.filter(m=>m.role!=='error').slice(-8).map(({role,content})=>({role,content}));
-    updateRecovery({draft:text,pending:true,proposal:null,base:''});setMessages(m=>[...m,{role:'user',content:text}]);setRunning(true);setActivity('Connecting to Codex…');
+    updateRecovery({draft:text,pending:true,proposal:null,base:context.ids.length?base:'',selection:context.ids});setMessages(m=>[...m,{role:'user',content:text}]);setRunning(true);setActivity('Connecting to Codex…');
     const controller=new AbortController();request.current=controller;
     let gotResult=false;
     try {
@@ -179,7 +183,7 @@ export default function Studio({takeoffWorkspace}) {
       }
       if(!gotResult)throw new Error('The connection ended before Codex finished. Please retry.');
     } catch(e){setMessages(m=>[...m,{role:'error',content:e.name==='AbortError'?'Stopped. Your drawing is unchanged.':e.message}]);}
-    finally{updateRecovery({pending:false,draft:gotResult?'':text});setRunning(false);setActivity('');request.current=null;}
+    finally{updateRecovery({pending:false,draft:gotResult?'':text,...(gotResult?{selection:[]}:{})});setRunning(false);setActivity('');request.current=null;}
   };
   const importProject=async file=>{if(!file||running)return;try{if(projects.length>=30)throw new Error('Export a backup before adding more than 30 local projects.');if(file.size>1000000)throw new Error('Choose a project smaller than 1 MB.');const imported=validateProject(JSON.parse(await file.text()));const copy={...imported,id:crypto.randomUUID()};setProjects(rows=>[copy,...rows]);selectProject(copy.id);}catch(e){setNotice(e.message);}if(fileInput.current)fileInput.current.value='';};
   const exportPdf=async (toTakeoff,target=storedProject)=>{if(exporting)return;setExporting(true);setExportOpen(false);try{const bytes=await createPlanPdf(target);const name=`${target.name.replace(/[\\/:*?"<>|]/g,'-')}-${target.id.slice(0,8)}.pdf`;if(toTakeoff){await localStore.addPdf(new File([bytes],name,{type:'application/pdf'}));setWorkspace('takeoff');}else download(name,bytes,'application/pdf');}catch(error){setNotice(error.message||'Could not export the drawing set.');}finally{setExporting(false);}};
@@ -249,9 +253,10 @@ export default function Studio({takeoffWorkspace}) {
           {isBuilding&&<details className="ks-building-brief"><summary>Building brief & assumptions</summary>{storedProject.notes.map((note,i)=><p key={i}>{note}</p>)}</details>}<div ref={chatBottom}/></div>
         </div>
         <form className="ks-composer" onSubmit={e=>{e.preventDefault();send();}}>
-          {!!context.ids.length&&<div className="ks-context"><Glyph name="layers" size={13}/>{context.source==='viewed'?'Viewing · ':''}{context.label}<button type="button" aria-label={context.source==='viewed'?'Clear viewed space':'Clear selection'} onClick={()=>{setSelected(null);setViewedLocation(null);}}>×</button></div>}
+          {contextBlocked&&<div className="ks-recovery-notice" role="alert">The drawing changed since this request. Select a current space or clear the saved context before retrying.<button type="button" className="ks-text-button" onClick={clearContext}>Clear saved context</button></div>}
+          {!!context.ids.length&&<div className="ks-context"><Glyph name="layers" size={13}/>{context.source==='viewed'?'Viewing · ':context.source==='retry'?'Retry · ':''}{context.label}<button type="button" aria-label={context.source==='viewed'?'Clear viewed space':context.source==='retry'?'Clear retry context':'Clear selection'} onClick={clearContext}>×</button></div>}
           <textarea disabled={running} aria-label="Message Arcloom" placeholder="Describe what you want to create…" value={prompt} maxLength={12000} onChange={e=>setPrompt(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.nativeEvent.isComposing){e.preventDefault();send();}}}/>
-          <div className="ks-composer-bottom"><button type="button" className="ks-icon-button" aria-label="Import project" disabled={running} onClick={()=>fileInput.current?.click()}><Glyph name="plus"/></button><span><Glyph name="sparkle" size={13}/>Codex<span className="ks-context-count">{isBuilding?`${storedProject.floors.length} floors in context`:`${project.elements.length} elements in context`}</span></span>{running?<button type="button" className="ks-send" aria-label="Stop generation" onClick={()=>request.current?.abort()}><Glyph name="stop" size={16}/></button>:<button type="submit" className="ks-send" disabled={!prompt.trim()||!status?.connected} aria-label="Send message"><Glyph name="arrow" size={17}/></button>}</div>
+          <div className="ks-composer-bottom"><button type="button" className="ks-icon-button" aria-label="Import project" disabled={running} onClick={()=>fileInput.current?.click()}><Glyph name="plus"/></button><span><Glyph name="sparkle" size={13}/>Codex<span className="ks-context-count">{isBuilding?`${storedProject.floors.length} floors in context`:`${project.elements.length} elements in context`}</span></span>{running?<button type="button" className="ks-send" aria-label="Stop generation" onClick={()=>request.current?.abort()}><Glyph name="stop" size={16}/></button>:<button type="submit" className="ks-send" disabled={!prompt.trim()||!status?.connected||contextBlocked} aria-label="Send message"><Glyph name="arrow" size={17}/></button>}</div>
         </form><p className="ks-chat-footnote">AI drafts. You decide. Review before building.</p>
       </aside>
     </div>

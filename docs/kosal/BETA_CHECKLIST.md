@@ -466,3 +466,33 @@ The refreshed `release/arcloom-view/mac-arm64/Arcloom.app` passed native
 packaged runtime checks for bundled Codex 0.162.1, compiled assets, PDF worker
 delivery and six attribution/license files. Packages remain unsigned and
 unnotarized; public-beta manual verification remains open.
+
+
+### Selected-space request recovery — 2026-10-12
+
+New sent requests persist optional selection IDs alongside their existing brief
+and drawing snapshot. Recovery validates IDs against that snapshot and requires
+the current drawing to match before using them. A current selection or viewed
+space takes priority; clearing recovery context retains the brief. Legacy
+records without selection keep their original shape. Project exports, takeoff
+formats and review authority are unchanged.
+
+The owned localhost test paused its first request with a controlled fixture,
+then reloaded to abort it. This first attempt was not a model run. The recovered
+composer showed the level-7 rooftop target. Changing the project name showed a
+warning and disabled Send; restoring it enabled an explicit retry. The second
+attempt used authenticated Codex and sent the identical drawing and target ID
+`r15`. The returned proposal differed only in that terrace's label, changing it
+to “Roof garden”. Discard kept the saved drawing.
+
+Evidence: [recovered target](../../output/ui/arcloom-retry-restored.png),
+[stale context warning](../../output/ui/arcloom-retry-stale.png),
+[reviewable proposal](../../output/ui/arcloom-retry-proposal.png),
+[exact comparison](../../output/verification/retry-context-proof.json).
+All 60 studio tests and the full web check passed before the live verification.
+MCP tool-count/wiki checks, all 61 protocol tests, protocol documentation/matrix
+checks and relative doc links passed. The isolated
+`release/arcloom-recovery/mac-arm64/Arcloom.app` passed native runtime checks
+with bundled Codex 0.162.1, compiled assets, PDF worker delivery and six license
+files. Its ARM64 DMG passed `hdiutil verify`. Public-beta signing and
+notarization remain open.

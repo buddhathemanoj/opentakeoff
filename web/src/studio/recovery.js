@@ -1,4 +1,5 @@
 import { validateProject } from './model.js';
+import {allElementIds,BUILDING_SCHEMA} from './building.js';
 export const RECOVERY_STORAGE = 'kosal.studio.recovery.v1';
 export const EMPTY_RECOVERY = Object.freeze({ draft: '', proposal: null, base: '', pending: false });
 
@@ -13,7 +14,25 @@ export function validateRecovery(value, projectId) {
     const original = validateProject(JSON.parse(base));
     if (original.id !== projectId) throw new Error('Saved proposal context belongs to a different project.');
   }
-  return { draft, proposal, base, pending: value.pending === true };
+  const record={ draft, proposal, base, pending: value.pending === true };
+  if(value.selection!==undefined){
+    if(!Array.isArray(value.selection)||value.selection.length>250||value.selection.some(id=>typeof id!=='string'))throw new Error('Invalid saved request selection.');
+    if(value.selection.length){const original=validateProject(JSON.parse(base)),ids=new Set(allElementIds(original));if(original.id!==projectId||value.selection.some(id=>!ids.has(id)))throw new Error('Saved request selection belongs to a different drawing.');}
+    record.selection=[...new Set(value.selection)];
+  }
+  return record;
+}
+export function retryContext(record,project){
+ const empty={ids:[],label:'',source:null,status:'none'};
+ if(!record.selection?.length||!record.draft?.trim())return empty;
+ try{
+  const original=validateProject(JSON.parse(record.base)),current=validateProject(project),ids=new Set(allElementIds(original));
+  if(original.id!==current.id||record.selection.some(id=>!ids.has(id)))return{...empty,status:'stale'};
+  const items=original.schema===BUILDING_SCHEMA?original.floors.flatMap(f=>[...f.elements,...f.fixtures,...f.openings].map(item=>({...item,floorName:f.name}))):original.elements;
+  const first=items.find(item=>item.id===record.selection[0]),label=[first?.floorName,first?.label||first?.kind].filter(Boolean).join(' · ')+(record.selection.length>1?` +${record.selection.length-1} more`:'');
+  if(JSON.stringify(original)!==JSON.stringify(current))return{...empty,label,status:'stale'};
+  return{ids:[...record.selection],label,source:'retry',status:'ready'};
+ }catch{return{...empty,status:'stale'};}
 }
 export function restoreRecovery(storage) {
   const records = Object.create(null);

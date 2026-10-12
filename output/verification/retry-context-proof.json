@@ -1,0 +1,13 @@
+{
+  "scenario": "Reload during selected-space request, change and restore project name, explicit authenticated retry",
+  "firstAttempt": "Controlled pending fixture aborted by reload; no model call",
+  "secondAttempt": "Real authenticated Codex run",
+  "target": "r15",
+  "floor": "f7",
+  "oldLabel": "Landscaped roof terrace",
+  "newLabel": "Roof garden",
+  "sameRequestSnapshot": true,
+  "exactOneLabelChange": true,
+  "staleDrawingSendDisabled": true,
+  "proposalNotApplied": true
+}

@@ -37,3 +37,9 @@ test('malformed persisted messages cannot crash chat rendering or become AI syst
   assert.throws(() => validateChats({ x: [{ role: 'assistant', content: { bad: true } }] }));
   assert.deepEqual(validateChats({ x: [{ role: 'user', content: 'Brief', extra: 'discarded' }] }).x, [{ role: 'user', content: 'Brief' }]);
 });
+
+test('new interrupted requests restore valid selection without changing legacy recovery records',async()=>{
+ const {retryContext}=await import('../../web/src/studio/recovery.js');const p=exampleProject(),id=p.elements[0].id,record={draft:'Rename this space',pending:true,base:JSON.stringify(p),selection:[id]},restored=validateRecovery(JSON.parse(JSON.stringify(record)),p.id),context=retryContext(restored,p);
+ assert.equal(context.status,'ready');assert.deepEqual(context.ids,[id]);assert.equal(context.source,'retry');assert.ok(context.label.includes(p.elements[0].label));assert.equal(retryContext({...restored,draft:''},p).status,'none');assert.equal(retryContext(restored,{...p,name:'Changed drawing'}).status,'stale');assert.equal(retryContext(restored,{...p,id:'other'}).status,'stale');
+ assert.throws(()=>validateRecovery({...record,selection:['unknown']},p.id));assert.throws(()=>validateRecovery({...record,base:'{}'},p.id));assert.equal(validateRecovery({draft:'Old brief',pending:true},p.id).selection,undefined);
+});
