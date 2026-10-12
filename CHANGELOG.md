@@ -1,5 +1,7 @@
 # Changelog
 
+- Arcloom: same-scene AI preview, Apply and Discard preserve the 3D camera position and direction. Restoration checks project/floor identity, view settings and physical bounds; newly blocked walkthrough positions fall back to entry.
+
 - Arcloom: compact AI additions/removals can combine with existing field edits into one atomic, validated review proposal, preserving unaffected items and floors. Live two-planter addition/removal tests updated quantities and restored an exact exported project. New editable exports use `.arcloom.json`.
 
 - Arcloom: walkthrough location now supplies visible, transient chat context for short briefs such as “rename this space.” Manual selections take priority; stale and proposal-preview locations are excluded. Updated the 3D timer and shadow mode to supported Three.js APIs.

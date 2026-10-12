@@ -1480,3 +1480,14 @@ construction approval.
 Editable design exports now use `.arcloom.json`; existing `.kosal.json` and
 other valid JSON project files remain importable. The document schema and
 original takeoff formats are unchanged.
+
+## Keep your place while editing in 3D
+
+Previewing, applying or discarding a same-scene design change preserves your
+camera position and look direction. This includes interior walkthroughs and
+exterior orbit views. The scene must keep the same project, floor, view settings
+and physical bounds. If a new wall blocks the old walkthrough position, the
+viewer returns to entry instead. **Return to entry** and **Reset view** remain
+explicit controls. Changing projects, floors, view modes or scene bounds resets
+the view. Camera memory is transient within the mounted 3D viewer; it is not
+stored in your exported project or restored after a page reload.

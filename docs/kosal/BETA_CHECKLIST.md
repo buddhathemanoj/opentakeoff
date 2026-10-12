@@ -429,3 +429,40 @@ wiki, protocol and relative doc links passed. The new
 compiled-asset, PDF worker and attribution smoke checks. Both native Mac CI
 jobs passed for prior context commit `75521709`; compact changes need their
 own CI run. Packages remain unsigned/unnotarized, and Windows remains deferred.
+
+## Camera continuity during edits
+
+The 3D scene previously returned to its default camera whenever proposal or
+saved geometry changed. It now captures a transient camera pose before scene
+cleanup and restores it only for the same project, floor, view settings and
+physical extents. Walkthrough restoration additionally checks the new wall
+geometry. Explicit reset controls remain unchanged, and no camera fields are
+added to persisted projects. Tests cover unit-conversion rounding, identity and
+mode/extent changes, invalid poses and newly blocked positions. All 59 studio
+tests and the full web check passed. A live camera-continuity UI test is pending.
+
+Live browser verification moved and rotated the camera on the level-7 terrace,
+then requested two planters. Proposal preview retained the terrace and look
+direction; Discard retained that view. A second proposal was applied and undone
+without returning to the entrance. In exterior orbit mode, a deliberately
+rotated view remained through Redo and Undo; screenshots were inspected.
+The isolated test drawing was restored with Undo. These checks verify same-scene
+updates; closing the viewer, opening reports and page reload do not preserve
+the component's transient camera state.
+
+Evidence: [before](../../output/ui/arcloom-pose-before.png),
+[proposal preview](../../output/ui/arcloom-pose-proposal.png),
+[discarded](../../output/ui/arcloom-pose-discard.png),
+[applied](../../output/ui/arcloom-pose-applied.png),
+[undone](../../output/ui/arcloom-pose-undone.png),
+[orbit before](../../output/ui/arcloom-orbit-before.png),
+[orbit redo](../../output/ui/arcloom-orbit-redo.png),
+[orbit undo](../../output/ui/arcloom-orbit-undone.png).
+Tool-count, wiki, protocol and relative doc links passed. Both native Mac CI
+jobs passed for prior compact-edit commit `4863ddc9`; the camera change needs
+its own native CI run.
+
+The refreshed `release/arcloom-view/mac-arm64/Arcloom.app` passed native
+packaged runtime checks for bundled Codex 0.162.1, compiled assets, PDF worker
+delivery and six attribution/license files. Packages remain unsigned and
+unnotarized; public-beta manual verification remains open.

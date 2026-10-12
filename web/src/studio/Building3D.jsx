@@ -1,8 +1,9 @@
 import {useEffect,useRef,useState} from 'react';
 import {wallBoxes,worldFixture,ceilingPanels} from './threeGeometry.js';
 import {canWalkTo,entryRoom,walkthroughLocations} from './walkthrough.js';
+import {canRestoreView} from './viewPose.js';
 export default function Building3D({project,floorId,onLocationChange}){
- const mount=useRef(null),reset=useRef(null),enter=useRef(null),keys=useRef(new Set()),[walk,setWalk]=useState(false),[roomName,setRoomName]=useState(''),[locationId,setLocationId]=useState(''),[exploded,setExploded]=useState(false),[cutaway,setCutaway]=useState(false),[scope,setScope]=useState('all'),[error,setError]=useState(''),[ready,setReady]=useState(false);
+ const mount=useRef(null),reset=useRef(null),enter=useRef(null),keys=useRef(new Set()),viewPose=useRef(null),[walk,setWalk]=useState(false),[roomName,setRoomName]=useState(''),[locationId,setLocationId]=useState(''),[exploded,setExploded]=useState(false),[cutaway,setCutaway]=useState(false),[scope,setScope]=useState('all'),[error,setError]=useState(''),[ready,setReady]=useState(false);
  useEffect(()=>{
   const host=mount.current;let disposed=false,cleanup=()=>{};setReady(false);setError('');
   if(!walk)onLocationChange?.(null);
@@ -78,6 +79,7 @@ export default function Building3D({project,floorId,onLocationChange}){
     const walkingWalls=wallBoxes(project,activeFloor),frameTimer=new THREE.Timer();frameTimer.connect(document);
     let yaw=0,pitch=0,drag=null,lastRoomUpdate=0,lastReported;
     const reportLocation=(room,force=false)=>{const id=room?.id||null;if(force||id!==lastReported){lastReported=id;onLocationChange?.(id?{projectId:project.id,floorId:activeFloor.id,elementId:id}:null);}};
+    const syncLocation=()=>{const room=walkthroughLocations(activeFloor).find(e=>camera.position.x>=e.x*m&&camera.position.x<=(e.x+e.width)*m&&camera.position.z>=e.y*m&&camera.position.z<=(e.y+e.height)*m);setRoomName(room?.label||activeFloor.name);setLocationId(room?.id||'');reportLocation(room);};
     const place=(id)=>{
      const room=activeFloor.elements.find(e=>e.id===id)||entryRoom(activeFloor);
      const px=room?(room.x+room.width/2)*m:w/2,pz=room?(room.y+room.height*.78)*m:d/2;
@@ -92,7 +94,12 @@ export default function Building3D({project,floorId,onLocationChange}){
     };
     reset.current=home;
     const resize=()=>{const width=host.clientWidth,height=host.clientHeight;if(!width||!height)return;renderer.setSize(width,height);camera.aspect=width/height;camera.updateProjectionMatrix();};
-    const observer=new ResizeObserver(resize);observer.observe(host);resize();home();
+    const observer=new ResizeObserver(resize);observer.observe(host);resize();
+    const viewContext={projectId:project.id,floorId:activeFloor.id,walk,scope,cutaway,exploded,width:w,depth:d,height:top},savedPose=viewPose.current;
+    if(canRestoreView(savedPose,viewContext)&&(!walk||canWalkTo(savedPose.position[0],savedPose.position[2],walkingWalls,{width:w,depth:d}))){
+     camera.position.fromArray(savedPose.position);controls.target.fromArray(savedPose.target);
+     if(walk){yaw=savedPose.yaw;pitch=savedPose.pitch;camera.rotation.set(pitch,yaw,0);syncLocation();}else controls.update();
+    }else home();
     const canvas=renderer.domElement;
     const keydown=e=>{if(!walk)return;if(['w','a','s','d','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Escape'].includes(e.key)){e.preventDefault();e.stopPropagation();if(e.key==='Escape'){setWalk(false);return;}keys.current.add(e.key.toLowerCase());}};
     const keyup=e=>keys.current.delete(e.key.toLowerCase());
@@ -110,12 +117,12 @@ export default function Building3D({project,floorId,onLocationChange}){
        const norm=Math.hypot(forward,side)||1,speed=2.4*dt/norm,dx=(-Math.sin(yaw)*forward+Math.cos(yaw)*side)*speed,dz=(-Math.cos(yaw)*forward-Math.sin(yaw)*side)*speed,bounds={width:w,depth:d};
        if(canWalkTo(camera.position.x+dx,camera.position.z,walkingWalls,bounds))camera.position.x+=dx;
        if(canWalkTo(camera.position.x,camera.position.z+dz,walkingWalls,bounds))camera.position.z+=dz;
-       if(frameTimer.getElapsed()-lastRoomUpdate>.5){lastRoomUpdate=frameTimer.getElapsed();const room=walkthroughLocations(activeFloor).find(e=>camera.position.x>=e.x*m&&camera.position.x<=(e.x+e.width)*m&&camera.position.z>=e.y*m&&camera.position.z<=(e.y+e.height)*m);setRoomName(room?.label||activeFloor.name);setLocationId(room?.id||'');reportLocation(room);}
+       if(frameTimer.getElapsed()-lastRoomUpdate>.5){lastRoomUpdate=frameTimer.getElapsed();syncLocation();}
       }else controls.update();
       renderer.render(scene,camera);
      }
     };animate();
-    cleanup=()=>{clear();canvas.removeEventListener('keydown',keydown);canvas.removeEventListener('keyup',keyup);canvas.removeEventListener('blur',clear);canvas.removeEventListener('pointerdown',down);canvas.removeEventListener('pointermove',move);canvas.removeEventListener('pointerup',up);canvas.removeEventListener('pointercancel',up);window.removeEventListener('blur',clear);enter.current=null;cancelAnimationFrame(frame);observer.disconnect();frameTimer.dispose();controls.dispose();for(const g of geometries)g.dispose();for(const v of materials){if(Array.isArray(v))v.forEach(m=>m.dispose());else v.dispose();}renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();reset.current=null;};
+    cleanup=()=>{viewPose.current={context:viewContext,position:camera.position.toArray(),target:controls.target.toArray(),yaw,pitch};clear();canvas.removeEventListener('keydown',keydown);canvas.removeEventListener('keyup',keyup);canvas.removeEventListener('blur',clear);canvas.removeEventListener('pointerdown',down);canvas.removeEventListener('pointermove',move);canvas.removeEventListener('pointerup',up);canvas.removeEventListener('pointercancel',up);window.removeEventListener('blur',clear);enter.current=null;cancelAnimationFrame(frame);observer.disconnect();frameTimer.dispose();controls.dispose();for(const g of geometries)g.dispose();for(const v of materials){if(Array.isArray(v))v.forEach(m=>m.dispose());else v.dispose();}renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();reset.current=null;};
     setReady(true);
    }catch(e){if(!disposed)setError(`3D rendering is unavailable on this device. ${e.message}`);}
   }
