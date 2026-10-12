@@ -727,3 +727,28 @@ university design. All three attempts retained the full programme and left the
 saved fixture unchanged. The temporary QA recorder was removed and the normal
 isolated server restored. Large-programme latency remains an unresolved MVP
 requirement; schema/unit/native package checks do not establish design quality.
+
+## Staged large-building generation checkpoint
+
+New explicit four-to-twelve-floor briefs now use a shared blueprint and then
+one detailed floor request at a time. Completed floors remain internal until
+the final building validates and becomes one review proposal. Cancellation or
+a failed stage returns no partial proposal and preserves the saved drawing.
+Shared footprint, floor metadata and reserved geometry are checked at assembly;
+new item IDs are namespaced by floor. Targeted refinements retain the existing
+mutation path. The persisted building and original takeoff formats are unchanged.
+
+`npm run test:studio` passes 78 tests, including actual subprocess transport of a
+controlled four-floor response with 150 individual generated grid seats, shared
+core rejection, floor-count rejection and cancellation between stages. The web
+check, MCP tool-count/wiki checks, protocol check and doc-link check pass.
+
+A real authenticated rerun of the full NEXUS programme returned the shared
+blueprint in 138 seconds: 54 × 36 m, six floors, aligned stair/lift coordinates,
+and five matching 12 × 12 m upper-floor openings at (21, 12). The
+[synthetic university blueprint](../../output/verification/staged-nexus-blueprint.json)
+is a planning artifact, not a complete furnished design. The detailed ground
+floor was still running at this checkpoint. Complete AI programme quality,
+assembled geometry, UI review and refreshed Mac packaging remain unverified.
+The authenticated run remains live; do not restart it because an observation
+wait expires.

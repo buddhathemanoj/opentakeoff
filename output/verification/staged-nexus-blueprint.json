@@ -1,0 +1,801 @@
+{
+  "schema": "kosal.studio.building.v1",
+  "id": "ba905d2f-58a0-45e3-b3ee-e288930105ea",
+  "name": "NEXUS \u2014 University Innovation Centre",
+  "mode": "building",
+  "unit": "m",
+  "width": 54,
+  "height": 36,
+  "floors": [
+    {
+      "id": "ground",
+      "name": "Ground \u2014 Public and Student Services",
+      "use": "mixed",
+      "elevation": 0,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "ground-stair-west",
+          "kind": "room",
+          "label": "West stair reservation",
+          "x": 0,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "ground-lifts",
+          "kind": "room",
+          "label": "Two-lift bank reservation",
+          "x": 5,
+          "y": 4,
+          "width": 4,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "ground-accessible-toilets",
+          "kind": "room",
+          "label": "Accessible toilets reservation",
+          "x": 9,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "ground-services",
+          "kind": "room",
+          "label": "Services and risers reservation",
+          "x": 14,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "ground-stair-east",
+          "kind": "room",
+          "label": "East stair reservation",
+          "x": 49,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "ground-west-connector",
+          "kind": "room",
+          "label": "West entrance and core circulation",
+          "x": 0,
+          "y": 10,
+          "width": 19,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "ground-east-connector",
+          "kind": "room",
+          "label": "East service entrance circulation",
+          "x": 35,
+          "y": 10,
+          "width": 19,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "ground-courtyard-north",
+          "kind": "room",
+          "label": "Courtyard north circulation",
+          "x": 19,
+          "y": 10,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "ground-courtyard-west",
+          "kind": "room",
+          "label": "Courtyard west circulation",
+          "x": 19,
+          "y": 12,
+          "width": 2,
+          "height": 12,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "ground-courtyard-east",
+          "kind": "room",
+          "label": "Courtyard east circulation",
+          "x": 33,
+          "y": 12,
+          "width": 2,
+          "height": 12,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "ground-courtyard-south",
+          "kind": "room",
+          "label": "Courtyard south student circulation",
+          "x": 19,
+          "y": 24,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "ground-courtyard",
+          "kind": "landscape",
+          "label": "Open-air landscaped courtyard",
+          "x": 21,
+          "y": 12,
+          "width": 12,
+          "height": 12,
+          "wallThickness": 0.18
+        }
+      ],
+      "programme": "Public reception with 3 service positions and 20 waiting seats; exhibition gallery for approximately 80 visitors; auditorium with exactly 150 audience seats, including 4 wheelchair positions and 146 individual editable chair fixtures at detailing stage, stage, 2 backstage rooms for 8 performers each and audiovisual control; 4 admissions offices with 2 staff positions each; caf\u00e9 with 40 seats, service counter, kitchen/preparation, wash-up and food storage; east loading entrance, receiving and general storage. Organize public reception/gallery/auditorium toward the west entrance, student access along the courtyard circulation and loading/kitchen/backstage access toward the east service entrance. Reserve distinct public, student and service branches during floor detailing, with controlled crossings."
+    },
+    {
+      "id": "level-1",
+      "name": "Level 1 \u2014 Library and Learning",
+      "use": "mixed",
+      "elevation": 4,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "level-1-stair-west",
+          "kind": "room",
+          "label": "West stair reservation",
+          "x": 0,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-1-lifts",
+          "kind": "room",
+          "label": "Two-lift bank reservation",
+          "x": 5,
+          "y": 4,
+          "width": 4,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-1-accessible-toilets",
+          "kind": "room",
+          "label": "Accessible toilets reservation",
+          "x": 9,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-1-services",
+          "kind": "room",
+          "label": "Services and risers reservation",
+          "x": 14,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-1-stair-east",
+          "kind": "room",
+          "label": "East stair reservation",
+          "x": 49,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-1-west-connector",
+          "kind": "room",
+          "label": "West core circulation",
+          "x": 0,
+          "y": 10,
+          "width": 19,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-1-east-connector",
+          "kind": "room",
+          "label": "East core circulation",
+          "x": 35,
+          "y": 10,
+          "width": 19,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-1-courtyard-north",
+          "kind": "room",
+          "label": "Courtyard north circulation",
+          "x": 19,
+          "y": 10,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-1-courtyard-west",
+          "kind": "room",
+          "label": "Courtyard west circulation",
+          "x": 19,
+          "y": 12,
+          "width": 2,
+          "height": 12,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-1-courtyard-east",
+          "kind": "room",
+          "label": "Courtyard east circulation",
+          "x": 33,
+          "y": 12,
+          "width": 2,
+          "height": 12,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-1-courtyard-south",
+          "kind": "room",
+          "label": "Courtyard south circulation",
+          "x": 19,
+          "y": 24,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-1-courtyard",
+          "kind": "void",
+          "label": "Open-air courtyard slab opening",
+          "x": 21,
+          "y": 12,
+          "width": 12,
+          "height": 12,
+          "wallThickness": 0.15
+        }
+      ],
+      "programme": "Library with book stacks provisionally accommodating 20,000 volumes; 80 quiet reading seats; 6 collaborative study rooms for 6 people each; computer lab with 30 workstations; librarian's office for 2 staff; circulation/help desk with 3 staff positions; book processing, returns, archive storage, print/copy and housekeeping spaces. Keep quiet reading away from collaborative study and computer activity. All floors include the reserved stairs, two-lift bank, accessible toilets, services and connected courtyard circulation."
+    },
+    {
+      "id": "level-2",
+      "name": "Level 2 \u2014 Teaching and Making",
+      "use": "mixed",
+      "elevation": 8,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "level-2-stair-west",
+          "kind": "room",
+          "label": "West stair reservation",
+          "x": 0,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-lifts",
+          "kind": "room",
+          "label": "Two-lift bank reservation",
+          "x": 5,
+          "y": 4,
+          "width": 4,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-accessible-toilets",
+          "kind": "room",
+          "label": "Accessible toilets reservation",
+          "x": 9,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-services",
+          "kind": "room",
+          "label": "Services and risers reservation",
+          "x": 14,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-stair-east",
+          "kind": "room",
+          "label": "East stair reservation",
+          "x": 49,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-west-connector",
+          "kind": "room",
+          "label": "West core circulation",
+          "x": 0,
+          "y": 10,
+          "width": 19,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-east-connector",
+          "kind": "room",
+          "label": "East core circulation",
+          "x": 35,
+          "y": 10,
+          "width": 19,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-courtyard-north",
+          "kind": "room",
+          "label": "Courtyard north circulation",
+          "x": 19,
+          "y": 10,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-courtyard-west",
+          "kind": "room",
+          "label": "Courtyard west circulation",
+          "x": 19,
+          "y": 12,
+          "width": 2,
+          "height": 12,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-courtyard-east",
+          "kind": "room",
+          "label": "Courtyard east circulation",
+          "x": 33,
+          "y": 12,
+          "width": 2,
+          "height": 12,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-courtyard-south",
+          "kind": "room",
+          "label": "Courtyard south circulation",
+          "x": 19,
+          "y": 24,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-2-courtyard",
+          "kind": "void",
+          "label": "Open-air courtyard slab opening",
+          "x": 21,
+          "y": 12,
+          "width": 12,
+          "height": 12,
+          "wallThickness": 0.15
+        }
+      ],
+      "programme": "Exactly 6 classrooms with 30 student seats and 1 teaching position each, totaling 180 student seats; electronics lab for 24 students; robotics lab for 24 students; fabrication workshop for 20 users; 3 equipment stores serving the laboratories and workshop; 8 faculty offices with 2 workstations each. Place teaching rooms in the quieter west/south zones and fabrication/robotics in the east zone, using equipment stores and support spaces as acoustic buffers. Provide controlled workshop access and dedicated extraction/service provision at detailing stage."
+    },
+    {
+      "id": "level-3",
+      "name": "Level 3 \u2014 Research",
+      "use": "mixed",
+      "elevation": 12,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "level-3-stair-west",
+          "kind": "room",
+          "label": "West stair reservation",
+          "x": 0,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-3-lifts",
+          "kind": "room",
+          "label": "Two-lift bank reservation",
+          "x": 5,
+          "y": 4,
+          "width": 4,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-3-accessible-toilets",
+          "kind": "room",
+          "label": "Accessible toilets reservation",
+          "x": 9,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-3-services",
+          "kind": "room",
+          "label": "Services and risers reservation",
+          "x": 14,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-3-stair-east",
+          "kind": "room",
+          "label": "East stair reservation",
+          "x": 49,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-3-west-connector",
+          "kind": "room",
+          "label": "West core circulation",
+          "x": 0,
+          "y": 10,
+          "width": 19,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-3-east-connector",
+          "kind": "room",
+          "label": "East core circulation",
+          "x": 35,
+          "y": 10,
+          "width": 19,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-3-courtyard-north",
+          "kind": "room",
+          "label": "Courtyard north circulation",
+          "x": 19,
+          "y": 10,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-3-courtyard-west",
+          "kind": "room",
+          "label": "Courtyard west circulation",
+          "x": 19,
+          "y": 12,
+          "width": 2,
+          "height": 12,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-3-courtyard-east",
+          "kind": "room",
+          "label": "Courtyard east circulation",
+          "x": 33,
+          "y": 12,
+          "width": 2,
+          "height": 12,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-3-courtyard-south",
+          "kind": "room",
+          "label": "Courtyard south circulation",
+          "x": 19,
+          "y": 24,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-3-courtyard",
+          "kind": "void",
+          "label": "Open-air courtyard slab opening",
+          "x": 21,
+          "y": 12,
+          "width": 12,
+          "height": 12,
+          "wallThickness": 0.15
+        }
+      ],
+      "programme": "Exactly 4 research laboratories for 16 researchers each; 4 associated preparation rooms for 4 users each; 2 secure equipment stores; 40 researcher desk workstations outside the laboratories; 2 seminar rooms for 24 attendees each; 2 breakout spaces for 12 people each. Assume general nonclinical research pending laboratory briefs. Separate controlled laboratory/preparation/storage access from visitor seminar access; determine specialist ventilation, utilities and hazards before laboratory detailing."
+    },
+    {
+      "id": "level-4",
+      "name": "Level 4 \u2014 Startup Incubator",
+      "use": "office",
+      "elevation": 16,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "level-4-stair-west",
+          "kind": "room",
+          "label": "West stair reservation",
+          "x": 0,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-4-lifts",
+          "kind": "room",
+          "label": "Two-lift bank reservation",
+          "x": 5,
+          "y": 4,
+          "width": 4,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-4-accessible-toilets",
+          "kind": "room",
+          "label": "Accessible toilets reservation",
+          "x": 9,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-4-services",
+          "kind": "room",
+          "label": "Services and risers reservation",
+          "x": 14,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-4-stair-east",
+          "kind": "room",
+          "label": "East stair reservation",
+          "x": 49,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-4-west-connector",
+          "kind": "room",
+          "label": "West core circulation",
+          "x": 0,
+          "y": 10,
+          "width": 19,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-4-east-connector",
+          "kind": "room",
+          "label": "East core circulation",
+          "x": 35,
+          "y": 10,
+          "width": 19,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-4-courtyard-north",
+          "kind": "room",
+          "label": "Courtyard north circulation",
+          "x": 19,
+          "y": 10,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-4-courtyard-west",
+          "kind": "room",
+          "label": "Courtyard west circulation",
+          "x": 19,
+          "y": 12,
+          "width": 2,
+          "height": 12,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-4-courtyard-east",
+          "kind": "room",
+          "label": "Courtyard east circulation",
+          "x": 33,
+          "y": 12,
+          "width": 2,
+          "height": 12,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-4-courtyard-south",
+          "kind": "room",
+          "label": "Courtyard south circulation",
+          "x": 19,
+          "y": 24,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-4-courtyard",
+          "kind": "void",
+          "label": "Open-air courtyard slab opening",
+          "x": 21,
+          "y": 12,
+          "width": 12,
+          "height": 12,
+          "wallThickness": 0.15
+        }
+      ],
+      "programme": "Exactly 8 private team offices with 6 workstations each, totaling 48; open coworking with 48 additional workstations; 3 meeting rooms for 8 people each and 1 meeting room for 12; 6 single-person video-call booths; presentation studio for 30 attendees plus presenter; kitchenette and 24-seat lounge. Include incubator reception for 2 staff, print/storage support and a secure server/communications room separated from public arrival. Keep booths and private offices buffered from presentation and lounge activity."
+    },
+    {
+      "id": "level-5",
+      "name": "Level 5 \u2014 Administration and Conference",
+      "use": "mixed",
+      "elevation": 20,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "level-5-stair-west",
+          "kind": "room",
+          "label": "West stair reservation",
+          "x": 0,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-5-lifts",
+          "kind": "room",
+          "label": "Two-lift bank reservation",
+          "x": 5,
+          "y": 4,
+          "width": 4,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-5-accessible-toilets",
+          "kind": "room",
+          "label": "Accessible toilets reservation",
+          "x": 9,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-5-services",
+          "kind": "room",
+          "label": "Services and risers reservation",
+          "x": 14,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-5-stair-east",
+          "kind": "room",
+          "label": "East stair reservation",
+          "x": 49,
+          "y": 4,
+          "width": 5,
+          "height": 6,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-5-west-connector",
+          "kind": "room",
+          "label": "West core circulation",
+          "x": 0,
+          "y": 10,
+          "width": 19,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-5-east-connector",
+          "kind": "room",
+          "label": "East core circulation",
+          "x": 35,
+          "y": 10,
+          "width": 19,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-5-courtyard-north",
+          "kind": "room",
+          "label": "Courtyard north circulation",
+          "x": 19,
+          "y": 10,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-5-courtyard-west",
+          "kind": "room",
+          "label": "Courtyard west circulation",
+          "x": 19,
+          "y": 12,
+          "width": 2,
+          "height": 12,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-5-courtyard-east",
+          "kind": "room",
+          "label": "Courtyard east circulation",
+          "x": 33,
+          "y": 12,
+          "width": 2,
+          "height": 12,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-5-courtyard-south",
+          "kind": "room",
+          "label": "Courtyard south circulation",
+          "x": 19,
+          "y": 24,
+          "width": 16,
+          "height": 2,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "level-5-courtyard",
+          "kind": "void",
+          "label": "Open-air courtyard slab opening",
+          "x": 21,
+          "y": 12,
+          "width": 12,
+          "height": 12,
+          "wallThickness": 0.15
+        }
+      ],
+      "programme": "Administration reception for 2 staff and 12 waiting visitors; 24 administrative workstations; 6 executive offices with 1 executive workstation and 4 visitor seats each; boardroom for 24; exactly 2 training rooms for 30 attendees each; event lounge for 60 seated guests; catering pantry with preparation, wash-up and storage; records and office support spaces. Allocate a landscaped rooftop terrace at this top occupied level, provisionally x=35, y=24, width=19, height=12 (228 square metres), for approximately 40 users, connected to the east courtyard circulation. This terrace is an unmodelled programme allocation for subsequent floor detailing, not an additional storey."
+    }
+  ],
+  "notes": [
+    "Shared blueprint proposal for review only. Exactly six floors on the requested 54 \u00d7 36 m footprint; no basement or additional roof floor.",
+    "Only shared cores, circulation and courtyard surfaces/openings are modelled. Tenant rooms, doors, windows, furniture and terrace geometry await individual floor detailing; auditorium chair requirements remain assigned to the ground programme.",
+    "All reserved rectangles fit the footprint and have no positive-area overlaps. Core coordinates align across all floors; 2 m circulation connects both stairs, the lift bank and the courtyard ring.",
+    "The 12 \u00d7 12 m courtyard remains at x=21, y=12 throughout: landscape at ground and explicit slab voids above. No furniture or floor surface is assigned to upper openings.",
+    "Assume 4 m storeys, 0.18 m internal walls and future 0.28 m perimeter walls. Reservation dimensions are planning envelopes; clear widths require wall and opening detailing.",
+    "Except the requested 150-seat auditorium and specified room counts, capacities are proposed assumptions. Seat counts include wheelchair positions; room populations are not additive building occupancy estimates.",
+    "Auditorium clear height, stage equipment, structural spans and potential double-height needs require resolution while preserving the six-floor count.",
+    "Final route separation, accessible toilet layouts, stair/lift sizing, terrace structure and drainage, courtyard balustrades, fire strategy and specialist MEP remain unresolved. No compliance, construction approval, costs or market rates are claimed."
+  ]
+}

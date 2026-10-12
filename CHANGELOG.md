@@ -1,5 +1,7 @@
 # Changelog
 
+- Arcloom: new briefs with four to twelve explicitly requested floors generate a shared building blueprint followed by detailed floor stages. The app returns one complete review proposal, preserves reserved geometry, reports floor progress, and cancels without applying partial designs.
+
 - Arcloom: same-scene AI preview, Apply and Discard preserve the 3D camera position and direction. Restoration checks project/floor identity, view settings and physical bounds; newly blocked walkthrough positions fall back to entry.
 
 - Arcloom: compact AI additions/removals can combine with existing field edits into one atomic, validated review proposal, preserving unaffected items and floors. Live two-planter addition/removal tests updated quantities and restored an exact exported project. New editable exports use `.arcloom.json`.

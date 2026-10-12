@@ -1575,3 +1575,17 @@ limit. Exports still contain ordinary fixture objects; no pattern language is
 added to saved drawings. Large designs still need review of circulation and
 placement. A time-limited request retains its brief and leaves the drawing
 unchanged for an explicit retry.
+
+### Large building generation
+
+New building briefs that explicitly request four to twelve floors use staged
+generation. Arcloom plans the footprint, shared cores and floor programme, then
+details each floor. Chat shows the current floor as it works. The complete
+proposal appears after all floors pass validation; no intermediate floor replaces
+your drawing. **Stop** cancels generation and preserves the saved design.
+
+Each stage preserves the shared footprint and reserved cores/openings. Repeated
+furniture expands into individual editable fixtures before review. Refinements
+continue to use the existing edit flow instead of regenerating every floor. This
+does not establish architectural compliance or guarantee that every circulation
+connection is correct; inspect the design checks, plans and walkthrough.
