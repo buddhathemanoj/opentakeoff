@@ -634,3 +634,51 @@ bundled Codex, assets, PDF worker and six-license checks as version
 verification and were copied into its fresh `verified` folder. Signing and
 notarization remain open. Its native CI run is still pending.
 [Ground courtyard view](../../output/ui/arcloom-courtyard-ground.png).
+
+
+### Large-programme generation and original workflow regression
+
+The live six-floor NEXUS request exceeded the existing 600-second runtime limit
+without returning a proposal. The request was not applied and the exact brief
+was retained. Output repetition is a potential bottleneck, not a proven sole
+cause. A new `fixturePatterns` response transport lets the model describe grids
+that expand into ordinary editable fixtures. Grids require a containing space,
+non-overlapping spacing, unique generated IDs, wall margins, valid geometry and
+the existing 400-fixture floor limit. Full replacement proposals may use grids;
+compact edits/changes may not mix with them. Expansion is atomic, and transport
+fields are removed before returning the normal review proposal. Stored schemas
+and original takeoff records are unchanged.
+
+Tests cover 150 individual seats, unit parity, collisions, invalid targets,
+spacing, bounds, count limits, source preservation and Codex runtime expansion.
+All 72 studio tests passed. The unchanged university brief is being retried
+through authenticated Codex; its result remains unverified.
+
+Separately, automated manual-tool UI regression opened the public finish sample,
+accepted its declared scale, committed one synthetic interior rectangle and
+opened the report. This is not a room-accuracy benchmark or human approval.
+The report exported 108.7 SF, 5% waste, 114.14 SF order quantity, 12.68 SY and one
+gallon of adhesive at 250 SF/gal coverage. CSV and Excel values agreed; the
+workbook retained Conditions, By sheet, Materials, Shapes and By floor × room.
+Undo changed one shape to zero; Redo restored one. Reload retained both the
+shape and scale. No approval stamp was used.
+
+The PDF mode's header now identifies its independent workspace instead of
+showing the CAD project name/save badge. Sidebar project navigation returns to
+design; returning to PDF mode preserved the measurement. Source-backed evidence:
+[original report](../../output/ui/arcloom-original-takeoff-report.png),
+[workspace header](../../output/ui/arcloom-pdf-workspace-header.png),
+[CSV](../../output/verification/original-takeoff-qa.csv),
+[Excel](../../output/verification/original-takeoff-qa.xlsx),
+[regression record](../../output/verification/original-takeoff-qa-proof.json).
+This verifies the exercised workflow only; the wider original-feature manual
+checklist remains open.
+
+
+The full web check, MCP tool-count/wiki checks, all 61 protocol tests and doc
+links passed. The refreshed ARM64 runtime in `release/arcloom-patterns` passed
+native identity, bundled Codex, compiled assets, PDF worker and license checks
+as beta 2 build `55c2cf04e595`. Its DMG and ZIP passed installer verification.
+The compact-grid retry is still active; no claim of improved end-to-end
+university generation quality is made yet. Packages remain unsigned and
+unnotarized.

@@ -1,0 +1,12 @@
+Finish,Shapes,Multiplier,Waste %,Floor SF,Wall SF,Border SF,Total SF,LF,EA,Total SF w/Waste,LF w/Waste,SY w/Waste
+CPT-1,1,1,5,108.7,0,0,108.7,0,0,114.14,0,12.68
+TOTAL,,,,,,,108.7,0,0,114.14,0,12.68
+
+Finish,Material,Qty,Unit,Coverage,Note
+CPT-1,Adhesive,1,gal,1 gal / 250 SF,
+
+Material (combined),Qty,Unit
+Adhesive,1,gal
+
+Sheet,Sheet ID,Finish,Floor SF,Wall SF,Border SF,LF,EA
+AF101,sample-finish-plan.pdf,CPT-1,108.7,0,0,0,0

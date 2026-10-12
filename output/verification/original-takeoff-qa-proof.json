@@ -1,0 +1,20 @@
+{
+  "scenario": "Automated manual-tool UI regression on a synthetic interior rectangle in the public sample; not a room-accuracy benchmark or human approval",
+  "sampleImportPassed": true,
+  "declaredPlanScale": "1/8 inch = 1 foot; no independent scale check in this regression",
+  "measurements": 1,
+  "netSquareFeet": 108.7,
+  "wastePercent": 5.0,
+  "orderSquareFeet": 114.14,
+  "orderSquareYards": 12.68,
+  "adhesiveCoverage": "1 gal / 250 SF",
+  "adhesiveOrderGallons": 1,
+  "csvAndExcelAgree": true,
+  "undoMeasurementCount": 0,
+  "redoMeasurementCount": 1,
+  "approvalStampUsed": false,
+  "reloadMeasurementCount": 1,
+  "reloadRetainedScale": true,
+  "workspaceHeaderSeparatesCadContext": true,
+  "sidebarProjectReturnsToDesign": true
+}

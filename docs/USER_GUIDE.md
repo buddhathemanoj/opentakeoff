@@ -1557,3 +1557,21 @@ This capability starts in Arcloom **0.1.0-beta.2**. Existing building and site
 files remain importable. New building exports use the existing building schema
 with an additional `void` element kind; older beta builds cannot import those
 files. Original PDF takeoff formats and measurement records are unchanged.
+
+
+## PDF workspace and large furniture layouts
+
+**PDF takeoff workspace** identifies the original measuring workspace. Its
+scale, shapes, conditions and reports are independent of the CAD project list.
+Clicking a project in the sidebar returns to its design. Use **PDF takeoff** to
+return to the shared PDF workspace; its existing measurements remain saved.
+The canvas's own save status describes that workspace.
+
+For repeated furniture in a new building, Codex can describe a grid compactly.
+Arcloom expands it into individual editable fixtures before proposal review,
+3D rendering and quantity calculation. Each grid must fit a named room or
+landscape area, including its wall margins, and respect the floor's fixture
+limit. Exports still contain ordinary fixture objects; no pattern language is
+added to saved drawings. Large designs still need review of circulation and
+placement. A time-limited request retains its brief and leaves the drawing
+unchanged for an explicit retry.
