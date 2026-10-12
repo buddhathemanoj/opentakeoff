@@ -870,3 +870,27 @@ next observation, run 38201693107 at e96cafc0 had passed arm64 while Intel was
 still running. Windows remained failed on its previously known path issue.
 All 84 local studio tests, full web check, MCP tool-count/wiki, protocol and
 doc-link checks pass after the report/blueprint changes.
+
+## Current generation and refreshed Mac checkpoint
+
+The next live observation confirmed four validated stages: ground 331 fixtures,
+library 349, teaching 589, and research 290. Teaching has two overlap findings;
+research has none. Library's three overlaps come from a reserved sanitary-core
+room that also contains individual WC rooms and a lobby. The flat room schema
+counts both the enclosure and its partitions. This is an unresolved modelling
+and quantity issue, not grounds for ignoring the warnings. Correct reservation
+partition handling before claiming the complete building's quantities are
+reliable. The fifth-floor request was confirmed live; do not restart it solely
+for an observation timeout. Separate completed-stage diagnostic files remain
+in the isolated QA temporary directory.
+
+Mac beta.3 build c7f9d4ebdb22 includes the latest assumption/report and nominal
+blueprint-surface fixes. It passed the actual packaged runtime/content-digest
+check, and both installers passed verification. The refreshed local installer
+folder is release/arcloom-assumptions/verified. It is unsigned/unnotarized.
+Previous beta.3 build ada41617838e remains a separate valid checkpoint and lacks
+these newest report fixes. CI run 38201693107 passed both Mac architectures at
+e96cafc0; Windows remains failed. The full six-floor AI run began before the
+new assumption-assembly patch, so its eventual note handling must be audited
+against the separately captured stages. Do not claim that run exercised the
+new packing path.
