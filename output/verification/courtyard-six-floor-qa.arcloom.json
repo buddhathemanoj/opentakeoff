@@ -1,0 +1,685 @@
+{
+  "schema": "kosal.studio.building.v1",
+  "id": "courtyard-six-storeys-qa",
+  "name": "Six-storey courtyard · Geometry QA",
+  "mode": "building",
+  "unit": "m",
+  "width": 20,
+  "height": 16,
+  "notes": [
+    "Authored six-storey fixture for courtyard rendering and quantity verification, not an AI-generated programme. Guardrails, structural edges and compliance are not modelled."
+  ],
+  "floors": [
+    {
+      "id": "q0",
+      "name": "Ground · Courtyard",
+      "use": "mixed",
+      "elevation": 0,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "q0w",
+          "kind": "room",
+          "label": "Public entrance · West gallery",
+          "x": 0,
+          "y": 0,
+          "width": 6,
+          "height": 16,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q0e",
+          "kind": "room",
+          "label": "East gallery",
+          "x": 14,
+          "y": 0,
+          "width": 6,
+          "height": 16,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q0n",
+          "kind": "room",
+          "label": "North gallery",
+          "x": 6,
+          "y": 0,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q0s",
+          "kind": "room",
+          "label": "South gallery",
+          "x": 6,
+          "y": 12,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q0c",
+          "kind": "landscape",
+          "label": "Courtyard garden",
+          "x": 6,
+          "y": 4,
+          "width": 8,
+          "height": 8,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "q0pass00",
+          "kind": "opening",
+          "x": 6,
+          "y": 1,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q0pass01",
+          "kind": "opening",
+          "x": 6,
+          "y": 14,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q0pass10",
+          "kind": "opening",
+          "x": 14,
+          "y": 1,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q0pass11",
+          "kind": "opening",
+          "x": 14,
+          "y": 14,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q0cw",
+          "kind": "window",
+          "x": 7,
+          "y": 12,
+          "width": 6,
+          "rotation": 0,
+          "swing": 1
+        },
+        {
+          "id": "entrance-door",
+          "kind": "door",
+          "x": 0,
+          "y": 7,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "garden-passage",
+          "kind": "opening",
+          "x": 6,
+          "y": 7,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        }
+      ],
+      "fixtures": [
+        {
+          "id": "court-tree",
+          "type": "plant",
+          "label": "Courtyard planting",
+          "x": 8,
+          "y": 6,
+          "width": 4,
+          "height": 4,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "q1",
+      "name": "Level 1 · Gallery",
+      "use": "mixed",
+      "elevation": 4,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "q1w",
+          "kind": "room",
+          "label": "West gallery",
+          "x": 0,
+          "y": 0,
+          "width": 6,
+          "height": 16,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q1e",
+          "kind": "room",
+          "label": "East gallery",
+          "x": 14,
+          "y": 0,
+          "width": 6,
+          "height": 16,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q1n",
+          "kind": "room",
+          "label": "North gallery",
+          "x": 6,
+          "y": 0,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q1s",
+          "kind": "room",
+          "label": "South gallery",
+          "x": 6,
+          "y": 12,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q1c",
+          "kind": "void",
+          "label": "Atrium · open to below",
+          "x": 6,
+          "y": 4,
+          "width": 8,
+          "height": 8,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "q1pass00",
+          "kind": "opening",
+          "x": 6,
+          "y": 1,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q1pass01",
+          "kind": "opening",
+          "x": 6,
+          "y": 14,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q1pass10",
+          "kind": "opening",
+          "x": 14,
+          "y": 1,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q1pass11",
+          "kind": "opening",
+          "x": 14,
+          "y": 14,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q1cw",
+          "kind": "window",
+          "x": 7,
+          "y": 12,
+          "width": 6,
+          "rotation": 0,
+          "swing": 1
+        }
+      ],
+      "fixtures": []
+    },
+    {
+      "id": "q2",
+      "name": "Level 2 · Gallery",
+      "use": "mixed",
+      "elevation": 8,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "q2w",
+          "kind": "room",
+          "label": "West gallery",
+          "x": 0,
+          "y": 0,
+          "width": 6,
+          "height": 16,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q2e",
+          "kind": "room",
+          "label": "East gallery",
+          "x": 14,
+          "y": 0,
+          "width": 6,
+          "height": 16,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q2n",
+          "kind": "room",
+          "label": "North gallery",
+          "x": 6,
+          "y": 0,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q2s",
+          "kind": "room",
+          "label": "South gallery",
+          "x": 6,
+          "y": 12,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q2c",
+          "kind": "void",
+          "label": "Atrium · open to below",
+          "x": 6,
+          "y": 4,
+          "width": 8,
+          "height": 8,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "q2pass00",
+          "kind": "opening",
+          "x": 6,
+          "y": 1,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q2pass01",
+          "kind": "opening",
+          "x": 6,
+          "y": 14,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q2pass10",
+          "kind": "opening",
+          "x": 14,
+          "y": 1,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q2pass11",
+          "kind": "opening",
+          "x": 14,
+          "y": 14,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q2cw",
+          "kind": "window",
+          "x": 7,
+          "y": 12,
+          "width": 6,
+          "rotation": 0,
+          "swing": 1
+        }
+      ],
+      "fixtures": []
+    },
+    {
+      "id": "q3",
+      "name": "Level 3 · Gallery",
+      "use": "mixed",
+      "elevation": 12,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "q3w",
+          "kind": "room",
+          "label": "West gallery",
+          "x": 0,
+          "y": 0,
+          "width": 6,
+          "height": 16,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q3e",
+          "kind": "room",
+          "label": "East gallery",
+          "x": 14,
+          "y": 0,
+          "width": 6,
+          "height": 16,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q3n",
+          "kind": "room",
+          "label": "North gallery",
+          "x": 6,
+          "y": 0,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q3s",
+          "kind": "room",
+          "label": "South gallery",
+          "x": 6,
+          "y": 12,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q3c",
+          "kind": "void",
+          "label": "Atrium · open to below",
+          "x": 6,
+          "y": 4,
+          "width": 8,
+          "height": 8,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "q3pass00",
+          "kind": "opening",
+          "x": 6,
+          "y": 1,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q3pass01",
+          "kind": "opening",
+          "x": 6,
+          "y": 14,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q3pass10",
+          "kind": "opening",
+          "x": 14,
+          "y": 1,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q3pass11",
+          "kind": "opening",
+          "x": 14,
+          "y": 14,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q3cw",
+          "kind": "window",
+          "x": 7,
+          "y": 12,
+          "width": 6,
+          "rotation": 0,
+          "swing": 1
+        }
+      ],
+      "fixtures": []
+    },
+    {
+      "id": "q4",
+      "name": "Level 4 · Gallery",
+      "use": "mixed",
+      "elevation": 16,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "q4w",
+          "kind": "room",
+          "label": "West gallery",
+          "x": 0,
+          "y": 0,
+          "width": 6,
+          "height": 16,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q4e",
+          "kind": "room",
+          "label": "East gallery",
+          "x": 14,
+          "y": 0,
+          "width": 6,
+          "height": 16,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q4n",
+          "kind": "room",
+          "label": "North gallery",
+          "x": 6,
+          "y": 0,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q4s",
+          "kind": "room",
+          "label": "South gallery",
+          "x": 6,
+          "y": 12,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q4c",
+          "kind": "void",
+          "label": "Atrium · open to below",
+          "x": 6,
+          "y": 4,
+          "width": 8,
+          "height": 8,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "q4pass00",
+          "kind": "opening",
+          "x": 6,
+          "y": 1,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q4pass01",
+          "kind": "opening",
+          "x": 6,
+          "y": 14,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q4pass10",
+          "kind": "opening",
+          "x": 14,
+          "y": 1,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q4pass11",
+          "kind": "opening",
+          "x": 14,
+          "y": 14,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q4cw",
+          "kind": "window",
+          "x": 7,
+          "y": 12,
+          "width": 6,
+          "rotation": 0,
+          "swing": 1
+        }
+      ],
+      "fixtures": []
+    },
+    {
+      "id": "q5",
+      "name": "Level 5 · Gallery",
+      "use": "mixed",
+      "elevation": 20,
+      "storeyHeight": 4,
+      "elements": [
+        {
+          "id": "q5w",
+          "kind": "room",
+          "label": "West gallery",
+          "x": 0,
+          "y": 0,
+          "width": 6,
+          "height": 16,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q5e",
+          "kind": "room",
+          "label": "East gallery",
+          "x": 14,
+          "y": 0,
+          "width": 6,
+          "height": 16,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q5n",
+          "kind": "room",
+          "label": "North gallery",
+          "x": 6,
+          "y": 0,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q5s",
+          "kind": "room",
+          "label": "South gallery",
+          "x": 6,
+          "y": 12,
+          "width": 8,
+          "height": 4,
+          "wallThickness": 0.18
+        },
+        {
+          "id": "q5c",
+          "kind": "void",
+          "label": "Atrium · open to below",
+          "x": 6,
+          "y": 4,
+          "width": 8,
+          "height": 8,
+          "wallThickness": 0.18
+        }
+      ],
+      "openings": [
+        {
+          "id": "q5pass00",
+          "kind": "opening",
+          "x": 6,
+          "y": 1,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q5pass01",
+          "kind": "opening",
+          "x": 6,
+          "y": 14,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q5pass10",
+          "kind": "opening",
+          "x": 14,
+          "y": 1,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q5pass11",
+          "kind": "opening",
+          "x": 14,
+          "y": 14,
+          "width": 1.4,
+          "rotation": 90,
+          "swing": 1
+        },
+        {
+          "id": "q5cw",
+          "kind": "window",
+          "x": 7,
+          "y": 12,
+          "width": 6,
+          "rotation": 0,
+          "swing": 1
+        }
+      ],
+      "fixtures": []
+    }
+  ]
+}

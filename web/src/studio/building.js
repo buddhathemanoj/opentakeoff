@@ -1,7 +1,7 @@
 export const BUILDING_SCHEMA='kosal.studio.building.v1';
 export const FIXTURE_TYPES=['desk','chair','table','sofa','bed','shower','counter','teller','atm','safe','kitchen','sink','toilet','stair','lift','plant','rack','cabinet'];
 export const USES=['bank','cafe','office','mixed'];
-export const BUILDING_KINDS=['room','building','landscape','water','parking'];
+export const BUILDING_KINDS=['room','building','landscape','water','parking','void'];
 export const metresPerUnit=unit=>unit==='ft'?.3048:1;
 const finite=(n,min,max)=>typeof n==='number'&&Number.isFinite(n)&&n>=min&&n<=max;
 const text=(value,max=120)=>typeof value==='string'&&value.trim().length>0&&value.length<=max;
@@ -38,7 +38,7 @@ export function applyView(project,view,floorId){
   return{...project,name:view.name,width:view.width,height:view.height,unit:view.unit,floors:project.floors.map(f=>({...f,elements:f.id===current.id?view.elements.map(e=>({...e,wallThickness:e.wallThickness===undefined?.15/metresPerUnit(view.unit):e.wallThickness*(scaled?ratio:1)})):scaled?f.elements.map(scaleRect):f.elements,openings:scaled?f.openings.map(o=>({...o,x:o.x*ratio,y:o.y*ratio,width:o.width*ratio})):f.openings,fixtures:scaled?f.fixtures.map(i=>({...i,x:i.x*ratio,y:i.y*ratio,width:i.width*ratio,height:i.height*ratio})):f.fixtures}))};
 }
 export function allElementIds(project){return project.schema===BUILDING_SCHEMA?project.floors.flatMap(f=>[...f.elements,...f.fixtures,...f.openings].map(e=>e.id)):project.elements.map(e=>e.id);}
-export function buildingStats(project){return{floors:project.floors.length,grossArea:project.width*project.height*project.floors.length,spaces:project.floors.reduce((sum,f)=>sum+f.elements.length,0),openings:project.floors.reduce((sum,f)=>sum+f.openings.length,0),fixtures:project.floors.reduce((sum,f)=>sum+f.fixtures.length,0)};}
+export function buildingStats(project){return{floors:project.floors.length,grossArea:project.width*project.height*project.floors.length,spaces:project.floors.reduce((sum,f)=>sum+f.elements.filter(e=>e.kind!=='void').length,0),openings:project.floors.reduce((sum,f)=>sum+f.openings.length,0),fixtures:project.floors.reduce((sum,f)=>sum+f.fixtures.length,0)};}
 
 export function convertBuildingUnit(project,unit){
   if(!['m','ft'].includes(unit))throw new Error('Invalid drawing unit.');

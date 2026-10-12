@@ -17,7 +17,7 @@ export function drawingSvg(input,floorId){
         <text x="0" y={-pad*1.4} fontSize={font*1.5}>{project.name}</text>
         <text x="0" y={-pad*.9} fontSize={font}>{floor.name} · {width.toFixed(2)} × {height.toFixed(2)} {unit}</text>
       </g>
-      {floor.elements.map(e=><rect key={e.id} x={e.x} y={e.y} width={e.width} height={e.height} fill={e.kind==='landscape'?'#e1eadb':floor.use==='bank'?'#edf1f3':floor.use==='cafe'?'#f5f0e8':'#f0f2ef'}/>)}
+      {floor.elements.map(e=><rect key={e.id} x={e.x} y={e.y} width={e.width} height={e.height} fill={e.kind==='void'?'#fafaf7':e.kind==='landscape'?'#e1eadb':floor.use==='bank'?'#edf1f3':floor.use==='cafe'?'#f5f0e8':'#f0f2ef'}/>)}
       <FloorDetails floor={floor} width={width} height={height} unit={unit}/>
       <text x="0" y={height+pad} fontFamily="sans-serif" fontSize={font*.8} fill="#718087">ARCLOOM · CONCEPT DRAWING · NOT FOR CONSTRUCTION</text>
     </svg>

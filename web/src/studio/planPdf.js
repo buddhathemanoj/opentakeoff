@@ -21,7 +21,8 @@ export async function createPlanPdf(input){
   const text=(value,x,y,size=7,type=font,shade=ink)=>page.drawText(ascii(value),{x,y,size,font:type,color:shade});
   const center=(value,x,y,size=7,type=font,shade=ink)=>{const label=ascii(value);text(label,x-type.widthOfTextAtSize(label,size)/2,y,size,type,shade);};
   rect(0,0,project.width,project.height,color('#fafaf7'),ink,.22);
-  for(const e of floor.elements)rect(e.x,e.y,e.width,e.height,color(e.kind==='landscape'?'#e1eadb':project.schema===BUILDING_SCHEMA?floor.use==='bank'?'#edf1f3':floor.use==='cafe'?'#f5f0e8':'#f0f2ef':PAINT[e.kind].fill),ink,e.wallThickness||.08);
+  for(const e of floor.elements)rect(e.x,e.y,e.width,e.height,color(e.kind==='void'?'#fafaf7':e.kind==='landscape'?'#e1eadb':project.schema===BUILDING_SCHEMA?floor.use==='bank'?'#edf1f3':floor.use==='cafe'?'#f5f0e8':'#f0f2ef':PAINT[e.kind].fill),ink,e.wallThickness||.08);
+  for(const e of floor.elements.filter(e=>e.kind==='void')){line(e.x,e.y,e.x+e.width,e.y+e.height,.04,soft);line(e.x+e.width,e.y,e.x,e.y+e.height,.04,soft);}
   for(const item of floor.fixtures){
    const {type}=item,frame=fixtureFrame(item),w=frame.width,h=frame.height;
    const pos=(x,y)=>{const p=frame.point(x,y);return xy(p.x,p.y);};

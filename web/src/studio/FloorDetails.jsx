@@ -29,6 +29,7 @@ export default function FloorDetails({floor,width,height,unit='m',showLabels=tru
   return <g pointerEvents="none" transform={`scale(${1/m})`}>
     {showFixtures&&floor.fixtures.map(item=><Fixture key={item.id} item={item} selected={selected} onSelect={onSelect}/>)}
     {floor.elements.filter(e=>e.kind==='room').map(e=><rect key={e.id} x={e.x} y={e.y} width={e.width} height={e.height} fill="none" stroke="#495055" strokeWidth={e.wallThickness}/>)}
+    {floor.elements.filter(e=>e.kind==='void').map(e=><g key={e.id} fill="none" stroke="#88969a" strokeWidth=".06"><rect x={e.x} y={e.y} width={e.width} height={e.height} strokeDasharray=".25 .15"/><path d={`M${e.x} ${e.y}l${e.width} ${e.height}M${e.x+e.width} ${e.y}l${-e.width} ${e.height}`}/></g>)}
     <rect width={width} height={height} fill="none" stroke="#2f393c" strokeWidth=".32"/>
     {floor.openings.map(o=><g key={o.id} data-opening={o.id} transform={`translate(${o.x} ${o.y}) rotate(${o.rotation})`} fill="none" stroke="#64737b" strokeWidth=".055" pointerEvents={onSelect?'all':'none'} role={onSelect?'button':undefined} tabIndex={onSelect?0:undefined} aria-label={onSelect?o.kind+' opening '+o.id.slice(-5):undefined} onPointerDown={onSelect?e=>{e.stopPropagation();onSelect(o.id);}:undefined} onKeyDown={onSelect?e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();onSelect(o.id);}}:undefined}>
       {onSelect&&<path d={`M0 0h${o.width}`} stroke="transparent" strokeWidth=".5"/>}

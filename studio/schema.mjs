@@ -1,5 +1,5 @@
 import { KINDS, SCHEMA } from '../web/src/studio/model.js';
-import { BUILDING_SCHEMA, FIXTURE_TYPES, USES } from '../web/src/studio/building.js';
+import { BUILDING_SCHEMA, BUILDING_KINDS, FIXTURE_TYPES, USES } from '../web/src/studio/building.js';
 const object = properties => ({ type:'object', properties, required:Object.keys(properties), additionalProperties:false });
 const string={type:'string'},number={type:'number'},rotation={type:'number',enum:[0,90,180,270]};
 const baseElement={id:string,kind:{type:'string',enum:KINDS},label:string,x:number,y:number,width:number,height:number};
@@ -7,7 +7,7 @@ export const projectSchema=object({schema:{type:'string',enum:[SCHEMA]},id:strin
 export const buildingSchema=object({
  schema:{type:'string',enum:[BUILDING_SCHEMA]},id:string,name:string,mode:{type:'string',enum:['building']},unit:{type:'string',enum:['m','ft']},width:number,height:number,
  floors:{type:'array',items:object({id:string,name:string,use:{type:'string',enum:USES},elevation:number,storeyHeight:number,
-  elements:{type:'array',items:object({...baseElement,kind:{type:'string',enum:['room','landscape','water','parking','building']},wallThickness:number})},
+  elements:{type:'array',items:object({...baseElement,kind:{type:'string',enum:BUILDING_KINDS},wallThickness:number})},
   openings:{type:'array',items:object({id:string,kind:{type:'string',enum:['door','window','opening']},x:number,y:number,width:number,rotation,swing:{type:'number',enum:[-1,1]}})},
   fixtures:{type:'array',items:object({id:string,type:{type:'string',enum:FIXTURE_TYPES},label:string,x:number,y:number,width:number,height:number,rotation})}
  })},notes:{type:'array',items:string}

@@ -577,5 +577,60 @@ The wrapper built both local ARM64 installer formats successfully. Both passed
 the new verification step. A deliberately corrupt ZIP failed verification and
 left its upload directory empty. Tests replay the observed failure, bounded
 retries and non-Mac/unrelated-error refusal. Workflow YAML parsed successfully.
-The updated workflow still needs its own CI run; Windows test-path failures
-remain outside the current Mac focus.
+Both Mac jobs passed for build-identity commit `d93b3ffb` in
+[its CI run](https://github.com/buddhathemanoj/opentakeoff/actions/runs/38188970899).
+Windows test-path failures remain outside the current Mac focus.
+
+
+### Explicit floor openings — 0.1.0-beta.2
+
+A building-only `void` element now represents an opening through its slab.
+No existing project fields or machine originals are rewritten; the original
+site/floor and takeoff schemas are unchanged. Old building files remain valid.
+Older beta readers reject new files containing this kind, so the product beta
+version has advanced to 0.1.0-beta.2.
+
+Shared rectangle subtraction computes disjoint floor/ceiling panels and opening
+unions. Ceiling geometry uses openings in the nearest upper slab. Buildings
+with voids render all storeys during walkthroughs, translated relative to the
+active floor, with the ground below the lowest storey. Camera placement,
+restoration and movement check void bounds. Unsupported destinations are not
+listed. Review diagnostics flag overlapping rooms/surfaces/fixtures and openings
+on void boundaries, while accepting glazing on explicit outdoor boundaries.
+Slab quantities deduct the union once; schedules identify floor openings.
+
+All 69 studio tests and the full web check passed. Tests cover schema separation,
+unit conversion, nested openings, upper-slab selection, bounds, supported camera
+points, derived quantities and targeted diagnostics. The authored six-floor
+courtyard fixture has five 8 × 8 m upper openings: 320 m² total openings and
+320 m³ slab concrete at 0.2 m thickness, compared with 384 m³ before deductions.
+The UI displayed those quantities and rendered the courtyard cutaway and
+third-floor interior. Console checks found no warnings or errors. This fixture
+is geometry verification, not an AI-generated programme or construction approval.
+Live AI programme generation remains pending for this capability.
+
+
+The opening pattern and ceiling height both follow the nearest actual upper
+slab, including when its elevation differs from the lower storey height. A top
+roof uses its own outdoor areas. Glazing is clearer in the concept viewer.
+A controlled proposal changing the footprint from 20 × 16 m to 24 × 16 m showed
+384 m² in the viewer footer; Discard restored 320 m². This proposal was a local
+fixture, not a model call. Preview drawing now closes the report panel to show
+the viewer. The saved design is unchanged by these navigation actions.
+
+Evidence: [cutaway](../../output/ui/arcloom-courtyard-cutaway.png),
+[interior](../../output/ui/arcloom-courtyard-walkthrough.png),
+[quantities](../../output/ui/arcloom-courtyard-quantities.png),
+[proposal footprint](../../output/ui/arcloom-proposal-footprint.png),
+[opening audit](../../output/verification/floor-opening-proof.json),
+[authored fixture](../../output/verification/courtyard-six-floor-qa.arcloom.json),
+[drawing sheets](../../output/verification/courtyard-six-floor-qa.pdf),
+[quantity report](../../output/verification/courtyard-six-floor-quantities.pdf).
+The final full web check passed, followed by lint/build after the preview
+navigation change. Source-backed documentation and repository checks passed.
+The final ARM64 app in `release/arcloom-courtyard-final` passed runtime identity,
+bundled Codex, assets, PDF worker and six-license checks as version
+`0.1.0-beta.2`, build `8f2fd41648c2`. Both its DMG and ZIP passed installer
+verification and were copied into its fresh `verified` folder. Signing and
+notarization remain open. Its native CI run is still pending.
+[Ground courtyard view](../../output/ui/arcloom-courtyard-ground.png).

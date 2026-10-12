@@ -1,6 +1,6 @@
 import {BUILDING_SCHEMA,metresPerUnit} from './building.js';
 import {validateProject,layoutWarnings} from './model.js';
-import {wallBoxes} from './threeGeometry.js';
+import {wallBoxes,floorPanels} from './threeGeometry.js';
 export function estimateQuantities(input,{slabThickness=.2}={}){
   const p=validateProject(input),m=metresPerUnit(p.unit);
   if(!Number.isFinite(slabThickness)||slabThickness<.05||slabThickness>1)throw new Error('Slab thickness must be between 0.05 and 1 metre.');
@@ -8,7 +8,9 @@ export function estimateQuantities(input,{slabThickness=.2}={}){
   const rows=[],add=(id,label,unit,quantity,basis)=>rows.push({id,label,unit,quantity,basis});
   const gross=p.width*p.height*m*m*floors.length;
   if(p.schema===BUILDING_SCHEMA){
-    add('slabs','Floor slab concrete','m³',gross*slabThickness,'Gross floor footprint × assumed slab thickness; core holes not deducted.');
+    const slabArea=floors.reduce((n,f)=>n+floorPanels(p,f).reduce((sum,panel)=>sum+panel.width*panel.depth,0),0),voidArea=Math.max(0,gross-slabArea);
+    add('slabs','Floor slab concrete','m³',slabArea*slabThickness,`${Number(slabArea.toFixed(3))} m² modelled slab area × ${slabThickness} m assumed thickness; explicit floor openings deducted, other core holes not inferred.`);
+    if(voidArea>1e-8)add('area-void','Floor opening area','m²',voidArea,'Union of explicit openings across floors; already deducted from slab concrete. Any entered rate is a separate opening allowance.');
     let walls=0,finishes=0,glazing=0,doors=0;
     for(const f of floors){
       for(const b of wallBoxes(p,f)){walls+=b.width*b.depth*b.height;finishes+=2*(b.axis==='x'?b.width:b.depth)*b.height;}
@@ -27,7 +29,7 @@ export function estimateQuantities(input,{slabThickness=.2}={}){
   const fixtures=new Map();
   for(const item of floors.flatMap(f=>f.fixtures))fixtures.set(item.type,(fixtures.get(item.type)||0)+1);
   for(const [type,count] of fixtures)add('fixture-'+type,type[0].toUpperCase()+type.slice(1)+' fixtures','each',count,'Count of editable fixture objects across all floors.');
-  return{grossArea:gross,floors:floors.length,areaLabel:p.mode==='site'?'Site boundary area':'Gross floor area',summary:p.mode==='site'?'Site layout':floors.length+' '+(floors.length===1?'floor':'floors'),scheduleLabel:p.mode==='site'?'Plots & areas':'Rooms & areas',hasSlabs:p.schema===BUILDING_SCHEMA,rows,warnings:layoutWarnings(p),assumptions:['Concept quantities, not a priced construction tender.','No foundations, reinforcement, structural sizing, MEP, earthworks, taxes or contractor allowances are inferred.','Enter local supplier or estimator rates. Blank rates remain unpriced.']};
+  return{grossArea:gross,floors:floors.length,areaLabel:p.mode==='site'?'Site boundary area':floors.some(f=>f.elements.some(e=>e.kind==='void'))?'Gross floor footprint including openings':'Gross floor area',summary:p.mode==='site'?'Site layout':floors.length+' '+(floors.length===1?'floor':'floors'),scheduleLabel:p.mode==='site'?'Plots & areas':'Rooms & areas',hasSlabs:p.schema===BUILDING_SCHEMA,rows,warnings:layoutWarnings(p),assumptions:['Concept quantities, not a priced construction tender.','No foundations, reinforcement, structural sizing, MEP, earthworks, taxes or contractor allowances are inferred.','Enter local supplier or estimator rates. Blank rates remain unpriced.']};
 }
 export function priceEstimate(rows,rates){
   const priced=rows.map(row=>{const rate=rates[row.id];return{...row,rate:typeof rate==='number'&&Number.isFinite(rate)&&rate>=0?rate:null,amount:typeof rate==='number'&&Number.isFinite(rate)&&rate>=0?row.quantity*rate:null};});

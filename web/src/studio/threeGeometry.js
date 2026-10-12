@@ -1,12 +1,8 @@
 // World coordinates are metres. Elevation/storeyHeight remain metres in either drawing unit.
-export function ceilingPanels(project,floor){
+function panelsWithout(project,areas){
  const m=project.unit==='ft'?.3048:1;
  let panels=[{x:0,z:0,width:project.width*m,depth:project.height*m}];
- // Every storey currently has a full footprint slab: a higher storey still covers lower terraces.
- const covered=project.floors?.some(f=>f.elevation>floor.elevation);
- if(covered)return panels.map(p=>({...p,x:p.x+p.width/2,z:p.z+p.depth/2}));
- // Subtract the union of landscaped outdoor areas, keeping the remaining roof continuous.
- for(const area of floor.elements.filter(e=>e.kind==='landscape')){
+ for(const area of areas){
   const cut={x:area.x*m,z:area.y*m,width:area.width*m,depth:area.height*m};
   panels=panels.flatMap(p=>{
    const left=Math.max(p.x,cut.x),right=Math.min(p.x+p.width,cut.x+cut.width),near=Math.max(p.z,cut.z),far=Math.min(p.z+p.depth,cut.z+cut.depth);
@@ -15,6 +11,16 @@ export function ceilingPanels(project,floor){
   });
  }
  return panels.map(p=>({...p,x:p.x+p.width/2,z:p.z+p.depth/2}));
+}
+export function floorVoids(project,floor){const m=project.unit==='ft'?.3048:1;return floor.elements.filter(e=>e.kind==='void').map(e=>({x:e.x*m,z:e.y*m,width:e.width*m,depth:e.height*m}));}
+export function floorPanels(project,floor){return panelsWithout(project,floor.elements.filter(e=>e.kind==='void'));}
+const nextFloor=(project,floor)=>project.floors?.filter(f=>f.elevation>floor.elevation).sort((a,b)=>a.elevation-b.elevation)[0];
+export function roofPanels(project,floor){return panelsWithout(project,floor.elements.filter(e=>e.kind==='landscape'||e.kind==='void'));}
+export function ceilingHeight(project,floor){const above=nextFloor(project,floor);return above?above.elevation-floor.elevation:floor.storeyHeight;}
+export function ceilingPanels(project,floor){
+ const above=nextFloor(project,floor);
+ // Follow the actual nearest upper slab; the top roof uses its own outdoor areas.
+ return above?floorPanels(project,above):roofPanels(project,floor);
 }
 export function wallBoxes(project,floor){
  const m=project.unit==='ft'?.3048:1,height=floor.storeyHeight-.22,raw=[];

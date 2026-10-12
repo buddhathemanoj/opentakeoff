@@ -1,6 +1,6 @@
 import {useEffect,useRef,useState} from 'react';
-import {wallBoxes,worldFixture,ceilingPanels} from './threeGeometry.js';
-import {canWalkTo,entryRoom,walkthroughLocations} from './walkthrough.js';
+import {wallBoxes,worldFixture,ceilingPanels,ceilingHeight,roofPanels,floorPanels,floorVoids} from './threeGeometry.js';
+import {canWalkTo,entryRoom,walkthroughLocations,walkPoint} from './walkthrough.js';
 import {canRestoreView} from './viewPose.js';
 export default function Building3D({project,floorId,onLocationChange}){
  const mount=useRef(null),reset=useRef(null),enter=useRef(null),keys=useRef(new Set()),viewPose=useRef(null),[walk,setWalk]=useState(false),[roomName,setRoomName]=useState(''),[locationId,setLocationId]=useState(''),[exploded,setExploded]=useState(false),[cutaway,setCutaway]=useState(false),[scope,setScope]=useState('all'),[error,setError]=useState(''),[ready,setReady]=useState(false);
@@ -16,7 +16,7 @@ export default function Building3D({project,floorId,onLocationChange}){
     controls.enableDamping=true;controls.minDistance=2;controls.maxDistance=400;controls.minPolarAngle=.12;controls.maxPolarAngle=Math.PI*.44;controls.enabled=!walk;camera.rotation.order='YXZ';
     const materials=[],geometries=[];
     const material=(color,extra={})=>{const v=new THREE.MeshStandardMaterial({color,roughness:.72,...extra});materials.push(v);return v;};
-    const wall=material('#eeeae2'),edge=material('#707b7b'),glass=material('#8fb3bf',{transparent:true,opacity:.4,roughness:.2}),wood=material('#bda080'),fabric=material('#657f81'),leaf=material('#719768'),soil=material('#a58c72'),white=material('#f2f1eb'),metal=material('#56646c'),ground=material('#e2e4dc');
+    const wall=material('#eeeae2'),edge=material('#707b7b'),glass=material('#8fb3bf',{transparent:true,opacity:.18,roughness:.2,depthWrite:false}),wood=material('#bda080'),fabric=material('#657f81'),leaf=material('#719768'),soil=material('#a58c72'),white=material('#f2f1eb'),metal=material('#56646c'),ground=material('#e2e4dc');
     const box=(parent,w,h,d,x,y,z,mat)=>{
      const geometry=new THREE.BoxGeometry(Math.max(.01,w),Math.max(.01,h),Math.max(.01,d));geometries.push(geometry);
      const mesh=new THREE.Mesh(geometry,mat);mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;parent.add(mesh);return mesh;
@@ -24,13 +24,14 @@ export default function Building3D({project,floorId,onLocationChange}){
     const sphere=(parent,r,x,y,z,mat)=>{const geometry=new THREE.SphereGeometry(r,12,8);geometries.push(geometry);const mesh=new THREE.Mesh(geometry,mat);mesh.position.set(x,y,z);mesh.castShadow=true;parent.add(mesh);};
     const m=project.unit==='ft'?.3048:1,w=project.width*m,d=project.height*m;
     const activeFloor=project.floors.find(f=>f.id===floorId)||project.floors[0];
-    const floors=walk?[activeFloor]:scope==='selected'?[activeFloor]:project.floors;
+    const hasVoids=project.floors.some(f=>f.elements.some(e=>e.kind==='void'));
+    const floors=walk?(hasVoids?project.floors:[activeFloor]):scope==='selected'?[activeFloor]:project.floors;
     const showCutaway=!walk&&cutaway,showExploded=!walk&&exploded;
     let top=0;const landscape=material('#b2c2a3');
     floors.forEach((floor,index)=>{
-     const group=new THREE.Group(),base=walk||scope==='selected'?0:floor.elevation+(showExploded?index*5:0);group.position.y=base;scene.add(group);top=Math.max(top,base+floor.storeyHeight);
+     const group=new THREE.Group(),base=walk?floor.elevation-activeFloor.elevation:scope==='selected'?0:floor.elevation+(showExploded?index*5:0);group.position.y=base;scene.add(group);top=Math.max(top,base+floor.storeyHeight);
      const floorMat=material(floor.use==='cafe'?'#d6c4ac':floor.use==='bank'?'#d7dfe0':'#e4e5df');
-     box(group,w,.2,d,w/2,-.1,d/2,floorMat);
+     for(const panel of floorPanels(project,floor))box(group,panel.width,.2,panel.depth,panel.x,-.1,panel.z,floorMat);
      for(const area of floor.elements.filter(e=>e.kind==='landscape'))box(group,area.width*m,.012,area.height*m,(area.x+area.width/2)*m,.006,(area.y+area.height/2)*m,landscape);
      for(const b of wallBoxes(project,floor)){
       if(showCutaway&&b.perimeter&&(b.x>w-.2||b.z>d-.2))continue;
@@ -70,20 +71,22 @@ export default function Building3D({project,floorId,onLocationChange}){
       else {box(g,a,.9,b,0,.45,0,wood);box(g,a+.04,.06,b+.04,0,.93,0,white);}
      }
     });
-    if(walk){for(const p of ceilingPanels(project,activeFloor))box(scene,p.width,.16,p.depth,p.x,activeFloor.storeyHeight-.08,p.z,white);}
-    else if(!showCutaway&&!showExploded&&scope==='all'){const roofFloor=floors.reduce((a,b)=>a.elevation+a.storeyHeight>b.elevation+b.storeyHeight?a:b);for(const p of ceilingPanels(project,roofFloor))box(scene,p.width,.18,p.depth,p.x,top+.09,p.z,white);}
-    box(scene,w+12,.12,d+12,w/2,-.3,d/2,ground);
-    const grid=new THREE.GridHelper(Math.max(w,d)+12,Math.ceil(Math.max(w,d)+12),'#c7ccc6','#d7dbd4');grid.position.set(w/2,-.235,d/2);scene.add(grid);geometries.push(grid.geometry);materials.push(grid.material);
+    if(walk){for(const p of ceilingPanels(project,activeFloor))box(scene,p.width,.16,p.depth,p.x,ceilingHeight(project,activeFloor)-.08,p.z,white);}
+    else if(!showCutaway&&!showExploded&&scope==='all'){const roofFloor=floors.reduce((a,b)=>a.elevation+a.storeyHeight>b.elevation+b.storeyHeight?a:b);for(const p of roofPanels(project,roofFloor))box(scene,p.width,.18,p.depth,p.x,top+.09,p.z,white);}
+    const groundLevel=walk&&hasVoids?Math.min(...project.floors.map(f=>f.elevation))-activeFloor.elevation:0;
+    box(scene,w+12,.12,d+12,w/2,groundLevel-.3,d/2,ground);
+    const grid=new THREE.GridHelper(Math.max(w,d)+12,Math.ceil(Math.max(w,d)+12),'#c7ccc6','#d7dbd4');grid.position.set(w/2,groundLevel-.235,d/2);scene.add(grid);geometries.push(grid.geometry);materials.push(grid.material);
     scene.add(new THREE.HemisphereLight('#fff9ed','#8d9b98',2.6));
     const sun=new THREE.DirectionalLight('#fff5df',3.2);sun.position.set(-15,45,20);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-60;sun.shadow.camera.right=60;sun.shadow.camera.top=60;sun.shadow.camera.bottom=-60;sun.shadow.bias=-.0005;scene.add(sun);
-    const walkingWalls=wallBoxes(project,activeFloor),frameTimer=new THREE.Timer();frameTimer.connect(document);
+    const walkingWalls=wallBoxes(project,activeFloor),walkingBounds={width:w,depth:d,voids:floorVoids(project,activeFloor)},frameTimer=new THREE.Timer();frameTimer.connect(document);
     let yaw=0,pitch=0,drag=null,lastRoomUpdate=0,lastReported;
     const reportLocation=(room,force=false)=>{const id=room?.id||null;if(force||id!==lastReported){lastReported=id;onLocationChange?.(id?{projectId:project.id,floorId:activeFloor.id,elementId:id}:null);}};
     const syncLocation=()=>{const room=walkthroughLocations(activeFloor).find(e=>camera.position.x>=e.x*m&&camera.position.x<=(e.x+e.width)*m&&camera.position.z>=e.y*m&&camera.position.z<=(e.y+e.height)*m);setRoomName(room?.label||activeFloor.name);setLocationId(room?.id||'');reportLocation(room);};
     const place=(id)=>{
-     const room=activeFloor.elements.find(e=>e.id===id)||entryRoom(activeFloor);
-     const px=room?(room.x+room.width/2)*m:w/2,pz=room?(room.y+room.height*.78)*m:d/2;
-     camera.position.set(px,1.65,pz);yaw=0;pitch=-.12;camera.rotation.set(pitch,yaw,0);setRoomName(room?.label||activeFloor.name);setLocationId(room?.id||'');reportLocation(room,true);
+     let room=walkthroughLocations(activeFloor).find(e=>e.id===id)||entryRoom(activeFloor),point=walkPoint(room,walkingWalls,walkingBounds,project.unit);
+     if(!point&&!id){for(const candidate of walkthroughLocations(activeFloor)){point=walkPoint(candidate,walkingWalls,walkingBounds,project.unit);if(point){room=candidate;break;}}}
+     if(!point){setError('No walkable viewpoint found here. Inspect the floor plan and its openings.');return;}
+     setError('');camera.position.set(point.x,1.65,point.z);yaw=0;pitch=-.12;camera.rotation.set(pitch,yaw,0);setRoomName(room?.label||activeFloor.name);setLocationId(room?.id||'');reportLocation(room,true);
     };
     enter.current=place;
     const home=()=>{
@@ -96,7 +99,7 @@ export default function Building3D({project,floorId,onLocationChange}){
     const resize=()=>{const width=host.clientWidth,height=host.clientHeight;if(!width||!height)return;renderer.setSize(width,height);camera.aspect=width/height;camera.updateProjectionMatrix();};
     const observer=new ResizeObserver(resize);observer.observe(host);resize();
     const viewContext={projectId:project.id,floorId:activeFloor.id,walk,scope,cutaway,exploded,width:w,depth:d,height:top},savedPose=viewPose.current;
-    if(canRestoreView(savedPose,viewContext)&&(!walk||canWalkTo(savedPose.position[0],savedPose.position[2],walkingWalls,{width:w,depth:d}))){
+    if(canRestoreView(savedPose,viewContext)&&(!walk||canWalkTo(savedPose.position[0],savedPose.position[2],walkingWalls,walkingBounds))){
      camera.position.fromArray(savedPose.position);controls.target.fromArray(savedPose.target);
      if(walk){yaw=savedPose.yaw;pitch=savedPose.pitch;camera.rotation.set(pitch,yaw,0);syncLocation();}else controls.update();
     }else home();
@@ -114,7 +117,7 @@ export default function Building3D({project,floorId,onLocationChange}){
       if(walk){
        const pressed=keys.current;let forward=(pressed.has('w')||pressed.has('arrowup')?1:0)-(pressed.has('s')||pressed.has('arrowdown')?1:0),side=(pressed.has('d')?1:0)-(pressed.has('a')?1:0);
        yaw+=((pressed.has('arrowleft')?1:0)-(pressed.has('arrowright')?1:0))*dt*1.5;camera.rotation.set(pitch,yaw,0);
-       const norm=Math.hypot(forward,side)||1,speed=2.4*dt/norm,dx=(-Math.sin(yaw)*forward+Math.cos(yaw)*side)*speed,dz=(-Math.cos(yaw)*forward-Math.sin(yaw)*side)*speed,bounds={width:w,depth:d};
+       const norm=Math.hypot(forward,side)||1,speed=2.4*dt/norm,dx=(-Math.sin(yaw)*forward+Math.cos(yaw)*side)*speed,dz=(-Math.cos(yaw)*forward-Math.sin(yaw)*side)*speed,bounds=walkingBounds;
        if(canWalkTo(camera.position.x+dx,camera.position.z,walkingWalls,bounds))camera.position.x+=dx;
        if(canWalkTo(camera.position.x,camera.position.z+dz,walkingWalls,bounds))camera.position.z+=dz;
        if(frameTimer.getElapsed()-lastRoomUpdate>.5){lastRoomUpdate=frameTimer.getElapsed();syncLocation();}

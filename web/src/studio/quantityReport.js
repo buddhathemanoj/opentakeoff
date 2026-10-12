@@ -12,7 +12,7 @@ export async function createQuantityReport(project,quantities,priced,currency){
  for(const row of priced.rows){if(y<130)next();line(row.label,11,true);line(num(row.quantity)+' '+row.unit+' | Rate: '+(row.rate===null?'Unpriced':currency+' '+num(row.rate))+' | Amount: '+(row.amount===null?'Unpriced':currency+' '+num(row.amount)),9);wrap(row.basis);y-=5;}
  next();line(project.mode==='site'?'Plot and site schedule':'Room and space schedule',12,true);
  const m=project.unit==='ft'?.3048:1,floors=project.floors||[{name:project.name,elements:project.elements}];
- for(const f of floors){line(f.name,11,true);for(const e of f.elements)wrap(e.label+' | '+num(e.width*m)+' x '+num(e.height*m)+' m | '+num(e.width*e.height*m*m)+' m2');y-=10;}
+ for(const f of floors){line(f.name,11,true);for(const e of f.elements)wrap((e.kind==='void'?'[Floor opening] ':'')+e.label+' | '+num(e.width*m)+' x '+num(e.height*m)+' m | '+num(e.width*e.height*m*m)+' m2');y-=10;}
  if(project.notes?.length){if(y<140)next();line('Design assumptions and unresolved issues',12,true);for(const note of project.notes){wrap(note);y-=5;}}
  line('Basis and exclusions',12,true);for(const text of [...quantities.assumptions,...quantities.warnings])wrap(text);
  const pages=pdf.getPages();pages.forEach((p,i)=>p.drawText('Concept design - not for construction | '+(i+1)+' / '+pages.length,{x:40,y:25,size:8,font}));

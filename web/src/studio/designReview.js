@@ -16,7 +16,7 @@ export function floorAccessIssues(project,floor){
  }
  for(const opening of floor.openings){
   if(opening.kind==='window'){
-   if(!openingOnBoundary(footprint,opening,project.unit))issues.push({kind:'window',itemIds:[opening.id],message:`Window ${opening.id} is away from the building perimeter; check whether interior glazing is intended.`});
+   if(!openingOnBoundary(footprint,opening,project.unit)&&!floor.elements.some(e=>(e.kind==='void'||e.kind==='landscape')&&openingOnBoundary(e,opening,project.unit)))issues.push({kind:'window',itemIds:[opening.id],message:`Window ${opening.id} is away from the building perimeter; check whether interior glazing is intended.`});
   }else if(!openingOnBoundary(footprint,opening,project.unit)&&!rooms.some(room=>openingOnBoundary(room,opening,project.unit))){
    issues.push({kind:'opening',itemIds:[opening.id],message:`Opening ${opening.id} is not on a modelled room wall or the building perimeter.`});
   }
@@ -39,7 +39,14 @@ export function reviewLayout(project,{floorId=null,offset=0,limit=25}={}){
    const a=solid[i],b=solid[j];if(a.kind!==b.kind)continue;
    if(Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x)>.01&&Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y)>.01)add({kind:'overlap',itemIds:[a.id,b.id],message:`${a.label} overlaps ${b.label}.`});
   }
-  if(building)for(const issue of floorAccessIssues(project,floor))add(issue);
+  if(building){
+   for(const issue of floorAccessIssues(project,floor))add(issue);
+   const overlaps=(a,b)=>Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x)>.01&&Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y)>.01;
+   for(const hole of floor.elements.filter(e=>e.kind==='void')){
+    for(const item of [...floor.elements.filter(e=>['room','landscape','water','parking'].includes(e.kind)),...floor.fixtures])if(overlaps(item,hole))add({kind:'void-overlap',itemIds:[item.id,hole.id],message:`${item.label} overlaps floor opening ${hole.label}.`});
+    for(const opening of floor.openings.filter(o=>o.kind!=='window'))if(openingOnBoundary(hole,opening,project.unit))add({kind:'void-door',itemIds:[opening.id,hole.id],message:`Opening ${opening.id} is on floor opening ${hole.label}; check that its route has a supported floor.`});
+   }
+  }
  }
  return{issues,total,offset,limit};
 }

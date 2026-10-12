@@ -1445,8 +1445,8 @@ location follows the camera, and **Return to entry** resets both the view and
 menu. Landscaped areas have a distinct ground surface. The top storey's roof
 excludes landscaped outdoor areas, so rooftop terraces remain open to the sky
 in both the assembled model and walkthrough. Lower terraces retain the slab
-of any higher storey: the current model uses a full footprint slab per floor.
-These concept views do not model structural roof openings, setback floorplates
+of the next higher storey unless that slab has an explicit floor opening.
+These concept views do not model structural edge design, setback floorplates
 or construction-ready terrace details. Water and parking areas are not
 walkthrough destinations.
 
@@ -1528,3 +1528,32 @@ point and bundled Codex, together with the target and Electron version. It
 identifies runtime content; it is not a signature or release approval.
 Development views without packaged metadata say that build information is
 unavailable. No drawing or conversation data is included in this fingerprint.
+
+
+## Courtyards and openings through floors
+
+In multi-floor buildings, **Draw floor opening** creates an editable area with
+no slab surface. Use aligned openings on upper storeys for an atrium or open-air
+courtyard; a ground-level courtyard can remain a landscape surface. Openings
+appear with a cross marker in plans and drawing exports. They are distinct from
+doorways and open passages in **Add opening**.
+
+The 3D model subtracts these openings from slabs. A lower floor's ceiling follows
+the next slab above; a top floor's roof excludes its openings and landscaped
+outdoor areas. For buildings with floor openings, walkthroughs render surrounding
+storeys so you can look through the atrium. Movement and automatic viewpoints
+avoid unsupported opening areas. Floor openings are not walkthrough destinations.
+Design checks flag rooms, surface areas, fixtures and passages that conflict
+with them. These checks do not model falls, continuous stair movement, edge
+protection, structural support or fire strategy.
+
+**Floor slab concrete** now deducts the union of explicit openings, so overlapping
+opening rectangles are not deducted twice. **Floor opening area** reports that
+union across floors; it is already excluded from slab concrete. Gross footprint
+remains labelled as including openings. Any rate entered against opening area
+is a separate allowance. Other unmodelled core holes are not inferred.
+
+This capability starts in Arcloom **0.1.0-beta.2**. Existing building and site
+files remain importable. New building exports use the existing building schema
+with an additional `void` element kind; older beta builds cannot import those
+files. Original PDF takeoff formats and measurement records are unchanged.

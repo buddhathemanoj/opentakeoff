@@ -1,0 +1,30 @@
+{
+  "fixture": "Authored six-floor courtyard geometry, not an AI-generated university design",
+  "floorCount": 6,
+  "upperOpeningCount": 5,
+  "eachOpeningSquareMetres": 64,
+  "openingUnionSquareMetres": 320,
+  "grossFootprintSquareMetres": 1920,
+  "modelledSlabSquareMetres": 1600,
+  "assumedSlabThicknessMetres": 0.2,
+  "slabConcreteCubicMetres": 320,
+  "openingUnionNotDoubleDeducted": true,
+  "unitConversionTestPassed": true,
+  "walkthroughBoundsAndViewpointTestsPassed": true,
+  "uiCutawayAndInteriorInspected": true,
+  "liveAiProgrammeGeneration": "pending",
+  "edgeProtectionAndStructuralDesign": "not modelled",
+  "controlledProposalFootprint": {
+    "savedSquareMetres": 320,
+    "previewSquareMetres": 384,
+    "discardRestoresSavedArea": true,
+    "modelCall": false
+  },
+  "ceilingUsesActualUpperElevationTestPassed": true,
+  "nativeVersion": "0.1.0-beta.2",
+  "nativeBuildId": "8f2fd41648c2",
+  "nativeRuntimeIdentityVerified": true,
+  "dmgVerified": true,
+  "zipVerified": true,
+  "publisherSignature": "unsigned; not notarized"
+}

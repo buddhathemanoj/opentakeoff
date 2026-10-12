@@ -2,11 +2,12 @@ import { validateBuilding, BUILDING_SCHEMA } from './building.js';
 import {reviewLayout} from './designReview.js';
 export const SCHEMA = 'kosal.studio.project.v1';
 export const KINDS = ['plot', 'building', 'room', 'road', 'landscape', 'water', 'parking'];
-export const KIND_LABELS = { plot: 'Plot', building: 'Building', room: 'Room', road: 'Road', landscape: 'Landscape', water: 'Water', parking: 'Parking' };
+export const KIND_LABELS = { plot: 'Plot', building: 'Building', room: 'Room', road: 'Road', landscape: 'Landscape', water: 'Water', parking: 'Parking', void: 'Floor opening' };
 export const PAINT = {
   plot: { fill: '#ede7dc', stroke: '#9c9180' }, building: { fill: '#d8d5cc', stroke: '#79796d' },
   room: { fill: '#eee4d9', stroke: '#a38c74' }, road: { fill: '#e0e1df', stroke: '#afb3af' },
   landscape: { fill: '#dce5d4', stroke: '#91a184' }, water: { fill: '#d9e6e7', stroke: '#8cabad' },
+  void: {fill:'#fafaf7',stroke:'#88969a'},
   parking: { fill: '#e8e7e3', stroke: '#a2a39a' },
 };
 const number = (n, min, max) => typeof n === 'number' && Number.isFinite(n) && n >= min && n <= max;
@@ -48,7 +49,7 @@ export function exampleProject() {
 }
 export function metrics(project) {
   const areas = Object.fromEntries(KINDS.map(k => [k, 0]));
-  for (const e of project.elements) areas[e.kind] += e.width * e.height;
+  for (const e of project.elements) areas[e.kind] = (areas[e.kind]||0) + e.width * e.height;
   return { area: project.width * project.height, areas, plots: project.elements.filter(e => e.kind === 'plot').length };
 }
 export function layoutWarnings(project) {
