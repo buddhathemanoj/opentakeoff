@@ -718,3 +718,12 @@ assets, PDF worker and license checks as build `9612fddb7412`. Both installer
 formats passed verification. The live university run with corrected repair
 handling remains active; signing/notarization and the wider quality checklist
 remain open.
+
+
+The third authenticated university request terminated at the 600-second limit
+without a draft, so no repair occurred and no proposal was applied. The repaired
+new-draft path is verified by its regression test, not yet by a successful live
+university design. All three attempts retained the full programme and left the
+saved fixture unchanged. The temporary QA recorder was removed and the normal
+isolated server restored. Large-programme latency remains an unresolved MVP
+requirement; schema/unit/native package checks do not establish design quality.
